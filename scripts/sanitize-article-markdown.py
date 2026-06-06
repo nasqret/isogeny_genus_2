@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 DISPLAY_ENV_RE = re.compile(
-    r"\$\$\\begin\{(?P<env>equation|align\*?|eqnarray)\}"
+    r"\$\$\s*\\begin\{(?P<env>equation|align\*?|eqnarray)\}"
     r"(?P<body>.*?)"
     r"\\end\{(?P=env)\}\$\$",
     re.DOTALL,
@@ -107,22 +107,26 @@ def flatten_cases(body: str) -> str:
 
 
 def sanitize_article(text: str) -> str:
-    equation_numbers: dict[str, int] = {}
-    next_equation_number = 1
+    labels_in_order = [label.strip() for label in LABEL_RE.findall(text)]
+    if len(labels_in_order) != len(set(labels_in_order)):
+        raise ValueError("duplicate equation labels in Pandoc output")
+    equation_numbers = {
+        label: number for number, label in enumerate(labels_in_order, start=1)
+    }
+    used_labels: set[str] = set()
 
     text, tikz_count = TIKZ_RE.subn(lambda _: TIKZ_REPLACEMENT, text)
     if tikz_count != 1:
         raise ValueError(f"expected one tikzcd diagram, found {tikz_count}")
 
     def remember_label(label: str) -> tuple[str, int]:
-        nonlocal next_equation_number
         clean_label = label.strip()
-        if clean_label in equation_numbers:
-            raise ValueError(f"duplicate equation label: {clean_label}")
-        number = next_equation_number
-        equation_numbers[clean_label] = number
-        next_equation_number += 1
-        return slugify(clean_label), number
+        if clean_label not in equation_numbers:
+            raise ValueError(f"unknown equation label: {clean_label}")
+        if clean_label in used_labels:
+            raise ValueError(f"duplicate equation label use: {clean_label}")
+        used_labels.add(clean_label)
+        return slugify(clean_label), equation_numbers[clean_label]
 
     def sanitize_environment(match: re.Match[str]) -> str:
         env = match.group("env")
@@ -167,7 +171,18 @@ def sanitize_article(text: str) -> str:
 
     def strip_comments_from_display(match: re.Match[str]) -> str:
         body = strip_math_comments(match.group("body")).strip()
-        return f"\n\n$$\n{body}\n$$\n\n"
+        body = flatten_cases(body)
+        anchors: list[str] = []
+
+        def replace_remaining_label(label_match: re.Match[str]) -> str:
+            anchor, number = remember_label(label_match.group(1))
+            anchors.append(f'<span id="{anchor}"></span>')
+            return rf" \qquad\text{{({number})}}"
+
+        body = LABEL_RE.sub(replace_remaining_label, body)
+        anchor_html = "\n".join(anchors)
+        prefix = f"\n\n{anchor_html}\n\n" if anchor_html else "\n\n"
+        return f"{prefix}$$\n{body}\n$$\n\n"
 
     text = DISPLAY_MATH_RE.sub(strip_comments_from_display, text)
 
@@ -228,6 +243,13 @@ def sanitize_article(text: str) -> str:
     for description, pattern in forbidden_patterns.items():
         if re.search(pattern, text):
             raise ValueError(f"sanitizer left {description} in the article")
+
+    unused_labels = set(equation_numbers) - used_labels
+    if unused_labels:
+        raise ValueError(
+            "sanitizer did not consume equation labels: "
+            + ", ".join(sorted(unused_labels))
+        )
 
     malformed_display_lines = [
         line for line in text.splitlines() if "$$" in line and line.strip() != "$$"
