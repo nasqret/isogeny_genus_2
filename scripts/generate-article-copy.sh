@@ -3,12 +3,15 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 TEMP="$ROOT/book/paper/.original_article.body.md"
+SANITIZED="$ROOT/book/paper/.original_article.sanitized.md"
 
 pandoc "$ROOT/sources/paper.tex" \
   --from=latex \
   --to=markdown \
   --bibliography="$ROOT/sources/bibliography.bib" \
   --output="$TEMP"
+
+python3 "$ROOT/scripts/sanitize-article-markdown.py" "$TEMP" "$SANITIZED"
 
 {
   cat <<'EOF'
@@ -37,7 +40,7 @@ computes the complementary elliptic factor in the decomposition of
 \(\operatorname{Jac}(X)\) up to isogeny.
 
 EOF
-  cat "$TEMP"
+  cat "$SANITIZED"
 } > "$ROOT/book/paper/original_article.md"
 
-rm -f "$TEMP"
+rm -f "$TEMP" "$SANITIZED"

@@ -126,3 +126,21 @@
   `(p,q)=(-8,16)` from the degree-4 example.
 - Verified that the explicit degree-3 maps produce nonconstant `Q(t)`-points
   on both quadratic twists by the source sextic.
+
+## 2026-06-07
+
+### Jupyter Book formula-rendering audit
+
+- Added `scripts/sanitize-article-markdown.py` to normalize Pandoc's article
+  conversion before it enters the Jupyter Book.
+- Converted nested `equation`, `align`, and `eqnarray` environments into
+  standalone MathJax display blocks with 19 stable numbered anchors.
+- Repaired Pandoc equation and theorem references, normalized MyST targets,
+  removed leaked reference metadata and TeX comments, and flattened the one
+  `cases` block that conflicts with MyST's automatic `split` wrapper.
+- Replaced the unsupported `tikzcd` diagram with equivalent geometric-cover
+  and subgroup-inclusion tables containing rendered inline mathematics.
+- A clean `./scripts/build-book.sh` run completed without Sphinx warnings.
+- Browser verification of the article page found 779 MathJax containers,
+  including 50 display blocks, zero `mjx-merror` nodes, zero raw TeX
+  fragments, working sampled anchors, and zero horizontal overflow.
