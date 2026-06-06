@@ -94,3 +94,6 @@
   Magma constructed the displayed map directly and returned degree `3`,
   verifying C019.
 - The initial degree-3 claim cluster C012-C020 is now fully verified.
+- The first unified GitHub Actions build failed because Pandoc was absent from
+  the runner. The workflow now installs Pandoc explicitly before regenerating
+  the article and Jupyter Book.
