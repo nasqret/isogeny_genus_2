@@ -32,7 +32,8 @@ A computational claim is **verified** only when:
 | Degree 3 | Independent reconstruction of curve, complement, and map | Initial 9 obligations verified |
 | Degree 4 | Independent reconstruction, arithmetic, and label checks | Example obligations C021-C025 verified |
 | Degree 5 | Number-field reconstruction and complementary curve | Not started |
-| Publication | Private GitHub repository and continuous validation | Pending |
+| Degree 2 and invariants | Maps, generic j formulas, and twist identities | Complete |
+| Publication | Private GitHub repository and continuous validation | Operational |
 
 ## Phases
 

@@ -14,6 +14,9 @@ Local exact computations live under `computations/sage/`.
   critical and fiber-product discriminants, explicit complement
   normalization, twist identification, arithmetic, and ramification
   invariant.
+- [`verify_degree2_j_twists.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/verify_degree2_j_twists.sage):
+  generic degree-2 maps, symbolic critical-quartic `j` formulas, and
+  quadratic-twist point identities.
 
 ## Magma
 
@@ -40,4 +43,5 @@ never sufficient by itself to mark a claim verified.
 - [`magma_degree3_map.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree3_map.json)
 - [`sage_degree4_example.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_degree4_example.json)
 - [`magma_degree4_complement.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree4_complement.json)
+- [`sage_degree2_j_twists.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_degree2_j_twists.json)
 - [`magma_remote_smoke.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_remote_smoke.json)

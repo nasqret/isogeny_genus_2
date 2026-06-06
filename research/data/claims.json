@@ -455,10 +455,14 @@
     "category": "degree_2",
     "engine": "SageMath",
     "location": "local",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Verify both displayed maps preserve the equations and have degree two."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_degree2_j_twists.sage",
+      "results/sage_degree2_j_twists.json"
+    ],
+    "notes": "Verified both substitutions over Q(a,b)(x) and computed degree two for each rational x-coordinate map.",
+    "result_note": "The target equations are preserved identically."
   },
   {
     "id": "C032",
@@ -468,10 +472,14 @@
     "category": "j_invariants",
     "engine": "SageMath",
     "location": "local",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Symbolically derive both rational functions of j and test specializations."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_degree2_j_twists.sage",
+      "results/sage_degree2_j_twists.json"
+    ],
+    "notes": "Derived both formulas symbolically for g=x^4+p*x^2+q*x over Q(p,q).",
+    "result_note": "Also tested three exact specializations, including the degree-4 paper example."
   },
   {
     "id": "C033",
@@ -481,10 +489,14 @@
     "category": "quadratic_twists",
     "engine": "SageMath",
     "location": "local",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Verify the function-field points satisfy the twist equations and preserve nonconstancy."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_degree2_j_twists.sage",
+      "results/sage_degree2_j_twists.json"
+    ],
+    "notes": "Verified the explicit degree-3 maps give points on both twists by F(t), with nonconstant x-coordinates.",
+    "result_note": "The identities hold exactly in Q(t)."
   },
   {
     "id": "C034",

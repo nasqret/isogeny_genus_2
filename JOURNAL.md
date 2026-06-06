@@ -114,3 +114,15 @@
   certified a nonsingular genus-one curve isomorphic to the target.
 - Verified the `-1` twist relation with Cremona 11a3, rank zero, torsion
   group `Z/5Z`, and ramification `j=-27648/11`.
+
+### Degree-2 and invariant identities
+
+- Added `computations/sage/verify_degree2_j_twists.sage`.
+- Verified both generic degree-2 maps from
+  `y^2=x^6+a*x^4+b*x^2+1` and their two target elliptic equations.
+- Derived the critical and complementary `j` formulas symbolically for the
+  affine-normalized generic quartic `g=x^4+p*x^2+q*x` over `Q(p,q)`.
+- Tested the formulas at three exact specializations, including
+  `(p,q)=(-8,16)` from the degree-4 example.
+- Verified that the explicit degree-3 maps produce nonconstant `Q(t)`-points
+  on both quadratic twists by the source sextic.

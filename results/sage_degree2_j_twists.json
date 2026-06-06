@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-06-07T00:22:00+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 0.051207,
+  "claims": {
+    "C031": {
+      "verified": true,
+      "first_map_degree": 2,
+      "second_map_degree": 2,
+      "certificate": "Both substitutions preserve the target equations over Q(a,b)(x)."
+    },
+    "C032": {
+      "verified": true,
+      "critical_formula": "j*(j-1536)^3/(2^18*(j-1728))",
+      "complement_formula": "j^2/(4*(j-1728))",
+      "specializations": [
+        {
+          "parameters": [
+            -8,
+            16
+          ],
+          "ramification_j": "-27648/11",
+          "critical_j": "-199794688/1331",
+          "complement_j": "-4096/11"
+        },
+        {
+          "parameters": [
+            1,
+            1
+          ],
+          "ramification_j": "13824/35",
+          "critical_j": "71991296/42875",
+          "complement_j": "-1024/35"
+        },
+        {
+          "parameters": [
+            2,
+            3
+          ],
+          "ramification_j": "110592/307",
+          "critical_j": "425259008000/260409987",
+          "complement_j": "-65536/2763"
+        }
+      ]
+    },
+    "C033": {
+      "verified": true,
+      "certificate": "The degree-3 maps define nonconstant points on both twists by F(t).",
+      "Z_nonconstant": true,
+      "Zprime_nonconstant": true
+    }
+  }
+}

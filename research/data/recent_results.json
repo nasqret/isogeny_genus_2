@@ -93,5 +93,20 @@
     "timestamp": "2026-06-07T00:17:19+02:00",
     "claim_id": "C025",
     "summary": "Computed the ramification j-invariant -27648/11."
+  },
+  {
+    "timestamp": "2026-06-07T00:21:27+02:00",
+    "claim_id": "C031",
+    "summary": "Verified both generic degree-2 maps and their target equations."
+  },
+  {
+    "timestamp": "2026-06-07T00:21:27+02:00",
+    "claim_id": "C032",
+    "summary": "Derived both critical-quartic j-invariant formulas symbolically over Q(p,q)."
+  },
+  {
+    "timestamp": "2026-06-07T00:21:27+02:00",
+    "claim_id": "C033",
+    "summary": "Verified nonconstant function-field points on both quadratic twists."
   }
 ]
