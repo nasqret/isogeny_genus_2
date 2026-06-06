@@ -183,5 +183,25 @@
     "timestamp": "2026-06-07T01:09:35+02:00",
     "claim_id": "C034",
     "summary": "Closed the article-wide audit: all 40 claims are terminal, evidence-linked, and machine-validated."
+  },
+  {
+    "timestamp": "2026-06-07T01:39:58+02:00",
+    "claim_id": "B002",
+    "summary": "Proved the generic degree-5 three-node quartic and derived its normalization conic over Q(a,b)."
+  },
+  {
+    "timestamp": "2026-06-07T01:41:34+02:00",
+    "claim_id": "B002",
+    "summary": "Constructed ten exact primitive degree-5 maps; all tested conics split over the branch field and none over Q."
+  },
+  {
+    "timestamp": "2026-06-07T01:42:10+02:00",
+    "claim_id": "B008",
+    "summary": "Certified a rational degree-7 Kumar benchmark by 41 exact Euler-factor identities."
+  },
+  {
+    "timestamp": "2026-06-07T01:42:44+02:00",
+    "claim_id": "B013",
+    "summary": "Certified exact nonprimitive degree-20 and degree-80 maps by elliptic multiplication."
   }
 ]

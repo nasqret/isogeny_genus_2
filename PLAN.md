@@ -4,8 +4,9 @@
 
 Build a comprehensive, reviewable, and reproducible collection of SageMath and
 Magma computations that verifies every computational claim in
-`sources/paper.tex`. Publish the work as a private GitHub repository and as a
-Jupyter Book containing a copy of the article with direct links to evidence.
+`sources/paper.tex`, then develop a degree-independent theory and implementation
+for primitive genus-2 to elliptic maps. Publish the work in a public GitHub
+repository and a Jupyter Book with direct links to exact evidence.
 
 ## Acceptance criteria
 
@@ -33,8 +34,8 @@ A computational claim is **verified** only when:
 | Degree 4 | Independent reconstruction, arithmetic, and label checks | Example obligations C021-C025 verified |
 | Degree 5 | Number-field reconstruction and complementary curve | Complete; four article claims disproved |
 | Degree 2 and invariants | Maps, generic j formulas, and twist identities | Complete |
-| Publication | Private GitHub repository and continuous validation | Operational |
-| Beyond paper | Separate B-series research ledger | Started |
+| Publication | Public GitHub repository and continuous validation | Operational |
+| Beyond paper | High-degree B-series research program | Active |
 
 ## Phases
 
@@ -84,16 +85,49 @@ A computational claim is **verified** only when:
 - 0 unresolved.
 - Strict audit: `python3 scripts/audit-claims.py`.
 
-## Beyond-paper program
+## High-degree research program
 
 The B-series is deliberately separate from the frozen article ledger.
 
-1. Generalize the degree-5 base-field point and parametrization from
-   `(a,b)=(7,1)` to a locus in the full two-parameter family.
-2. Derive a generic complementary `j` formula for degree 5.
-3. Build a large exact census in degrees 3, 4, and 5.
-4. Add number-field arithmetic and automated source-to-CAS discrepancy
-   detection.
+### Theory target
 
-Current bounded task: B002, the generic degree-5 base-field parametrization
-locus.
+For a maximal degree-\(n\) cover \(C\to E\), construct the complementary
+degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
+\(E\times E'\to\operatorname{Jac}(C)\), and record the anti-isometry on
+\(n\)-torsion. Nonprimitive compositions are tracked separately.
+
+### Algorithm target
+
+1. **Given-map engine:** symmetric self-fiber, component selection,
+   normalization, genus-one conversion, and complementary map recovery.
+2. **Eigenform engine:** recover unknown maps from the split differential
+   \((r+sx)dx/y\) using modular polynomial solving.
+3. **Family engine:** solve specializations, interpolate parameter formulas,
+   and certify them generically.
+4. **CRT backend:** compute over good finite fields, lift coefficients, and
+   verify over the original field.
+5. **Galois engine:** implement the degree-independent non-diagonal
+   fiber-product quotient.
+6. **Construction engine:** synthesize new examples from Frey-Kani
+   anti-isometries.
+
+### Degree milestones
+
+| Degree | Deliverable |
+|---|---|
+| 5 | Prove the generic normalization conic and its branch-field splitting locus; derive \(j(E')\) |
+| 6 | Import \(Y_-(36)\), handle exceptional monodromy, recover one pair of maps |
+| 7 | Recover both maps for the certified Kumar benchmark |
+| 8-11 | Import Kumar families and certify one rational specialization per degree |
+| \(>11\) | Generate primitive examples from anti-isometries and recover maps by CRT |
+
+### Implemented checkpoint
+
+- Generic degree-5 quartic, three nodes, and normalization conic: exact.
+- Ten exact primitive degree-5 maps over quadratic branch fields: exact.
+- One degree-7 split benchmark with 41 Euler-factor identities: exact
+  discovery certificate; maps pending.
+- Degree-20 and degree-80 maps by elliptic multiplication: exact,
+  nonprimitive.
+
+Current bounded tasks: B002, B007, and B008.

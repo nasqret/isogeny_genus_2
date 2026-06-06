@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-06-07T01:45:32+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 0.877255,
+  "workstream": "B013",
+  "verified": true,
+  "base_cover": {
+    "parameters": {
+      "a": 7,
+      "b": 1
+    },
+    "degree": 5,
+    "field_polynomial": "289*t0^2 - 605*t0 + 289",
+    "source_polynomial": "x^5 + (-8197/39*e + 4621/39)*x^4 + (-56126/13*e + 78281/13)*x^3 + (59213/13*e - 80316/13)*x^2 + (-1064/39*e + 1445/39)*x",
+    "target_j": "8077950976/2255067"
+  },
+  "compositions": [
+    {
+      "elliptic_endomorphism": "[2]",
+      "endomorphism_degree": 4,
+      "cover_degree": 20,
+      "x_coordinate_sha256": "d82190f474d10c84b5f9a250dc5f470d999ce87087b45073f3ba58a53e463bb5",
+      "identity": "source_y_factor^2 * source_polynomial = target cubic"
+    },
+    {
+      "elliptic_endomorphism": "[4]",
+      "endomorphism_degree": 16,
+      "cover_degree": 80,
+      "x_coordinate_sha256": "23edc5528c52e389be1af9bb75f3e26c51f9cf5fb6304258398007ac922e2db8",
+      "identity": "source_y_factor^2 * source_polynomial = target cubic"
+    }
+  ],
+  "general_rule": "A degree-n cover followed by multiplication-by-m on the elliptic target has degree n*m^2.",
+  "scope_note": "These maps are exact but nonprimitive. They do not produce a new maximal elliptic subfield or a new complementary factor."
+}

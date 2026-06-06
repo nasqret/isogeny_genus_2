@@ -31,6 +31,16 @@ The audit requires every claim C001-C040 to be terminal and every linked
 artifact to exist. Remote Magma transcripts are preserved under
 `results/remote/`.
 
+## Beyond-paper certificates
+
+```bash
+./scripts/validate-beyond.sh
+```
+
+This reruns the generic degree-5 structure calculation, the exact degree-5
+census, the degree-7 Kumar benchmark, and the degree-20/80 composition
+certificates.
+
 ## Dashboard
 
 ```bash

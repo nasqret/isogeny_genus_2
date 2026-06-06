@@ -14,36 +14,44 @@
   },
   {
     "id": "B002",
-    "title": "Generic degree-5 base-field parametrization locus",
+    "title": "Generic degree-5 normalization and base-field locus",
     "status": "in_progress",
-    "progress": 10,
+    "progress": 70,
     "engine": "SageMath+Magma",
     "location": "hybrid",
-    "objective": "Determine for which Shaska parameters (a,b) the corrected genus-zero component has a rational point over the minimal field of definition, and derive a generic parametrization where possible.",
+    "objective": "Prove the generic three-node quartic and normalization conic, then classify when that conic has a point over Q and over the branch quadratic field.",
     "artifacts": [
-      "research/reports/degree5_source_audit.md",
-      "computations/magma/verify_degree5_over_base_field.m"
+      "computations/sage/verify_degree5_family_structure.sage",
+      "computations/sage/census_degree5_family.sage",
+      "results/sage_degree5_family_structure.json",
+      "results/sage_degree5_family_census.json",
+      "research/reports/degree5_source_audit.md"
     ]
   },
   {
     "id": "B003",
     "title": "Generic degree-5 complementary j formula",
-    "status": "planned",
-    "progress": 0,
+    "status": "in_progress",
+    "progress": 10,
     "engine": "SageMath+Magma",
     "location": "hybrid",
-    "objective": "Derive a reproducible formula for the second degree-5 elliptic subcover directly from the two-parameter normal form.",
-    "artifacts": []
+    "objective": "Parametrize the normalization conic over the branch field and interpolate a certified two-parameter formula for the complementary elliptic j-invariant.",
+    "artifacts": [
+      "results/sage_degree5_family_structure.json"
+    ]
   },
   {
     "id": "B004",
-    "title": "Large exact census of degree 3, 4, and 5 examples",
-    "status": "planned",
-    "progress": 0,
+    "title": "Exact database of primitive covers",
+    "status": "in_progress",
+    "progress": 20,
     "engine": "SageMath+Magma",
     "location": "hybrid",
-    "objective": "Build a database of source curves, both elliptic factors, maps, fields of definition, ranks, torsion, and discrepancy flags.",
-    "artifacts": []
+    "objective": "Store source curves, both elliptic factors, primitive maps, fields, ramification, arithmetic invariants, and exact certificates for degrees 3 through 11.",
+    "artifacts": [
+      "results/sage_degree5_family_census.json",
+      "results/sage_degree7_kumar_specialization.json"
+    ]
   },
   {
     "id": "B005",
@@ -52,7 +60,7 @@
     "progress": 0,
     "engine": "Magma",
     "location": "remote",
-    "objective": "Compute ranks, torsion, conductors, isogeny classes, and reduction data for systematic number-field families.",
+    "objective": "Compute ranks, torsion, conductors, isogeny classes, local data, and descent information for systematic number-field families.",
     "artifacts": []
   },
   {
@@ -63,6 +71,99 @@
     "engine": "Python+SageMath",
     "location": "local",
     "objective": "Extract displayed formulas from TeX, normalize them, and compare them automatically with generated CAS identities.",
+    "artifacts": []
+  },
+  {
+    "id": "B007",
+    "title": "Degree-independent self-fiber and normalization engine",
+    "status": "in_progress",
+    "progress": 25,
+    "engine": "SageMath+Magma",
+    "location": "hybrid",
+    "objective": "Turn the symmetric self-fiber construction into a reusable engine with component selection, normalization, genus, and certificate output for arbitrary input degree.",
+    "artifacts": [
+      "computations/sage/verify_degree5_family_structure.sage",
+      "research/reports/high_degree_roadmap.md"
+    ]
+  },
+  {
+    "id": "B008",
+    "title": "Primitive degree-7 benchmark and map recovery",
+    "status": "in_progress",
+    "progress": 40,
+    "engine": "SageMath+Magma",
+    "location": "hybrid",
+    "objective": "Recover and certify both degree-7 maps for Kumar's rational family; the first benchmark already has exact source, j-invariants, twists, and 41 Euler-factor identities.",
+    "artifacts": [
+      "computations/sage/verify_degree7_kumar_specialization.sage",
+      "results/sage_degree7_kumar_specialization.json"
+    ]
+  },
+  {
+    "id": "B009",
+    "title": "Kumar family importer for degrees 6 through 11",
+    "status": "in_progress",
+    "progress": 10,
+    "engine": "SageMath",
+    "location": "local",
+    "objective": "Encode Kumar's tautological genus-2 families and the two elliptic j-invariants on Y_-(n^2) for every n from 6 through 11.",
+    "artifacts": [
+      "research/reports/high_degree_roadmap.md"
+    ]
+  },
+  {
+    "id": "B010",
+    "title": "Eigenform-guided exact map recovery",
+    "status": "planned",
+    "progress": 0,
+    "engine": "SageMath+Magma",
+    "location": "hybrid",
+    "objective": "Recover rational maps from split differentials by modular solving, Hensel lifting, rational reconstruction, and final function-field verification.",
+    "artifacts": []
+  },
+  {
+    "id": "B011",
+    "title": "Galois-closure complement algorithm",
+    "status": "in_progress",
+    "progress": 15,
+    "engine": "Magma",
+    "location": "remote",
+    "objective": "Implement Gallese's non-diagonal fiber-product quotient for arbitrary degree and certify subgroup, genus, quotient, and complement data.",
+    "artifacts": [
+      "research/reports/high_degree_roadmap.md"
+    ]
+  },
+  {
+    "id": "B012",
+    "title": "Finite-field, CRT, and interpolation backend",
+    "status": "planned",
+    "progress": 0,
+    "engine": "SageMath+Magma",
+    "location": "hybrid",
+    "objective": "Avoid coefficient explosion by solving at good primes and parameter specializations, then lifting with CRT and certifying the reconstructed characteristic-zero formulas.",
+    "artifacts": []
+  },
+  {
+    "id": "B013",
+    "title": "Exact nonprimitive high-degree composition engine",
+    "status": "completed",
+    "progress": 100,
+    "engine": "SageMath",
+    "location": "local",
+    "objective": "Generate and certify degree n*m^2 covers by composing a primitive degree-n map with multiplication-by-m on the elliptic target.",
+    "artifacts": [
+      "computations/sage/verify_composed_high_degree_maps.sage",
+      "results/sage_composed_high_degree_maps.json"
+    ]
+  },
+  {
+    "id": "B014",
+    "title": "Frey-Kani anti-isometry synthesis",
+    "status": "planned",
+    "progress": 0,
+    "engine": "Magma+SageMath",
+    "location": "hybrid",
+    "objective": "Construct new split Jacobians from anti-isometries E[n] to E'[n], reconstruct genus-2 curves, and recover the two primitive degree-n maps.",
     "artifacts": []
   }
 ]

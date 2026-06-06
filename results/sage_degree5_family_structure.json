@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-06-07T01:45:26+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 0.084494,
+  "workstream": "B002",
+  "verified": true,
+  "family": {
+    "F1": "x^2 + (a^2 + 2*a + 2*b)*x + 2*a*b + b^2",
+    "F2": "(2*a + 1)*x^2 + (a^2 + 2*a*b + 2*b)*x + b^2",
+    "F3": "x^2 + (-a^2 + 2*b)*x + b^2",
+    "phi_minus_one_factorization": "(x-1)*F3(x)^2/F2(x)^2"
+  },
+  "branch": {
+    "quadratic": "-aa^8*e - 6*aa^7*bb*e - 12*aa^6*bb^2*e - 8*aa^5*bb^3*e + 8*aa^7*e^2 + 64*aa^6*bb*e^2 + 192*aa^5*bb^2*e^2 + 256*aa^4*bb^3*e^2 + 128*aa^3*bb^4*e^2 + 8*aa^7*bb + 12*aa^6*bb^2 + 6*aa^5*bb^3 + aa^4*bb^4 - 6*aa^7*e - 120*aa^6*bb*e - 374*aa^5*bb^2*e - 396*aa^4*bb^3*e - 168*aa^3*bb^4*e - 16*aa^2*bb^5*e + 12*aa^6*e^2 + 160*aa^5*bb*e^2 + 544*aa^4*bb^2*e^2 + 640*aa^3*bb^3*e^2 + 192*aa^2*bb^4*e^2 + 64*aa^6*bb + 160*aa^5*bb^2 + 144*aa^4*bb^3 + 56*aa^3*bb^4 + 8*aa^2*bb^5 - 12*aa^6*e - 374*aa^5*bb*e - 1098*aa^4*bb^2*e - 1216*aa^3*bb^3*e - 632*aa^2*bb^4*e - 160*aa*bb^5*e + 6*aa^5*e^2 + 144*aa^4*bb*e^2 + 656*aa^3*bb^2*e^2 + 576*aa^2*bb^3*e^2 + 96*aa*bb^4*e^2 + 192*aa^5*bb + 544*aa^4*bb^2 + 656*aa^3*bb^3 + 408*aa^2*bb^4 + 128*aa*bb^5 + 16*bb^6 - 8*aa^5*e - 396*aa^4*bb*e - 1216*aa^3*bb^2*e - 1200*aa^2*bb^3*e - 416*aa*bb^4*e + 32*bb^5*e + aa^4*e^2 + 56*aa^3*bb*e^2 + 408*aa^2*bb^2*e^2 + 224*aa*bb^3*e^2 + 16*bb^4*e^2 + 256*aa^4*bb + 640*aa^3*bb^2 + 576*aa^2*bb^3 + 224*aa*bb^4 + 32*bb^5 - 168*aa^3*bb*e - 632*aa^2*bb^2*e - 416*aa*bb^3*e + 64*bb^4*e + 8*aa^2*bb*e^2 + 128*aa*bb^2*e^2 + 32*bb^3*e^2 + 128*aa^3*bb + 192*aa^2*bb^2 + 96*aa*bb^3 + 16*bb^4 - 16*aa^2*bb*e - 160*aa*bb^2*e + 32*bb^3*e + 16*bb^2*e^2",
+    "discriminant_factorization": "aa * (-aa^3 + 2*aa*bb + 2*bb^2 + 2*bb)^2 * (aa^3 + 4*aa^2*bb + 4*aa*bb^2 + 4*aa^2 - 12*aa*bb - 16*bb^2 + 4*aa - 16*bb)^3"
+  },
+  "base_curve": {
+    "equation": "a^4*b^4*s^2 + 2*a^6*b^2*s*p + 4*a^5*b^3*s*p + a^8*p^2 + 4*a^7*b*p^2 + 4*a^6*b^2*p^2 + 4*a^3*b^5*s + 2*a^2*b^6*s + 4*a^3*b^4*s^2 + 4*a^2*b^5*s^2 + 2*a^2*b^4*s^3 - 4*a^6*b^2*p - 12*a^5*b^3*p - 14*a^4*b^4*p - 12*a^3*b^5*p - 4*a^2*b^6*p - 8*a^5*b^2*s*p - 20*a^4*b^3*s*p - 20*a^3*b^4*s*p - 8*a^2*b^5*s*p - 12*a^4*b^2*s^2*p - 8*a^3*b^3*s^2*p - 4*a^2*b^4*s^2*p + 4*a^7*p^2 + 8*a^6*b*p^2 + 4*a^5*b^2*p^2 + 2*a^6*s*p^2 - 8*a^5*b*s*p^2 - 4*a^6*p^3 + 4*a^2*b^6 + 4*a*b^7 + b^8 + 8*a^2*b^5*s + 12*a*b^6*s + 4*b^7*s + 4*a^2*b^4*s^2 + 12*a*b^5*s^2 + 6*b^6*s^2 + 4*a*b^4*s^3 + 4*b^5*s^3 + b^4*s^4 + 4*a^3*b^4*p + 8*a^2*b^5*p + 4*a*b^6*p + 22*a^2*b^4*s*p + 12*a*b^5*s*p - 8*a^3*b^2*s^2*p + 16*a^2*b^3*s^2*p + 12*a*b^4*s^2*p + 2*a^2*b^2*s^3*p + 4*a*b^3*s^3*p + 4*a^6*p^2 + 4*a^5*b*p^2 - 12*a^4*b^2*p^2 - 8*a^3*b^3*p^2 - 4*a^2*b^4*p^2 + 4*a^5*s*p^2 - 20*a^4*b*s*p^2 + a^4*s^2*p^2 + 4*a^3*b*s^2*p^2 + 4*a^2*b^2*s^2*p^2 - 12*a^5*p^3 + 4*a^2*b^4*p + 12*a*b^5*p + 4*b^6*p + 24*a*b^4*s*p + 12*b^5*s*p - 4*a^2*b^2*s^2*p + 12*a*b^3*s^2*p + 12*b^4*s^2*p + 4*b^3*s^3*p - 8*a^3*b^2*p^2 + 16*a^2*b^3*p^2 + 12*a*b^4*p^2 - 20*a^3*b*s*p^2 + 22*a^2*b^2*s*p^2 + 24*a*b^3*s*p^2 + 4*a^2*b*s^2*p^2 + 12*a*b^2*s^2*p^2 - 14*a^4*p^3 + 4*a^3*b*p^3 + 4*a^2*b^2*p^3 + 4*a^3*s*p^3 + 8*a^2*b*s*p^3 - 4*a^2*b^2*p^2 + 12*a*b^3*p^2 + 6*b^4*p^2 - 8*a^2*b*s*p^2 + 12*a*b^2*s*p^2 + 12*b^3*s*p^2 + 6*b^2*s^2*p^2 - 12*a^3*p^3 + 8*a^2*b*p^3 + 12*a*b^2*p^3 + 2*a^2*s*p^3 + 12*a*b*s*p^3 + 4*a^2*p^4 - 4*a^2*p^3 + 4*a*b*p^3 + 4*b^2*p^3 + 4*b*s*p^3 + 4*a*p^4 + p^4",
+    "degree": 4,
+    "arithmetic_genus": 3,
+    "generic_nodes": [
+      {
+        "label": "fiber over 0",
+        "coordinates": [
+          "-a^2 - 2*a - 2*b",
+          "2*a*b + b^2"
+        ],
+        "tangent_discriminant": "(64) * (2*A + B) * B^3 * (A + B + 1)^4 * A^8"
+      },
+      {
+        "label": "fiber over 1",
+        "coordinates": [
+          "a^2 - 2*b",
+          "b^2"
+        ],
+        "tangent_discriminant": "(64) * (-A + B + 1) * (A + B + 1)^3 * B^4 * A^8"
+      },
+      {
+        "label": "fiber over infinity",
+        "coordinates": [
+          "(-a^2 - 2*a*b - 2*b)/(2*a + 1)",
+          "b^2/(2*a + 1)"
+        ],
+        "tangent_discriminant": "(64) * (2*A + 1)^-1 * B^4 * (A + B + 1)^4 * A^8"
+      }
+    ],
+    "generic_geometric_genus": 0
+  },
+  "normalization": {
+    "conic": "y^2 = a^4*m^2 + 2*a^3*b*m + 2*a^2*b^2*m + 2*a^3*m^2 + 2*a^2*b*m^2 + 2*a*b^3 + b^4 + 2*a*b^2*m + 2*b^3*m + a^2*m^2 + b^2*m^2",
+    "projection_discriminant_factorization": "(16) * a^2 * (a*m + b + m)^2 * (a^2*m + 2*a*b + b^2 + 2*a*m + b*m + b + m)^2 * (a^4*m^2 + 2*a^3*b*m + 2*a^2*b^2*m + 2*a^3*m^2 + 2*a^2*b*m^2 + 2*a*b^3 + b^4 + 2*a*b^2*m + 2*b^3*m + a^2*m^2 + b^2*m^2)",
+    "quadratic_discriminant_factorization": "(-4) * b^2 * a^3 * (-a^3 + 2*a*b + 2*b^2 + 2*b)"
+  },
+  "genericity_conditions": [
+    "a*b*(a+b+1)*(2*a+1) != 0",
+    "branch quadratic discriminant != 0",
+    "(2*a+b)*(-a+b+1) != 0 for ordinary displayed nodes"
+  ]
+}

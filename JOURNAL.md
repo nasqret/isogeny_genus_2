@@ -183,3 +183,24 @@
   source-line range.
 - Added final-status and beyond-paper chapters to the Jupyter Book.
 - Started B002, the generic degree-5 base-field parametrization locus.
+
+### High-degree program
+
+- Audited the primary degree-5, Hilbert modular surface, and geometric
+  complement sources: arXiv:1209.0443, arXiv:1412.2849, and
+  arXiv:2412.07414.
+- Derived the generic degree-5 branch quadratic and proved that the symmetric
+  off-diagonal self-fiber is a plane quartic with three ordinary nodes.
+- Projected from a node and obtained the normalization conic
+  `y^2=L*m^2+M*m+N` over `Q(a,b)`, with a fully factored discriminant.
+- Constructed ten exact primitive degree-5 covers. Their normalization conics
+  are all obstructed over `Q` and soluble over the branch quadratic field.
+- Added a rational degree-7 Kumar specialization. Exact Frobenius polynomial
+  factorization against two rational elliptic curves passed at all 41 good
+  primes from 11 through 199.
+- Composed the degree-5 cover with `[2]` and `[4]` on its elliptic target and
+  certified exact degree-20 and degree-80 maps. These are explicitly recorded
+  as nonprimitive.
+- Expanded the B-series to fourteen workstreams covering map recovery,
+  Galois closures, finite-field/CRT lifting, Kumar families through degree 11,
+  and Frey-Kani anti-isometry synthesis.

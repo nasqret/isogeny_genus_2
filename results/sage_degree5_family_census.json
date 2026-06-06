@@ -1,0 +1,243 @@
+{
+  "generated_at": "2026-06-07T01:45:28+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 0.449721,
+  "workstream": "B002",
+  "verified": true,
+  "tested_parameter_count": 10,
+  "Q_soluble_count": 0,
+  "branch_field_soluble_count": 10,
+  "examples": [
+    {
+      "parameters": {
+        "a": -4,
+        "b": 1
+      },
+      "branch_polynomial": "-21952*t^2 - 18304*t - 21952",
+      "branch_field_polynomial": "-21952*t^2 - 18304*t - 21952",
+      "source_polynomial": "x^5 + (-2303/45*e + 827/45)*x^4 + (441/5*e - 279/5)*x^3 + (-539/15*e + 551/15)*x^2 + (-49/45*e - 14/45)*x",
+      "source_degree": 5,
+      "target_j": "15926924096/28588707",
+      "map": {
+        "x_coordinate_numerator": "x^5 + 20*x^4 + 86*x^3 - 140*x^2 + 49*x",
+        "x_coordinate_denominator": "49*x^4 - 140*x^3 + 86*x^2 + 20*x + 1",
+        "y_multiplier": "x^5 + (49/45*e - 166/45)*x^4 + (-196/45*e - 6626/45)*x^3 + (-7154/45*e + 2816/45)*x^2 + (588/5*e + 133/5)*x - 343/45*e - 98/45",
+        "degree": 5
+      },
+      "normalization_conic": {
+        "equation": "y^2 = 177*m^2 + -102*m + -7",
+        "soluble_over_Q": false,
+        "Q_point_or_obstruction": "3",
+        "soluble_over_branch_field": true
+      }
+    },
+    {
+      "parameters": {
+        "a": -3,
+        "b": 1
+      },
+      "branch_polynomial": "-3125*t^2 + 3125*t - 3125",
+      "branch_field_polynomial": "-3125*t^2 + 3125*t - 3125",
+      "source_polynomial": "x^5 + (-27*e + 11)*x^4 + (54*e - 27)*x^3 + (-27*e + 16)*x^2 - x",
+      "source_degree": 5,
+      "target_j": "0",
+      "map": {
+        "x_coordinate_numerator": "x^5 + 10*x^4 + 15*x^3 - 50*x^2 + 25*x",
+        "x_coordinate_denominator": "25*x^4 - 50*x^3 + 15*x^2 + 10*x + 1",
+        "y_multiplier": "x^5 + (e - 3)*x^4 + (-2*e - 37)*x^3 + (-39*e + 79)*x^2 + (40*e - 45)*x - 5*e + 5",
+        "degree": 5
+      },
+      "normalization_conic": {
+        "equation": "y^2 = 55*m^2 + -40*m + -5",
+        "soluble_over_Q": false,
+        "Q_point_or_obstruction": "5",
+        "soluble_over_branch_field": true
+      }
+    },
+    {
+      "parameters": {
+        "a": -2,
+        "b": 3
+      },
+      "branch_polynomial": "-21168*t^2 + 49248*t - 432",
+      "branch_field_polynomial": "-21168*t^2 + 49248*t - 432",
+      "source_polynomial": "x^5 + (-41/10*e + 113/10)*x^4 + (-103/10*e + 219/10)*x^3 + (45/2*e - 117/2)*x^2 + (-81/10*e + 243/10)*x",
+      "source_degree": 5,
+      "target_j": "-69432285/49*e + 161014577/49",
+      "map": {
+        "x_coordinate_numerator": "x^5 + 12*x^4 + 30*x^3 - 36*x^2 + 9*x",
+        "x_coordinate_denominator": "9*x^4 + 12*x^3 - 50*x^2 - 36*x + 81",
+        "y_multiplier": "x^5 + (-49/20*e + 157/20)*x^4 + (-98/5*e + 84/5)*x^3 + (-441/10*e + 453/10)*x^2 + (-588/5*e - 171/5)*x + 1323/20*e + 81/20",
+        "degree": 5
+      },
+      "normalization_conic": {
+        "equation": "y^2 = 37*m^2 + 42*m + -27",
+        "soluble_over_Q": false,
+        "Q_point_or_obstruction": "5",
+        "soluble_over_branch_field": true
+      }
+    },
+    {
+      "parameters": {
+        "a": 1,
+        "b": 1
+      },
+      "branch_polynomial": "4563*t^2 - 9099*t + 4563",
+      "branch_field_polynomial": "4563*t^2 - 9099*t + 4563",
+      "source_polynomial": "x^5 + (203/15*e - 187/15)*x^4 + (22/5*e - 23/5)*x^3 + (-31/5*e + 24/5)*x^2 + (-176/15*e + 169/15)*x",
+      "source_degree": 5,
+      "target_j": "-1213857792/28561",
+      "map": {
+        "x_coordinate_numerator": "x^5 + 10*x^4 + 31*x^3 + 30*x^2 + 9*x",
+        "x_coordinate_denominator": "9*x^4 + 30*x^3 + 31*x^2 + 10*x + 1",
+        "y_multiplier": "x^5 + (-169/15*e + 251/15)*x^4 + (-338/5*e + 367/5)*x^3 + (-507/5*e + 523/5)*x^2 + (-1352/15*e + 1333/15)*x - 169/5*e + 161/5",
+        "degree": 5
+      },
+      "normalization_conic": {
+        "equation": "y^2 = 7*m^2 + 8*m + 3",
+        "soluble_over_Q": false,
+        "Q_point_or_obstruction": "5",
+        "soluble_over_branch_field": true
+      }
+    },
+    {
+      "parameters": {
+        "a": 1,
+        "b": 2
+      },
+      "branch_polynomial": "29403*t^2 - 64827*t + 36992",
+      "branch_field_polynomial": "29403*t^2 - 64827*t + 36992",
+      "source_polynomial": "x^5 + (873/145*e - 371/145)*x^4 + (2142/145*e - 5447/435)*x^3 + (393/145*e - 1041/145)*x^2 + (-3408/145*e + 9248/435)*x",
+      "source_degree": 5,
+      "target_j": "-322557312997473545/13976412158016*e + 8970403679878229251/377363128266432",
+      "map": {
+        "x_coordinate_numerator": "x^5 + 14*x^4 + 65*x^3 + 112*x^2 + 64*x",
+        "x_coordinate_denominator": "9*x^4 + 54*x^3 + 105*x^2 + 72*x + 16",
+        "y_multiplier": "x^5 + (-1089/145*e + 2578/145)*x^4 + (-2178/29*e + 3213/29)*x^3 + (-35937/145*e + 44764/145)*x^2 + (-56628/145*e + 63296/145)*x - 34848/145*e + 36096/145",
+        "degree": 5
+      },
+      "normalization_conic": {
+        "equation": "y^2 = 12*m^2 + 36*m + 32",
+        "soluble_over_Q": false,
+        "Q_point_or_obstruction": "3",
+        "soluble_over_branch_field": true
+      }
+    },
+    {
+      "parameters": {
+        "a": 1,
+        "b": 3
+      },
+      "branch_polynomial": "100467*t^2 - 249507*t + 165375",
+      "branch_field_polynomial": "100467*t^2 - 249507*t + 165375",
+      "source_polynomial": "x^5 + (2483/551*e + 677/551)*x^4 + (11530/551*e - 7537/551)*x^3 + (8991/551*e - 13536/551)*x^2 + (-23004/551*e + 19845/551)*x",
+      "source_degree": 5,
+      "target_j": "-12172447302971621376/2043819774390625*e + 16543171508622442496/2043819774390625",
+      "map": {
+        "x_coordinate_numerator": "x^5 + 18*x^4 + 111*x^3 + 270*x^2 + 225*x",
+        "x_coordinate_denominator": "9*x^4 + 78*x^3 + 223*x^2 + 234*x + 81",
+        "y_multiplier": "x^5 + (-3721/551*e + 12059/551)*x^4 + (-52094/551*e + 98849/551)*x^3 + (-256749/551*e + 385761/551)*x^2 + (-580476/551*e + 752205/551)*x - 502335/551*e + 586575/551",
+        "degree": 5
+      },
+      "normalization_conic": {
+        "equation": "y^2 = 19*m^2 + 96*m + 135",
+        "soluble_over_Q": false,
+        "Q_point_or_obstruction": "29",
+        "soluble_over_branch_field": true
+      }
+    },
+    {
+      "parameters": {
+        "a": 2,
+        "b": 3
+      },
+      "branch_polynomial": "722000*t^2 - 1525664*t + 806736",
+      "branch_field_polynomial": "722000*t^2 - 1525664*t + 806736",
+      "source_polynomial": "x^5 + (6575/98*e - 135/2)*x^4 + (17225/98*e - 357/2)*x^3 + (5375/14*e - 833/2)*x^2 + (-8775/14*e + 1323/2)*x",
+      "source_degree": 5,
+      "target_j": "-185014731122879879/111487133625*e + 12203258454605537/6825742875",
+      "map": {
+        "x_coordinate_numerator": "x^5 + 28*x^4 + 238*x^3 + 588*x^2 + 441*x",
+        "x_coordinate_denominator": "25*x^4 + 220*x^3 + 574*x^2 + 396*x + 81",
+        "y_multiplier": "x^5 + (-9025/196*e + 253/4)*x^4 + (-36100/49*e + 814)*x^3 + (-261725/98*e + 5817/2)*x^2 + (-54150/7*e + 8127)*x - 243675/28*e + 35721/4",
+        "degree": 5
+      },
+      "normalization_conic": {
+        "equation": "y^2 = 69*m^2 + 210*m + 189",
+        "soluble_over_Q": false,
+        "Q_point_or_obstruction": "7",
+        "soluble_over_branch_field": true
+      }
+    },
+    {
+      "parameters": {
+        "a": 3,
+        "b": 1
+      },
+      "branch_polynomial": "288463*t^2 - 577051*t + 288463",
+      "branch_field_polynomial": "288463*t^2 - 577051*t + 288463",
+      "source_polynomial": "x^5 + (36603/935*e - 49043/935)*x^4 + (-1285074/935*e + 1325259/935)*x^3 + (1357839/935*e - 1389004/935)*x^2 + (-109368/935*e + 111853/935)*x",
+      "source_degree": 5,
+      "target_j": "6152827940381048832/10401362796125",
+      "map": {
+        "x_coordinate_numerator": "x^5 + 34*x^4 + 303*x^3 + 238*x^2 + 49*x",
+        "x_coordinate_denominator": "49*x^4 + 238*x^3 + 303*x^2 + 34*x + 1",
+        "y_multiplier": "x^5 + (-41209/935*e + 49299/935)*x^4 + (-82418/187*e + 59141/187)*x^3 + (4574199/935*e - 4464259/935)*x^2 + (1318688/935*e - 1271823/935)*x - 288463/935*e + 279643/935",
+        "degree": 5
+      },
+      "normalization_conic": {
+        "equation": "y^2 = 163*m^2 + 80*m + 7",
+        "soluble_over_Q": false,
+        "Q_point_or_obstruction": "17",
+        "soluble_over_branch_field": true
+      }
+    },
+    {
+      "parameters": {
+        "a": 5,
+        "b": 1
+      },
+      "branch_polynomial": "3738779*t^2 - 7560907*t + 3738779",
+      "branch_field_polynomial": "3738779*t^2 - 7560907*t + 3738779",
+      "source_polynomial": "x^5 + (-2986885/30303*e + 1643221/30303)*x^4 + (-7210390/3367*e + 8578435/3367)*x^3 + (23007545/10101*e - 26736032/10101)*x^2 + (-1142240/30303*e + 1328657/30303)*x",
+      "source_degree": 5,
+      "target_j": "14294061513348362534912/1165091363575186509",
+      "map": {
+        "x_coordinate_numerator": "x^5 + 74*x^4 + 1391*x^3 + 814*x^2 + 121*x",
+        "x_coordinate_denominator": "121*x^4 + 814*x^3 + 1391*x^2 + 74*x + 1",
+        "y_multiplier": "x^5 + (-339889/30303*e + 708691/30303)*x^4 + (-679778/4329*e - 3063133/4329)*x^3 + (285166871/30303*e - 245198159/30303)*x^2 + (8157336/3367*e - 6789739/3367)*x - 3738779/30303*e + 3128939/30303",
+        "degree": 5
+      },
+      "normalization_conic": {
+        "equation": "y^2 = 951*m^2 + 312*m + 11",
+        "soluble_over_Q": false,
+        "Q_point_or_obstruction": "3",
+        "soluble_over_branch_field": true
+      }
+    },
+    {
+      "parameters": {
+        "a": 7,
+        "b": 1
+      },
+      "branch_polynomial": "24384375*t^2 - 51046875*t + 24384375",
+      "branch_field_polynomial": "24384375*t^2 - 51046875*t + 24384375",
+      "source_polynomial": "x^5 + (-8197/39*e + 4621/39)*x^4 + (-56126/13*e + 78281/13)*x^3 + (59213/13*e - 80316/13)*x^2 + (-1064/39*e + 1445/39)*x",
+      "source_degree": 5,
+      "target_j": "8077950976/2255067",
+      "map": {
+        "x_coordinate_numerator": "x^5 + 130*x^4 + 4255*x^3 + 1950*x^2 + 225*x",
+        "x_coordinate_denominator": "225*x^4 + 1950*x^3 + 4255*x^2 + 130*x + 1",
+        "y_multiplier": "x^5 + (-289/39*e + 907/39)*x^4 + (-1734/13*e - 38277/13)*x^3 + (292757/13*e - 215985/13)*x^2 + (184960/39*e - 130615/39)*x - 1445/13*e + 1025/13",
+        "degree": 5
+      },
+      "normalization_conic": {
+        "equation": "y^2 = 3235*m^2 + 800*m + 15",
+        "soluble_over_Q": false,
+        "Q_point_or_obstruction": "13",
+        "soluble_over_branch_field": true
+      }
+    }
+  ],
+  "scope_note": "Every row is an exact genus-2 curve with a certified degree-5 map. The conic test decides whether the off-diagonal quotient admits a parametrization over Q or over the branch quadratic field."
+}

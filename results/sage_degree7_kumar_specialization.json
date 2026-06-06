@@ -1,0 +1,283 @@
+{
+  "generated_at": "2026-06-07T01:45:30+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 0.165594,
+  "workstream": "B008",
+  "verified": true,
+  "degree": 7,
+  "source": {
+    "family_parameter": "u=1 on r=4/(5u)",
+    "cubic1": "x^3 + 23*x^2 + 552*x + 17940",
+    "cubic2": "x^3 - 46/5*x^2 + 3013/4*x - 25645/4",
+    "polynomial": "x^6 + 69/5*x^5 + 21873/20*x^4 + 237751/10*x^3 + 413149/4*x^2 + 9974295*x - 115017825",
+    "genus": 2,
+    "discriminant_factorization": "2^6 * 3 * 5^2 * 7^30 * 23^10"
+  },
+  "elliptic_factors": [
+    {
+      "j": "-20285403817/279936",
+      "twist_square_class": -115,
+      "model": "Elliptic Curve defined by y^2 + x*y = x^3 - 6077163*x - 5835183183 over Rational Field",
+      "conductor": 79350
+    },
+    {
+      "j": "-97967097/128",
+      "twist_square_class": 5,
+      "model": "Elliptic Curve defined by y^2 + x*y + y = x^3 - x^2 - 15705*x + 762297 over Rational Field",
+      "conductor": 26450
+    }
+  ],
+  "evidence": {
+    "type": "Euler-factor equality at all good primes in [11,200)",
+    "tested_prime_count": 41,
+    "prime_certificates": [
+      {
+        "prime": 11,
+        "trace_E1": 3,
+        "trace_E2": -4,
+        "frobenius_polynomial": "x^4 + x^3 + 10*x^2 + 11*x + 121"
+      },
+      {
+        "prime": 13,
+        "trace_E1": -4,
+        "trace_E2": -4,
+        "frobenius_polynomial": "x^4 + 8*x^3 + 42*x^2 + 104*x + 169"
+      },
+      {
+        "prime": 17,
+        "trace_E1": 6,
+        "trace_E2": -1,
+        "frobenius_polynomial": "x^4 - 5*x^3 + 28*x^2 - 85*x + 289"
+      },
+      {
+        "prime": 19,
+        "trace_E1": 0,
+        "trace_E2": 7,
+        "frobenius_polynomial": "x^4 - 7*x^3 + 38*x^2 - 133*x + 361"
+      },
+      {
+        "prime": 29,
+        "trace_E1": 3,
+        "trace_E2": -4,
+        "frobenius_polynomial": "x^4 + x^3 + 46*x^2 + 29*x + 841"
+      },
+      {
+        "prime": 31,
+        "trace_E1": -1,
+        "trace_E2": 6,
+        "frobenius_polynomial": "x^4 - 5*x^3 + 56*x^2 - 155*x + 961"
+      },
+      {
+        "prime": 37,
+        "trace_E1": 12,
+        "trace_E2": -2,
+        "frobenius_polynomial": "x^4 - 10*x^3 + 50*x^2 - 370*x + 1369"
+      },
+      {
+        "prime": 41,
+        "trace_E1": -8,
+        "trace_E2": 6,
+        "frobenius_polynomial": "x^4 + 2*x^3 + 34*x^2 + 82*x + 1681"
+      },
+      {
+        "prime": 43,
+        "trace_E1": 6,
+        "trace_E2": -1,
+        "frobenius_polynomial": "x^4 - 5*x^3 + 80*x^2 - 215*x + 1849"
+      },
+      {
+        "prime": 47,
+        "trace_E1": 8,
+        "trace_E2": -6,
+        "frobenius_polynomial": "x^4 - 2*x^3 + 46*x^2 - 94*x + 2209"
+      },
+      {
+        "prime": 53,
+        "trace_E1": 13,
+        "trace_E2": -8,
+        "frobenius_polynomial": "x^4 - 5*x^3 + 2*x^2 - 265*x + 2809"
+      },
+      {
+        "prime": 59,
+        "trace_E1": -9,
+        "trace_E2": -9,
+        "frobenius_polynomial": "x^4 + 18*x^3 + 199*x^2 + 1062*x + 3481"
+      },
+      {
+        "prime": 61,
+        "trace_E1": 4,
+        "trace_E2": 4,
+        "frobenius_polynomial": "x^4 - 8*x^3 + 138*x^2 - 488*x + 3721"
+      },
+      {
+        "prime": 67,
+        "trace_E1": 0,
+        "trace_E2": 7,
+        "frobenius_polynomial": "x^4 - 7*x^3 + 134*x^2 - 469*x + 4489"
+      },
+      {
+        "prime": 71,
+        "trace_E1": 6,
+        "trace_E2": 6,
+        "frobenius_polynomial": "x^4 - 12*x^3 + 178*x^2 - 852*x + 5041"
+      },
+      {
+        "prime": 73,
+        "trace_E1": -5,
+        "trace_E2": 9,
+        "frobenius_polynomial": "x^4 - 4*x^3 + 101*x^2 - 292*x + 5329"
+      },
+      {
+        "prime": 79,
+        "trace_E1": 9,
+        "trace_E2": -12,
+        "frobenius_polynomial": "x^4 + 3*x^3 + 50*x^2 + 237*x + 6241"
+      },
+      {
+        "prime": 83,
+        "trace_E1": -5,
+        "trace_E2": -5,
+        "frobenius_polynomial": "x^4 + 10*x^3 + 191*x^2 + 830*x + 6889"
+      },
+      {
+        "prime": 89,
+        "trace_E1": 6,
+        "trace_E2": 6,
+        "frobenius_polynomial": "x^4 - 12*x^3 + 214*x^2 - 1068*x + 7921"
+      },
+      {
+        "prime": 97,
+        "trace_E1": -15,
+        "trace_E2": 6,
+        "frobenius_polynomial": "x^4 + 9*x^3 + 104*x^2 + 873*x + 9409"
+      },
+      {
+        "prime": 101,
+        "trace_E1": 3,
+        "trace_E2": -4,
+        "frobenius_polynomial": "x^4 + x^3 + 190*x^2 + 101*x + 10201"
+      },
+      {
+        "prime": 103,
+        "trace_E1": 7,
+        "trace_E2": 14,
+        "frobenius_polynomial": "x^4 - 21*x^3 + 304*x^2 - 2163*x + 10609"
+      },
+      {
+        "prime": 107,
+        "trace_E1": 4,
+        "trace_E2": 4,
+        "frobenius_polynomial": "x^4 - 8*x^3 + 230*x^2 - 856*x + 11449"
+      },
+      {
+        "prime": 109,
+        "trace_E1": 20,
+        "trace_E2": 6,
+        "frobenius_polynomial": "x^4 - 26*x^3 + 338*x^2 - 2834*x + 11881"
+      },
+      {
+        "prime": 113,
+        "trace_E1": -4,
+        "trace_E2": 17,
+        "frobenius_polynomial": "x^4 - 13*x^3 + 158*x^2 - 1469*x + 12769"
+      },
+      {
+        "prime": 127,
+        "trace_E1": -12,
+        "trace_E2": 2,
+        "frobenius_polynomial": "x^4 + 10*x^3 + 230*x^2 + 1270*x + 16129"
+      },
+      {
+        "prime": 131,
+        "trace_E1": -17,
+        "trace_E2": -3,
+        "frobenius_polynomial": "x^4 + 20*x^3 + 313*x^2 + 2620*x + 17161"
+      },
+      {
+        "prime": 137,
+        "trace_E1": 0,
+        "trace_E2": -21,
+        "frobenius_polynomial": "x^4 + 21*x^3 + 274*x^2 + 2877*x + 18769"
+      },
+      {
+        "prime": 139,
+        "trace_E1": -12,
+        "trace_E2": -19,
+        "frobenius_polynomial": "x^4 + 31*x^3 + 506*x^2 + 4309*x + 19321"
+      },
+      {
+        "prime": 149,
+        "trace_E1": 6,
+        "trace_E2": 20,
+        "frobenius_polynomial": "x^4 - 26*x^3 + 418*x^2 - 3874*x + 22201"
+      },
+      {
+        "prime": 151,
+        "trace_E1": 15,
+        "trace_E2": 22,
+        "frobenius_polynomial": "x^4 - 37*x^3 + 632*x^2 - 5587*x + 22801"
+      },
+      {
+        "prime": 157,
+        "trace_E1": -16,
+        "trace_E2": 12,
+        "frobenius_polynomial": "x^4 + 4*x^3 + 122*x^2 + 628*x + 24649"
+      },
+      {
+        "prime": 163,
+        "trace_E1": -6,
+        "trace_E2": 8,
+        "frobenius_polynomial": "x^4 - 2*x^3 + 278*x^2 - 326*x + 26569"
+      },
+      {
+        "prime": 167,
+        "trace_E1": -8,
+        "trace_E2": 20,
+        "frobenius_polynomial": "x^4 - 12*x^3 + 174*x^2 - 2004*x + 27889"
+      },
+      {
+        "prime": 173,
+        "trace_E1": -6,
+        "trace_E2": -6,
+        "frobenius_polynomial": "x^4 + 12*x^3 + 382*x^2 + 2076*x + 29929"
+      },
+      {
+        "prime": 179,
+        "trace_E1": -16,
+        "trace_E2": 5,
+        "frobenius_polynomial": "x^4 + 11*x^3 + 278*x^2 + 1969*x + 32041"
+      },
+      {
+        "prime": 181,
+        "trace_E1": -4,
+        "trace_E2": -18,
+        "frobenius_polynomial": "x^4 + 22*x^3 + 434*x^2 + 3982*x + 32761"
+      },
+      {
+        "prime": 191,
+        "trace_E1": -6,
+        "trace_E2": 8,
+        "frobenius_polynomial": "x^4 - 2*x^3 + 334*x^2 - 382*x + 36481"
+      },
+      {
+        "prime": 193,
+        "trace_E1": -17,
+        "trace_E2": -17,
+        "frobenius_polynomial": "x^4 + 34*x^3 + 675*x^2 + 6562*x + 37249"
+      },
+      {
+        "prime": 197,
+        "trace_E1": -15,
+        "trace_E2": 6,
+        "frobenius_polynomial": "x^4 + 9*x^3 + 304*x^2 + 1773*x + 38809"
+      },
+      {
+        "prime": 199,
+        "trace_E1": -7,
+        "trace_E2": 14,
+        "frobenius_polynomial": "x^4 - 7*x^3 + 300*x^2 - 1393*x + 39601"
+      }
+    ]
+  },
+  "scope_note": "This certifies the expected split isogeny class at a dense finite set of reductions.  Constructing and certifying the two degree-7 maps over Q remains a separate workstream."
+}

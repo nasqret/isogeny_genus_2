@@ -1,0 +1,26 @@
+# High-Degree Program
+
+## Objective
+
+Construct and certify primitive genus-2 to elliptic maps in degrees 5 and
+above, with a degree-independent fallback and exact arithmetic certificates.
+
+## Engines
+
+- Given-map symmetric self-fiber and normalization.
+- Eigenform-guided map recovery.
+- Specialization and interpolation for families.
+- Finite-field computation with CRT reconstruction.
+- Galois-closure quotient following Gallese.
+- Frey-Kani anti-isometry synthesis.
+
+## Degree frontier
+
+- Degree 5: generic normalization conic proved; complementary `j` pending.
+- Degree 6: Kumar import and exceptional monodromy pending.
+- Degree 7: split benchmark certified; maps pending.
+- Degrees 8-11: Kumar family import pending.
+- Degrees 20 and 80: exact nonprimitive test maps complete.
+
+See `research/reports/high_degree_roadmap.md` and
+`research/data/beyond_paper.json`.

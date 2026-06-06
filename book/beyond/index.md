@@ -1,35 +1,46 @@
 # Beyond the Paper
 
-Paper verification and new research are tracked separately. Claims C001-C040
-are frozen article obligations; workstreams B001 onward may strengthen,
-generalize, or replace the paper's calculations.
+The article ledger C001-C040 is frozen. New mathematics is tracked in the
+B-series, with a separate standard: a workstream may be exploratory, but every
+claimed example must still have exact executable evidence.
 
-## Initial program
+## New target
 
-| ID | Workstream | State |
+The project is no longer limited to computing one complementary elliptic
+factor from one map. The target is a practical theory and implementation for
+
+1. accepting an arbitrary genus-2 to elliptic map and constructing its
+   complement;
+2. recovering primitive maps when only a split Jacobian or a moduli point is
+   known;
+3. handling degrees \(5\) through \(11\) with exact family data; and
+4. scaling beyond degree \(11\) by modular computation rather than enormous
+   characteristic-zero formulas.
+
+The distinction between **primitive** and **nonprimitive** maps is mandatory.
+Composing a primitive degree-\(n\) map with an elliptic isogeny produces valid
+high-degree examples, but it does not discover a new maximal elliptic
+subfield.
+
+## Current gains
+
+| Result | State | Evidence |
 |---|---|---|
-| B001 | Universal torsion classification for quartic self-fibers | Complete |
-| B002 | Generic degree-5 base-field parametrization locus | In progress |
-| B003 | Generic degree-5 complementary \(j\)-formula | Planned |
-| B004 | Large exact census in degrees \(3,4,5\) | Planned |
-| B005 | Arithmetic of complementary factors over number fields | Planned |
-| B006 | Automated TeX-to-CAS discrepancy detection | Planned |
+| Generic degree-5 self-fiber is a quartic with three ordinary nodes | Exact | `verify_degree5_family_structure.sage` |
+| Its normalization is an explicit conic over \(\mathbf Q(a,b)\) | Exact | `sage_degree5_family_structure.json` |
+| Ten exact degree-5 source curves and maps | Exact | `census_degree5_family.sage` |
+| All ten tested conics split over the branch quadratic field, none over \(\mathbf Q\) | Experimental exact census | `sage_degree5_family_census.json` |
+| Rational degree-7 Kumar specialization with two elliptic factors | Exact finite-reduction certificate | `verify_degree7_kumar_specialization.sage` |
+| Degree \(20\) and \(80\) maps from elliptic multiplication | Exact, nonprimitive | `verify_composed_high_degree_maps.sage` |
 
 The machine-readable program is
 [`research/data/beyond_paper.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/research/data/beyond_paper.json).
-Its progress is displayed separately on the live dashboard.
+The live dashboard reports its progress independently of the completed paper
+audit.
 
-## First result
+## Chapters
 
-For a normalized quartic
-\[
-g(x)=x^4+px^2+qx,
-\]
-the off-diagonal self-fiber is birational to
-\[
-V^2=U^3+2pU^2+4q^2
-\]
-and carries the universal point \(P=(-2p,2q)\). Exact division-polynomial
-factorization, together with Mazur's theorem, classifies every rational
-parameter for which \(P\) is torsion. This is stronger than merely checking
-the three exceptional values listed in the paper.
+- [Theory and invariants](theory.md)
+- [The generic degree-5 family](degree5.md)
+- [Algorithms for degrees 6 and beyond](high_degree.md)
+- [Executable examples](examples.md)

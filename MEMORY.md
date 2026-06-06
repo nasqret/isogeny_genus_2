@@ -74,4 +74,18 @@ This project reconstructs every computational claim in
 - New research uses IDs B001 onward in
   `research/data/beyond_paper.json`.
 - Do not modify C-series outcomes to represent new work.
-- Current workstream B002: generic degree-5 base-field parametrization locus.
+- Separate primitive maps from maps obtained by composing with elliptic
+  isogenies.
+- Degree-5 generic normalization:
+  `y^2=L*m^2+M*m+N`, where
+  `L=a^4+2*a^3+2*a^2*b+a^2+b^2`,
+  `M=2*b*(a+b)*(a^2+b)`, and `N=b^3*(2*a+b)`.
+- The initial exact degree-5 census has ten rows: zero conics split over `Q`,
+  all ten split over the branch quadratic field.
+- Degree-7 benchmark evidence is Euler-factor splitting at 41 good primes;
+  do not describe the two degree-7 maps as recovered until B008 produces
+  exact function-field identities.
+- B013 gives exact degree-20 and degree-80 maps by elliptic multiplication,
+  but they are nonprimitive.
+- Current active frontier: B002 generic degree 5, B007 arbitrary given-map
+  engine, and B008 primitive degree-7 map recovery.

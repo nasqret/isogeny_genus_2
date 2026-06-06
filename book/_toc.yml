@@ -8,4 +8,9 @@ chapters:
   - file: computations/index
   - file: results/final_status
   - file: beyond/index
+    sections:
+      - file: beyond/theory
+      - file: beyond/degree5
+      - file: beyond/high_degree
+      - file: beyond/examples
   - file: reproducibility
