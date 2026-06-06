@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Genus 2 Complement Verification</title>
+    <link rel="stylesheet" href="/dashboard/styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="mark">G2</div>
+        <nav aria-label="Project links">
+          <a class="active" href="/dashboard/">Dashboard</a>
+          <a href="/book/_build/html/index.html">Jupyter Book</a>
+          <a href="/research/reports/claim_inventory.md">Claim inventory</a>
+          <a href="/reconstruction/COMPUTATIONAL_RECONSTRUCTION.md">Reconstruction</a>
+          <a href="/vault/00-Project/Home.md">Obsidian vault</a>
+          <a href="/sources/paper.tex">Paper source</a>
+          <a href="https://github.com/nasqret/isogeny_genus_2">Private GitHub</a>
+        </nav>
+        <div class="sidebar-foot">
+          <span class="signal"></span>
+          <span>Auto-refresh: 10s</span>
+        </div>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <div>
+            <h1>Genus 2 Complement Verification</h1>
+            <p id="updated-at">Loading current verification state...</p>
+          </div>
+          <div class="top-actions">
+            <a href="/PLAN.md">Plan</a>
+            <a href="/JOURNAL.md">Journal</a>
+            <a href="/MEMORY.md">Memory</a>
+          </div>
+        </header>
+
+        <section class="overview" aria-label="Progress overview">
+          <div class="completion-block">
+            <div class="completion-value" id="overall-progress">0%</div>
+            <div>
+              <h2>Formal verification</h2>
+              <p>Evidence-weighted across computational claims only.</p>
+            </div>
+          </div>
+          <div class="completion-block readiness-block">
+            <div class="completion-value" id="setup-progress">0%</div>
+            <div>
+              <h2>Setup readiness</h2>
+              <p>Required local, remote, documentation, and repository environments.</p>
+            </div>
+          </div>
+          <div class="status-strip" id="status-strip"></div>
+        </section>
+
+        <section class="workspace-grid">
+          <div class="primary-column">
+            <section class="panel efforts-panel">
+              <div class="panel-heading">
+                <div>
+                  <h2>Current efforts</h2>
+                  <p>Active bounded computations and completeness work.</p>
+                </div>
+              </div>
+              <div id="current-efforts" class="effort-list"></div>
+            </section>
+
+            <section class="panel ledger-panel">
+              <div class="panel-heading ledger-heading">
+                <div>
+                  <h2>Claim ledger</h2>
+                  <p>Every identified computational statement and its evidence state.</p>
+                </div>
+                <div class="filters">
+                  <label>
+                    <span>Search</span>
+                    <input id="search" type="search" placeholder="Claim ID or text">
+                  </label>
+                  <label>
+                    <span>Status</span>
+                    <select id="status-filter">
+                      <option value="">All</option>
+                      <option value="verified">Verified</option>
+                      <option value="in_progress">In progress</option>
+                      <option value="review_needed">Review needed</option>
+                      <option value="blocked">Blocked</option>
+                      <option value="not_started">Not started</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>Location</span>
+                    <select id="location-filter">
+                      <option value="">All</option>
+                      <option value="local">Local</option>
+                      <option value="remote">Remote</option>
+                      <option value="hybrid">Hybrid</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Claim</th>
+                      <th>Source</th>
+                      <th>Engine</th>
+                      <th>Location</th>
+                      <th>Status</th>
+                      <th>Progress</th>
+                      <th>Artifacts</th>
+                    </tr>
+                  </thead>
+                  <tbody id="claim-rows"></tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+
+          <aside class="operations-column">
+            <section class="panel operations-panel">
+              <div class="panel-heading">
+                <div>
+                  <h2>Execution locations</h2>
+                  <p>Local SageMath and remote Magma readiness.</p>
+                </div>
+              </div>
+              <div id="execution-locations"></div>
+            </section>
+
+            <section class="panel jobs-panel">
+              <div class="panel-heading">
+                <div>
+                  <h2>Remote Magma</h2>
+                  <p>Tracked screen jobs on the faculty server.</p>
+                </div>
+              </div>
+              <div id="remote-jobs"></div>
+            </section>
+
+            <section class="panel results-panel">
+              <div class="panel-heading">
+                <div>
+                  <h2>Recent results</h2>
+                  <p>Latest evidence and operational changes.</p>
+                </div>
+              </div>
+              <div id="recent-results"></div>
+            </section>
+          </aside>
+        </section>
+      </main>
+    </div>
+    <script src="/dashboard/app.js"></script>
+  </body>
+</html>

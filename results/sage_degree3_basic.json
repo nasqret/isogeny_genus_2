@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-06-07T00:01:01+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 0.049027,
+  "claims": {
+    "C012": {
+      "verified": true,
+      "certificate": "-20/247*F*W^2 equals the displayed cubic evaluated at Z",
+      "F_squarefree": true
+    },
+    "C013": {
+      "verified": true,
+      "certificate": "(Z(x1)-Z(x2))/(x1-x2) = 5*(sx-px^2/5+4px/5)/(den1*den2)"
+    },
+    "C015": {
+      "verified": true,
+      "certificate": "U=5-25/u, V=25v/u^2 and its inverse identify the quartic with E'",
+      "Eprime_discriminant": "-61750000",
+      "Eprime_j_invariant": "6912/247"
+    },
+    "C018": {
+      "verified": true,
+      "certificate": "F*Wprime^2 equals Zprime^3+25*Zprime+375"
+    },
+    "C020": {
+      "verified": true,
+      "certificate": "den_pi*den_prime equals F exactly"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+format: jb-book
+root: intro
+chapters:
+  - file: paper/reconstruction
+    sections:
+      - file: paper/original_article
+  - file: claims/index
+  - file: computations/index
+  - file: reproducibility

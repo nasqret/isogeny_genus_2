@@ -1,0 +1,52 @@
+[
+  {
+    "timestamp": "2026-06-06T23:20:00+02:00",
+    "claim_id": "SETUP",
+    "summary": "Archived arXiv TeX and PDF for 2606.02429."
+  },
+  {
+    "timestamp": "2026-06-06T23:32:00+02:00",
+    "claim_id": "SETUP",
+    "summary": "Pinned the authors' companion repository at d7f91b16."
+  },
+  {
+    "timestamp": "2026-06-06T23:42:00+02:00",
+    "claim_id": "SETUP",
+    "summary": "Confirmed SageMath 10.8 locally and Magma V2.28-3 remotely."
+  },
+  {
+    "timestamp": "2026-06-06T23:59:35+02:00",
+    "claim_id": "C012",
+    "summary": "Verified the degree-3 source curve and cover identity in SageMath."
+  },
+  {
+    "timestamp": "2026-06-06T23:59:35+02:00",
+    "claim_id": "C013",
+    "summary": "Derived the degree-3 symmetric base equation exactly."
+  },
+  {
+    "timestamp": "2026-06-06T23:59:35+02:00",
+    "claim_id": "C015",
+    "summary": "Certified the quartic-to-Weierstrass birational transformation."
+  },
+  {
+    "timestamp": "2026-06-06T23:59:35+02:00",
+    "claim_id": "C018",
+    "summary": "Verified that the explicit complementary map lands on E'."
+  },
+  {
+    "timestamp": "2026-06-06T23:59:35+02:00",
+    "claim_id": "C020",
+    "summary": "Verified the exact denominator-product identity."
+  },
+  {
+    "timestamp": "2026-06-07T00:01:45+02:00",
+    "claim_id": "SETUP",
+    "summary": "Executed the tracked Magma smoke artifact remotely; MAGMA_SMOKE_OK."
+  },
+  {
+    "timestamp": "2026-06-07T00:03:00+02:00",
+    "claim_id": "SETUP",
+    "summary": "Created the private GitHub repository nasqret/isogeny_genus_2."
+  }
+]

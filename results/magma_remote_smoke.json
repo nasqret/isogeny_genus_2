@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-06-07T00:01:45+02:00",
+  "engine": "Magma V2.28-3",
+  "host": "lts-faculty.wmi.amu.edu.pl",
+  "artifact": "computations/magma/smoke_test.m",
+  "verified": true,
+  "output": "MAGMA_SMOKE_OK",
+  "remote_log": "/home/faculty/bnaskrecki/magma/logs/session_log_2026_06_07_1544730725.txt",
+  "notes": "Magma's polynomial discriminant for x^3+25*x+375 is -3859375; multiplying by 16 gives the elliptic-curve discriminant -61750000."
+}

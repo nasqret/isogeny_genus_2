@@ -1,0 +1,4 @@
+# Preserve byte-faithful source archives and mechanically generated copies.
+sources/** -whitespace
+book/bibliography.bib -whitespace
+book/paper/original_article.md -whitespace

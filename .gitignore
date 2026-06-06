@@ -1,0 +1,22 @@
+# Generated documentation
+book/_build/
+dashboard/status.json
+
+# Runtime state
+dashboard/server.log
+dashboard/remote_runtime.json
+logs/
+
+# Computation byproducts
+*.pyc
+*.sage.py
+__pycache__/
+.sage/
+results/*.tmp
+
+# Local environments and system files
+.venv/
+.DS_Store
+
+# Upstream checkout internals are not part of this repository
+sources/upstream/NoteOnGenus2Covers/.git/

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "sage-local",
+    "title": "SageMath local",
+    "location": "local",
+    "status": "ready",
+    "version": "SageMath 10.8",
+    "host": "macOS workspace",
+    "command": "sage",
+    "notes": "Primary engine for symbolic identities, elliptic curves, number fields, and independent cross-checks."
+  },
+  {
+    "id": "magma-remote",
+    "title": "Magma remote",
+    "location": "remote",
+    "status": "ready",
+    "version": "Magma V2.28-3",
+    "host": "lts-faculty.wmi.amu.edu.pl",
+    "command": "/opt/magma/current/magma",
+    "notes": "Use a Bash login shell or absolute path. Long jobs run in GNU screen."
+  },
+  {
+    "id": "docs-local",
+    "title": "Documentation local",
+    "location": "local",
+    "status": "ready",
+    "version": "Jupyter Book 1.0.4.post1",
+    "host": "macOS workspace",
+    "command": "jupyter-book",
+    "notes": "Pandoc 3.8.2.1 and latexmk 4.86a are also installed."
+  },
+  {
+    "id": "git-local",
+    "title": "Git repository",
+    "location": "local",
+    "status": "ready",
+    "version": "git 2.50.1",
+    "host": "workspace",
+    "command": "git",
+    "notes": "Initialized on branch main; private remote is https://github.com/nasqret/isogeny_genus_2."
+  }
+]

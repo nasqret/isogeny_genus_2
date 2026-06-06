@@ -1,0 +1,8 @@
+{
+  "title": "Genus 2 Complement Computation Reconstruction",
+  "paper": "arXiv:2606.02429",
+  "outputs": ["html"],
+  "notebook_execution": "off",
+  "profiles": ["research"],
+  "source_of_truth": "research/data/claims.json"
+}
