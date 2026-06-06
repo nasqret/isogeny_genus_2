@@ -68,5 +68,30 @@
     "timestamp": "2026-06-07T00:09:15+02:00",
     "claim_id": "C017",
     "summary": "Four additional Kuhn-family parameter triples passed exact invariant comparison."
+  },
+  {
+    "timestamp": "2026-06-07T00:17:19+02:00",
+    "claim_id": "C021",
+    "summary": "Derived the displayed degree-4 critical and genus-2 models from exact discriminants."
+  },
+  {
+    "timestamp": "2026-06-07T00:17:52+02:00",
+    "claim_id": "C022",
+    "summary": "SageMath and remote Magma recovered the complementary degree-4 elliptic curve."
+  },
+  {
+    "timestamp": "2026-06-07T00:17:19+02:00",
+    "claim_id": "C023",
+    "summary": "Identified the untwisted complement with Cremona 11a3."
+  },
+  {
+    "timestamp": "2026-06-07T00:17:19+02:00",
+    "claim_id": "C024",
+    "summary": "Verified rank zero and torsion group Z/5Z for 11a3."
+  },
+  {
+    "timestamp": "2026-06-07T00:17:19+02:00",
+    "claim_id": "C025",
+    "summary": "Computed the ramification j-invariant -27648/11."
   }
 ]

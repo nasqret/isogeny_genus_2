@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-06-07T00:17:52+02:00",
+  "engine": "Magma V2.28-3",
+  "host": "lts-faculty.wmi.amu.edu.pl",
+  "artifact": "computations/magma/verify_degree4_complement.m",
+  "verified": true,
+  "claim_id": "C022",
+  "genus": 1,
+  "j_invariant": "-4096/11",
+  "output": "C022_MAGMA_VERIFIED",
+  "remote_log": "/home/faculty/bnaskrecki/magma/logs/session_log_2026_06_07_644400681.txt"
+}

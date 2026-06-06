@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-06-07T00:18:20+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 0.365256,
+  "claims": {
+    "C021": {
+      "verified": true,
+      "critical_discriminant_factor": "-256",
+      "fiber_discriminant_factor": "-16",
+      "fiber_polynomial": "x0^6 - 16*x0^4 + 40*x0^3 + 80*x0^2 - 288*x0 + 304",
+      "fiber_squarefree": true,
+      "genus": 2
+    },
+    "C022": {
+      "verified": true,
+      "self_fiber_quartic": "-s0^4 + 16*s0^2 - 32*s0",
+      "forward_map": "x=12-72/s, y=-108*Y/s^2",
+      "target": "y^2=x^3-432*x-8208"
+    },
+    "C023": {
+      "verified": true,
+      "untwisted_minimal_model": "Elliptic Curve defined by y^2 + y = x^3 - x^2 over Rational Field",
+      "cremona_label": "11a3"
+    },
+    "C024": {
+      "verified": true,
+      "rank": 0,
+      "torsion_invariants": [
+        5
+      ]
+    },
+    "C025": {
+      "verified": true,
+      "ramification_model": "y^2=x^3-4*x+4",
+      "j_invariant": "-27648/11"
+    }
+  }
+}

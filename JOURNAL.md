@@ -97,3 +97,20 @@
 - The first unified GitHub Actions build failed because Pandoc was absent from
   the runner. The workflow now installs Pandoc explicitly before regenerating
   the article and Jupyter Book.
+
+### Degree-4 example
+
+- Added `computations/sage/verify_degree4_example.sage`.
+- Derived the critical cubic and reduced genus-2 sextic directly from the two
+  discriminants, including the displayed factors `-256` and `-16`.
+- Recorded the rescaling convention: after passing to the displayed models,
+  the map has second coordinate `y*g'(x)/4`.
+- Normalized the self-fiber-product cubic through
+  `Y^2=-s^4+16s^2-32s` and verified the birational map
+  `x=12-72/s`, `y=-108Y/s^2` to
+  `y^2=x^3-432x-8208`.
+- Added and remotely executed
+  `computations/magma/verify_degree4_complement.m`; Magma independently
+  certified a nonsingular genus-one curve isomorphic to the target.
+- Verified the `-1` twist relation with Cremona 11a3, rank zero, torsion
+  group `Z/5Z`, and ramification `j=-27648/11`.

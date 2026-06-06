@@ -303,10 +303,14 @@
     "category": "degree_4",
     "engine": "SageMath",
     "location": "local",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Compute both discriminants for g=x^4-8x^2+16x and match the displayed rescalings."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_degree4_example.sage",
+      "results/sage_degree4_example.json"
+    ],
+    "notes": "Computed both discriminants, matched the factors -256 and -16, and verified the squarefree genus-2 model.",
+    "result_note": "For the displayed rescaled models, the compatible map has w=y*g'(x)/4."
   },
   {
     "id": "C022",
@@ -316,10 +320,16 @@
     "category": "degree_4",
     "engine": "Magma+SageMath",
     "location": "hybrid",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Normalize the self-fiber-product curve and recover y^2=x^3-432x-8208."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_degree4_example.sage",
+      "computations/magma/verify_degree4_complement.m",
+      "results/sage_degree4_example.json",
+      "results/magma_degree4_complement.json"
+    ],
+    "notes": "Normalized the self-fiber-product through an explicit quartic and birational map to the displayed Weierstrass model.",
+    "result_note": "Remote Magma independently verified nonsingularity, genus one, and isomorphism."
   },
   {
     "id": "C023",
@@ -329,10 +339,14 @@
     "category": "degree_4",
     "engine": "SageMath",
     "location": "local",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Compare minimal models, invariants, and database label provenance."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_degree4_example.sage",
+      "results/sage_degree4_example.json"
+    ],
+    "notes": "Twisted by -1, minimized, and matched the Sage/Cremona database curve 11a3.",
+    "result_note": "The untwisted minimal model is y^2+y=x^3-x^2."
   },
   {
     "id": "C024",
@@ -342,10 +356,14 @@
     "category": "degree_4",
     "engine": "Magma+SageMath",
     "location": "hybrid",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Verify rank zero and torsion group Z/5Z."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_degree4_example.sage",
+      "results/sage_degree4_example.json"
+    ],
+    "notes": "Verified rank zero and torsion invariants [5] for Cremona 11a3.",
+    "result_note": "SageMath proof mode returned rank 0."
   },
   {
     "id": "C025",
@@ -355,10 +373,14 @@
     "category": "degree_4",
     "engine": "SageMath",
     "location": "local",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Compute j(u^2=g'(x))=-27648/11."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_degree4_example.sage",
+      "results/sage_degree4_example.json"
+    ],
+    "notes": "Converted u^2=g'(x) to y^2=x^3-4x+4 and computed its exact j-invariant.",
+    "result_note": "The result is -27648/11."
   },
   {
     "id": "C026",
