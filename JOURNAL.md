@@ -144,3 +144,42 @@
 - Browser verification of the article page found 779 MathJax containers,
   including 50 display blocks, zero `mjx-merror` nodes, zero raw TeX
   fragments, working sampled anchors, and zero horizontal overflow.
+
+### General algorithm and omitted obligations
+
+- Added universal SageMath certificates for the D4 symmetric-square
+  invariants, trace rewriting, the complementary equations, squarefree
+  normalization, and degree-3 linearity.
+- Reconstructed the degree-3 complementary map from exactly seven samples.
+- Added C035-C040 after the second line-by-line audit.
+- Ran the full divisor-class worksheet remotely; all degree assertions and
+  Riemann-Roch evaluations passed.
+
+### Degree-5 discrepancy audit
+
+- Found four incorrect coefficients in the displayed quartic.
+- Proved that the printed quartic is smooth of genus 3, while the corrected
+  quartic has three ordinary nodes and geometric genus zero.
+- Found an exact nonsingular point over `Q(z)`, disproving the claimed
+  obstruction.
+- Parametrized over `Q(z)` itself in Magma and obtained
+  `j(E')=-250888806400/56807829`.
+- Recorded the mismatch between the cited 2001 Shaska paper and the later
+  source of the two-parameter normal form.
+
+### Quartic structural completion
+
+- Remote Magma certified the `S4` subgroup tower and maximality used for
+  primitivity.
+- Derived the universal point `P=(-2p,2q)` on the complementary elliptic
+  model.
+- Factored every division polynomial permitted by Mazur's theorem and
+  recovered exactly `0`, `-27648/11`, and `55296/5`.
+
+### Final article audit
+
+- Closed all claims C001-C040: 36 verified, 4 disproved, 0 unresolved.
+- Added `scripts/audit-claims.py`; it checks 45 linked artifacts and every
+  source-line range.
+- Added final-status and beyond-paper chapters to the Jupyter Book.
+- Started B002, the generic degree-5 base-field parametrization locus.

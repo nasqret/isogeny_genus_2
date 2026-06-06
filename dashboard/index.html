@@ -13,7 +13,8 @@
         <nav aria-label="Project links">
           <a class="active" href="/dashboard/">Dashboard</a>
           <a href="/book/_build/html/index.html">Jupyter Book</a>
-          <a href="/research/reports/claim_inventory.md">Claim inventory</a>
+          <a href="/research/reports/final_claim_audit.md">Final claim audit</a>
+          <a href="/book/_build/html/beyond/index.html">Beyond paper</a>
           <a href="/reconstruction/COMPUTATIONAL_RECONSTRUCTION.md">Reconstruction</a>
           <a href="/vault/00-Project/Home.md">Obsidian vault</a>
           <a href="/sources/paper.tex">Paper source</a>
@@ -68,6 +69,17 @@
               <div id="current-efforts" class="effort-list"></div>
             </section>
 
+            <section class="panel beyond-panel">
+              <div class="panel-heading">
+                <div>
+                  <h2>Beyond-paper program</h2>
+                  <p id="beyond-summary">Loading new research workstreams...</p>
+                </div>
+                <div class="beyond-progress" id="beyond-progress">0%</div>
+              </div>
+              <div id="beyond-workstreams" class="effort-list"></div>
+            </section>
+
             <section class="panel ledger-panel">
               <div class="panel-heading ledger-heading">
                 <div>
@@ -84,6 +96,7 @@
                     <select id="status-filter">
                       <option value="">All</option>
                       <option value="verified">Verified</option>
+                      <option value="disproved">Disproved</option>
                       <option value="in_progress">In progress</option>
                       <option value="review_needed">Review needed</option>
                       <option value="blocked">Blocked</option>

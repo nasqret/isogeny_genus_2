@@ -8,11 +8,14 @@ const state = {
 
 const labels = {
   verified: "Verified",
+  disproved: "Disproved",
   in_progress: "In progress",
   review_needed: "Review needed",
   blocked: "Blocked",
   not_started: "Not started",
   ready: "Ready",
+  completed: "Completed",
+  planned: "Planned",
 };
 
 function pathLink(path) {
@@ -20,7 +23,14 @@ function pathLink(path) {
 }
 
 function renderStatusStrip(summary) {
-  const order = ["verified", "in_progress", "review_needed", "blocked", "not_started"];
+  const order = [
+    "verified",
+    "disproved",
+    "in_progress",
+    "review_needed",
+    "blocked",
+    "not_started",
+  ];
   document.querySelector("#status-strip").innerHTML = order
     .map(
       (key) => `
@@ -35,7 +45,8 @@ function renderStatusStrip(summary) {
 function renderEfforts(efforts) {
   const element = document.querySelector("#current-efforts");
   if (!efforts.length) {
-    element.innerHTML = '<div class="empty-state">No active claim work is recorded.</div>';
+    element.innerHTML =
+      '<div class="empty-state">No article claim remains active. New research is tracked in the B-series below.</div>';
     return;
   }
   element.innerHTML = efforts
@@ -74,7 +85,7 @@ function renderJobs(jobs) {
   const element = document.querySelector("#remote-jobs");
   if (!jobs.length) {
     element.innerHTML =
-      '<div class="empty-state">No remote Magma jobs are running. The first remote batch will follow the degree-3 SageMath baseline.</div>';
+      '<div class="empty-state">No remote Magma jobs are running. Completed transcripts are preserved under results/remote/.</div>';
     return;
   }
   element.innerHTML = jobs
@@ -103,6 +114,29 @@ function renderResults(results) {
         <div class="result-item">
           <time>${item.timestamp}</time>
           <p><span class="claim-id">${item.claim_id}</span> · ${item.summary}</p>
+        </div>`,
+    )
+    .join("");
+}
+
+function renderBeyond(items, summary) {
+  document.querySelector("#beyond-progress").textContent =
+    `${summary.overall_progress}%`;
+  document.querySelector("#beyond-summary").textContent =
+    `${summary.completed} completed · ${summary.in_progress} active · ${summary.planned} planned`;
+  document.querySelector("#beyond-workstreams").innerHTML = items
+    .map(
+      (item) => `
+        <div class="effort">
+          <div class="claim-id">${item.id}</div>
+          <div class="effort-title">
+            ${item.title}
+            <small>${item.engine} · ${item.location} · ${item.objective}</small>
+            <div class="mini-progress"><span style="width:${item.progress}%"></span></div>
+          </div>
+          <div class="effort-value">
+            <span class="status ${item.status}">${labels[item.status] || item.status}</span>
+          </div>
         </div>`,
     )
     .join("");
@@ -179,6 +213,7 @@ async function loadDashboard() {
   renderLocations(state.data.environments);
   renderJobs(state.data.remote_jobs);
   renderResults(state.data.recent_results);
+  renderBeyond(state.data.beyond_paper, state.data.beyond_summary);
   renderClaims();
 }
 

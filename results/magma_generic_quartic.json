@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-06-07T00:45:26+02:00",
+  "engine": "Magma V2.28-3",
+  "host": "lts-faculty.wmi.amu.edu.pl",
+  "artifact": "computations/magma/verify_generic_quartic.m",
+  "verified": true,
+  "claim_ids": [
+    "C008",
+    "C009",
+    "C010",
+    "C011"
+  ],
+  "specializations": [
+    {
+      "p": -8,
+      "q": 16,
+      "fiber_discriminant": "-8642520959461809446715392",
+      "complement_j": "-4096/11"
+    },
+    {
+      "p": 1,
+      "q": 1,
+      "fiber_discriminant": "-805641912320000",
+      "complement_j": "-1024/35"
+    },
+    {
+      "p": 2,
+      "q": 3,
+      "fiber_discriminant": "-42920609994881630208",
+      "complement_j": "-65536/2763"
+    }
+  ],
+  "output": "C008_C011_MAGMA_VERIFIED",
+  "elapsed_seconds": 0.07,
+  "memory_mb": 32.09,
+  "transcript": "results/remote/magma_generic_quartic.log",
+  "remote_log": "/home/faculty/bnaskrecki/magma/logs/session_log_2026_06_07_2261276801.txt"
+}

@@ -20,8 +20,22 @@
 ./scripts/build-book.sh
 ```
 
+## Strict audit
+
+```bash
+python3 scripts/audit-claims.py
+./scripts/validate-all.sh
+```
+
+The audit requires every claim C001-C040 to be terminal and every linked
+artifact to exist. Remote Magma transcripts are preserved under
+`results/remote/`.
+
 ## Dashboard
 
 ```bash
 ./scripts/start-dashboard.sh
 ```
+
+The dashboard separates completed paper verification from workstreams B001
+onward.

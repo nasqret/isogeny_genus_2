@@ -1,5 +1,5 @@
 """
-Exact SageMath verification for claims C014, C016, and C017.
+Exact SageMath verification for claims C003, C004, C014, C016, and C017.
 
 The script reconstructs the degree-3 complementary genus-one model by
 eliminating the symmetric-square variables. It then compares the resulting
@@ -101,6 +101,15 @@ def reconstruct_complement(a, b, c):
 
     eliminated = selected_polynomial.gcd(product_polynomial)
     eliminated = eliminated / eliminated.content()
+    selected_quotient, selected_remainder = selected_polynomial.quo_rem(
+        eliminated
+    )
+    product_quotient, product_remainder = product_polynomial.quo_rem(
+        eliminated
+    )
+    assert selected_remainder == 0
+    assert product_remainder == 0
+    assert selected_quotient.gcd(product_quotient).degree() == 0
 
     as_sy = eliminated.polynomial(sy)
     if as_sy.degree() != 2 or as_sy[1] != 0:
@@ -145,6 +154,10 @@ def reconstruct_complement(a, b, c):
         "reconstructed_j": QQ(reconstructed_j),
         "kuhn_j": QQ(kuhn_j),
         "source_squarefree": bool(source_polynomial.is_squarefree()),
+        "base_equation": B(c*sx - px^2 + b*px),
+        "selected_polynomial": R(selected_polynomial),
+        "product_polynomial": R(product_polynomial),
+        "common_component_is_exact_gcd": True,
     }
 
 
@@ -206,6 +219,32 @@ result = {
     "engine": "SageMath 10.8",
     "elapsed_seconds": float(round(elapsed, 6)),
     "claims": {
+        "C003": {
+            "verified": True,
+            "certificate": (
+                "The divided Z equation, symmetric-square sum/product "
+                "relations, and selected y equation are reconstructed "
+                "exactly before elimination."
+            ),
+            "base_equation": str(main["base_equation"]),
+            "selected_equation_degree": int(
+                main["selected_polynomial"].total_degree()
+            ),
+            "product_equation_degree": int(
+                main["product_polynomial"].total_degree()
+            ),
+        },
+        "C004": {
+            "verified": True,
+            "certificate": (
+                "The rational parametrization sx=(px^2-b*px)/c followed "
+                "by exact polynomial GCD isolates the sole common component."
+            ),
+            "parameter_triples_checked": int(1 + len(sample_results)),
+            "common_component_is_exact_gcd": bool(
+                main["common_component_is_exact_gcd"]
+            ),
+        },
         "C014": {
             "verified": True,
             "certificate": "Exact elimination and polynomial GCD reproduce the displayed factorized singular model.",

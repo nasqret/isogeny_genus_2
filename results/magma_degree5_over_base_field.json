@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-06-07T01:09:35+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "lts-faculty.wmi.amu.edu.pl",
+  "claim": "C030",
+  "verified": false,
+  "outcome": "disproved_as_stated",
+  "base_field": "Q(z), z^2+z-5=0",
+  "additional_extension_required": false,
+  "base_curve_point": [
+    "-194925411292797456462453/638959327494406963489*z - 1630328988505259813900882/1916877982483220890467",
+    "17652564032100059143825/1916877982483220890467*z + 147955966498089193522369/5750633947449662671401"
+  ],
+  "parametrization_over_base_field": true,
+  "complementary_j": "-250888806400/56807829",
+  "complementary_j_verified": true,
+  "citation_comparison": {
+    "status": "not_reproducible_from_cited_source",
+    "reason": "The cited Shaska 2001 article does not contain the two-parameter a,b normal form used by the companion computation. That normal form appears in Magaard-Shaska-Voelklein, arXiv:1209.0443, which does not display a generic complementary-j formula."
+  },
+  "transcript": "results/remote/magma_degree5_over_base_field.log"
+}

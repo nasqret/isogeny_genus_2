@@ -7,10 +7,14 @@
     "category": "general_algorithm",
     "engine": "SageMath+Magma",
     "location": "hybrid",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Verify the invariant generators sx, px, sy, py and the two displayed relations."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_general_symbolics.sage",
+      "results/sage_general_symbolics.json"
+    ],
+    "notes": "Verified the D4 action, invariant generators, universal symmetric sum and product, and both defining relations over Q(a0,...,a6).",
+    "result_note": "SageMath 10.8 universal symbolic certificate generated 2026-06-07."
   },
   {
     "id": "C002",
@@ -20,10 +24,14 @@
     "category": "general_algorithm",
     "engine": "SageMath+Magma",
     "location": "hybrid",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Implement and test the A1,A2,B1,B2 decomposition for rational functions."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_general_symbolics.sage",
+      "results/sage_general_symbolics.json"
+    ],
+    "notes": "Verified the trace identity and full A1+A2*py+B1*sy+B2*py*sy rewriting for a universal bidegree-(2,2) input.",
+    "result_note": "SageMath 10.8 universal symbolic certificate generated 2026-06-07."
   },
   {
     "id": "C003",
@@ -33,10 +41,16 @@
     "category": "general_algorithm",
     "engine": "SageMath+Magma",
     "location": "hybrid",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Derive the four equations and separate the diagonal genus-zero component."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_general_symbolics.sage",
+      "results/sage_general_symbolics.json",
+      "computations/sage/verify_degree3_elimination.sage",
+      "results/sage_degree3_elimination.json"
+    ],
+    "notes": "Reconstructed the divided Z equation, both symmetric-square relations, and the selected y equation before elimination.",
+    "result_note": "The degree-3 family audit removes the diagonal factor and derives the four equations exactly."
   },
   {
     "id": "C004",
@@ -46,10 +60,14 @@
     "category": "general_algorithm",
     "engine": "Magma+SageMath",
     "location": "hybrid",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Parametrize T, eliminate auxiliary variables, and recover the common component by GCD."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_degree3_elimination.sage",
+      "results/sage_degree3_elimination.json"
+    ],
+    "notes": "Applied the rational parametrization and exact polynomial GCD pipeline to the paper example and four further Kuhn triples.",
+    "result_note": "For every run, the two cofactors after dividing by the recovered component are coprime."
   },
   {
     "id": "C005",
@@ -59,10 +77,14 @@
     "category": "general_algorithm",
     "engine": "SageMath+Magma",
     "location": "hybrid",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Verify normalization by squarefree numerator and denominator parts."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_structural_claims.sage",
+      "results/sage_structural_claims.json"
+    ],
+    "notes": "Implemented exact numerator/denominator square decomposition, recovered the paper's normalized quartic, and tested three additional rational functions.",
+    "result_note": "SageMath 10.8 records an explicit scaling q=H*r^2 for every test."
   },
   {
     "id": "C006",
@@ -72,10 +94,16 @@
     "category": "complementary_map",
     "engine": "Magma",
     "location": "remote",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Construct Gamma_p, verify degree n-1, and evaluate its divisor class on E'."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "sources/upstream/NoteOnGenus2Covers/ComplementaryMap_d3.m",
+      "results/magma_complementary_map_full.json",
+      "results/remote/magma_complementary_map_full.out",
+      "results/remote/magma_complementary_map_console.log"
+    ],
+    "notes": "Constructed every Gamma_p as a degree-two divisor, evaluated Gamma_p-Gamma_p0 by Riemann-Roch, and mapped the resulting class to E'.",
+    "result_note": "Remote Magma completed all divisor assertions, generated 14 rational samples, and returned final map degree three."
   },
   {
     "id": "C007",
@@ -85,10 +113,16 @@
     "category": "complementary_map",
     "engine": "Magma+SageMath",
     "location": "hybrid",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Recover degree-n rational functions from 2n+1 samples and verify the map identically."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_complementary_interpolation.sage",
+      "results/sage_complementary_interpolation.json",
+      "computations/magma/verify_degree3_map.m",
+      "results/magma_degree3_map.json"
+    ],
+    "notes": "Recovered the degree-3 x-coordinate from exactly seven samples, derived W' up to sign, fixed the sign, and verified the final map identically.",
+    "result_note": "The exact interpolation matrix has nonzero determinant and the recovered map has degree three."
   },
   {
     "id": "C008",
@@ -98,10 +132,17 @@
     "category": "critical_quartic",
     "engine": "SageMath",
     "location": "local",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Verify Delta(g(x))=g'(x)^2 Disc_t((g(t)-g(x))/(t-x))."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_generic_quartic.sage",
+      "results/sage_generic_quartic.json",
+      "computations/magma/verify_generic_quartic.m",
+      "results/magma_generic_quartic.json",
+      "results/remote/magma_generic_quartic.log"
+    ],
+    "notes": "Verified the discriminant factorization symbolically over Q(p,q) and independently at three Magma specializations.",
+    "result_note": "SageMath 10.8 universal identity and Magma V2.28-3 specialization suite generated 2026-06-07."
   },
   {
     "id": "C009",
@@ -111,10 +152,17 @@
     "category": "critical_quartic",
     "engine": "SageMath+Magma",
     "location": "hybrid",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Check degree six, squarefreeness, and genus for generic and example quartics."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_generic_quartic.sage",
+      "results/sage_generic_quartic.json",
+      "computations/magma/verify_generic_quartic.m",
+      "results/magma_generic_quartic.json",
+      "results/remote/magma_generic_quartic.log"
+    ],
+    "notes": "Computed the exact bad locus q*(8*p^3+27*q^2)=0, the sextic discriminant, squarefreeness, and genus two over Q(p,q).",
+    "result_note": "SageMath 10.8 generic certificate cross-checked by Magma V2.28-3 on three smooth fibers."
   },
   {
     "id": "C010",
@@ -124,10 +172,16 @@
     "category": "critical_quartic",
     "engine": "SageMath",
     "location": "local",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Substitute (g(x), y g'(x)) into E_g."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_generic_quartic.sage",
+      "results/sage_generic_quartic.json",
+      "computations/magma/verify_generic_quartic.m",
+      "results/magma_generic_quartic.json"
+    ],
+    "notes": "Verified identically that (x,y) maps to (g(x),y*g'(x)) on the critical elliptic curve.",
+    "result_note": "Exact Q(p,q) polynomial identity generated by SageMath 10.8 and independently specialized in Magma."
   },
   {
     "id": "C011",
@@ -137,10 +191,17 @@
     "category": "critical_quartic",
     "engine": "Magma",
     "location": "remote",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Normalize (g(u)-g(v))/(u-v)=0, verify genus one, and construct the birational elliptic model."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_generic_quartic.sage",
+      "results/sage_generic_quartic.json",
+      "computations/magma/verify_generic_quartic.m",
+      "results/magma_generic_quartic.json",
+      "results/remote/magma_generic_quartic.log"
+    ],
+    "notes": "Derived the self-fiber cubic and quartic normalization, proved both birational substitutions, and computed its generic complementary j-invariant.",
+    "result_note": "SageMath 10.8 symbolic normalization cross-checked by Magma V2.28-3 at three parameter pairs."
   },
   {
     "id": "C012",
@@ -390,10 +451,16 @@
     "category": "degree_5",
     "engine": "Magma+SageMath",
     "location": "hybrid",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Reconstruct Q(z), z^2+z-5=0, and explicit E, X, pi without trusting saved output."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_degree5_basic.sage",
+      "results/sage_degree5_basic.json",
+      "sources/upstream/NoteOnGenus2Covers/Example5.m",
+      "results/remote/magma_degree5_full.out"
+    ],
+    "notes": "Derived the branch polynomial, quadratic field, elliptic model, genus-2 source, adjusting factor, and degree-5 cover independently.",
+    "result_note": "SageMath reconstruction matches remote Magma and gives j(E)=8077950976/2255067."
   },
   {
     "id": "C027",
@@ -403,10 +470,15 @@
     "category": "degree_5",
     "engine": "SageMath+Magma",
     "location": "hybrid",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Derive the displayed bidegree-four equation exactly."
+    "status": "disproved",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_degree5_basic.sage",
+      "results/sage_degree5_basic.json",
+      "sources/upstream/NoteOnGenus2Covers/Example5.out"
+    ],
+    "notes": "The printed quartic does not equal the divided-difference equation; four coefficients are wrong. The corrected coefficients are certified.",
+    "result_note": "Printed 19500 must be 1950 in two terms, and printed -707130 must be -708130 in two terms."
   },
   {
     "id": "C028",
@@ -416,10 +488,15 @@
     "category": "degree_5",
     "engine": "Magma",
     "location": "remote",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Compute singularities, normalization, and geometric genus."
+    "status": "disproved",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_degree5_basic.sage",
+      "results/sage_degree5_basic.json",
+      "sources/upstream/NoteOnGenus2Covers/Example5.out"
+    ],
+    "notes": "As printed, the plane quartic is smooth of genus three. The corrected intended quartic has exactly three ordinary nodes and genus zero.",
+    "result_note": "The article's genus-zero statement becomes true only after correcting C027's four coefficients."
   },
   {
     "id": "C029",
@@ -429,10 +506,14 @@
     "category": "degree_5",
     "engine": "Magma",
     "location": "remote",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Give a rigorous local or conic obstruction certificate, not only a failed point search."
+    "status": "disproved",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_degree5_basic.sage",
+      "results/sage_degree5_basic.json"
+    ],
+    "notes": "Projection from a node gives a normalization conic with a Q(z)-point.",
+    "result_note": "The conic point maps to an exact nonsingular Q(z)-point on the corrected quartic, refuting the claimed obstruction."
   },
   {
     "id": "C030",
@@ -442,10 +523,16 @@
     "category": "degree_5",
     "engine": "Magma+SageMath",
     "location": "hybrid",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Parametrize over the required extension, resolve E', and compare with Shaska's formula."
+    "status": "disproved",
+    "progress": 100,
+    "artifacts": [
+      "computations/magma/verify_degree5_over_base_field.m",
+      "results/magma_degree5_over_base_field.json",
+      "results/remote/magma_degree5_over_base_field.log",
+      "research/reports/degree5_source_audit.md"
+    ],
+    "notes": "The corrected genus-zero curve parametrizes over Q(z), without the claimed extension. Magma still resolves the complementary curve and obtains j(E')=-250888806400/56807829.",
+    "result_note": "Disproved as stated: no further field extension is required. The complementary j-invariant is independently confirmed, while the cited 2001 Shaska paper does not contain the two-parameter presentation used here or a displayed generic comparison formula."
   },
   {
     "id": "C031",
@@ -506,12 +593,120 @@
     "category": "completeness",
     "engine": "Python",
     "location": "local",
-    "status": "in_progress",
-    "progress": 20,
+    "status": "verified",
+    "progress": 100,
     "artifacts": [
       "research/data/claims.json",
-      "research/reports/claim_inventory.md"
+      "research/reports/final_claim_audit.md",
+      "scripts/audit-claims.py",
+      "results/claim_audit.json"
     ],
-    "notes": "Second line-by-line audit must confirm that every computational assertion is linked to an atomic claim."
+    "notes": "The second line-by-line audit found six omitted obligations, tracked as C035-C040. A strict machine audit now enforces IDs, terminal outcomes, source ranges, artifact presence, and JSON validity.",
+    "result_note": "All 40 claims are terminal with executable evidence; four degree-5 claims are explicitly disproved rather than silently repaired."
+  },
+  {
+    "id": "C035",
+    "title": "General degree-3 symmetric base equation is linear in sx",
+    "source": "sources/paper.tex",
+    "lines": "653-657",
+    "category": "degree_3",
+    "engine": "SageMath",
+    "location": "local",
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_structural_claims.sage",
+      "results/sage_structural_claims.json"
+    ],
+    "notes": "Derived the universal equation c*sx-px^2+b*px=0 for Kuhn's x-coordinate over Q(a,b,c).",
+    "result_note": "The equation is identically linear in sx before any specialization."
+  },
+  {
+    "id": "C036",
+    "title": "Critical quartic ellipticity criterion",
+    "source": "sources/paper.tex",
+    "lines": "549-553",
+    "category": "critical_quartic",
+    "engine": "SageMath",
+    "location": "local",
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_structural_claims.sage",
+      "results/sage_structural_claims.json"
+    ],
+    "notes": "Factored j_ram-1728 and the critical cubic discriminant over Q(p,q), proving the stated equivalence.",
+    "result_note": "The bad loci are q=0 and 8*p^3+27*q^2=0 exactly."
+  },
+  {
+    "id": "C037",
+    "title": "Quartic splitting-field subgroup tower and primitivity",
+    "source": "sources/paper.tex",
+    "lines": "589-620",
+    "category": "critical_quartic",
+    "engine": "Magma",
+    "location": "remote",
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/magma/verify_quartic_group_tower.m",
+      "results/magma_quartic_group_tower.json",
+      "results/remote/magma_quartic_group_tower.log"
+    ],
+    "notes": "An S4 specialization certifies the generic group; Magma checks every subgroup order, index, intersection, and maximality assertion in the tower.",
+    "result_note": "The intersection A4 cap Stab(1) is <(234)>, and <(234)> is maximal in A4, proving primitivity."
+  },
+  {
+    "id": "C038",
+    "title": "Exceptional ramification j-values in the quartic corollary",
+    "source": "sources/paper.tex",
+    "lines": "623-630",
+    "category": "critical_quartic",
+    "engine": "SageMath",
+    "location": "local",
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_exceptional_ramification.sage",
+      "results/sage_exceptional_ramification.json"
+    ],
+    "notes": "Mapped the universal Q(i)-solution to P=(-2p,2q) and classified its rational torsion using exact division polynomials and Mazur's theorem.",
+    "result_note": "After excluding j=1728, the torsion cases give exactly j=0, -27648/11, and 55296/5."
+  },
+  {
+    "id": "C039",
+    "title": "Degree-2 j-pair map is dominant",
+    "source": "sources/paper.tex",
+    "lines": "709-720",
+    "category": "degree_2",
+    "engine": "SageMath",
+    "location": "local",
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_structural_claims.sage",
+      "results/sage_structural_claims.json"
+    ],
+    "notes": "Computed and factored the Jacobian determinant of (a,b) -> (j(E),j(E')); it is nonzero over Q(a,b).",
+    "result_note": "Its value at (1,2) is -1351680000/12167, certifying dominance."
+  },
+  {
+    "id": "C040",
+    "title": "Non-torsion and converse assertions for twist points",
+    "source": "sources/paper.tex",
+    "lines": "730-742",
+    "category": "quadratic_twists",
+    "engine": "SageMath",
+    "location": "local",
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_degree2_j_twists.sage",
+      "results/sage_degree2_j_twists.json",
+      "computations/sage/verify_structural_claims.sage",
+      "results/sage_structural_claims.json"
+    ],
+    "notes": "Certified both x-coordinate degrees as three and specialized at t=0 to infinite-order rational points on both twists.",
+    "result_note": "One good infinite-order specialization proves each generic function-field point is non-torsion; surjectivity follows from positive map degree."
   }
 ]

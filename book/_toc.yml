@@ -6,4 +6,6 @@ chapters:
       - file: paper/original_article
   - file: claims/index
   - file: computations/index
+  - file: results/final_status
+  - file: beyond/index
   - file: reproducibility

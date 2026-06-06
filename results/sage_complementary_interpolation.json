@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-06-07T01:12:14+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 0.098687,
+  "claims": {
+    "C007": {
+      "verified": true,
+      "sample_count": 7,
+      "degree_bounds": [
+        3,
+        3
+      ],
+      "sample_arguments": [
+        "-3",
+        "-2",
+        "-1",
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "interpolation_determinant": "202176000000000000/2042350338581",
+      "recovered_Z": "(-6*t^3 - 6*t^2 - 35/4*t + 25/4)/(t^3 + 4/5*t^2 + 2*t + 5/4)",
+      "W_square": "(9*t^6 - 165*t^5 + 2725/4*t^4 + 2375/4*t^3 + 8125/8*t^2 + 3125/8*t + 15625/64)/(t^12 + 16/5*t^11 + 296/25*t^10 + 3281/125*t^9 + 32356/625*t^8 + 10262/125*t^7 + 21459/200*t^6 + 599/5*t^5 + 215/2*t^4 + 1245/16*t^3 + 175/4*t^2 + 125/8*t + 625/256)",
+      "sign_fixed_at": "0",
+      "map_degree": 3,
+      "map_identity_verified": true
+    }
+  }
+}

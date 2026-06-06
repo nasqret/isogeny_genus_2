@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-06-07T00:56:38+02:00",
+  "engine": "Magma V2.28-3",
+  "host": "lts-faculty.wmi.amu.edu.pl",
+  "artifact": "sources/upstream/NoteOnGenus2Covers/Example5.m",
+  "exit_code": 0,
+  "verified_execution": true,
+  "input_parameters": {
+    "a": 7,
+    "b": 1
+  },
+  "base_elliptic_j": "8077950976/2255067",
+  "complementary_j": "-250888806400/56807829",
+  "reported_total_seconds": 3.25,
+  "reported_memory_mb": 194.34,
+  "worksheet_output": "results/remote/magma_degree5_full.out",
+  "console_transcript": "results/remote/magma_degree5_console.log"
+}

@@ -1,8 +1,21 @@
 {
-  "generated_at": "2026-06-07T00:09:41+02:00",
+  "generated_at": "2026-06-07T01:12:07+02:00",
   "engine": "SageMath 10.8",
-  "elapsed_seconds": 0.083346,
+  "elapsed_seconds": 0.109079,
   "claims": {
+    "C003": {
+      "verified": true,
+      "certificate": "The divided Z equation, symmetric-square sum/product relations, and selected y equation are reconstructed exactly before elimination.",
+      "base_equation": "-px^2 + 5*sx + 4*px",
+      "selected_equation_degree": 18,
+      "product_equation_degree": 24
+    },
+    "C004": {
+      "verified": true,
+      "certificate": "The rational parametrization sx=(px^2-b*px)/c followed by exact polynomial GCD isolates the sole common component.",
+      "parameter_triples_checked": 5,
+      "common_component_is_exact_gcd": true
+    },
     "C014": {
       "verified": true,
       "certificate": "Exact elimination and polynomial GCD reproduce the displayed factorized singular model.",

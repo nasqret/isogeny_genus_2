@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-06-07T01:15:29+02:00",
+  "claim_count": 40,
+  "expected_id_range": "C001-C040",
+  "all_claims_terminal": true,
+  "status_counts": {
+    "disproved": 4,
+    "verified": 36
+  },
+  "source_files_checked": [
+    "sources/paper.tex"
+  ],
+  "artifact_count": 45,
+  "all_artifacts_present": true,
+  "all_json_artifacts_valid": true,
+  "all_source_ranges_valid": true,
+  "disproved_claims": [
+    "C027",
+    "C028",
+    "C029",
+    "C030"
+  ],
+  "verified": true
+}

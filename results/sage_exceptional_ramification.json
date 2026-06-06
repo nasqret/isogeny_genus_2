@@ -1,0 +1,95 @@
+{
+  "generated_at": "2026-06-07T01:12:14+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 0.09153150000202004,
+  "claim": "C038",
+  "verified": true,
+  "quartic_model": "Y^2=X^4+2*p*X^2+2*q*X",
+  "elliptic_model": "V^2=U^3+2*p*U^2+4*q^2",
+  "universal_point": "(-2*p, 2*q)",
+  "ramification_j": "13824*p^3/(8*p^3 + 27*q^2)",
+  "complementary_j": "191102976*p^6/(-1492992*p^3*q^2 - 5038848*q^4)",
+  "mazur_orders_checked": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    12
+  ],
+  "division_certificates": {
+    "3": {
+      "polynomial": "(-64) * (r + 1/4)",
+      "rational_roots": [
+        "-1/4"
+      ]
+    },
+    "4": {
+      "polynomial": "(-4096) * r * (r^2 + 2*r + 1/2)",
+      "rational_roots": [
+        "0"
+      ]
+    },
+    "5": {
+      "polynomial": "(-65536) * (r + 1/2) * (r^3 - 5/2*r^2 - 5/4*r - 1/8)",
+      "rational_roots": [
+        "-1/2"
+      ]
+    },
+    "6": {
+      "polynomial": "(134217728) * r * (r + 1/4) * (r^4 + r^3 + 5/4*r^2 + 5/8*r + 3/32)",
+      "rational_roots": [
+        "0",
+        "-1/4"
+      ]
+    },
+    "7": {
+      "polynomial": "(4294967296) * (r^2 - 1/2*r - 1/4) * (r^6 + 21/2*r^5 + 14*r^4 + 67/8*r^3 + 5/2*r^2 + 11/32*r + 1/64)",
+      "rational_roots": []
+    },
+    "8": {
+      "polynomial": "(17592186044416) * r * (r^2 + 2*r + 1/2) * (r^8 - 12*r^7 - 15*r^6 - 9*r^5 - 5*r^4 - 5/2*r^3 - 25/32*r^2 - 1/8*r - 1/128)",
+      "rational_roots": [
+        "0"
+      ]
+    },
+    "9": {
+      "polynomial": "(-54043195528445952) * (r + 1/4) * (r^3 + 2/3*r^2 + 1/4*r + 1/24) * (r^9 + 2*r^8 + 55/4*r^7 + 165/8*r^6 + 153/16*r^5 - 7/16*r^4 - 53/32*r^3 - 65/128*r^2 - 15/256*r - 1/512)",
+      "rational_roots": [
+        "-1/4"
+      ]
+    },
+    "10": {
+      "polynomial": "(-295147905179352825856) * r * (r + 1/2) * (r^3 - 5/2*r^2 - 5/4*r - 1/8) * (r^12 + 30*r^11 + 195/2*r^10 + 671/4*r^9 + 2573/16*r^8 + 187/2*r^7 + 1185/32*r^6 + 385/32*r^5 + 971/256*r^4 + 17/16*r^3 + 27/128*r^2 + 25/1024*r + 5/4096)",
+      "rational_roots": [
+        "0",
+        "-1/2"
+      ]
+    },
+    "12": {
+      "polynomial": "(1267650600228229401496703205376) * r * (r + 1/4) * (r^2 + 2*r + 1/2) * (r^4 + r^3 + 5/4*r^2 + 5/8*r + 3/32) * (r^16 + 2*r^15 + 149/2*r^14 + 239/2*r^13 - 5*r^12 - 675/4*r^11 - 12623/64*r^10 - 1947/16*r^9 - 12365/256*r^8 - 871/64*r^7 - 99/32*r^6 - 693/1024*r^5 - 605/4096*r^4 - 55/2048*r^3 - 55/16384*r^2 - 1/4096*r - 1/131072)",
+      "rational_roots": [
+        "0",
+        "-1/4"
+      ]
+    }
+  },
+  "excluded_rational_root": {
+    "r": "0",
+    "reason": "j_ram=1728, excluded by the paper's ellipticity hypothesis"
+  },
+  "exceptional_ramification_j": [
+    "0",
+    "-27648/11",
+    "55296/5"
+  ],
+  "exceptional_complementary_j": [
+    "0",
+    "-4096/11",
+    "16384/5"
+  ],
+  "interpretation": "The universal Q(i)-solution maps to a rational point P. Mazur's theorem plus the exact division-polynomial factors show that P is torsion precisely at the three stated ramification j-values, after excluding j=1728."
+}

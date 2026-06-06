@@ -7,10 +7,10 @@ Jacobian* ([arXiv:2606.02429](https://arxiv.org/abs/2606.02429)).
 The copied article, claim ledger, SageMath and Magma artifacts, saved results,
 and execution provenance are maintained in one repository.
 
-:::{warning}
-The project is in its baseline phase. A claim is not verified merely because
-the authors' upstream script or saved output reproduces it. Independent
-execution evidence is required.
+:::{important}
+The article audit is complete: 36 claims are independently verified and four
+degree-5 claims are disproved as printed. No article claim remains unresolved.
+New work is tracked separately in the [beyond-paper program](beyond/index.md).
 :::
 
 The live project dashboard is available at

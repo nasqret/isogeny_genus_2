@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-06-07T01:12:07+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 0.091714,
+  "family": "g=x^4+p*x^2+q*x over Q(p,q)",
+  "nondegeneracy": "q*(8*p^3+27*q^2) != 0",
+  "claims": {
+    "C008": {
+      "verified": true,
+      "certificate": "Disc(g(t)-g(x))=g'(x)^2*Disc((g(t)-g(x))/(t-x))",
+      "fiber_polynomial": "-16*X^6 - 32*p*X^4 - 40*q*X^3 - 20*p^2*X^2 - 36*p*q*X - 4*p^3 - 27*q^2"
+    },
+    "C009": {
+      "verified": true,
+      "fiber_discriminant": "(-536870912) * q^2 * (8*p^3 + 27*q^2)^4",
+      "critical_cubic_discriminant": "(-65536) * q^2 * (8*p^3 + 27*q^2)^3",
+      "degree": 6,
+      "genus": 2
+    },
+    "C010": {
+      "verified": true,
+      "certificate": "Substitution of (g(x),y*g'(x)) preserves E_g."
+    },
+    "C011": {
+      "verified": true,
+      "self_fiber_equation": "u^3 + u^2*v + u*v^2 + v^3 + p*u + p*v + q",
+      "normalized_quartic": "-X^4 - 2*p*X^2 - 2*q*X",
+      "quartic_discriminant": "(-16) * q^2 * (8*p^3 + 27*q^2)",
+      "genus": 1,
+      "complement_j": "(-1024) * q^-2 * p^6 * (8*p^3 + 27*q^2)^-1"
+    }
+  }
+}

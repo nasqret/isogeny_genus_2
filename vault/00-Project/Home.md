@@ -15,6 +15,14 @@ Build a complete Magma and SageMath reconstruction of every computational
 claim in arXiv:2606.02429, with executable evidence and direct links from a
 copied article.
 
+## Final state
+
+- 36 claims verified.
+- 4 degree-5 claims disproved.
+- 0 unresolved.
+- Beyond-paper work is tracked separately in
+  `research/data/beyond_paper.json`.
+
 ## Authoritative files
 
 - Claim ledger: `research/data/claims.json`
@@ -22,3 +30,5 @@ copied article.
 - Journal: `JOURNAL.md`
 - Memory: `MEMORY.md`
 - Dashboard: `http://127.0.0.1:8765/dashboard/`
+- Final audit: `results/claim_audit.json`
+- Beyond-paper program: `book/beyond/index.md`

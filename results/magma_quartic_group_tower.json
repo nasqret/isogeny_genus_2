@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-06-07T01:09:35+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "lts-faculty.wmi.amu.edu.pl",
+  "claim": "C037",
+  "verified": true,
+  "specialization": "x^4-8*x^2+16*x-1",
+  "specialization_galois_group": "S4",
+  "specialization_galois_group_order": 24,
+  "subgroups": {
+    "<(34)>": {
+      "order": 2,
+      "index_in_S4": 12
+    },
+    "Stab(1)": {
+      "order": 6,
+      "index_in_S4": 4
+    },
+    "A4": {
+      "order": 12,
+      "index_in_S4": 2
+    },
+    "<(234)>": {
+      "order": 3,
+      "index_in_A4": 4,
+      "maximal_in_A4": true
+    }
+  },
+  "intersection": "A4 intersect Stab(1) = <(234)>",
+  "transcript": "results/remote/magma_quartic_group_tower.log"
+}

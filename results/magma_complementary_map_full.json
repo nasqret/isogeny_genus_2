@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-07T01:01:03+02:00",
+  "engine": "Magma V2.28-3",
+  "host": "lts-faculty.wmi.amu.edu.pl",
+  "artifact": "sources/upstream/NoteOnGenus2Covers/ComplementaryMap_d3.m",
+  "exit_code": 0,
+  "verified_execution": true,
+  "claim_ids": [
+    "C006",
+    "C007"
+  ],
+  "gamma_degree": 2,
+  "expected_gamma_degree": 2,
+  "riemann_roch_divisor_class_evaluation": true,
+  "rational_sample_count": 14,
+  "interpolated_map_degree": 3,
+  "reported_total_seconds": 358.85,
+  "reported_memory_mb": 32.09,
+  "worksheet_output": "results/remote/magma_complementary_map_full.out",
+  "console_transcript": "results/remote/magma_complementary_map_console.log"
+}

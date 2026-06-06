@@ -1,0 +1,88 @@
+{
+  "generated_at": "2026-06-07T01:12:14+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 0.267742,
+  "claims": {
+    "C026": {
+      "verified": true,
+      "branch_factorization": "(e - 1)^2 * e^2 * (e^2 - 605/289*e + 1)",
+      "base_field": "Q(z), z^2+z-5=0",
+      "elliptic_rhs": "t^3 + (39/289*z - 572/289)*t^2 + (-39/289*z + 283/289)*t",
+      "elliptic_j": "8077950976/2255067",
+      "source_polynomial": "t^5 + (8197/289*z - 25238/289)*t^4 + (168378/289*z + 518427/289)*t^3 + (-177639/289*z - 496465/289)*t^2 + (1064/289*z + 2987/289)*t",
+      "source_genus": 2,
+      "cover_degree": 5,
+      "cover_identity_verified": true
+    },
+    "C027": {
+      "verified": false,
+      "paper_assertion": "The displayed quartic equals the divided-difference equation.",
+      "outcome": "disproved",
+      "corrected_equation": "225*x1^4*x2^4 + 1950*x1^4*x2^3 + 1950*x1^3*x2^4 + 4255*x1^4*x2^2 - 699620*x1^3*x2^3 + 4255*x1^2*x2^4 + 130*x1^4*x2 + 114530*x1^3*x2^2 + 114530*x1^2*x2^3 + 130*x1*x2^4 + x1^4 - 33724*x1^3*x2 + 14268801*x1^2*x2^2 - 33724*x1*x2^3 + x2^4 + 130*x1^3 + 114530*x1^2*x2 + 114530*x1*x2^2 + 130*x2^3 + 4255*x1^2 - 699620*x1*x2 + 4255*x2^2 + 1950*x1 + 1950*x2 + 225",
+      "printed_difference": "-17550*x1^4*x2^3 - 17550*x1^3*x2^4 - 1000*x1^3*x2^3 - 1000*x1*x2 - 17550*x1 - 17550*x2",
+      "incorrect_coefficients": {
+        "sx*px^3": {
+          "printed": 19500,
+          "correct": 1950
+        },
+        "sx": {
+          "printed": 19500,
+          "correct": 1950
+        },
+        "px^3": {
+          "printed": -707130,
+          "correct": -708130
+        },
+        "px": {
+          "printed": -707130,
+          "correct": -708130
+        }
+      }
+    },
+    "C028": {
+      "verified": false,
+      "paper_assertion": "The displayed plane quartic has geometric genus zero.",
+      "outcome": "disproved_as_printed",
+      "printed_curve_genus": 3,
+      "corrected_curve_genus": 0,
+      "corrected_curve_nodes": [
+        {
+          "point": [
+            "-65",
+            "15"
+          ],
+          "tangent_cone": "75460*du^2 - 5707520*du*dv - 12371324*dv^2",
+          "discriminant": "36309944986560*dv^2"
+        },
+        {
+          "point": [
+            "47",
+            "1"
+          ],
+          "tangent_cone": "24696*du^2 - 1160712*du*dv + 27252036*dv^2",
+          "discriminant": "-1344812777280*dv^2"
+        },
+        {
+          "point": [
+            "-13/3",
+            "1/15"
+          ],
+          "tangent_cone": "15092/45*du^2 + 3816904/9*du*dv + 124004104/9*dv^2",
+          "discriminant": "806887666368/5*dv^2"
+        }
+      ]
+    },
+    "C029": {
+      "verified": false,
+      "paper_assertion": "The corrected genus-zero curve has no nonsingular point over Q(z).",
+      "outcome": "disproved",
+      "normalization_conic": "-12940*M^2 - 3200*M*N - 60*N^2 + Y^2",
+      "conic_point": "(86625243/7925750*z - 16906244/792575 : -381609/12250*z + 346809/2450 : 1)",
+      "nonsingular_affine_point": [
+        "-194925411292797456462453/638959327494406963489*z - 1630328988505259813900882/1916877982483220890467",
+        "17652564032100059143825/1916877982483220890467*z + 147955966498089193522369/5750633947449662671401"
+      ],
+      "partial_derivatives_nonzero": true
+    }
+  }
+}

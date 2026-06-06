@@ -108,5 +108,80 @@
     "timestamp": "2026-06-07T00:21:27+02:00",
     "claim_id": "C033",
     "summary": "Verified nonconstant function-field points on both quadratic twists."
+  },
+  {
+    "timestamp": "2026-06-07T00:43:21+02:00",
+    "claim_id": "C001",
+    "summary": "Certified the symmetric-square D4 invariants and defining relations over a universal sextic."
+  },
+  {
+    "timestamp": "2026-06-07T00:43:21+02:00",
+    "claim_id": "C002",
+    "summary": "Verified the universal trace-method decomposition in symmetric coordinates."
+  },
+  {
+    "timestamp": "2026-06-07T00:45:26+02:00",
+    "claim_id": "C008-C011",
+    "summary": "Verified the generic quartic construction over Q(p,q) and cross-checked three fibers in remote Magma."
+  },
+  {
+    "timestamp": "2026-06-07T00:48:49+02:00",
+    "claim_id": "C005",
+    "summary": "Certified squarefree normalization with explicit birational scaling."
+  },
+  {
+    "timestamp": "2026-06-07T00:48:49+02:00",
+    "claim_id": "C035-C036",
+    "summary": "Proved universal degree-3 linearity and the critical-quartic ellipticity criterion."
+  },
+  {
+    "timestamp": "2026-06-07T00:48:49+02:00",
+    "claim_id": "C039-C040",
+    "summary": "Certified dominance of the degree-2 j-pair map and infinite order of both twist points."
+  },
+  {
+    "timestamp": "2026-06-07T00:49:34+02:00",
+    "claim_id": "C003-C004",
+    "summary": "Audited the four symmetric-square equations and exact parametrization/GCD elimination pipeline."
+  },
+  {
+    "timestamp": "2026-06-07T00:50:21+02:00",
+    "claim_id": "C007",
+    "summary": "Recovered the complementary rational map from exactly seven samples and verified it identically."
+  },
+  {
+    "timestamp": "2026-06-07T00:56:19+02:00",
+    "claim_id": "C026",
+    "summary": "Independently reconstructed the degree-5 base field, curves, and degree-5 cover."
+  },
+  {
+    "timestamp": "2026-06-07T00:56:19+02:00",
+    "claim_id": "C027-C029",
+    "summary": "Disproved three printed degree-5 assertions and recorded corrected coefficients, genus, and a nonsingular Q(z)-point."
+  },
+  {
+    "timestamp": "2026-06-07T01:01:03+02:00",
+    "claim_id": "C006",
+    "summary": "Remote Magma constructed the degree-two Gamma_p divisors and evaluated their classes by Riemann-Roch."
+  },
+  {
+    "timestamp": "2026-06-07T01:09:35+02:00",
+    "claim_id": "C037",
+    "summary": "Remote Magma certified the S4 subgroup tower, intersection A4 cap Stab(1), and maximality proving primitivity."
+  },
+  {
+    "timestamp": "2026-06-07T01:09:35+02:00",
+    "claim_id": "C038",
+    "summary": "Exact division-polynomial factors recovered all three exceptional ramification j-values."
+  },
+  {
+    "timestamp": "2026-06-07T01:09:35+02:00",
+    "claim_id": "C030",
+    "summary": "Disproved the claimed degree-5 extension requirement; base-field Magma parametrization still gives j(E')=-250888806400/56807829."
+  },
+  {
+    "timestamp": "2026-06-07T01:09:35+02:00",
+    "claim_id": "C034",
+    "summary": "Closed the article-wide audit: all 40 claims are terminal, evidence-linked, and machine-validated."
   }
 ]

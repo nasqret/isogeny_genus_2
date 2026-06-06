@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-06-07T01:12:07+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 0.13137,
+  "claims": {
+    "C001": {
+      "verified": true,
+      "coefficient_field": "Q(a0,...,a6)",
+      "certificates": [
+        "r^4=s^2=1 and s*r*s=r^-1 on all four generators",
+        "sx,px,sy,py are fixed by the transposition s",
+        "universal sextic sum and product are expressed in sx,px",
+        "sy^2=F(x1)+F(x2)+2py and py^2=F(x1)F(x2)"
+      ]
+    },
+    "C002": {
+      "verified": true,
+      "coefficient_field": "Q(a0,...,a6,c00,...,c22)",
+      "certificate": "The trace identity and A1+A2*py+B1*sy+B2*py*sy decomposition hold for a universal bidegree-(2,2) g1."
+    }
+  }
+}

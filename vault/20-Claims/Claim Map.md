@@ -9,3 +9,7 @@ The machine-readable claim map is `research/data/claims.json`.
 - C026-C030: degree-5 reconstruction.
 - C031-C033: further computational identities.
 - C034: article-wide completeness audit.
+- C035-C040: obligations recovered by the second source audit.
+
+All C-series claims are terminal: 36 verified and C027-C030 disproved.
+New research uses the B-series in `research/data/beyond_paper.json`.

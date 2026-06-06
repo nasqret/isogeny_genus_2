@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-06-07T01:12:07+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 0.076937,
+  "claims": {
+    "C005": {
+      "verified": true,
+      "paper_normalized_polynomial": "t^4 - 4*t^3 + 15*t^2 - 25*t",
+      "paper_scaling": "1/125*t^4 - 2/25*t^3 + 32/125*t^2 - 189/250*t + 6/5",
+      "additional_tests": 3
+    },
+    "C035": {
+      "verified": true,
+      "universal_base_equation": "c*sx-px^2+b*px",
+      "coefficient_field": "Q(a,b,c)"
+    },
+    "C036": {
+      "verified": true,
+      "ramification_j": "(-13824*p^3)/(-8*p^3 - 27*q^2)",
+      "ramification_j_minus_1728": "(-46656) * q^2 * (8*p^3 + 27*q^2)^-1",
+      "critical_curve_discriminant": "(-68719476736) * q^2 * (8*p^3 + 27*q^2)^3",
+      "certificate": "The critical discriminant is nonzero exactly when ramification j is neither 1728 nor infinity."
+    },
+    "C039": {
+      "verified": true,
+      "jacobian_factorization": "(196608) * (-a^2 + 3*b)^2 * (b^2 - 3*a)^2 * (-2*a^3 + 9*a*b - 27) * (2*b^3 - 9*a*b + 27) * (-a^2*b^2 + 4*a^3 + 4*b^3 - 18*a*b + 27)^-3",
+      "value_at_1_2": "-1351680000/12167"
+    },
+    "C040": {
+      "verified": true,
+      "map_degrees": [
+        3,
+        3
+      ],
+      "specialization_t": "0",
+      "twist_parameter": "25/4",
+      "first_point": "(0 : 494/625 : 1)",
+      "first_point_order": "+Infinity",
+      "second_point": "(4/5 : 8/5 : 1)",
+      "second_point_order": "+Infinity"
+    }
+  }
+}

@@ -25,15 +25,16 @@ A computational claim is **verified** only when:
 |---|---|---|
 | Source archive | arXiv TeX, PDF, bibliography, metadata | Complete |
 | Upstream audit | Pinned copy of the authors' companion Magma repository | Complete |
-| Claim inventory | Atomic ledger of every computational assertion | Initial pass complete; second audit pending |
+| Claim inventory | Atomic ledger of every computational assertion | Complete: C001-C040 |
 | Operations | Live dashboard with local/remote status | Operational |
-| Documentation | Plan, journal, memory, Obsidian vault, Jupyter Book | Baseline complete |
-| General algorithm | Reusable symmetric-square and normalization routines | Not started |
-| Degree 3 | Independent reconstruction of curve, complement, and map | Initial 9 obligations verified |
+| Documentation | Plan, journal, memory, Obsidian vault, Jupyter Book | Complete and validated |
+| General algorithm | Reusable symmetric-square and normalization routines | Complete |
+| Degree 3 | Independent reconstruction of curve, complement, and map | Complete |
 | Degree 4 | Independent reconstruction, arithmetic, and label checks | Example obligations C021-C025 verified |
-| Degree 5 | Number-field reconstruction and complementary curve | Not started |
+| Degree 5 | Number-field reconstruction and complementary curve | Complete; four article claims disproved |
 | Degree 2 and invariants | Maps, generic j formulas, and twist identities | Complete |
 | Publication | Private GitHub repository and continuous validation | Operational |
+| Beyond paper | Separate B-series research ledger | Started |
 
 ## Phases
 
@@ -75,7 +76,24 @@ A computational claim is **verified** only when:
 - Preserve local and remote environment metadata and transcripts.
 - Push validated checkpoints to the private GitHub repository.
 
-## Current bounded task
+## Final paper-verification state
 
-Continue the second-pass claim inventory audit, verify the general quartic
-identities C008-C011, and begin the degree-5 number-field reconstruction.
+- 40 tracked claims.
+- 36 independently verified.
+- 4 disproved as printed: C027-C030.
+- 0 unresolved.
+- Strict audit: `python3 scripts/audit-claims.py`.
+
+## Beyond-paper program
+
+The B-series is deliberately separate from the frozen article ledger.
+
+1. Generalize the degree-5 base-field point and parametrization from
+   `(a,b)=(7,1)` to a locus in the full two-parameter family.
+2. Derive a generic complementary `j` formula for degree 5.
+3. Build a large exact census in degrees 3, 4, and 5.
+4. Add number-field arithmetic and automated source-to-CAS discrepancy
+   detection.
+
+Current bounded task: B002, the generic degree-5 base-field parametrization
+locus.

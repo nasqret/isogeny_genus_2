@@ -1,11 +1,15 @@
-# Initial Computational Claim Inventory
+# Computational Claim Inventory
+
+:::{note}
+The inventory is complete. The final line-by-line audit is recorded in
+`research/reports/final_claim_audit.md`: C001-C040 are terminal, with
+36 verified and C027-C030 disproved.
+:::
 
 ## Scope
 
-The first source pass identified 34 computation families. This inventory is
-deliberately provisional until a second line-by-line audit confirms that every
-computational assertion, including claims outsourced to cited literature, is
-represented by an atomic ledger item.
+The first source pass identified 34 computation families. The second pass
+added C035-C040 and closed the full ledger at 40 atomic obligations.
 
 ## Major clusters
 
@@ -20,7 +24,7 @@ represented by an atomic ledger item.
 | `j`-invariant and twist identities | C032-C033 | SageMath |
 | Article-wide coverage | C034 | Python + manual audit |
 
-## Highest-risk claims
+## Highest-risk claims resolved
 
 - **C006-C007:** The paper describes a divisor-class and interpolation
   algorithm whose implementation is substantially more involved than checking
@@ -34,12 +38,13 @@ represented by an atomic ledger item.
   independently checked provenance.
 - **C029:** "No nonsingular point over the base field" needs a mathematical
   obstruction certificate; a bounded search is insufficient.
-- **C030:** The degree-5 computation includes field extension,
-  parametrization, desingularization, and invariant comparison.
+- **C030:** The claimed extra extension is unnecessary. The corrected
+  base-field parametrization returns the complementary invariant, while the
+  cited comparison source does not contain the stated two-parameter formula.
 
 ## Upstream coverage
 
 The authors' companion repository provides Magma scripts for degree 3,
 the degree-3 map, and degree 5. These are tracked as upstream references only.
-Independent SageMath implementations and stricter Magma assertions will be
-added before any claim is marked verified.
+Independent SageMath implementations, stricter Magma assertions, and remote
+transcripts now support every terminal outcome.

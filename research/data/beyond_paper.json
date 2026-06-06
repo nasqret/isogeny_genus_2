@@ -1,0 +1,68 @@
+[
+  {
+    "id": "B001",
+    "title": "Universal torsion classification for quartic self-fibers",
+    "status": "completed",
+    "progress": 100,
+    "engine": "SageMath",
+    "location": "local",
+    "objective": "Classify the rational torsion of P=(-2p,2q) on V^2=U^3+2pU^2+4q^2 for every rational quartic parameter.",
+    "artifacts": [
+      "computations/sage/verify_exceptional_ramification.sage",
+      "results/sage_exceptional_ramification.json"
+    ]
+  },
+  {
+    "id": "B002",
+    "title": "Generic degree-5 base-field parametrization locus",
+    "status": "in_progress",
+    "progress": 10,
+    "engine": "SageMath+Magma",
+    "location": "hybrid",
+    "objective": "Determine for which Shaska parameters (a,b) the corrected genus-zero component has a rational point over the minimal field of definition, and derive a generic parametrization where possible.",
+    "artifacts": [
+      "research/reports/degree5_source_audit.md",
+      "computations/magma/verify_degree5_over_base_field.m"
+    ]
+  },
+  {
+    "id": "B003",
+    "title": "Generic degree-5 complementary j formula",
+    "status": "planned",
+    "progress": 0,
+    "engine": "SageMath+Magma",
+    "location": "hybrid",
+    "objective": "Derive a reproducible formula for the second degree-5 elliptic subcover directly from the two-parameter normal form.",
+    "artifacts": []
+  },
+  {
+    "id": "B004",
+    "title": "Large exact census of degree 3, 4, and 5 examples",
+    "status": "planned",
+    "progress": 0,
+    "engine": "SageMath+Magma",
+    "location": "hybrid",
+    "objective": "Build a database of source curves, both elliptic factors, maps, fields of definition, ranks, torsion, and discrepancy flags.",
+    "artifacts": []
+  },
+  {
+    "id": "B005",
+    "title": "Arithmetic of complementary factors over number fields",
+    "status": "planned",
+    "progress": 0,
+    "engine": "Magma",
+    "location": "remote",
+    "objective": "Compute ranks, torsion, conductors, isogeny classes, and reduction data for systematic number-field families.",
+    "artifacts": []
+  },
+  {
+    "id": "B006",
+    "title": "Automated source-to-CAS discrepancy detection",
+    "status": "planned",
+    "progress": 0,
+    "engine": "Python+SageMath",
+    "location": "local",
+    "objective": "Extract displayed formulas from TeX, normalize them, and compare them automatically with generated CAS identities.",
+    "artifacts": []
+  }
+]
