@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-06-07T00:09:41+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 0.083346,
+  "claims": {
+    "C014": {
+      "verified": true,
+      "certificate": "Exact elimination and polynomial GCD reproduce the displayed factorized singular model.",
+      "eliminated_equation": "4*p0^12 - 96*p0^11 + 1036*p0^10 - 7240*p0^9 + 37960*p0^8 - 153756*p0^7 + 494629*p0^6 - 1274164*p0^5 + 2560215*p0^4 - 3914025*p0^3 + 4185000*p0^2 - 62500*sy^2 - 2250000*p0",
+      "normalized_quartic": "1/15625*p^4 - 4/15625*p^3 + 3/3125*p^2 - 1/625*p"
+    },
+    "C016": {
+      "verified": true,
+      "reconstructed_j": "6912/247",
+      "kuhn_j": "6912/247"
+    },
+    "C017": {
+      "verified": true,
+      "sample_count": 4,
+      "samples": [
+        {
+          "parameters": [
+            1,
+            2,
+            3
+          ],
+          "normalized_quartic": "1/729*p^4 - 2/729*p^3 + 1/243*p^2 - 1/81*p",
+          "reconstructed_j": "1280/7",
+          "kuhn_j": "1280/7"
+        },
+        {
+          "parameters": [
+            2,
+            3,
+            5
+          ],
+          "normalized_quartic": "1/15625*p^4 - 3/15625*p^3 + 2/3125*p^2 - 1/625*p",
+          "reconstructed_j": "32000/367",
+          "kuhn_j": "32000/367"
+        },
+        {
+          "parameters": [
+            1,
+            4,
+            2
+          ],
+          "normalized_quartic": "1/64*p^4 - 1/16*p^3 + 1/32*p^2 - 1/16*p",
+          "reconstructed_j": "85184/53",
+          "kuhn_j": "85184/53"
+        },
+        {
+          "parameters": [
+            4,
+            7,
+            3
+          ],
+          "normalized_quartic": "1/729*p^4 - 7/729*p^3 + 4/243*p^2 - 1/81*p",
+          "reconstructed_j": "32000/87",
+          "kuhn_j": "32000/87"
+        }
+      ]
+    }
+  }
+}

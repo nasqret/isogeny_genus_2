@@ -15,5 +15,4 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements-ci.txt
       - run: python3 scripts/update-dashboard.py
-      - run: python3 scripts/generate-claim-index.py
-      - run: jupyter-book build --all book
+      - run: ./scripts/build-book.sh

@@ -48,5 +48,25 @@
     "timestamp": "2026-06-07T00:03:00+02:00",
     "claim_id": "SETUP",
     "summary": "Created the private GitHub repository nasqret/isogeny_genus_2."
+  },
+  {
+    "timestamp": "2026-06-07T00:07:13+02:00",
+    "claim_id": "C019",
+    "summary": "Remote Magma certified that the explicit complementary map has degree three."
+  },
+  {
+    "timestamp": "2026-06-07T00:09:15+02:00",
+    "claim_id": "C014",
+    "summary": "Exact symmetric elimination and GCD reproduced the displayed singular model."
+  },
+  {
+    "timestamp": "2026-06-07T00:09:15+02:00",
+    "claim_id": "C016",
+    "summary": "The reconstructed and Kuhn j-invariants agree at (3,4,5)."
+  },
+  {
+    "timestamp": "2026-06-07T00:09:15+02:00",
+    "claim_id": "C017",
+    "summary": "Four additional Kuhn-family parameter triples passed exact invariant comparison."
   }
 ]

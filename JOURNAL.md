@@ -78,3 +78,19 @@
   `https://github.com/nasqret/isogeny_genus_2`.
 - Prepared the validated baseline, source archive, ledger, documentation,
   dashboard, and first independent evidence batch for the initial push.
+
+### Degree-3 cluster completion
+
+- Added `computations/sage/verify_degree3_elimination.sage`.
+- Reconstructed C014 from the symmetric-square equations by eliminating
+  `p_y`, taking the exact polynomial GCD, and matching the displayed
+  factorized singular model.
+- Recovered `j=6912/247` independently from binary-quartic invariants and
+  matched Kuhn's formula for C016.
+- For C017, repeated the complete elimination and invariant calculation for
+  `(1,2,3)`, `(2,3,5)`, `(1,4,2)`, and `(4,7,3)`; every exact comparison
+  passed.
+- Added `computations/magma/verify_degree3_map.m` and ran it remotely.
+  Magma constructed the displayed map directly and returned degree `3`,
+  verifying C019.
+- The initial degree-3 claim cluster C012-C020 is now fully verified.

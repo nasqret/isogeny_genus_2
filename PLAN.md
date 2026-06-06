@@ -29,7 +29,7 @@ A computational claim is **verified** only when:
 | Operations | Live dashboard with local/remote status | Operational |
 | Documentation | Plan, journal, memory, Obsidian vault, Jupyter Book | Baseline complete |
 | General algorithm | Reusable symmetric-square and normalization routines | Not started |
-| Degree 3 | Independent reconstruction of curve, complement, and map | 5 of 9 initial obligations verified |
+| Degree 3 | Independent reconstruction of curve, complement, and map | Initial 9 obligations verified |
 | Degree 4 | Independent reconstruction, arithmetic, and label checks | Not started |
 | Degree 5 | Number-field reconstruction and complementary curve | Not started |
 | Publication | Private GitHub repository and continuous validation | Pending |
@@ -76,6 +76,5 @@ A computational claim is **verified** only when:
 
 ## Current bounded task
 
-Publish the validated baseline privately, reproduce the remaining degree-3
-elimination and map-degree claims in Magma and SageMath, and continue the
-second-pass claim inventory audit.
+Continue the second-pass claim inventory audit and begin the degree-4
+critical-curve reconstruction in SageMath.

@@ -184,10 +184,14 @@
     "category": "degree_3",
     "engine": "Magma+SageMath",
     "location": "hybrid",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Reproduce the displayed factorized equation by exact elimination and GCD."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_degree3_elimination.sage",
+      "results/sage_degree3_elimination.json"
+    ],
+    "notes": "Reproduced the displayed factorized equation by exact symmetric elimination and polynomial GCD.",
+    "result_note": "The certificate also extracts the normalized quartic used in C015."
   },
   {
     "id": "C015",
@@ -214,10 +218,14 @@
     "category": "degree_3",
     "engine": "SageMath",
     "location": "local",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Evaluate both formulas exactly and compare."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_degree3_elimination.sage",
+      "results/sage_degree3_elimination.json"
+    ],
+    "notes": "Evaluated the reconstructed binary-quartic invariant and Kuhn's formula exactly at (3,4,5).",
+    "result_note": "Both values are 6912/247."
   },
   {
     "id": "C017",
@@ -227,10 +235,14 @@
     "category": "degree_3",
     "engine": "SageMath",
     "location": "local",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Define and document the sample triples; compare independent and Kuhn invariants."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/sage/verify_degree3_elimination.sage",
+      "results/sage_degree3_elimination.json"
+    ],
+    "notes": "Reconstructed complements and compared exact invariants for four documented additional parameter triples.",
+    "result_note": "Samples: (1,2,3), (2,3,5), (1,4,2), and (4,7,3)."
   },
   {
     "id": "C018",
@@ -257,10 +269,14 @@
     "category": "degree_3",
     "engine": "Magma",
     "location": "remote",
-    "status": "not_started",
-    "progress": 0,
-    "artifacts": [],
-    "notes": "Construct the curve map and compute its degree and nonconstancy."
+    "status": "verified",
+    "progress": 100,
+    "artifacts": [
+      "computations/magma/verify_degree3_map.m",
+      "results/magma_degree3_map.json"
+    ],
+    "notes": "Constructed the displayed map directly in Magma and computed its degree.",
+    "result_note": "Remote Magma V2.28-3 returned degree 3 and j-invariant 6912/247."
   },
   {
     "id": "C020",

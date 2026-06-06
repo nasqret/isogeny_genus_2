@@ -23,6 +23,10 @@ in `sources/paper.tex`. The original PDF is available at
 claim ledger and do not modify the archived source.
 :::
 
+EOF
+  cat "$ROOT/reconstruction/ARTICLE_EVIDENCE_TABLE.md"
+  cat <<'EOF'
+
 ## Abstract
 
 This note gives a simple algorithm for the following effectivity problem:
