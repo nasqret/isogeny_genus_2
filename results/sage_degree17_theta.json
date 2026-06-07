@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-06-07T19:59:49+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 3.514242,
+  "workstream": "B019",
+  "verified": true,
+  "scope": "explicit degree-17 Frey-Kani theta quotient",
+  "field": "GF(8263)",
+  "degree": 17,
+  "theta_extension_degree": 12,
+  "anti_isometry_matrix": [
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      6
+    ]
+  ],
+  "quotient_theta_null": [
+    "5460*theta_extension^11 + 6127*theta_extension^10 + 1256*theta_extension^9 + 5957*theta_extension^8 + 4468*theta_extension^7 + 8094*theta_extension^6 + 5710*theta_extension^5 + 5896*theta_extension^4 + 2937*theta_extension^3 + 4388*theta_extension^2 + 2139*theta_extension + 1425",
+    "3651*theta_extension^11 + 5180*theta_extension^10 + 710*theta_extension^9 + 1622*theta_extension^8 + 1208*theta_extension^7 + 5966*theta_extension^6 + 2834*theta_extension^5 + 1184*theta_extension^4 + 4617*theta_extension^3 + 6012*theta_extension^2 + 4048*theta_extension + 4283",
+    "6327*theta_extension^11 + 5855*theta_extension^10 + 632*theta_extension^9 + 1696*theta_extension^8 + 56*theta_extension^7 + 6848*theta_extension^6 + 177*theta_extension^5 + 4060*theta_extension^4 + 151*theta_extension^3 + 379*theta_extension^2 + 4424*theta_extension + 6915",
+    "6280*theta_extension^11 + 5107*theta_extension^10 + 4982*theta_extension^9 + 6326*theta_extension^8 + 7576*theta_extension^7 + 7363*theta_extension^6 + 202*theta_extension^5 + 3311*theta_extension^4 + 3506*theta_extension^3 + 5413*theta_extension^2 + 3894*theta_extension + 2408"
+  ],
+  "rosenhain_polynomial": "x^5 + (854*theta_extension^11 + 7576*theta_extension^10 + 6062*theta_extension^9 + 4158*theta_extension^8 + 7322*theta_extension^7 + 219*theta_extension^6 + 1301*theta_extension^5 + 1847*theta_extension^4 + 2323*theta_extension^3 + 1408*theta_extension^2 + 4470*theta_extension + 1644)*x^4 + (6755*theta_extension^11 + 5237*theta_extension^10 + 1845*theta_extension^9 + 5451*theta_extension^8 + 7488*theta_extension^7 + 6499*theta_extension^6 + 6515*theta_extension^5 + 435*theta_extension^4 + 3104*theta_extension^3 + 2664*theta_extension^2 + 2148*theta_extension + 3331)*x^3 + (7805*theta_extension^11 + 4963*theta_extension^10 + 3707*theta_extension^9 + 3574*theta_extension^8 + 7310*theta_extension^7 + 1082*theta_extension^6 + 2773*theta_extension^5 + 7646*theta_extension^4 + 7475*theta_extension^3 + 7919*theta_extension^2 + 5200*theta_extension + 2730)*x^2 + (1112*theta_extension^11 + 7013*theta_extension^10 + 4912*theta_extension^9 + 3343*theta_extension^8 + 2669*theta_extension^7 + 463*theta_extension^6 + 5937*theta_extension^5 + 6598*theta_extension^4 + 3624*theta_extension^3 + 4535*theta_extension^2 + 4708*theta_extension + 557)*x",
+  "igusa_clebsch_invariants": [
+    "5432*theta_extension^11 + 6077*theta_extension^10 + 5317*theta_extension^9 + 2721*theta_extension^8 + 5198*theta_extension^7 + 1455*theta_extension^6 + 4168*theta_extension^5 + 3763*theta_extension^4 + 6863*theta_extension^3 + 2784*theta_extension^2 + 6949*theta_extension + 4116",
+    "1838*theta_extension^11 + 1358*theta_extension^10 + 5714*theta_extension^9 + 6708*theta_extension^8 + 6116*theta_extension^7 + 6196*theta_extension^6 + 2128*theta_extension^5 + 2725*theta_extension^4 + 6416*theta_extension^3 + 7619*theta_extension^2 + 789*theta_extension + 5289",
+    "1743*theta_extension^11 + 3197*theta_extension^10 + 1970*theta_extension^9 + 754*theta_extension^8 + 4703*theta_extension^7 + 5376*theta_extension^6 + 5331*theta_extension^5 + 4260*theta_extension^4 + 843*theta_extension^3 + 6930*theta_extension^2 + 3963*theta_extension + 673",
+    "5429*theta_extension^11 + 4850*theta_extension^10 + 3547*theta_extension^9 + 7581*theta_extension^8 + 8049*theta_extension^7 + 4831*theta_extension^6 + 860*theta_extension^5 + 4263*theta_extension^4 + 3240*theta_extension^3 + 6682*theta_extension^2 + 2459*theta_extension + 1888"
+  ],
+  "absolute_igusa_invariants": [
+    893,
+    1328,
+    7156
+  ],
+  "absolute_invariants_frobenius_fixed": true,
+  "remaining_step": "reconstruct a fixed F_8263 model and recover both degree-17 maps"
+}

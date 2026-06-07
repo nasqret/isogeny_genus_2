@@ -627,3 +627,7 @@
   matrices, a graph of `17^2=289` points, and quotient Weil polynomial
   `T^4-55*T^3-3598*T^2-454465*T+68277169`.
 - B019 starts at `35%`; quotient reconstruction and both maps remain.
+- The existing theta-gluing engine works unchanged at degree `17`. It
+  computes a Rosenhain quotient over `F_(8263^12)` whose absolute Igusa
+  invariants are `(893,1328,7156)`, all fixed by `8263`-Frobenius.
+- B019 is now `55%`; next are a fixed base-field model and both maps.

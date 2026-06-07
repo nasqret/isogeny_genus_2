@@ -348,5 +348,10 @@
     "timestamp": "2026-06-07T19:56:46+02:00",
     "claim_id": "B019",
     "summary": "SageMath and remote Magma certified a new degree-17 Frey-Kani graph over F_8263: traces 172 and -117, CM squareclasses -3 and -67, determinant 6, 289 graph points, and quotient Weil polynomial T^4-55*T^3-3598*T^2-454465*T+68277169."
+  },
+  {
+    "timestamp": "2026-06-07T19:59:00+02:00",
+    "claim_id": "B019",
+    "summary": "The parameterized theta-gluing engine computed the degree-17 Rosenhain quotient over F_(8263^12); its absolute Igusa invariants are (893,1328,7156) and descend to F_8263."
   }
 ]
