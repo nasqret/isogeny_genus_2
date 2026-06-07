@@ -30,3 +30,8 @@ has order `2`.
 quotient's generic octic fiber and proves that the elliptic-base quadratic
 extension does not absorb the unique quadratic subfield of the splitting
 field.
+
+`lib/splitting_kernel.m` implements the reusable torsion-pullback and
+anti-isometry certificate. `verify_degree6_splitting_kernel.m` and
+`verify_degree8_splitting_kernel.m` recover explicit graph matrices at good
+reduction, enumerate all kernel pairs, and verify inverse Weil pairings.

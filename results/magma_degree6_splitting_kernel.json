@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-06-07T12:59:37+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "lts-faculty.wmi.amu.edu.pl",
+  "elapsed_seconds": 0.52,
+  "maximum_memory_mb": 64.12,
+  "workstream": "B018",
+  "verified": true,
+  "scope": "Explicit good-reduction graph of the degree-6 splitting kernel and Weil-pairing anti-isometry certificate",
+  "cover_degree": 6,
+  "reduction_characteristic": 29,
+  "base_field_size": 841,
+  "target_group_invariants": [
+    [
+      6,
+      144
+    ],
+    [
+      6,
+      144
+    ]
+  ],
+  "graph_matrix_mod_n": [
+    [
+      1,
+      4
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "graph_matrix_determinant_mod_n": 1,
+  "kernel_count": 36,
+  "expected_kernel_count": 36,
+  "weil_pairings": [
+    "a^700",
+    "a^140"
+  ],
+  "pairing_product_is_one": true,
+  "artifact": "computations/magma/verify_degree6_splitting_kernel.m",
+  "helper": "computations/magma/lib/splitting_kernel.m",
+  "transcript": "results/remote/magma_degree6_splitting_kernel.log",
+  "success_marker": "B018_DEGREE6_SPLITTING_KERNEL_VERIFIED"
+}

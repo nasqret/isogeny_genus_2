@@ -326,6 +326,38 @@ elliptic quadratic extension does not absorb the unique quadratic subfield
 of the $S_8$ closure. The degree-$8$ elliptic cover retains full $S_8$
 monodromy.
 
+## Explicit splitting kernels in degrees 6 and 8
+
+The script `verify_degree6_splitting_kernel.m` reduces the two degree-$6$
+maps over $\mathbf F_{29^2}$, where both elliptic target groups have
+invariants $[6,144]$. Pulling full 6-torsion bases into the genus-2 Jacobian
+gives the graph matrix
+
+$$
+\begin{pmatrix}
+1&4\\
+0&1
+\end{pmatrix}
+\pmod{6}.
+$$
+
+Exactly $36$ pairs map to zero, and the Weil pairings are inverse.
+
+For degree $8$, the same computation over $\mathbf F_{79^2}$ uses target
+group invariants $[8,792]$ and returns
+
+$$
+\begin{pmatrix}
+4&7\\
+3&4
+\end{pmatrix}
+\pmod{8}.
+$$
+
+The determinant is a unit, exactly $64$ pairs map to zero, and the two Weil
+pairings again multiply to $1$. These are explicit good-reduction
+realizations of the two characteristic-zero $(n,n)$ splitting kernels.
+
 ## Degree 9: primitive maps with CRT-reconstructed centers
 
 The rational point

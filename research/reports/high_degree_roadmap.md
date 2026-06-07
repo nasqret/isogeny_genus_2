@@ -39,6 +39,9 @@ is complete only after both maps and this splitting are certified exactly.
 - Degree 11: one rational Kumar specialization with both primitive
   full-function-field maps, scale CRT moduli of 127 and 238 bits, and
   independent Magma degrees.
+- Splitting kernels: explicit good-reduction graph matrices and inverse Weil
+  pairings for the degree-6 and degree-8 benchmarks, with complete kernel
+  counts `6^2` and `8^2`.
 - General recovery: a degree-independent SageMath library reconstructs and
   exactly certifies maps from local formal data. Regression cases cover
   degrees 3, 5, 7, and 9, finite and infinite source centers, finite target
@@ -155,6 +158,21 @@ independent of the plane-model shortcuts.
 Enumerate Frey-Kani anti-isometries on \(n\)-torsion, quotient
 \(E\times E'\), test the principal polarization, reconstruct the genus-2
 curve, and recover the two maps.
+
+### Explicit splitting-kernel certificate
+
+For two recovered maps `phi1:C->E1` and `phi2:C->E2`, choose a good finite
+field of characteristic prime to `n` over which both full `n`-torsion groups
+are rational. For a torsion point `P`, compute
+
+```magma
+JacobianPoint(J, Pullback(phi, Divisor(P)-Divisor(E!0)));
+```
+
+Solving when the two pullback classes sum to zero gives a matrix for the
+graph isomorphism `E1[n] -> E2[n]`. The certificate requires a unit
+determinant, exactly `n^2` graph pairs, and inverse Weil pairings. This is
+implemented in `computations/magma/lib/splitting_kernel.m`.
 
 ## Degree milestones
 

@@ -91,6 +91,9 @@ Local exact computations live under `computations/sage/`.
 Remote computations live under `computations/magma/` and execute with Magma
 V2.28-3 on `lts-faculty.wmi.amu.edu.pl`.
 
+- [`lib/splitting_kernel.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/lib/splitting_kernel.m):
+  reusable full-torsion pullback, graph-kernel enumeration, and Weil-pairing
+  anti-isometry certificate.
 - [`smoke_test.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/smoke_test.m):
   remote engine and exact-arithmetic smoke certificate.
 - [`verify_degree3_map.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree3_map.m):
@@ -113,6 +116,9 @@ V2.28-3 on `lts-faculty.wmi.amu.edu.pl`.
   exact `S6` generic-fiber Galois group, discriminant square class, and
   elliptic-base disjointness certificate ruling out exceptional
   `PGL(2,5)` monodromy.
+- [`verify_degree6_splitting_kernel.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree6_splitting_kernel.m):
+  full 6-torsion pullback over `F_(29^2)`, explicit anti-isometry graph
+  matrix, inverse Weil pairings, and all 36 kernel points.
 - [`verify_degree7_maps.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree7_maps.m):
   independent construction of both Kumar morphisms and exact degree-7
   computations.
@@ -122,6 +128,9 @@ V2.28-3 on `lts-faculty.wmi.amu.edu.pl`.
 - [`verify_degree8_monodromy.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree8_monodromy.m):
   exact `S8` generic-fiber Galois group, discriminant square class, and
   elliptic-base disjointness certificate.
+- [`verify_degree8_splitting_kernel.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree8_splitting_kernel.m):
+  full 8-torsion pullback over `F_(79^2)`, explicit anti-isometry graph
+  matrix, inverse Weil pairings, and all 64 kernel points.
 - [`verify_degree9_maps.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree9_maps.m):
   independent construction of both degree-9 morphisms and exact degree
   computations.

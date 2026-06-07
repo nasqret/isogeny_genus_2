@@ -63,7 +63,9 @@
       "results/sage_degree10_recovery.json",
       "results/magma_degree10_maps.json",
       "results/sage_degree11_recovery.json",
-      "results/magma_degree11_maps.json"
+      "results/magma_degree11_maps.json",
+      "results/magma_degree6_splitting_kernel.json",
+      "results/magma_degree8_splitting_kernel.json"
     ]
   },
   {
@@ -301,6 +303,24 @@
       "results/magma_degree11_maps.json",
       "results/remote/magma_degree10_maps.log",
       "results/remote/magma_degree11_maps.log"
+    ]
+  },
+  {
+    "id": "B018",
+    "title": "Explicit degree-6 and degree-8 splitting kernels",
+    "status": "completed",
+    "progress": 100,
+    "engine": "Magma",
+    "location": "remote",
+    "objective": "Pull full torsion bases through both elliptic maps into the genus-2 Jacobian at good reduction, recover the graph matrices, enumerate the n^2-point kernels, and certify the anti-isometries by Weil pairings.",
+    "artifacts": [
+      "computations/magma/lib/splitting_kernel.m",
+      "computations/magma/verify_degree6_splitting_kernel.m",
+      "computations/magma/verify_degree8_splitting_kernel.m",
+      "results/magma_degree6_splitting_kernel.json",
+      "results/magma_degree8_splitting_kernel.json",
+      "results/remote/magma_degree6_splitting_kernel.log",
+      "results/remote/magma_degree8_splitting_kernel.log"
     ]
   }
 ]

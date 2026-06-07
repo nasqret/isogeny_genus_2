@@ -431,3 +431,25 @@
   degrees `11,11` in 10.359 seconds, with 32.09 MB memory in each run.
 - B004, B010, and the new benchmark workstream B017 are complete. The next
   bounded task is explicit splitting-kernel certification in degrees 6 and 8.
+
+### Explicit degree-6 and degree-8 splitting kernels
+
+- Added a reusable Magma helper that obtains full rational `n`-torsion bases
+  over finite fields, pulls point divisors through curve maps, converts them
+  to genus-2 Jacobian classes, solves the graph relation, enumerates the full
+  kernel, and checks the Weil pairing.
+- For degree 6, good reduction over `F_(29^2)` gives target group invariants
+  `[6,144]` on both sides. In the computed bases, the kernel is the graph of
+  `[[1,4],[0,1]]` modulo `6`.
+- Exactly `36=6^2` pairs lie in the kernel. The two Weil pairings are
+  `a^700` and `a^140` in a field whose multiplicative group has order `840`,
+  so their product is `1`.
+- For degree 8, good reduction over `F_(79^2)` gives target group invariants
+  `[8,792]` on both sides. The graph matrix is
+  `[[4,7],[3,4]]` modulo `8`, with unit determinant `3`.
+- Exactly `64=8^2` pairs lie in the kernel. The pairing exponents
+  `2340+3900=6240` sum to the multiplicative group order, again proving that
+  the graph is anti-isometric.
+- The reduction characteristics do not divide `n`, so these are finite etale
+  good-reduction models of the characteristic-zero splitting kernels.
+  B018 is complete.

@@ -1,0 +1,17 @@
+Magma V2.28-3     Sun Jun  7 2026 12:59:36 on lts-faculty [Seed = 3119954893]
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "computations/magma/verify_degree8_splitting_kernel.m"
+Loading "computations/magma/lib/splitting_kernel.m"
+B018_DEGREE8_SPLITTING_KERNEL_VERIFIED
+base_field_size 6241
+target_1_group_invariants [ 8, 792 ]
+target_2_group_invariants [ 8, 792 ]
+graph_matrix_mod_8 
+[4 7]
+[3 4]
+pairing_1 a^2340
+pairing_2 a^3900
+kernel_count 64
+
+Total time: 0.760 seconds, Total memory usage: 32.09MB

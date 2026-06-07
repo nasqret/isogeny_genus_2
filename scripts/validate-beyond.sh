@@ -35,9 +35,11 @@ python3 -m json.tool "$ROOT/results/sage_kumar_tautological_curves.json" >/dev/n
 python3 -m json.tool "$ROOT/results/sage_degree6_recovery.json" >/dev/null
 python3 -m json.tool "$ROOT/results/magma_degree6_maps.json" >/dev/null
 python3 -m json.tool "$ROOT/results/magma_degree6_monodromy.json" >/dev/null
+python3 -m json.tool "$ROOT/results/magma_degree6_splitting_kernel.json" >/dev/null
 python3 -m json.tool "$ROOT/results/sage_degree8_recovery.json" >/dev/null
 python3 -m json.tool "$ROOT/results/magma_degree8_maps.json" >/dev/null
 python3 -m json.tool "$ROOT/results/magma_degree8_monodromy.json" >/dev/null
+python3 -m json.tool "$ROOT/results/magma_degree8_splitting_kernel.json" >/dev/null
 python3 -m json.tool "$ROOT/results/sage_degree9_recovery.json" >/dev/null
 python3 -m json.tool "$ROOT/results/magma_degree9_maps.json" >/dev/null
 python3 -m json.tool "$ROOT/results/magma_degree9_monodromy.json" >/dev/null

@@ -28,6 +28,35 @@ is an $(n,n)$-isogeny. Its kernel is the graph of an anti-isometry
 $E[n]\to E'[n]$ for the Weil pairings. This is the Frey-Kani structure that
 the computational pipeline must recover and certify.
 
+## Certifying the splitting kernel
+
+Suppose both maps $f:C\to E$ and $f':C\to E'$ are known. Their pullbacks
+define
+
+$$
+\Phi:E\times E'\longrightarrow \operatorname{Jac}(C),\qquad
+(P,Q)\longmapsto f^*(P-O)+f'^*(Q-O').
+$$
+
+At a good reduction of characteristic prime to $n$, choose bases
+$(P_1,P_2)$ and $(Q_1,Q_2)$ of the full rational $n$-torsion. Pull the point
+divisors back to the genus-2 Jacobian and solve
+
+$$
+f^*(P_i-O)+f'^*(\psi(P_i)-O')=0.
+$$
+
+This gives a matrix for $\psi:E[n]\to E'[n]$. A complete certificate checks:
+
+1. the matrix has unit determinant modulo $n$;
+2. exactly $n^2$ pairs in $E[n]\times E'[n]$ map to zero;
+3. the Weil pairings satisfy
+   $e_n(P_1,P_2)e_n(\psi(P_1),\psi(P_2))=1$.
+
+Thus the kernel is the graph of an anti-isometry and is maximally isotropic.
+Because the characteristic is prime to $n$, the torsion and kernel schemes
+are finite etale at good reduction.
+
 ## Quotient diagram
 
 The hyperelliptic involution on $C$ and negation on $E$ give a degree-$n$

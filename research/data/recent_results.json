@@ -298,5 +298,10 @@
     "timestamp": "2026-06-07T12:44:40+02:00",
     "claim_id": "B004-B010-B017",
     "summary": "Remote Magma independently constructed all four degree-10 and degree-11 morphisms and returned degrees 10, 10, 11, and 11."
+  },
+  {
+    "timestamp": "2026-06-07T12:59:37+02:00",
+    "claim_id": "B004-B018",
+    "summary": "Remote Magma explicitly recovered the degree-6 and degree-8 splitting kernels as anti-isometry graphs. The graph matrices are [[1,4],[0,1]] mod 6 and [[4,7],[3,4]] mod 8, with 36 and 64 kernel points."
   }
 ]

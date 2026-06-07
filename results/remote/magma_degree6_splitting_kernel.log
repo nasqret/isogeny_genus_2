@@ -1,0 +1,17 @@
+Magma V2.28-3     Sun Jun  7 2026 12:59:36 on lts-faculty [Seed = 3136665806]
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "computations/magma/verify_degree6_splitting_kernel.m"
+Loading "computations/magma/lib/splitting_kernel.m"
+B018_DEGREE6_SPLITTING_KERNEL_VERIFIED
+base_field_size 841
+target_1_group_invariants [ 6, 144 ]
+target_2_group_invariants [ 6, 144 ]
+graph_matrix_mod_6 
+[1 4]
+[0 1]
+pairing_1 a^700
+pairing_2 a^140
+kernel_count 36
+
+Total time: 0.520 seconds, Total memory usage: 64.12MB

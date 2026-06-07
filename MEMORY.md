@@ -183,6 +183,10 @@ This project reconstructs every computational claim in
 - `discover_general_scale_by_crt` now skips bad or noncertifying primes,
   records failures, and preserves resumable CRT state. Its largest completed
   reconstruction is the 276-bit modulus for the second degree-10 map.
-- Current active frontier, in order: explicit splitting kernels, the full
-  Galois-closure quotient, B002/B003 generic degree 5, and anti-isometry
-  synthesis.
+- B018 explicitly certifies splitting kernels at good reduction. For degree
+  6 over `F_(29^2)`, the anti-isometry graph matrix is
+  `[[1,4],[0,1]] mod 6` and the kernel has `36` points. For degree 8 over
+  `F_(79^2)`, the matrix is `[[4,7],[3,4]] mod 8` and the kernel has `64`
+  points. Inverse Weil pairings certify maximal isotropy.
+- Current active frontier, in order: the full Galois-closure quotient,
+  B002/B003 generic degree 5, and anti-isometry synthesis.

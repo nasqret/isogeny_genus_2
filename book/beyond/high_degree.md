@@ -316,7 +316,50 @@ $$
 This linear polynomial is squarefree and coprime to the elliptic branch
 cubic, so the quadratic elliptic base change preserves $S_9$.
 
-## Engine F: Frey-Kani synthesis
+## Engine F: explicit splitting kernels
+
+For recovered maps $\phi_i:C\to E_i$, the reusable Magma helper pulls
+divisors $P-O_i$ through $\phi_i$ and converts them to points of
+$\operatorname{Jac}(C)$. Over a good finite field containing the full
+$n$-torsion, it solves the unique graph relation
+
+$$
+\phi_1^*(P-O_1)+\phi_2^*(\psi(P)-O_2)=0.
+$$
+
+The degree-$6$ benchmark uses $\mathbf F_{29^2}$. In the computed torsion
+bases,
+
+$$
+\psi_6=
+\begin{pmatrix}
+1&4\\
+0&1
+\end{pmatrix}
+\pmod{6}.
+$$
+
+The script finds exactly $36$ kernel pairs. The two Weil pairings are
+$a^{700}$ and $a^{140}$ in $\mathbf F_{29^2}^{\times}$, whose order is
+$840$, so their product is $1$.
+
+The degree-$8$ benchmark uses $\mathbf F_{79^2}$ and gives
+
+$$
+\psi_8=
+\begin{pmatrix}
+4&7\\
+3&4
+\end{pmatrix}
+\pmod{8}.
+$$
+
+Its determinant is $3$ modulo $8$, the kernel contains exactly $64$ pairs,
+and the pairing exponents $2340$ and $3900$ sum to
+$|\mathbf F_{79^2}^{\times}|=6240$. Thus both graph maps are
+anti-isometries and both kernels are maximally isotropic.
+
+## Engine G: Frey-Kani synthesis
 
 Instead of starting from a curve, start from elliptic curves $E,E'$ and an
 anti-isometry

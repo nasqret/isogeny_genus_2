@@ -148,6 +148,10 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
   primitive maps: exact in SageMath and independently degree-checked in
   Magma. Both coordinates use `Q(x,y)`; their scales were reconstructed with
   127-bit and 238-bit CRT moduli.
+- Explicit splitting kernels for the degree-6 and degree-8 benchmarks:
+  Magma pulls full torsion bases into the genus-2 Jacobians, recovers graph
+  matrices modulo `6` and `8`, enumerates exactly `36` and `64` kernel
+  points, and verifies inverse Weil pairings.
 - The finite-field backend lifts complete projective coefficient vectors for
   both `X=A(x)/D(x)` and `X=A(x)/D(x)+y*B(x)/D(x)`. Partial CRT state is
   resumable and every lift is accepted only after exact characteristic-zero
@@ -161,8 +165,7 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
 
 Current bounded tasks, in order:
 
-1. certify the explicit degree-6 and degree-8 splitting kernels;
-2. implement the full Galois-closure quotient rather than only its monodromy
+1. implement the full Galois-closure quotient rather than only its monodromy
    certificate;
-3. finish the generic degree-5 complementary `j`-formula;
-4. begin Frey-Kani anti-isometry synthesis beyond degree 11.
+2. finish the generic degree-5 complementary `j`-formula;
+3. begin Frey-Kani anti-isometry synthesis beyond degree 11.
