@@ -11,9 +11,14 @@ Each `.sage` file must:
 ## Beyond-paper artifacts
 
 - `verify_degree5_family_structure.sage`: generic branch quadratic,
-  three-node quartic, and normalization conic.
-- `census_degree5_family.sage`: exact degree-5 source curves, maps, and conic
-  solubility over the rational and branch fields.
+  three-node quartic, normalization conic, and canonical branch-field point.
+- `lib/degree5_complement.sage`: exact conic parameterization, off-diagonal
+  pair curve, orientation square classes, branch quartic, and complementary
+  elliptic `j`-invariant.
+- `verify_degree5_complement.sage`: the article specialization and a genuinely
+  quadratic branch-field example.
+- `census_degree5_family.sage`: exact degree-5 source curves, maps, canonical
+  conic points, complementary quartics, and `j`-minimal polynomials.
 - `verify_degree7_kumar_specialization.sage`: rational degree-7 benchmark and
   41 exact Euler-factor identities.
 - `lib/kumar_square_discriminant_families.sage`: exact importer for Kumar's

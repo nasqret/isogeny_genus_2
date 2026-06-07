@@ -47,3 +47,8 @@ generic formula for the complementary \(j\)-invariant that can be specialized
 to the article's value. Consequently, the numerical complementary invariant
 is independently confirmed, but the article's specific comparison to
 "the formulas in Shaska" is not reproducible from the cited source.
+
+The present repository now supplies the missing generic construction
+independently. See
+[`degree5_complement_formula.md`](degree5_complement_formula.md) and
+[`degree5_complement.sage`](../../computations/sage/lib/degree5_complement.sage).

@@ -487,3 +487,28 @@
 - Remote runtimes were `0.050` seconds for the subgroup/genus certificate
   and `0.290` seconds for the degree-7 Galois group, both at `32.09 MB`.
   B011 is complete.
+
+### Generic degree-5 branch-field splitting and complement
+
+- Identified the diagonal critical pair `(c,c)` as a rational point on the
+  divided self-fiber. Projection from the node over zero gives the universal
+  normalization-conic point
+  `m=((a+2*b)c-2*b(2*a+b))/(2*a^2+3*a+4*b)` and the corresponding explicit
+  `y`.
+- SageMath reduces the conic identity and the diagonal self-fiber identity
+  exactly modulo the fourth-critical-point quadratic. Remote Magma repeats
+  the conic substitution over `Q(a)(b,c)` in `0.020` seconds.
+- Implemented the complete orientation quotient from the four square classes
+  `z`, `z-1`, `z-e`, and `s^2-4*p`. Pairwise gcd cancellation produces a
+  squarefree quartic; its binary-quartic invariant gives
+  `j'=256*I^3/discriminant`.
+- The article specialization `(a,b)=(7,1)` returns
+  `j'=-250888806400/56807829`, independently matching the prior Magma
+  reconstruction.
+- The generic invariant lies in `Q(a,b,c)` and is usually quadratic over
+  `Q(a,b)`. At `(a,b)=(1,2)`, the exact minimal polynomial has degree two.
+- Upgraded the ten-row degree-5 census: every row now contains the canonical
+  conic point, complementary branch quartic, `j'`, and its minimal
+  polynomial. Four of the ten displayed rows have quadratic `j'`.
+- B002 and B003 are complete. The next bounded task is Frey-Kani
+  anti-isometry synthesis beyond degree 11.

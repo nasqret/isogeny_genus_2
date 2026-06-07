@@ -1,0 +1,12 @@
+Magma V2.28-3     Sun Jun  7 2026 16:44:29 on lts-faculty [Seed = 1208453679]
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "/tmp/verify_degree5_conic_generic.m"
+SOLUBLE true
+POINT_M (1/2*b + 1/4*a)/(b + (1/2*a^2 + 3/4*a))*c + (-1/2*b^2 - a*b)/(b + 
+    (1/2*a^2 + 3/4*a))
+POINT_Y (-1/2*b^2 + (-1/2*a^2 - 1/4*a)*b + (1/4*a^3 + 1/4*a^2))/(b + (1/2*a^2 + 
+    3/4*a))*c + (-1/2*b^3 - 3/4*a*b^2 + 1/2*a^2*b)/(b + (1/2*a^2 + 3/4*a))
+VERIFIED true
+
+Total time: 0.010 seconds, Total memory usage: 32.09MB

@@ -17,9 +17,11 @@ is complete only after both maps and this splitting are certified exactly.
 ## Implemented frontier
 
 - Generic degree 5: branch quadratic, three-node plane quartic, normalization
-  conic, and exact construction of source curves and maps.
+  conic, canonical branch-field point, exact complementary genus-one
+  quartic, and generic complementary \(j\)-algorithm.
 - Degree-5 census: ten exact primitive covers; all tested normalization conics
-  split over the branch quadratic field and none over Q.
+  are insoluble over Q but split over the branch quadratic field. Every row
+  now includes the exact complementary \(j\)-invariant and minimal polynomial.
 - Degree 6: one rational Kumar specialization with both primitive maps,
   full quadratic-function recovery for the complement, CRT scale lifting,
   independent Magma degrees, and nonexceptional `S6` monodromy.
@@ -212,8 +214,9 @@ implemented in `computations/magma/lib/splitting_kernel.m`.
 
 ## Degree milestones
 
-1. Degree 5: prove or refute generic conic splitting over the branch field;
-   derive \(j(E')\).
+1. Degree 5: complete. The diagonal critical point gives a universal
+   branch-field point on the normalization conic, and the four-divisor
+   square-class algorithm gives the exact generic complementary \(j\).
 2. Degree 6: both primitive maps are recovered and independently checked in
    Magma. The monodromy is \(S_6\), so this specialization is not the
    exceptional \(\operatorname{PGL}_2(\mathbf F_5)\) action.

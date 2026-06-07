@@ -35,3 +35,12 @@ field.
 anti-isometry certificate. `verify_degree6_splitting_kernel.m` and
 `verify_degree8_splitting_kernel.m` recover explicit graph matrices at good
 reduction, enumerate all kernel pairs, and verify inverse Weil pairings.
+
+`verify_degree5_conic_generic.m` certifies the universal branch-field point
+on the degree-5 normalization conic over `Q(a)(b,c)`.
+
+`derive_degree5_complement_j_generic.m` is the full two-parameter expansion
+path for the compact quartic-invariant formula. The compact, routinely
+validated implementation is `computations/sage/lib/degree5_complement.sage`;
+the expanded Magma trace/norm form is intentionally treated as a heavy
+derived artifact.

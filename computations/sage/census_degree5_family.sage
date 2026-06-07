@@ -22,6 +22,7 @@ from time import perf_counter
 
 started = perf_counter()
 root = Path.cwd()
+load(str(root / "computations" / "sage" / "lib" / "degree5_complement.sage"))
 
 P.<A, B, X, T> = PolynomialRing(QQ, 4)
 F1_generic = X^2 + (2*A + 2*B + A^2)*X + 2*A*B + B^2
@@ -115,6 +116,25 @@ for av, bv in parameter_pairs:
         256*(1 - e + e^2)^3/(e^2*(1 - e)^2)
     )
 
+    Qc.<u> = PolynomialRing(QQ)
+    critical_polynomial = degree5_critical_polynomial(
+        QQ, av, bv, u
+    )
+    Kc.<c> = NumberField(critical_polynomial)
+    canonical_point = degree5_canonical_conic_point(
+        Kc, av, bv, c
+    )
+    assert canonical_point["conic_residual"] == 0
+    complement_certificate = degree5_complement_from_conic_point(
+        Kc,
+        av,
+        bv,
+        c,
+        (canonical_point["m"], canonical_point["y"]),
+    )
+    complement_j = complement_certificate["complement_j"]
+    complement_j_polynomial = complement_j.minpoly()
+
     # The normalization conic y^2=L*m^2+M*m+N is equivalent to
     # U^2-4*L*Y^2-D*Z^2=0, where D=M^2-4*L*N.
     L = QQ(av^4 + 2*av^3 + 2*av^2*bv + av^2 + bv^2)
@@ -138,6 +158,26 @@ for av, bv in parameter_pairs:
             "source_polynomial": str(source_polynomial),
             "source_degree": int(source_polynomial.degree()),
             "target_j": str(j_target),
+            "complement": {
+                "critical_polynomial": str(critical_polynomial),
+                "canonical_conic_point": {
+                    "m": str(canonical_point["m"]),
+                    "y": str(canonical_point["y"]),
+                },
+                "branch_quartic": str(
+                    complement_certificate["branch_quartic"]
+                ),
+                "branch_quartic_degree": int(
+                    complement_certificate["branch_quartic"].degree()
+                ),
+                "j": str(complement_j),
+                "j_minimal_polynomial": str(
+                    complement_j_polynomial
+                ),
+                "j_degree": int(
+                    complement_j_polynomial.degree()
+                ),
+            },
             "map": {
                 "x_coordinate_numerator": str(phi_num),
                 "x_coordinate_denominator": str(phi_den),
@@ -183,8 +223,9 @@ result = {
     "examples": examples,
     "scope_note": (
         "Every row is an exact genus-2 curve with a certified degree-5 map. "
-        "The conic test decides whether the off-diagonal quotient admits a "
-        "parametrization over Q or over the branch quadratic field."
+        "The diagonal critical point gives a canonical branch-field "
+        "parametrization of the off-diagonal quotient, from which an exact "
+        "complementary elliptic j-invariant is constructed."
     ),
 }
 

@@ -313,5 +313,15 @@
     "timestamp": "2026-06-07T13:16:00+02:00",
     "claim_id": "B011",
     "summary": "Remote Magma computed S7 monodromy for the compact degree-7 quotient. Its discriminant square class is 2 times the elliptic cubic, so the elliptic base change remains S7."
+  },
+  {
+    "timestamp": "2026-06-07T16:31:16+02:00",
+    "claim_id": "B002",
+    "summary": "Proved generic branch-field splitting of the degree-5 normalization conic by projecting the diagonal critical point; SageMath and remote Magma certify the closed-form point."
+  },
+  {
+    "timestamp": "2026-06-07T16:31:16+02:00",
+    "claim_id": "B003",
+    "summary": "Derived the generic degree-5 complementary j as the binary-quartic invariant of the four orientation divisors, recovered the article value, and constructed quadratic examples over the branch field."
   }
 ]

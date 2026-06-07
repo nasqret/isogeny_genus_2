@@ -125,8 +125,10 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
 
 ### Implemented checkpoint
 
-- Generic degree-5 quartic, three nodes, and normalization conic: exact.
-- Ten exact primitive degree-5 maps over quadratic branch fields: exact.
+- Generic degree-5 quartic, three nodes, normalization conic, canonical
+  branch-field point, and complementary quartic-invariant formula: exact.
+- Ten exact primitive degree-5 maps over quadratic branch fields, including
+  exact complementary \(j\)-invariants and minimal polynomials: exact.
 - One degree-7 split benchmark with 41 Euler-factor identities and both
   primitive maps: exact in SageMath, with independent Magma degree checks.
 - One rational degree-6 benchmark with both primitive maps: exact in
@@ -173,5 +175,4 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
 
 Current bounded tasks, in order:
 
-1. finish the generic degree-5 complementary `j`-formula;
-2. begin Frey-Kani anti-isometry synthesis beyond degree 11.
+1. begin Frey-Kani anti-isometry synthesis beyond degree 11.

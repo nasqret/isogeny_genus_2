@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-06-07T16:01:08+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "remote",
+  "workstream": "B002",
+  "verified": true,
+  "elapsed_seconds": 0.02,
+  "memory_megabytes": 32.09,
+  "critical_polynomial": "(2*a+1)*c^2+(2*b-2*a*b-2*a-a^2)*c+b^2+2*a*b",
+  "normalization_conic": "y^2=L*m^2+M*m+N",
+  "canonical_point": {
+    "denominator": "2*a^2+3*a+4*b",
+    "m": "((a+2*b)*c-2*b*(2*a+b))/(2*a^2+3*a+4*b)",
+    "y": "((a^3-2*a^2*b+a^2-a*b-2*b^2)*c+2*a^2*b-3*a*b^2-2*b^3)/(2*a^2+3*a+4*b)"
+  },
+  "certificate": "Direct exact substitution into the conic over Q(a)(b,c)",
+  "log": "results/remote/magma_degree5_conic_generic.log"
+}

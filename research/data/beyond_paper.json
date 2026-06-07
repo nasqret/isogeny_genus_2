@@ -15,29 +15,42 @@
   {
     "id": "B002",
     "title": "Generic degree-5 normalization and base-field locus",
-    "status": "in_progress",
-    "progress": 70,
+    "status": "completed",
+    "progress": 100,
     "engine": "SageMath+Magma",
     "location": "hybrid",
-    "objective": "Prove the generic three-node quartic and normalization conic, then classify when that conic has a point over Q and over the branch quadratic field.",
+    "objective": "Prove the generic three-node quartic and normalization conic, then construct its canonical point over the branch quadratic field.",
     "artifacts": [
       "computations/sage/verify_degree5_family_structure.sage",
       "computations/sage/census_degree5_family.sage",
       "results/sage_degree5_family_structure.json",
       "results/sage_degree5_family_census.json",
+      "computations/magma/verify_degree5_conic_generic.m",
+      "results/magma_degree5_conic_generic.json",
+      "results/remote/magma_degree5_conic_generic.log",
       "research/reports/degree5_source_audit.md"
     ]
   },
   {
     "id": "B003",
     "title": "Generic degree-5 complementary j formula",
-    "status": "in_progress",
-    "progress": 10,
+    "status": "completed",
+    "progress": 100,
     "engine": "SageMath+Magma",
     "location": "hybrid",
-    "objective": "Parametrize the normalization conic over the branch field and interpolate a certified two-parameter formula for the complementary elliptic j-invariant.",
+    "objective": "Parametrize the normalization conic over the branch field and derive a certified two-parameter quartic-invariant formula for the complementary elliptic j-invariant.",
     "artifacts": [
-      "results/sage_degree5_family_structure.json"
+      "computations/sage/lib/degree5_complement.sage",
+      "computations/sage/verify_degree5_complement.sage",
+      "computations/sage/derive_degree5_complement_slice.sage",
+      "computations/magma/derive_degree5_complement_j_generic.m",
+      "results/sage_degree5_complement.json",
+      "results/sage_degree5_complement_slice_b_2.json",
+      "results/sage_degree5_complement_slice_b_3.json",
+      "results/sage_degree5_complement_slice_b_4.json",
+      "results/sage_degree5_family_census.json",
+      "research/reports/degree5_complement_formula.md",
+      "book/beyond/degree5.md"
     ]
   },
   {

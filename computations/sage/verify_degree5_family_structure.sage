@@ -18,6 +18,7 @@ from time import perf_counter
 
 started = perf_counter()
 root = Path.cwd()
+load(str(root / "computations" / "sage" / "lib" / "degree5_complement.sage"))
 
 R.<a, b, s, p, m> = PolynomialRing(QQ, 5)
 K = R.fraction_field()
@@ -231,6 +232,26 @@ assert normalization_discriminant == (
     * (-af^3 + 2*af*bf + 2*bf^2 + 2*bf)
 )
 
+# The diagonal point (c,c), where c is a root of the fourth-critical-point
+# quadratic, lies on the divided self-fiber.  Its projection gives a
+# universal point on the normalization conic over Q(a,b,c).
+AB0.<a0, b0> = PolynomialRing(QQ, 2)
+F0 = AB0.fraction_field()
+Pc.<C0> = PolynomialRing(F0)
+critical_polynomial = degree5_critical_polynomial(F0, a0, b0, C0).monic()
+Kc.<c0> = Pc.quotient(critical_polynomial)
+canonical_point = degree5_canonical_conic_point(Kc, a0, b0, c0)
+assert canonical_point["conic_residual"] == 0
+assert Kc(
+    base_quartic(
+        a=a0,
+        b=b0,
+        s=2*c0,
+        p=c0^2,
+        m=0,
+    )
+) == 0
+
 elapsed = perf_counter() - started
 result = {
     "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"),
@@ -263,6 +284,16 @@ result = {
         "quadratic_discriminant_factorization": str(
             factor(normalization_discriminant)
         ),
+        "canonical_branch_field_point": {
+            "critical_polynomial": str(critical_polynomial),
+            "m": str(canonical_point["m"]),
+            "y": str(canonical_point["y"]),
+            "source": (
+                "projection of the diagonal critical point "
+                "(s,p)=(2*c,c^2)"
+            ),
+        },
+        "generic_branch_field_splitting": True,
     },
     "genericity_conditions": [
         "a*b*(a+b+1)*(2*a+1) != 0",

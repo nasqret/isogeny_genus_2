@@ -196,5 +196,13 @@ This project reconstructs every computational claim in
   odd degree `15`, and the exact degree-6/7/8 signatures.
 - The compact degree-7 quotient has `S7` monodromy after elliptic base
   change; its discriminant square class is `2*target_cubic`.
-- Current active frontier, in order: B002/B003 generic degree 5 and
-  anti-isometry synthesis.
+- B002 is complete. The diagonal critical pair `(c,c)` gives a universal
+  point on the degree-5 normalization conic over `Q(a,b,c)`, with denominator
+  `2*a^2+3*a+4*b`. This proves generic branch-field splitting.
+- B003 is complete in compact form. Reduce the four orientation divisors
+  `z`, `z-1`, `z-e`, and `s^2-4*p` independently modulo squares, combine
+  them to a squarefree quartic, and use
+  `j'=256*I^3/discriminant`. The invariant generally has degree two over
+  `Q(a,b)`.
+- Current active frontier: Frey-Kani anti-isometry synthesis beyond degree
+  11.

@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-06-07T16:53:24+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 0.460699,
+  "workstream": "B003",
+  "verified": true,
+  "algorithm": "Galois-quotient orientation square class on the canonical branch-field parametrization of the normalization conic",
+  "examples": [
+    {
+      "parameters": {
+        "a": 7,
+        "b": 1
+      },
+      "critical_polynomial": "15*u^2 - 75*u + 15",
+      "canonical_conic_point": {
+        "m": "3/41*c - 10/41",
+        "y": "95/41*c + 25/41"
+      },
+      "component_square_class_degrees": {
+        "z": 4,
+        "z_minus_1": 4,
+        "z_minus_e": 6,
+        "diagonal": 8
+      },
+      "branch_quartic": "t^4 + (-1028640/22469*c + 447500/67407)*t^3 + (96799600/22469*c - 71267690/22469)*t^2 + (-20342906720/202221*c - 26787362620/202221)*t + 193657188400/606663*c + 3736442353775/606663",
+      "complement_j": "-250888806400/56807829",
+      "complement_j_minimal_polynomial": "x + 250888806400/56807829",
+      "complement_j_degree": 1
+    },
+    {
+      "parameters": {
+        "a": 1,
+        "b": 2
+      },
+      "critical_polynomial": "3*u^2 - 3*u + 8",
+      "canonical_conic_point": {
+        "m": "5/13*c - 16/13",
+        "y": "-12/13*c - 24/13"
+      },
+      "component_square_class_degrees": {
+        "z": 4,
+        "z_minus_1": 4,
+        "z_minus_e": 6,
+        "diagonal": 8
+      },
+      "branch_quartic": "t^4 + (-1710/641*c + 9552/641)*t^3 + (-29043/3205*c + 1092936/16025)*t^2 + (31824/16025*c + 1853568/16025)*t + 64368/3205*c + 922752/16025",
+      "complement_j": "1902924663/6545000*c - 3625833671/8181250",
+      "complement_j_minimal_polynomial": "x^2 + 19492046053/32725000*x + 8560545186167023/29218750000",
+      "complement_j_degree": 2
+    }
+  ]
+}
