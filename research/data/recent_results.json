@@ -343,5 +343,10 @@
     "timestamp": "2026-06-07T19:47:54+02:00",
     "claim_id": "B014",
     "summary": "Completed degree-13 Frey-Kani synthesis: a unique branch-set Mobius transformation descends both maps to the fixed F_8009 sextic, Sage verifies degrees 13 and Hasse-Witt eigendirections, and remote Magma independently returns degrees 13 and 13."
+  },
+  {
+    "timestamp": "2026-06-07T19:56:46+02:00",
+    "claim_id": "B019",
+    "summary": "SageMath and remote Magma certified a new degree-17 Frey-Kani graph over F_8263: traces 172 and -117, CM squareclasses -3 and -67, determinant 6, 289 graph points, and quotient Weil polynomial T^4-55*T^3-3598*T^2-454465*T+68277169."
   }
 ]

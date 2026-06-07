@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-06-07T19:56:46+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "lts-faculty.wmi.amu.edu.pl",
+  "workstream": "B019",
+  "verified": true,
+  "field": "F_8263",
+  "degree": 17,
+  "curve_cardinalities": [
+    8092,
+    8381
+  ],
+  "group_invariants": [
+    [34, 238],
+    [17, 493]
+  ],
+  "anti_isometry_matrix": [
+    [1, 0],
+    [0, 6]
+  ],
+  "compatible_matrix_count": 4896,
+  "graph_size": 289,
+  "cm_squareclasses": [
+    -3,
+    -67
+  ],
+  "quotient_weil_polynomial": "T^4 - 55*T^3 - 3598*T^2 - 454465*T + 68277169",
+  "artifact": "computations/magma/verify_degree17_anti_isometry.m",
+  "transcript": "results/remote/magma_degree17_anti_isometry.log",
+  "success_marker": "B019_DEGREE17_ANTI_ISOMETRY_VERIFIED"
+}

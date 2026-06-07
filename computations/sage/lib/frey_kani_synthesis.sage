@@ -7,6 +7,174 @@ value that inverts the two basis Weil pairings.
 """
 
 
+def admissible_full_torsion_traces(prime, field_order):
+    """
+    Return Hasse traces compatible with full rational prime-torsion.
+
+    If E[prime] is rational over F_q, then q is 1 modulo prime and
+    prime^2 divides #E(F_q)=q+1-trace.
+    """
+    prime = ZZ(prime)
+    field_order = ZZ(field_order)
+    assert prime.is_prime()
+    assert field_order.is_prime()
+    assert field_order % prime == 1
+
+    hasse_bound = ZZ(4*field_order).isqrt()
+    modulus = prime^2
+    minimum_multiplier = (
+        (field_order + 1 - hasse_bound + modulus - 1)//modulus
+    )
+    maximum_multiplier = (
+        field_order + 1 + hasse_bound
+    )//modulus
+    return [
+        field_order + 1 - modulus*multiplier
+        for multiplier in range(
+            minimum_multiplier,
+            maximum_multiplier + 1,
+        )
+        if abs(
+            field_order + 1 - modulus*multiplier
+        ) <= hasse_bound
+    ]
+
+
+def has_full_rational_prime_torsion(elliptic_curve, prime):
+    """Test whether E(F_q) contains (Z/prime Z)^2."""
+    prime = ZZ(prime)
+    invariants = elliptic_curve.abelian_group().invariants()
+    return (
+        len(invariants) == 2
+        and all(value % prime == 0 for value in invariants)
+    )
+
+
+def deterministic_prime_torsion_basis(elliptic_curve, prime):
+    """Return a reproducible basis of full rational prime-torsion."""
+    prime = ZZ(prime)
+    assert has_full_rational_prime_torsion(
+        elliptic_curve,
+        prime,
+    )
+    finite_field = elliptic_curve.base_field()
+    assert finite_field.is_prime_field()
+    invariants = elliptic_curve.abelian_group().invariants()
+    projector = ZZ(max(invariants)//prime)
+
+    first = None
+    for x_integer in range(finite_field.cardinality()):
+        x_value = finite_field(x_integer)
+        rhs = (
+            x_value^3
+            + elliptic_curve.a4()*x_value
+            + elliptic_curve.a6()
+        )
+        if not rhs.is_square():
+            continue
+        y_value = rhs.sqrt()
+        if ZZ(-y_value) < ZZ(y_value):
+            y_value = -y_value
+        point = projector*elliptic_curve(x_value, y_value)
+        if point == elliptic_curve(0):
+            continue
+        assert point.order() == prime
+        if first is None:
+            first = point
+            continue
+        pairing = first.weil_pairing(point, prime)
+        if pairing.multiplicative_order() == prime:
+            return first, point
+
+    raise ValueError("failed to find a rational prime-torsion basis")
+
+
+def search_prime_frey_kani_curves(
+    prime,
+    field_order,
+    curves_per_trace=1,
+):
+    """
+    Search the prime-field j-line for full rational prime-torsion curves.
+
+    Both the canonical model returned by EllipticCurve_from_j and its
+    quadratic twist are tested. The output is grouped by Frobenius trace.
+    """
+    prime = ZZ(prime)
+    field_order = ZZ(field_order)
+    curves_per_trace = ZZ(curves_per_trace)
+    assert curves_per_trace >= 1
+
+    finite_field = GF(field_order)
+    traces = admissible_full_torsion_traces(prime, field_order)
+    target_orders = {
+        field_order + 1 - trace: trace for trace in traces
+    }
+    answers = {trace: [] for trace in traces}
+    seen_models = set()
+    twist_parameter = finite_field.multiplicative_generator()
+    assert not twist_parameter.is_square()
+
+    for j_integer in range(field_order):
+        curve = EllipticCurve_from_j(finite_field(j_integer))
+        for model in (
+            curve,
+            curve.quadratic_twist(twist_parameter),
+        ):
+            model_key = (
+                model.a4(),
+                model.a6(),
+                model.cardinality(),
+            )
+            if model_key in seen_models:
+                continue
+            seen_models.add(model_key)
+            cardinality = model_key[2]
+            if cardinality not in target_orders:
+                continue
+            trace = target_orders[cardinality]
+            if len(answers[trace]) >= curves_per_trace:
+                continue
+            if not has_full_rational_prime_torsion(model, prime):
+                continue
+            answers[trace].append(
+                {
+                    "curve": model,
+                    "j": model.j_invariant(),
+                    "trace": trace,
+                    "cardinality": cardinality,
+                    "group_invariants": (
+                        model.abelian_group().invariants()
+                    ),
+                    "torsion_basis": (
+                        deterministic_prime_torsion_basis(
+                            model,
+                            prime,
+                        )
+                    ),
+                    "cm_squareclass": ZZ(
+                        trace^2 - 4*field_order
+                    ).squarefree_part(),
+                }
+            )
+        if all(
+            len(entries) >= curves_per_trace
+            for entries in answers.values()
+        ):
+            break
+
+    return {
+        "prime": prime,
+        "field_order": field_order,
+        "admissible_traces": traces,
+        "curves_by_trace": answers,
+        "complete": all(
+            len(entries) >= curves_per_trace
+            for entries in answers.values()
+        ),
+    }
+
+
 def fixed_determinant_matrices(prime, determinant):
     """Enumerate GL(2,F_prime) matrices with the prescribed determinant."""
     field = GF(prime)

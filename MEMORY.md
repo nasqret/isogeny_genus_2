@@ -234,3 +234,12 @@ This project reconstructs every computational claim in
   seconds and `32.09 MB`.
 - Current active frontier: parameterize the prime-degree Frey-Kani search and
   run it in degrees 17 and 19.
+- The prime-degree search is now deterministic: admissible traces are
+  filtered arithmetically, quadratic twists use a fixed primitive element,
+  and torsion bases come from a lexicographic point scan plus primitive Weil
+  pairing.
+- B019 has a certified degree-17 graph over `F_8263`. The curves
+  `y^2=x^3+1728` and `y^2=x^3+6442*x+3171` have traces `172,-117`,
+  CM squareclasses `-3,-67`, and anti-isometry matrix `diag(1,6)`.
+- The graph has `289` points and quotient Weil polynomial
+  `T^4-55*T^3-3598*T^2-454465*T+68277169`. SageMath and remote Magma agree.

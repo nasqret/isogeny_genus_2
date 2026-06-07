@@ -94,6 +94,9 @@ Local exact computations live under `computations/sage/`.
   unique branch-set Möbius transport, coefficientwise descent to `F_8009`,
   exact target identities, and Hasse-Witt eigendirection checks for both
   degree-13 maps.
+- [`verify_degree17_anti_isometry.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/verify_degree17_anti_isometry.sage):
+  deterministic prime-field search and exact degree-17 Frey-Kani graph
+  certificate over `F_8263`.
 - [`export_degree10_11_magma.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/export_degree10_11_magma.sage):
   deterministic export of the recovered exact coefficients to static Magma
   verification programs.
@@ -107,6 +110,9 @@ Local exact computations live under `computations/sage/`.
   independently constructs both descended morphisms over `F_8009`, verifies
   their equations and differential pullbacks, and computes degrees `13` and
   `13`.
+- [`verify_degree17_anti_isometry.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree17_anti_isometry.m):
+  independently verifies both full `17`-torsion bases, determinant `6`,
+  the `289`-point graph, CM squareclasses, and quotient Weil polynomial.
 
 Remote computations live under `computations/magma/` and execute with Magma
 V2.28-3 on `lts-faculty.wmi.amu.edu.pl`.

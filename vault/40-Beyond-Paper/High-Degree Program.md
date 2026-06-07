@@ -23,7 +23,9 @@ above, with a degree-independent fallback and exact arithmetic certificates.
 - Degrees 9-11: rational primitive map pairs complete.
 - Degree 13: anti-isometry, theta quotient, explicit genus-2 curve, both
   maps, base-field descent, and independent Magma verification complete.
-- Degrees 17 and 19: next prime-degree synthesis search.
+- Degree 17: deterministic anti-isometry graph over `F_8263` complete;
+  quotient and map reconstruction active.
+- Degree 19: next prime-degree synthesis search.
 - Degrees 20 and 80: exact nonprimitive test maps complete.
 
 See `research/reports/high_degree_roadmap.md` and

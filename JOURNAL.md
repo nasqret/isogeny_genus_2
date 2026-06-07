@@ -609,3 +609,21 @@
   `results/magma_degree13_maps.json`, and the remote transcript.
 - B014 is complete. The next construction frontier is a parameterized
   prime-degree search in degrees `17` and `19`.
+
+### Deterministic prime-degree search and degree 17
+
+- Added admissible-trace enumeration from the necessary conditions
+  `q=1 mod n` and `n^2 | q+1-t`.
+- Added deterministic j-line search, explicit fixed quadratic twisting, and
+  lexicographic full-torsion basis recovery by Weil pairing.
+- The first degree-17 field with two admissible trace classes is `F_8263`,
+  with traces `172` and `-117`.
+- Selected
+  `E1: y^2=x^3+1728`, group `(34,238)`, and
+  `E2: y^2=x^3+6442*x+3171`, group `(17,493)`.
+- Their CM squareclasses are `-3` and `-67`. The deterministic bases require
+  anti-isometry matrix `diag(1,6)`.
+- SageMath and remote Magma independently certify `4896` compatible
+  matrices, a graph of `17^2=289` points, and quotient Weil polynomial
+  `T^4-55*T^3-3598*T^2-454465*T+68277169`.
+- B019 starts at `35%`; quotient reconstruction and both maps remain.
