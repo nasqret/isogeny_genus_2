@@ -97,6 +97,14 @@ Local exact computations live under `computations/sage/`.
 - [`verify_degree17_anti_isometry.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/verify_degree17_anti_isometry.sage):
   deterministic prime-field search and exact degree-17 Frey-Kani graph
   certificate over `F_8263`.
+- [`reconstruct_degree17_theta.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/reconstruct_degree17_theta.sage):
+  degree-17 theta quotient, invariant descent, and exact certification of a
+  fixed genus-2 model over `F_8263`.
+- [`lib/frey_kani_map_recovery.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/lib/frey_kani_map_recovery.sage):
+  configuration-driven dual-kernel recovery, exact level-2 theta evaluation,
+  rational interpolation, and full function-field certification.
+- [`recover_degree17_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/recover_degree17_maps.sage):
+  degree-17 specialization with 42 deterministic interpolation samples.
 - [`export_degree10_11_magma.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/export_degree10_11_magma.sage):
   deterministic export of the recovered exact coefficients to static Magma
   verification programs.
@@ -113,6 +121,9 @@ Local exact computations live under `computations/sage/`.
 - [`verify_degree17_anti_isometry.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree17_anti_isometry.m):
   independently verifies both full `17`-torsion bases, determinant `6`,
   the `289`-point graph, CM squareclasses, and quotient Weil polynomial.
+- [`reconstruct_degree17_curve.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/reconstruct_degree17_curve.m):
+  independently reconstructs the degree-17 quotient from its invariants,
+  selects its twist by the L-polynomial, and checks the fixed sextic.
 
 Remote computations live under `computations/magma/` and execute with Magma
 V2.28-3 on `lts-faculty.wmi.amu.edu.pl`.

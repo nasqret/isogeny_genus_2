@@ -353,5 +353,10 @@
     "timestamp": "2026-06-07T19:59:00+02:00",
     "claim_id": "B019",
     "summary": "The parameterized theta-gluing engine computed the degree-17 Rosenhain quotient over F_(8263^12); its absolute Igusa invariants are (893,1328,7156) and descend to F_8263."
+  },
+  {
+    "timestamp": "2026-06-07T20:46:37+02:00",
+    "claim_id": "B019",
+    "summary": "SageMath and remote Magma independently certified the fixed degree-17 quotient y^2=5422*x^6+4306*x^5+4875*x^4+5667*x^3+6314*x^2+4554*x+6050 over F_8263, with Kohel invariants (893,1328,7156) and the required Weil polynomial."
   }
 ]

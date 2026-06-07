@@ -60,3 +60,9 @@ curve used by the Sage artifact.
 morphisms from the fixed `F_8009` sextic to the elliptic curves with
 j-invariants `81` and `3213`. It verifies the target identities,
 differential pullbacks, and degrees `13` and `13`.
+
+`verify_degree17_anti_isometry.m` independently certifies the full rational
+`17`-torsion graph over `F_8263`. `reconstruct_degree17_curve.m` then applies
+Mestre reconstruction to normalized Igusa-Clebsch invariants, selects the
+correct twist by its L-polynomial, and certifies the fixed base-field
+sextic.

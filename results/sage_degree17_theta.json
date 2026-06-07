@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-07T19:59:49+02:00",
+  "generated_at": "2026-06-07T20:46:12+02:00",
   "engine": "SageMath 10.8",
-  "elapsed_seconds": 3.514242,
+  "elapsed_seconds": 6.14967,
   "workstream": "B019",
   "verified": true,
-  "scope": "explicit degree-17 Frey-Kani theta quotient",
+  "scope": "explicit degree-17 Frey-Kani quotient curve",
   "field": "GF(8263)",
   "degree": 17,
   "theta_extension_degree": 12,
@@ -37,5 +37,22 @@
     7156
   ],
   "absolute_invariants_frobenius_fixed": true,
-  "remaining_step": "reconstruct a fixed F_8263 model and recover both degree-17 maps"
+  "base_field_curve": {
+    "equation": "y^2=5422*x^6+4306*x^5+4875*x^4+5667*x^3+6314*x^2+4554*x+6050",
+    "squarefree": true,
+    "genus": 2,
+    "absolute_igusa_invariants": [
+      893,
+      1328,
+      7156
+    ],
+    "frobenius_polynomial": "x^4 - 55*x^3 - 3598*x^2 - 454465*x + 68277169"
+  },
+  "certificate": {
+    "theta_quotient_computed": true,
+    "moduli_descend_to_base_field": true,
+    "base_model_matches_moduli": true,
+    "base_model_matches_quotient_weil_polynomial": true
+  },
+  "remaining_step": "recover and descend both degree-17 maps"
 }

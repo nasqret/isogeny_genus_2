@@ -508,6 +508,40 @@ returns degree $13$ for each. The base-field formulas are stored in
 `results/sage_degree13_descended_maps.json`, with the independent certificate
 in `results/magma_degree13_maps.json`.
 
+## Degree 17: new synthesized quotient
+
+The deterministic prime-degree search finds full rational $17$-torsion on
+
+$$
+E_1:y^2=x^3+1728,\qquad
+E_2:y^2=x^3+6442x+3171
+$$
+
+over $\mathbf F_{8263}$. The matrix $\operatorname{diag}(1,6)$ reverses the
+Weil pairing in the stored bases. Distinct CM squareclasses $-3$ and $-67$
+force Frey--Kani irreducibility.
+
+The theta quotient has absolute Igusa invariants $(893,1328,7156)$ and fixed
+base-field model
+
+$$
+\begin{aligned}
+C_{17}:\quad y^2={}&5422x^6+4306x^5+4875x^4+5667x^3\\
+&+6314x^2+4554x+6050.
+\end{aligned}
+$$
+
+Both SageMath and Magma certify its Frobenius polynomial
+
+$$
+T^4-55T^3-3598T^2-454465T+68277169.
+$$
+
+The reusable map-recovery engine takes the prime, field, elliptic factors,
+torsion bases, graph matrix, fixed sextic, and Hasse-Witt eigendirections as
+configuration data. The degree-17 specialization uses 42 deterministic
+points, compared with 34 in degree 13.
+
 ## Fixed-field quotient equations
 
 For any compact quotient with rational coordinate

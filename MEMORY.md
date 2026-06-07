@@ -243,3 +243,8 @@ This project reconstructs every computational claim in
   CM squareclasses `-3,-67`, and anti-isometry matrix `diag(1,6)`.
 - The graph has `289` points and quotient Weil polynomial
   `T^4-55*T^3-3598*T^2-454465*T+68277169`. SageMath and remote Magma agree.
+- The degree-17 quotient has absolute Kohel invariants `(893,1328,7156)`.
+  The fixed `F_8263` model is
+  `y^2=5422*x^6+4306*x^5+4875*x^4+5667*x^3+6314*x^2+4554*x+6050`.
+- SageMath and remote Magma independently certify that model's moduli and
+  Weil polynomial. B019 is at `75%`; both degree-17 maps remain.

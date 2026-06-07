@@ -58,6 +58,15 @@ Each `.sage` file must:
 - `descend_degree13_maps.sage`: finds the unique branch-set Möbius
   isomorphism, transports both maps to the fixed sextic, descends every
   coefficient to `F_8009`, and verifies both Hasse-Witt eigendirections.
+- `verify_degree17_anti_isometry.sage`: deterministically finds and certifies
+  a full rational `17`-torsion graph over `F_8263`.
+- `reconstruct_degree17_theta.sage`: computes the degree-17 theta quotient
+  over `F_(8263^12)` and certifies the fixed `F_8263` genus-2 model,
+  absolute invariants, and Weil polynomial.
+- `lib/frey_kani_map_recovery.sage`: configuration-driven dual-theta
+  evaluation and rational-interpolation engine for both Frey-Kani maps.
+- `recover_degree17_maps.sage`: degree-17 configuration using 42 exact
+  evaluations over `F_(8263^24)`.
 
 The theta reconstruction uses the GPL-3.0 Sage branch of AVIsogenies at
 commit `e488a54304a5b5bcd0ae8c58d0ab82aeb02d6746`. Install the pinned external

@@ -42,6 +42,7 @@ subfield.
 | Two degree-13 elliptic maps on the Rosenhain quotient | 34 exact theta evaluations, degree-13 interpolation, elliptic function-field identities, and linear differential pullbacks over $\mathbf F_{8009^{24}}$ | `recover_degree13_maps.sage`, `sage_degree13_maps.json` |
 | Descended degree-13 map pair over $\mathbf F_{8009}$ | Unique branch-set Möbius class, coefficientwise Frobenius descent, Hasse--Witt eigendirections, and independent Magma degrees $13,13$ | `descend_degree13_maps.sage`, `verify_degree13_maps.m` |
 | Degree-17 Frey--Kani graph over $\mathbf F_{8263}$ | Deterministic j-line search, full rational $17$-torsion bases, anti-isometry determinant $6$, distinct CM fields, and a $289$-point graph | `verify_degree17_anti_isometry.sage`, `verify_degree17_anti_isometry.m` |
+| Degree-17 Frey--Kani quotient curve | Exact theta quotient, invariant descent, fixed base-field sextic, and independent Sage/Magma Weil certificates | `reconstruct_degree17_theta.sage`, `reconstruct_degree17_curve.m` |
 | Degree $20$ and $80$ maps from elliptic multiplication | Exact, nonprimitive | `verify_composed_high_degree_maps.sage` |
 
 The machine-readable program is

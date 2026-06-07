@@ -371,19 +371,24 @@
     "id": "B019",
     "title": "Prime-degree Frey-Kani synthesis in degree 17",
     "status": "in_progress",
-    "progress": 55,
+    "progress": 75,
     "engine": "SageMath+Magma",
     "location": "hybrid",
     "objective": "Search deterministically for full rational 17-torsion pairs, certify an irreducible anti-isometry graph, reconstruct the genus-2 quotient, and recover both primitive degree-17 maps.",
     "artifacts": [
       "computations/sage/lib/frey_kani_synthesis.sage",
+      "computations/sage/lib/frey_kani_map_recovery.sage",
       "computations/sage/verify_degree17_anti_isometry.sage",
       "computations/sage/reconstruct_degree17_theta.sage",
+      "computations/sage/recover_degree17_maps.sage",
       "computations/magma/verify_degree17_anti_isometry.m",
+      "computations/magma/reconstruct_degree17_curve.m",
       "results/sage_degree17_anti_isometry.json",
       "results/sage_degree17_theta.json",
       "results/magma_degree17_anti_isometry.json",
-      "results/remote/magma_degree17_anti_isometry.log"
+      "results/magma_degree17_curve.json",
+      "results/remote/magma_degree17_anti_isometry.log",
+      "results/remote/magma_degree17_curve.log"
     ]
   }
 ]

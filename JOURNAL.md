@@ -631,3 +631,18 @@
   computes a Rosenhain quotient over `F_(8263^12)` whose absolute Igusa
   invariants are `(893,1328,7156)`, all fixed by `8263`-Frobenius.
 - B019 is now `55%`; next are a fixed base-field model and both maps.
+
+### Degree-17 base-field quotient
+
+- Converted the Kohel invariants `(893,1328,7156)` to normalized
+  Igusa-Clebsch invariants `(1,4851,430,7240)`.
+- Magma's Mestre reconstruction and L-polynomial twist test produced the
+  fixed representative
+  `y^2=5422*x^6+4306*x^5+4875*x^4+5667*x^3+6314*x^2+4554*x+6050`.
+- SageMath independently verifies squarefreeness, genus two, the same
+  absolute invariants, and Frobenius polynomial
+  `T^4-55*T^3-3598*T^2-454465*T+68277169`.
+- Remote Magma independently verifies the G2 invariants
+  `(4393,3171,8140)` and the reciprocal L-polynomial in `0.875` seconds.
+- B019 is now `75%`. Recovery and descent of both primitive degree-17 maps
+  remain.

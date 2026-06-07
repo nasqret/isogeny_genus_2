@@ -526,6 +526,46 @@ Weil polynomial. Both degree-$13$ maps have now been recovered, transported
 to this fixed model, descended to $\mathbf F_{8009}$, and independently
 certified in Magma.
 
+The same engine produces a degree-$17$ graph over $\mathbf F_{8263}$ from
+
+$$
+E_1:y^2=x^3+1728,\qquad
+E_2:y^2=x^3+6442x+3171.
+$$
+
+The traces are $172$ and $-117$, their CM squareclasses are $-3$ and $-67$,
+and the anti-isometry matrix is
+
+$$
+\begin{pmatrix}
+1&0\\
+0&6
+\end{pmatrix}
+\pmod {17}.
+$$
+
+The graph has $17^2=289$ points. The quotient Weil polynomial is
+
+$$
+T^4-55T^3-3598T^2-454465T+68277169.
+$$
+
+Its absolute Igusa invariants are $(893,1328,7156)$. Independent SageMath
+and Magma reconstruction gives the fixed base-field curve
+
+$$
+\begin{aligned}
+C_{17}:\quad y^2={}&5422x^6+4306x^5+4875x^4+5667x^3\\
+&+6314x^2+4554x+6050.
+\end{aligned}
+$$
+
+Map recovery is degree-independent. For prime $n$, the engine recovers two
+dual-kernel Mumford divisors, evaluates the dual theta isogeny on at least
+$2n+1$ deterministic points, interpolates rational functions of degree at
+most $n$, and proves the two elliptic equations as identities. The degree-17
+run uses 42 samples over $\mathbf F_{8263^{24}}$.
+
 ## Degree program
 
 | Degree | Immediate target |
@@ -537,7 +577,7 @@ certified in Magma.
 | 9 | Both primitive maps, CRT centers, and full $S_9$ monodromy complete |
 | 10 | Both primitive maps complete; target isogeny obstruction excludes degree $5$ followed by a 2-isogeny |
 | 11 | Both primitive maps complete on a rational point of Kumar's $Y_-(121)$ |
-| $>11$ | Degree-13 synthesis complete; parameterize the search and synthesize degrees 17 and 19 |
+| $>11$ | Degree-13 synthesis complete; degree-17 quotient complete and maps in progress; degree 19 next |
 
 ## Degree 10 and degree 11
 

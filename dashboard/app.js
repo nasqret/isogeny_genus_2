@@ -85,7 +85,7 @@ function renderJobs(jobs) {
   const element = document.querySelector("#remote-jobs");
   if (!jobs.length) {
     element.innerHTML =
-      '<div class="empty-state">No remote Magma jobs are running. Completed transcripts are preserved under results/remote/.</div>';
+      '<div class="empty-state">No tracked computations are running. Completed transcripts are preserved under results/.</div>';
     return;
   }
   element.innerHTML = jobs
