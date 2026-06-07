@@ -1,0 +1,40 @@
+PHASE_START theta_quotient
+PHASE_DONE theta_quotient 10.161865
+PHASE_START dual_kernel_recovery
+PHASE_DONE dual_kernel_recovery 0.106128
+PHASE_START level2_kernel_preparation
+PHASE_DONE level2_kernel_preparation 0.219688
+PHASE_START sample_selection
+PHASE_DONE sample_selection 0.028568
+PHASE_START sample_theta_conversion
+PHASE_DONE sample_theta_conversion 1.451487
+PHASE_START dual_isogeny_evaluation
+Traceback (most recent call last):
+  File "<string>", line 287, in explicit_root_isogeny
+  File "sage/rings/finite_rings/element_base.pyx", line 941, in sage.rings.finite_rings.element_base.FinitePolyExtElement.nth_root
+    return self._nth_root_common(n, all, algorithm, cunningham)
+  File "sage/rings/finite_rings/element_base.pyx", line 82, in sage.rings.finite_rings.element_base.FiniteRingElement._nth_root_common
+    raise ValueError("no nth root")
+ValueError: no nth root
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/airbartek/codex/isogeny_genus_2/computations/sage/benchmark_degree13_explicit_roots.sage.py", line 38, in <module>
+    load(
+    ~~~~^
+        str(
+        ^^^^
+    ...<5 lines>...
+        )
+        ^
+    )
+    ^
+  File "sage/misc/persist.pyx", line 189, in sage.misc.persist.load
+    sage.repl.load.load(filename, globals())
+  File "/var/tmp/sage-10.8-current/local/lib/python3.13/site-packages/sage/repl/load.py", line 288, in load
+    exec(preparse_file(f.read()) + "\n", globals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 556, in <module>
+  File "<string>", line 289, in explicit_root_isogeny
+RuntimeError: Compatible lift 2 is not a 13-th power in the level-2 field.

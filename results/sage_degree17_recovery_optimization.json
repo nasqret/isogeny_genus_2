@@ -1,0 +1,38 @@
+{
+  "workstream": "B022",
+  "status": "verified",
+  "generated_at": "2026-06-07T20:13:37.464891+00:00",
+  "degree": 17,
+  "sample_count": 42,
+  "compatible_lift_root_count": 87,
+  "root_extension_degree": 17,
+  "baseline": {
+    "strategy": "symbolic_quotient_ring",
+    "runtime_seconds": 384.8117027282715
+  },
+  "optimized": {
+    "strategy": "explicit_degree_prime_extension",
+    "runtime_seconds": 272.3381941318512,
+    "dual_isogeny_seconds": 253.19950275000883,
+    "runtime_reduction_percent": 29.22819337327732,
+    "runtime_speedup_factor": 1.4129920481956593
+  },
+  "map_equivalence": [
+    {
+      "factor_index": 0,
+      "x_coordinate_identical": true,
+      "target_y_sign": 1,
+      "y_coordinate_equivalent": true,
+      "differential_equivalent": true
+    },
+    {
+      "factor_index": 1,
+      "x_coordinate_identical": true,
+      "target_y_sign": -1,
+      "y_coordinate_equivalent": true,
+      "differential_equivalent": true
+    }
+  ],
+  "all_final_coordinates_descended": true,
+  "all_map_certificates_verified": true
+}

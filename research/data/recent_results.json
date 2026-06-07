@@ -408,5 +408,20 @@
     "timestamp": "2026-06-07T21:46:17+02:00",
     "claim_id": "B021",
     "summary": "Completed degree-23 synthesis: both maps descend directly with X-degree pairs (23,23), and remote Magma independently returns degrees 23 and 23."
+  },
+  {
+    "timestamp": "2026-06-07T21:48:00+02:00",
+    "claim_id": "B022",
+    "summary": "Instrumented the general map-recovery engine with nine flushed phase markers and machine-readable phase timings; the next benchmark will isolate the dominant degree-13 phase before optimization."
+  },
+  {
+    "timestamp": "2026-06-07T22:06:48+02:00",
+    "claim_id": "B022",
+    "summary": "Certified the common-extension evaluator in degree 13: all 71 compatible-lift roots exist in one degree-13 extension, all final image coordinates descend, both X-maps are identical to baseline, the Y-maps differ only by signs (1,-1), total runtime drops 33.25%, and dual-isogeny time drops 36.42%."
+  },
+  {
+    "timestamp": "2026-06-07T22:14:00+02:00",
+    "claim_id": "B022",
+    "summary": "Completed B022 after degree-17 cross-validation: 87 roots in one degree-17 extension, exact X-map agreement, Y-signs (1,-1), all map identities certified, and total runtime reduced from 384.812 to 272.338 seconds (29.23%). The common-extension evaluator is now the default."
   }
 ]

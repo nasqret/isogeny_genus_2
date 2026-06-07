@@ -185,7 +185,6 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
 
 Current bounded tasks, in order:
 
-1. optimize batched dual-theta evaluation, the dominant runtime cost;
-2. formalize the general odd-prime descent-cocycle theorem and algorithm;
-3. derive a predictive complexity model from degrees 13, 17, 19, and 23;
-4. extend synthesis to degree 29 after the recovery optimization.
+1. formalize the general odd-prime descent-cocycle theorem and algorithm;
+2. extend synthesis to degree 29 with the optimized evaluator;
+3. compare measured degree-29 scaling with the symbolic extrapolation.

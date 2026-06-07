@@ -603,6 +603,47 @@ The completed runs give the following scaling data:
 Thus exact map recovery, not quotient reconstruction or descent, is the
 dominant cost. The observed sample rule is $2n+8$.
 
+### Optimized dual-theta evaluation
+
+The original AVIsogenies evaluator adjoins one formal $n$-th root for every
+compatible lift. For $s$ samples in dimension two this introduces
+$2s+3$ formal generators: 71 in degree 13 and 87 in degree 17.
+
+The optimized evaluator replaces this quotient polynomial ring by one finite
+extension. Let the level-2 field have order $q$, and let $n=\ell$ be an odd
+prime with $q\equiv1\pmod\ell$. Every $a\in\mathbf F_q$ has an $\ell$-th
+root in $\mathbf F_{q^\ell}$. Indeed, the exponent of its embedded image is
+multiplied by
+
+$$
+1+q+\cdots+q^{\ell-1},
+$$
+
+which is divisible by $\ell$.
+
+The implementation therefore chooses every compatible root in the single
+field $\mathbf F_{q^\ell}$, executes the unchanged kernel-table recurrence,
+raises the resulting theta coordinates to the $\ell$-th power, and accepts
+the result only if every final coordinate descends coefficient by coefficient
+to $\mathbf F_q$.
+
+Exact regression certificates compare the resulting maps with the symbolic
+quotient-ring baseline:
+
+| degree | formal roots | baseline seconds | optimized seconds | reduction |
+|---:|---:|---:|---:|---:|
+| 13 | 71 | 173.008 | 115.487 | 33.25% |
+| 17 | 87 | 384.812 | 272.338 | 29.23% |
+
+In both cases the two X-coordinates are identical. The Y-coordinate signs
+are $[1,-1]$, and the pulled-back invariant differentials change by the same
+signs, so the maps differ only by the target involution on the second factor.
+All interpolation samples and elliptic identities remain exact.
+
+The common-extension strategy is now the default general evaluator.
+The symbolic quotient-ring strategy remains available as an independent
+regression oracle.
+
 ## Degree program
 
 | Degree | Immediate target |

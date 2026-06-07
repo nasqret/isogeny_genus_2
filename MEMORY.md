@@ -283,3 +283,19 @@ This project reconstructs every computational claim in
 - Both maps descend directly with degree pairs `(23,23)` and normalized
   differential directions `[1,19333]`, `[1,19653]`.
 - Remote Magma independently returns degrees `23,23` in `0.178` seconds.
+- B022 instruments map recovery with flushed phase markers and JSON timings.
+  Degree 13 shows the dual isogeny consumes `157.980/173.008` seconds.
+- Dictionary lookup regresses the evaluator by `11.78%`; retain linear exact
+  addition matching.
+- One common degree-13 root extension replaces 71 formal adjunctions and
+  cuts total degree-13 runtime by `33.25%`. Exact comparison preserves both
+  X-maps and changes only the second target Y-sign.
+- B022 is at `70%`; degree 17 is the cross-degree gate before making the
+  common-extension evaluator the default.
+- B022 is complete. Degree 17 confirms exact X-map agreement, Y-signs
+  `[1,-1]`, and a `29.23%` total runtime reduction.
+- General root-field fact: when `q = 1 mod ell`, every element of `F_q` has
+  an `ell`-th root in `F_(q^ell)`. The evaluator checks all final coordinates
+  descend before accepting a result.
+- `explicit_degree_prime_extension` is the default recovery strategy;
+  `symbolic_quotient_ring` is retained as a regression oracle.

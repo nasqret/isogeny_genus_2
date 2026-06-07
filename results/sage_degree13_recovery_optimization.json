@@ -1,0 +1,48 @@
+{
+  "workstream": "B022",
+  "status": "verified",
+  "generated_at": "2026-06-07T20:06:37.404359+00:00",
+  "degree": 13,
+  "sample_count": 34,
+  "compatible_lift_root_count": 71,
+  "root_extension_degree": 13,
+  "baseline": {
+    "strategy": "symbolic_quotient_ring",
+    "runtime_seconds": 173.00756406784058,
+    "dual_isogeny_seconds": 157.98011537500133
+  },
+  "rejected_lookup": {
+    "strategy": "projective_key_dictionary",
+    "runtime_seconds": 192.13138580322266,
+    "dual_isogeny_seconds": 176.59132970799692,
+    "runtime_regression_percent": 11.053748914633088,
+    "dual_isogeny_regression_percent": 11.780732207225997
+  },
+  "optimized": {
+    "strategy": "explicit_degree_prime_extension",
+    "runtime_seconds": 115.48717498779297,
+    "dual_isogeny_seconds": 100.45055770900217,
+    "runtime_reduction_percent": 33.247326144360045,
+    "dual_isogeny_reduction_percent": 36.41569543701105,
+    "runtime_speedup_factor": 1.4980673315987472,
+    "dual_isogeny_speedup_factor": 1.5727151643364494
+  },
+  "map_equivalence": [
+    {
+      "factor_index": 0,
+      "x_coordinate_identical": true,
+      "target_y_sign": 1,
+      "y_coordinate_equivalent": true,
+      "differential_equivalent": true
+    },
+    {
+      "factor_index": 1,
+      "x_coordinate_identical": true,
+      "target_y_sign": -1,
+      "y_coordinate_equivalent": true,
+      "differential_equivalent": true
+    }
+  ],
+  "all_final_coordinates_descended": true,
+  "all_map_certificates_verified": true
+}

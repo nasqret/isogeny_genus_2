@@ -1,0 +1,25 @@
+PHASE_START theta_quotient
+PHASE_DONE theta_quotient 16.697977
+PHASE_START dual_kernel_recovery
+PHASE_DONE dual_kernel_recovery 0.113898
+PHASE_START level2_kernel_preparation
+PHASE_DONE level2_kernel_preparation 0.202500
+PHASE_START sample_selection
+PHASE_DONE sample_selection 0.036633
+PHASE_START sample_theta_conversion
+PHASE_DONE sample_theta_conversion 1.749705
+PHASE_START dual_isogeny_evaluation
+EXPLICIT_ROOTS verified 87 extension_degree 17
+PHASE_DONE dual_isogeny_evaluation 253.199503
+PHASE_START target_factorization
+PHASE_DONE target_factorization 0.004932
+PHASE_START rational_interpolation
+PHASE_DONE rational_interpolation 0.090205
+PHASE_START map_identity_certification
+PHASE_DONE map_identity_certification 0.073958
+DEGREE17_MAPS verified
+samples 42
+map_degrees [17, 17]
+x_degree_pairs [(17, 16), (17, 16)]
+differential_degrees [1, 1]
+result /Users/airbartek/codex/isogeny_genus_2/results/sage_degree17_extension_roots.json

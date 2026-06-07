@@ -155,17 +155,17 @@
     }
   ],
   "phase_timings_seconds": {
-    "theta_quotient": 12.3475413749984,
-    "dual_kernel_recovery": 0.15266762499231845,
-    "level2_kernel_preparation": 0.2797144170035608,
-    "sample_selection": 0.0367744590039365,
-    "sample_theta_conversion": 1.110114875002182,
-    "dual_isogeny_evaluation": 157.98011537500133,
-    "target_factorization": 0.0053227500029606745,
-    "rational_interpolation": 0.06394654100586195,
-    "map_identity_certification": 0.0675297919951845
+    "theta_quotient": 12.966711583008873,
+    "dual_kernel_recovery": 0.1448595830006525,
+    "level2_kernel_preparation": 0.288021625005058,
+    "sample_selection": 0.036536250001518056,
+    "sample_theta_conversion": 1.8061435420095222,
+    "dual_isogeny_evaluation": 176.59132970799692,
+    "target_factorization": 0.003832749993307516,
+    "rational_interpolation": 0.049005541994119994,
+    "map_identity_certification": 0.055871874996228144
   },
-  "runtime_seconds": 173.00756406784058,
+  "runtime_seconds": 192.13138580322266,
   "notes": [
     "The formulas are on the Rosenhain model over F_(8009^24).",
     "The base-field descent is tracked in workstream B014.",

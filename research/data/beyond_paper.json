@@ -458,5 +458,30 @@
       "results/remote/magma_degree23_curve.log",
       "results/remote/magma_degree23_maps.log"
     ]
+  },
+  {
+    "id": "B022",
+    "title": "Batched dual-theta map-recovery optimization",
+    "status": "completed",
+    "progress": 100,
+    "engine": "SageMath",
+    "location": "local",
+    "objective": "Instrument, profile, and optimize exact level-2 sample conversion and dual-isogeny evaluation so prime-degree map recovery scales beyond degree 23.",
+    "artifacts": [
+      "computations/sage/lib/frey_kani_map_recovery.sage",
+      "computations/sage/benchmark_degree13_explicit_roots.sage",
+      "computations/sage/benchmark_degree13_extension_roots.sage",
+      "computations/sage/benchmark_degree17_extension_roots.sage",
+      "computations/sage/verify_degree13_recovery_optimization.sage",
+      "computations/sage/verify_degree17_recovery_optimization.sage",
+      "results/prime_degree_scaling.json",
+      "results/sage_degree13_profile_baseline.json",
+      "results/sage_degree13_lookup_benchmark.json",
+      "results/sage_degree13_extension_roots.json",
+      "results/sage_degree13_recovery_optimization.json",
+      "results/sage_degree17_extension_roots.json",
+      "results/sage_degree17_recovery_optimization.json",
+      "research/reports/map_recovery_optimization.md"
+    ]
   }
 ]

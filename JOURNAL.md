@@ -728,3 +728,38 @@
   grew from `251.786` seconds at degree 13 to `1100.736` seconds at degree
   23, while descent and Magma verification remained below seven seconds and
   one second respectively.
+
+### Recovery optimization instrumentation
+
+- Added nine flushed phase markers to the general map-recovery engine.
+- Every new result JSON records phase-level timings for quotient
+  construction, kernel recovery, level-2 preparation, sample conversion,
+  dual-isogeny evaluation, factorization, interpolation, and final identity
+  checks.
+- B022 starts at `15%`. The next bounded experiment is an instrumented
+  degree-13 rerun.
+
+### Degree-13 recovery optimization
+
+- The instrumented run isolates `157.980` of `173.008` seconds in the
+  dual-isogeny evaluator.
+- Projective-key lookup was rejected: it regressed total runtime by `11.05%`
+  and evaluator time by `11.78%`.
+- Replaced 71 formal root adjunctions with one common degree-13 finite-field
+  extension. Every final coordinate is checked to descend to the original
+  level-2 field.
+- The optimized run takes `115.487` seconds; total time falls `33.25%` and
+  evaluator time falls `36.42%`.
+- Exact comparison gives identical X-maps and Y-signs `[1,-1]`, with matching
+  differential signs. B022 advances to `70%`; degree 17 is the cross-degree
+  acceptance test.
+
+### Cross-degree optimization certificate
+
+- Degree 17 realizes all 87 compatible roots in one degree-17 extension.
+- Every final theta-image coordinate descends to `F_(8263^24)`.
+- Both X-maps are identical to the symbolic baseline; Y-signs are `[1,-1]`,
+  and the invariant differentials change by the same signs.
+- Runtime falls from `384.812` to `272.338` seconds, a `29.23%` reduction.
+- B022 is complete. The common-extension strategy is now the default general
+  map-recovery evaluator; the symbolic quotient-ring path remains selectable.
