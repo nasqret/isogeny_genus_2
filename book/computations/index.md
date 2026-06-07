@@ -71,6 +71,17 @@ Local exact computations live under `computations/sage/`.
   rational `Y_-(81)` specialization, twist and eigenform discovery,
   resumable finite-target-center reconstruction by CRT, both exact
   degree-9 maps, and primitivity.
+- [`recover_degree10_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/recover_degree10_maps.sage):
+  rational `Y_-(100)` specialization, target and eigenform discovery,
+  resumable scale reconstruction up to a 276-bit modulus, both exact
+  full-function-field maps, and primitivity.
+- [`recover_degree11_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/recover_degree11_maps.sage):
+  rational `Y_-(121)` specialization, target and eigenform discovery,
+  resumable scale reconstruction up to a 238-bit modulus, and both exact
+  primitive full-function-field maps.
+- [`export_degree10_11_magma.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/export_degree10_11_magma.sage):
+  deterministic export of the recovered exact coefficients to static Magma
+  verification programs.
 - [`verify_degree7_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/verify_degree7_maps.sage):
   exact target identities, differential pullbacks, pole divisors, infinity
   image, and primitivity for both Kumar maps.
@@ -117,6 +128,12 @@ V2.28-3 on `lts-faculty.wmi.amu.edu.pl`.
 - [`verify_degree9_monodromy.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree9_monodromy.m):
   deterministic `S9` certificate from modular cycle types, exact generic
   discriminant square class, and elliptic-base disjointness.
+- [`verify_degree10_maps.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree10_maps.m):
+  independent construction of both full-function-field degree-10 morphisms
+  and exact degree computations.
+- [`verify_degree11_maps.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree11_maps.m):
+  independent construction of both full-function-field degree-11 morphisms
+  and exact degree computations.
 
 ## Evidence
 

@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-07T12:13:25+02:00",
+  "generated_at": "2026-06-07T12:51:31+02:00",
   "engine": "SageMath 10.8",
-  "elapsed_seconds": 0.684279,
+  "elapsed_seconds": 0.54,
   "workstream": "B012",
   "verified": true,
   "scope": "Resumable CRT reconstruction of every projective coefficient in rational and full quadratic-function elliptic maps",

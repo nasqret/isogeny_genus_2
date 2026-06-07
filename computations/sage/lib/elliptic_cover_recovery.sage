@@ -816,6 +816,8 @@ def discover_general_scale_by_crt(
     primes,
     infinity_branch=1,
     precision=None,
+    allow_partial=False,
+    initial_state=None,
 ):
     """
     Discover c^2 modulo good primes and reconstruct c over QQ.
@@ -843,7 +845,27 @@ def discover_general_scale_by_crt(
         )
     precision = ZZ(precision)
 
-    certificates = []
+    if initial_state is None:
+        scale_square_residue = ZZ(0)
+        modulus = ZZ(1)
+        certificates = []
+        failures = []
+    else:
+        if tuple(initial_state.get("degree_bounds", ())) != (
+            numerator_degree,
+            y_numerator_degree,
+            denominator_degree,
+        ):
+            raise ValueError("initial state has different degree bounds")
+        modulus = ZZ(initial_state["crt_modulus"])
+        scale_square_residue = (
+            ZZ(initial_state["scale_square_residue"]) % modulus
+        )
+        certificates = list(initial_state.get("certificates", []))
+        failures = list(initial_state.get("failures", []))
+        if modulus <= 0:
+            raise ValueError("initial CRT modulus must be positive")
+
     for prime in primes:
         prime = ZZ(prime)
         if not prime.is_prime():
@@ -852,15 +874,53 @@ def discover_general_scale_by_crt(
             raise ValueError(
                 f"prime {prime} must exceed precision {precision}"
             )
+        if gcd(modulus, prime) != 1:
+            raise ValueError(
+                f"prime {prime} already divides the CRT modulus"
+            )
         finite_field = GF(prime)
         finite_ring = PolynomialRing(
             finite_field,
             names=(str(F.parent().gen()),),
         )
-        finite_source = finite_ring(F)
+        try:
+            finite_source = finite_ring(F)
+        except (
+            ArithmeticError,
+            TypeError,
+            ValueError,
+            ZeroDivisionError,
+        ):
+            failures.append({
+                "prime": prime,
+                "reason": "source coefficients have bad reduction",
+            })
+            continue
         if finite_source.discriminant() == 0:
-            raise ValueError(f"source has bad reduction at {prime}")
-        finite_target = E.change_ring(finite_field)
+            failures.append({
+                "prime": prime,
+                "reason": "source has bad reduction",
+            })
+            continue
+        try:
+            finite_target = E.change_ring(finite_field)
+        except (
+            ArithmeticError,
+            TypeError,
+            ValueError,
+            ZeroDivisionError,
+        ):
+            failures.append({
+                "prime": prime,
+                "reason": "target has bad reduction",
+            })
+            continue
+        if finite_target.discriminant() == 0:
+            failures.append({
+                "prime": prime,
+                "reason": "target has bad reduction",
+            })
+            continue
         local_data = hyperelliptic_local_data(
             finite_source,
             precision,
@@ -915,42 +975,70 @@ def discover_general_scale_by_crt(
                 continue
         square_classes = sorted(set(scale^2 for scale in matches))
         if len(square_classes) != 1:
-            raise ValueError(
-                f"expected one certified scale square at {prime}, "
-                f"found {square_classes}"
-            )
-        certificates.append(
-            {
+            failures.append({
                 "prime": prime,
-                "scale_roots": matches,
-                "scale_square": square_classes[0],
-            }
-        )
-
-    moduli = [certificate["prime"] for certificate in certificates]
-    residues = [
-        ZZ(certificate["scale_square"])
-        for certificate in certificates
-    ]
-    modulus = prod(moduli)
-    scale_square = QQ(
-        rational_reconstruction(
-            crt(residues, moduli),
+                "reason": (
+                    "expected one certified scale square, found "
+                    f"{square_classes}"
+                ),
+            })
+            continue
+        scale_square_residue = CRT(
+            scale_square_residue,
+            ZZ(square_classes[0]),
             modulus,
+            prime,
         )
-    )
-    if not scale_square.is_square():
-        raise ValueError(
-            f"reconstructed scale square {scale_square} is not rationally "
-            "square"
-        )
-    return {
-        "verified": True,
-        "scale": scale_square.sqrt(),
-        "scale_square": scale_square,
+        modulus *= prime
+        certificates.append({
+            "prime": prime,
+            "scale_roots": matches,
+            "scale_square": square_classes[0],
+        })
+
+        try:
+            scale_square = QQ(
+                scale_square_residue.rational_reconstruction(modulus)
+            )
+        except ArithmeticError:
+            continue
+        if not scale_square.is_square():
+            continue
+        return {
+            "verified": True,
+            "scale": scale_square.sqrt(),
+            "scale_square": scale_square,
+            "degree_bounds": (
+                numerator_degree,
+                y_numerator_degree,
+                denominator_degree,
+            ),
+            "crt_modulus": modulus,
+            "scale_square_residue": scale_square_residue,
+            "certificates": certificates,
+            "failures": failures,
+        }
+
+    partial = {
+        "verified": False,
+        "scale": None,
+        "scale_square": None,
+        "degree_bounds": (
+            numerator_degree,
+            y_numerator_degree,
+            denominator_degree,
+        ),
         "crt_modulus": modulus,
+        "scale_square_residue": scale_square_residue,
         "certificates": certificates,
+        "failures": failures,
     }
+    if allow_partial:
+        return partial
+    raise ValueError(
+        "no rational scale reconstructed from supplied primes; "
+        f"CRT modulus={modulus}"
+    )
 
 
 def _degree_bound_candidates(

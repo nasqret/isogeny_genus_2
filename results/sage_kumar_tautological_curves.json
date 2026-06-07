@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-07T03:38:09+02:00",
+  "generated_at": "2026-06-07T12:46:52+02:00",
   "engine": "SageMath 10.8",
-  "elapsed_seconds": 3.968669,
+  "elapsed_seconds": 2.408863,
   "workstream": "B009",
   "verified": true,
   "scope": "One exact nonsingular tautological genus-2 specialization in every degree 6 through 11",
@@ -18,7 +18,7 @@
       "sextic_discriminant_nonzero": true,
       "genus": 2,
       "j_polynomial": "J^2 + 37664137458/2401*J - 179091413182863/117649",
-      "elapsed_seconds": 0.317955
+      "elapsed_seconds": 0.181662
     },
     {
       "degree": 7,
@@ -32,7 +32,7 @@
       "sextic_discriminant_nonzero": true,
       "genus": 2,
       "j_polynomial": "J^2 + 58634861239/69984*J + 73603782349044787/1327104",
-      "elapsed_seconds": 0.059893
+      "elapsed_seconds": 0.03625
     },
     {
       "degree": 8,
@@ -46,7 +46,7 @@
       "sextic_discriminant_nonzero": true,
       "genus": 2,
       "j_polynomial": "J^2 + 1989239971151872/14348907*J + 682899227155628032/43046721",
-      "elapsed_seconds": 0.466497
+      "elapsed_seconds": 0.264741
     },
     {
       "degree": 9,
@@ -60,7 +60,7 @@
       "sextic_discriminant_nonzero": true,
       "genus": 2,
       "j_polynomial": "J^2 + 22872421564416/121*J + 72284087454655315968/1331",
-      "elapsed_seconds": 0.569149
+      "elapsed_seconds": 0.341976
     },
     {
       "degree": 10,
@@ -74,7 +74,7 @@
       "sextic_discriminant_nonzero": true,
       "genus": 2,
       "j_polynomial": "J^2 - 8451875/4*J + 18452065515625/16",
-      "elapsed_seconds": 0.486435
+      "elapsed_seconds": 0.289611
     },
     {
       "degree": 11,
@@ -88,7 +88,7 @@
       "sextic_discriminant_nonzero": true,
       "genus": 2,
       "j_polynomial": "J^2 - 675804512087680000/68630377364883*J + 5144030408986624000000/205891132094649",
-      "elapsed_seconds": 1.659863
+      "elapsed_seconds": 1.104691
     }
   ]
 }

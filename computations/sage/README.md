@@ -150,3 +150,12 @@ limits while retaining exact Sage arithmetic.
 eigenlines, reconstructs one compact `X(x)` coordinate and one
 `X=A(x)+yB(x)` coordinate, lifts the complementary scale from primes `61`
 and `67`, and certifies both degree-8 maps exactly.
+
+## Degree-10 and degree-11 benchmarks
+
+`recover_degree10_maps.sage` and `recover_degree11_maps.sage` specialize
+Kumar's `Y_-(100)` and `Y_-(121)` at rational points, discover the unique
+rational target twists and Hasse-Witt eigenlines, reconstruct both scales by
+resumable CRT, and certify all four maps in the full quadratic function
+fields. `export_degree10_11_magma.sage` emits the static independent Magma
+degree certificates.

@@ -33,6 +33,12 @@ is complete only after both maps and this splitting are certified exactly.
 - Degree 9: one rational Kumar specialization with both primitive maps,
   modular reconstruction of finite target centers, independent Magma
   degrees, and full `S9` monodromy over the elliptic base.
+- Degree 10: one rational Kumar specialization with both primitive
+  full-function-field maps, scale CRT moduli of 133 and 276 bits, target
+  isogeny obstruction, and independent Magma degrees.
+- Degree 11: one rational Kumar specialization with both primitive
+  full-function-field maps, scale CRT moduli of 127 and 238 bits, and
+  independent Magma degrees.
 - General recovery: a degree-independent SageMath library reconstructs and
   exactly certifies maps from local formal data. Regression cases cover
   degrees 3, 5, 7, and 9, finite and infinite source centers, finite target
@@ -110,10 +116,10 @@ primes, reconstructs `c^2` by CRT, and performs the expensive full-map solve
 only once over `Q`. For the degree-6 complement, primes `101` and `103`
 reconstruct `c^2=4/9`, hence `c=2/3`.
 
-For the degree-8 complement, primes `61` and `67` reconstruct `c^2=4`,
-hence `c=2`. Its recovered `X=a+y*b` coordinate has function degree `16`,
-and exact elimination proves that the map to the elliptic target has degree
-`8`.
+For the degree-8 complement, prime `61` reconstructs `c^2=4`, hence `c=2`;
+the exact characteristic-zero identity accepts this early lift. Its
+recovered `X=a+y*b` coordinate has function degree `16`, and exact
+elimination proves that the map to the elliptic target has degree `8`.
 
 The degree-9 benchmark adds finite-center reconstruction. For a known
 eigenform and scale, `discover_center_by_crt` enumerates target points over
@@ -164,8 +170,8 @@ curve, and recover the two maps.
    rational `Y_-(64)` specialization.
 5. Degree 9: both primitive maps, modular target centers, and full `S9`
    monodromy are certified for a rational `Y_-(81)` specialization.
-6. Degrees 10-11: imported; next locate rational surface points and recover
-   one fully certified rational specialization per degree.
+6. Degrees 10-11: one fully certified rational specialization and both
+   primitive maps are complete in each degree.
 7. Degrees above 11: generate primitive examples by anti-isometry synthesis
    and recover maps with the finite-field/CRT backend.
 

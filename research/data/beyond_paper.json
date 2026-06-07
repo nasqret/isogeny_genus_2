@@ -43,8 +43,8 @@
   {
     "id": "B004",
     "title": "Exact database of primitive covers",
-    "status": "in_progress",
-    "progress": 60,
+    "status": "completed",
+    "progress": 100,
     "engine": "SageMath+Magma",
     "location": "hybrid",
     "objective": "Store source curves, both elliptic factors, primitive maps, fields, ramification, arithmetic invariants, and exact certificates for degrees 3 through 11.",
@@ -59,7 +59,11 @@
       "results/magma_degree8_monodromy.json",
       "results/sage_degree9_recovery.json",
       "results/magma_degree9_maps.json",
-      "results/magma_degree9_monodromy.json"
+      "results/magma_degree9_monodromy.json",
+      "results/sage_degree10_recovery.json",
+      "results/magma_degree10_maps.json",
+      "results/sage_degree11_recovery.json",
+      "results/magma_degree11_maps.json"
     ]
   },
   {
@@ -136,8 +140,8 @@
   {
     "id": "B010",
     "title": "Eigenform-guided exact map recovery",
-    "status": "in_progress",
-    "progress": 98,
+    "status": "completed",
+    "progress": 100,
     "engine": "SageMath+Magma",
     "location": "hybrid",
     "objective": "Recover rational maps from split differentials using target and eigenform discovery, exact symbolic scale solving, bounded center search, linear rational reconstruction, coefficient lifting, and final function-field verification.",
@@ -149,6 +153,8 @@
       "computations/sage/recover_degree7_maps.sage",
       "computations/sage/recover_degree8_maps.sage",
       "computations/sage/recover_degree9_maps.sage",
+      "computations/sage/recover_degree10_maps.sage",
+      "computations/sage/recover_degree11_maps.sage",
       "computations/sage/verify_degree7_maps.sage",
       "computations/magma/verify_degree6_maps.m",
       "computations/magma/verify_degree7_maps.m",
@@ -162,7 +168,11 @@
       "results/sage_degree8_recovery.json",
       "results/magma_degree8_maps.json",
       "results/sage_degree9_recovery.json",
-      "results/magma_degree9_maps.json"
+      "results/magma_degree9_maps.json",
+      "results/sage_degree10_recovery.json",
+      "results/magma_degree10_maps.json",
+      "results/sage_degree11_recovery.json",
+      "results/magma_degree11_maps.json"
     ]
   },
   {
@@ -200,10 +210,14 @@
       "computations/sage/recover_degree6_maps.sage",
       "computations/sage/recover_degree8_maps.sage",
       "computations/sage/recover_degree9_maps.sage",
+      "computations/sage/recover_degree10_maps.sage",
+      "computations/sage/recover_degree11_maps.sage",
       "results/sage_crt_coefficient_lifting.json",
       "results/sage_degree6_recovery.json",
       "results/sage_degree8_recovery.json",
-      "results/sage_degree9_recovery.json"
+      "results/sage_degree9_recovery.json",
+      "results/sage_degree10_recovery.json",
+      "results/sage_degree11_recovery.json"
     ]
   },
   {
@@ -265,6 +279,28 @@
       "results/magma_degree9_monodromy.json",
       "results/remote/magma_degree9_maps.log",
       "results/remote/magma_degree9_monodromy.log"
+    ]
+  },
+  {
+    "id": "B017",
+    "title": "Primitive rational degree-10 and degree-11 map pairs",
+    "status": "completed",
+    "progress": 100,
+    "engine": "SageMath+Magma",
+    "location": "hybrid",
+    "objective": "Locate rational points on Y_-(100) and Y_-(121), recover both primitive elliptic maps at each point by resumable modular scale reconstruction, and independently certify all four degrees in Magma.",
+    "artifacts": [
+      "computations/sage/recover_degree10_maps.sage",
+      "computations/sage/recover_degree11_maps.sage",
+      "computations/sage/export_degree10_11_magma.sage",
+      "computations/magma/verify_degree10_maps.m",
+      "computations/magma/verify_degree11_maps.m",
+      "results/sage_degree10_recovery.json",
+      "results/sage_degree11_recovery.json",
+      "results/magma_degree10_maps.json",
+      "results/magma_degree11_maps.json",
+      "results/remote/magma_degree10_maps.log",
+      "results/remote/magma_degree11_maps.log"
     ]
   }
 ]

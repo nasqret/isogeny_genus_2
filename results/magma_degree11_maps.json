@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-06-07T12:44:40+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "lts-faculty.wmi.amu.edu.pl",
+  "elapsed_seconds": 10.359,
+  "maximum_memory_mb": 32.09,
+  "workstreams": [
+    "B004",
+    "B010"
+  ],
+  "verified": true,
+  "degrees": [
+    11,
+    11
+  ],
+  "target_j_invariants": [
+    "3245297195502/1977326743",
+    "2304"
+  ],
+  "artifact": "computations/magma/verify_degree11_maps.m",
+  "transcript": "results/remote/magma_degree11_maps.log",
+  "success_marker": "B004_B010_DEGREE11_MAGMA_VERIFIED"
+}

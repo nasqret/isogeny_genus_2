@@ -245,9 +245,9 @@ $$
 after which the complete map is reconstructed once over $\mathbf Q$ and
 certified exactly.
 
-For the degree-$8$ complement, primes $61$ and $67$ both leave the roots
-$c=\pm2$. Their CRT reconstruction gives $c^2=4$, and the characteristic-zero
-recovery then verifies the degree-$8$ map exactly.
+For the degree-$8$ complement, prime $61$ leaves the roots $c=\pm2$.
+Rational reconstruction gives $c^2=4$, and the characteristic-zero recovery
+then verifies the degree-$8$ map exactly.
 
 The degree-$9$ benchmark adds resumable target-center lifting. For each good
 prime, the implementation enumerates the finite elliptic target, retains only
@@ -339,9 +339,40 @@ new primitive examples beyond the currently tabulated moduli families.
 | 7 | Completed benchmark; automate finite target-point discovery |
 | 8 | Both primitive maps and full $S_8$ monodromy complete |
 | 9 | Both primitive maps, CRT centers, and full $S_9$ monodromy complete |
-| 10 | Separate primitive degree 10 from degree $5$ followed by a 2-isogeny |
-| 11 | Imported; recover maps on Kumar's $Y_-(121)$ model |
+| 10 | Both primitive maps complete; target isogeny obstruction excludes degree $5$ followed by a 2-isogeny |
+| 11 | Both primitive maps complete on a rational point of Kumar's $Y_-(121)$ |
 | $>11$ | Generate examples by anti-isometries and use modular/CRT reconstruction |
+
+## Degree 10 and degree 11
+
+The same full-function-field engine now reaches the final two imported Kumar
+families. For degree $10$, the rational point
+
+$$
+(r,s,z)=\left(-\frac45,\frac15,\frac{18}{125}\right)
+$$
+
+on $Y_-(100)$ yields two maps with pullback eigenforms
+$(x+3689/18750)dx/y$ and $dx/y$. Their differential scales are
+$1/10500$ and $197509/787500000$. Modular recovery used $133$-bit and
+$276$-bit CRT moduli. Both target curves have no rational $2$- or
+$5$-isogeny, so both degree-$10$ maps are primitive.
+
+For degree $11$, the rational point
+
+$$
+(r,s,z)=\left(\frac32,\frac12,\frac38\right)
+$$
+
+on $Y_-(121)$ yields eigenforms $(x-1)dx/y$ and $dx/y$, with scales
+$121/639660$ and $2671801/7306516350$. Their CRT moduli have $127$ and
+$238$ bits. Since $11$ is prime, the exact degree computation already rules
+out a nontrivial factorization through an elliptic isogeny.
+
+All four $X$-coordinates have the form $a(x)+y\,b(x)$. SageMath certifies
+their exact function-field identities and cover degrees. Static Magma
+programs independently reconstruct the morphisms and return degrees
+$10,10,11,11$.
 
 ## Complexity policy
 

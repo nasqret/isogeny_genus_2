@@ -120,7 +120,7 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
 | 7 | Recover both maps for the certified Kumar benchmark |
 | 8 | Both primitive maps and full \(S_8\) monodromy certified |
 | 9 | Both primitive maps, CRT centers, and full \(S_9\) monodromy certified |
-| 10-11 | Imported; certify one rational map pair per degree |
+| 10-11 | Both primitive rational map pairs certified in SageMath and Magma |
 | \(>11\) | Generate primitive examples from anti-isometries and recover maps by CRT |
 
 ### Implemented checkpoint
@@ -140,6 +140,14 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
   primitive maps: exact in SageMath, with independent Magma degrees and full
   `S9` monodromy over the elliptic base. Modular center searches reconstruct
   the two finite infinity images from 128-bit and 184-bit CRT moduli.
+- One rational degree-10 benchmark at
+  `(r,s,z)=(-4/5,1/5,18/125)` with both primitive maps: exact in SageMath and
+  independently degree-checked in Magma. Both coordinates use `Q(x,y)`;
+  their scales were reconstructed with 133-bit and 276-bit CRT moduli.
+- One rational degree-11 benchmark at `(r,s,z)=(3/2,1/2,3/8)` with both
+  primitive maps: exact in SageMath and independently degree-checked in
+  Magma. Both coordinates use `Q(x,y)`; their scales were reconstructed with
+  127-bit and 238-bit CRT moduli.
 - The finite-field backend lifts complete projective coefficient vectors for
   both `X=A(x)/D(x)` and `X=A(x)/D(x)+y*B(x)/D(x)`. Partial CRT state is
   resumable and every lift is accepted only after exact characteristic-zero
@@ -151,8 +159,10 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
   every degree 6 through 11. One nonsingular genus-2 specialization is
   certified in each degree.
 
-Current bounded tasks: recover rational map pairs in degrees 10 and 11,
-certify the explicit degree-6 and degree-8 splitting kernels, implement the
-full Galois-closure quotient rather than only its monodromy certificate,
-finish the generic degree-5 complementary `j`-formula, and begin Frey-Kani
-anti-isometry synthesis beyond degree 11.
+Current bounded tasks, in order:
+
+1. certify the explicit degree-6 and degree-8 splitting kernels;
+2. implement the full Galois-closure quotient rather than only its monodromy
+   certificate;
+3. finish the generic degree-5 complementary `j`-formula;
+4. begin Frey-Kani anti-isometry synthesis beyond degree 11.

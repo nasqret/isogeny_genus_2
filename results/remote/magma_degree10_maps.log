@@ -1,0 +1,11 @@
+Magma V2.28-3     Sun Jun  7 2026 12:44:29 on lts-faculty [Seed = 3431189442]
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "verify_degree10_maps.m"
+B004_B010_DEGREE10_MAGMA_VERIFIED
+degree_1 10
+degree_2 10
+j_1 -1604507735596990464/1942017336875
+j_2 884736/171875
+
+Total time: 7.240 seconds, Total memory usage: 32.09MB

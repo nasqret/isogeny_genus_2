@@ -143,8 +143,9 @@ This project reconstructs every computational claim in
 - Its targets have `j=-8780800/2187,5120/3`, and the pullback eigenforms are
   `dx/y` and `(1+2*x) dx/y`.
 - Both degree-8 maps have scale `2`; the complementary map requires
-  `X=A(x)+yB(x)` and has function degree `16`. CRT at primes `61` and `67`
-  reconstructs `c^2=4`.
+  `X=A(x)+yB(x)` and has function degree `16`. CRT at prime `61`
+  reconstructs `c^2=4`, and exact characteristic-zero verification accepts
+  the early lift.
 - Remote Magma returns degree `8` for both morphisms and source automorphism
   group order `2`. Together with the absence of rational target
   `2`-isogenies, this rules out all nontrivial degree-8 factorizations over
@@ -174,6 +175,14 @@ This project reconstructs every computational claim in
   projective pivot, preserves resumable partial state, and requires exact
   characteristic-zero identity and degree certification. The degree-6
   regression is stored in `results/sage_crt_coefficient_lifting.json`.
-- Current active frontier: the full Galois-closure quotient, B002 generic
-  degree 5, rational degree-10 and degree-11 map benchmarks, explicit
-  splitting kernels, and anti-isometry synthesis.
+- B017 gives complete rational degree-10 and degree-11 benchmarks. The
+  degree-10 point is `(-4/5,1/5,18/125)` on `Y_-(100)` and the degree-11
+  point is `(3/2,1/2,3/8)` on `Y_-(121)`. All four maps use full
+  quadratic-function `X`-coordinates and have independent remote Magma
+  degree certificates.
+- `discover_general_scale_by_crt` now skips bad or noncertifying primes,
+  records failures, and preserves resumable CRT state. Its largest completed
+  reconstruction is the 276-bit modulus for the second degree-10 map.
+- Current active frontier, in order: explicit splitting kernels, the full
+  Galois-closure quotient, B002/B003 generic degree 5, and anti-isometry
+  synthesis.

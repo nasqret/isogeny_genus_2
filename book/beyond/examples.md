@@ -294,7 +294,8 @@ $$
 
 The exact numerators are stored in `sage_degree8_recovery.json`. The
 differential scale is $2$, reconstructed from the roots $\pm2$ modulo
-$61$ and $67$. If $F$ is the source sextic, then
+$61$ and accepted by exact characteristic-zero verification. If $F$ is the
+source sextic, then
 
 $$
 Y_2=
@@ -398,6 +399,47 @@ $$
 
 which is coprime to the elliptic branch cubic. Hence the elliptic cover
 retains full $S_9$ monodromy.
+
+## Degrees 10 and 11: full-function-field CRT benchmarks
+
+For degree $10$, use
+
+$$
+(r,s,z)=\left(-\frac45,\frac15,\frac{18}{125}\right)\in Y_-(100)(\mathbf Q).
+$$
+
+The recovered target invariants are
+
+$$
+j_1=-\frac{1604507735596990464}{1942017336875},
+\qquad
+j_2=\frac{884736}{171875}.
+$$
+
+Both coordinates have $X=a(x)+y\,b(x)$ and function degree $20$. The two
+scales were reconstructed from $133$-bit and $276$-bit CRT moduli. Exact
+SageMath identities and independent Magma computations give cover degree
+$10$ for both maps. Neither target has a rational $2$- or $5$-isogeny, so
+both maps are primitive.
+
+For degree $11$, use
+
+$$
+(r,s,z)=\left(\frac32,\frac12,\frac38\right)\in Y_-(121)(\mathbf Q).
+$$
+
+The target invariants are
+
+$$
+j_1=\frac{3245297195502}{1977326743},
+\qquad
+j_2=2304.
+$$
+
+Again both coordinates use the full function field, now with function degree
+$22$. Scale reconstruction used $127$-bit and $238$-bit CRT moduli.
+SageMath and Magma independently return cover degree $11$ for both maps.
+Primality of $11$ proves primitivity.
 
 ## Degrees 20 and 80: exact nonprimitive maps
 

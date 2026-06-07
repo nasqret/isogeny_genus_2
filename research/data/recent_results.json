@@ -257,7 +257,7 @@
   {
     "timestamp": "2026-06-07T04:23:32+02:00",
     "claim_id": "B004-B010-B012-B015",
-    "summary": "Recovered both primitive degree-8 maps at (r,s,z)=(4,-2,-1280); the complementary X-coordinate lies in Q(x,y) and its scale 2 was reconstructed from finite-field residues modulo 61 and 67."
+    "summary": "Recovered both primitive degree-8 maps at (r,s,z)=(4,-2,-1280); the complementary X-coordinate lies in Q(x,y) and its scale 2 was reconstructed modulo 61 and accepted by exact characteristic-zero verification."
   },
   {
     "timestamp": "2026-06-07T04:25:25+02:00",
@@ -288,5 +288,15 @@
     "timestamp": "2026-06-07T12:13:25+02:00",
     "claim_id": "B012",
     "summary": "Completed a resumable projective coefficient-CRT backend for rational X=A/D and full X=A/D+yB/D maps, with exact degree-6 characteristic-zero certification."
+  },
+  {
+    "timestamp": "2026-06-07T12:43:30+02:00",
+    "claim_id": "B004-B010-B012-B017",
+    "summary": "Recovered both primitive rational map pairs in degrees 10 and 11. All four X-coordinates use the full quadratic function field, and modular scale lifting reached 133/276-bit and 127/238-bit CRT moduli."
+  },
+  {
+    "timestamp": "2026-06-07T12:44:40+02:00",
+    "claim_id": "B004-B010-B017",
+    "summary": "Remote Magma independently constructed all four degree-10 and degree-11 morphisms and returned degrees 10, 10, 11, and 11."
   }
 ]

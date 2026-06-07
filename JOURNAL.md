@@ -347,7 +347,8 @@
 - Recovered the complementary map as `X=A(x)+yB(x)` with degree `16` as a
   function on the source, hence elliptic cover degree `8`.
 - Reconstructed the complementary scale square `4` from exact roots `+/-2`
-  modulo `61` and `67`.
+  modulo `61`; exact characteristic-zero verification accepts the early
+  rational reconstruction.
 - Remote Magma independently constructed both morphisms, returned degree `8`
   for each, and computed the rational source automorphism group order as
   `2`.
@@ -407,3 +408,26 @@
   quadratic-function complement reconstructs after a 34-bit modulus. Both
   agree exactly with direct characteristic-zero recovery.
 - B012 is complete.
+
+### Primitive degree-10 and degree-11 map pairs
+
+- Located rational Hilbert modular points
+  `(r,s,z)=(-4/5,1/5,18/125)` on `Y_-(100)` and
+  `(r,s,z)=(3/2,1/2,3/8)` on `Y_-(121)`.
+- Frobenius filtering uniquely selected both rational target twists in each
+  degree, and Hasse-Witt eigenspaces identified the two pullback differential
+  lines.
+- Extended `discover_general_scale_by_crt` with bad-prime skipping and
+  resumable partial CRT state. The degree-10 scales required 133-bit and
+  276-bit moduli; the degree-11 scales required 127-bit and 238-bit moduli.
+- Recovered all four maps in the full quadratic function fields
+  `Q(x,y)`, verified the exact elliptic identities, and computed cover
+  degrees `10,10,11,11`.
+- The degree-10 targets have no rational 2- or 5-isogenies, proving both
+  maps primitive over `Q`. Degree 11 is prime, so both degree-11 maps are
+  primitive.
+- Generated static Magma artifacts from the exact Sage coefficients. Remote
+  Magma V2.28-3 independently returned degrees `10,10` in 7.240 seconds and
+  degrees `11,11` in 10.359 seconds, with 32.09 MB memory in each run.
+- B004, B010, and the new benchmark workstream B017 are complete. The next
+  bounded task is explicit splitting-kernel certification in degrees 6 and 8.
