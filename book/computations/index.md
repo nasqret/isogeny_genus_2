@@ -124,6 +124,10 @@ Local exact computations live under `computations/sage/`.
   degree-23 theta quotient and fixed base-field model.
 - [`descend_degree23_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/descend_degree23_maps.sage):
   fixed-field transport and exact certification of both degree-23 maps.
+- [`verify_prime_degree_descent_cocycles.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/verify_prime_degree_descent_cocycles.sage):
+  aggregate verification of the Frobenius action on target 2-torsion,
+  translation cocycles, norm-zero identities, coboundary corrections, and
+  correction cosets for eight maps in degrees 13, 17, 19, and 23.
 - [`export_degree10_11_magma.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/export_degree10_11_magma.sage):
   deterministic export of the recovered exact coefficients to static Magma
   verification programs.

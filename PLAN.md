@@ -185,6 +185,6 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
 
 Current bounded tasks, in order:
 
-1. formalize the general odd-prime descent-cocycle theorem and algorithm;
-2. extend synthesis to degree 29 with the optimized evaluator;
-3. compare measured degree-29 scaling with the symbolic extrapolation.
+1. extend synthesis to degree 29 with the optimized evaluator;
+2. compare measured degree-29 scaling with the symbolic extrapolation;
+3. use the resulting model to choose the next practical prime-degree target.

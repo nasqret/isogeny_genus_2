@@ -212,6 +212,34 @@ def coefficients_are_frobenius_fixed(function):
     )
 
 
+def frobenius_rational_function(function):
+    return level2_fraction_field(
+        level2_ring(
+            [
+                value^base_field.cardinality()
+                for value in function.numerator()
+            ]
+        )
+        / level2_ring(
+            [
+                value^base_field.cardinality()
+                for value in function.denominator()
+            ]
+        )
+    )
+
+
+def frobenius_map(map_pair):
+    return tuple(
+        frobenius_rational_function(function)
+        for function in map_pair
+    )
+
+
+def maps_are_equal(left, right):
+    return left[0] == right[0] and left[1] == right[1]
+
+
 def translate_by_two_torsion(
     x_map,
     y_coefficient,
@@ -242,6 +270,7 @@ def translate_by_two_torsion(
 
 descent_translations = []
 frobenius_fixed_maps = []
+descent_cocycle_records = []
 target_x_ring = PolynomialRing(level2_field, "target_x")
 target_x = target_x_ring.gen()
 for map_index, (target_curve, transported_map) in enumerate(zip(
@@ -254,8 +283,54 @@ for map_index, (target_curve, transported_map) in enumerate(zip(
         + level2_field(target_curve.a6())
     ).roots(multiplicities=False)
     assert len(target_two_torsion) == 3
+    target_curve_extended = target_curve.change_ring(level2_field)
+    target_two_torsion_points = [
+        target_curve_extended(0)
+    ] + [
+        target_curve_extended(torsion_x, 0)
+        for torsion_x in target_two_torsion
+    ]
+
+    def frobenius_point(point):
+        if point.is_zero():
+            return target_curve_extended(0)
+        return target_curve_extended(
+            point[0]^base_field.cardinality(),
+            point[1]^base_field.cardinality(),
+        )
+
+    frobenius_permutation = []
+    for point in target_two_torsion_points:
+        conjugate = frobenius_point(point)
+        frobenius_permutation.append(
+            target_two_torsion_points.index(conjugate)
+        )
+
+    translated_frobenius_map = frobenius_map(transported_map)
+    torsion_x_coordinates = [None] + target_two_torsion
+    cocycle_candidates = []
+    for torsion_index, torsion_x in enumerate(torsion_x_coordinates):
+        candidate = translate_by_two_torsion(
+            transported_map[0],
+            transported_map[1],
+            target_curve,
+            torsion_x,
+        )
+        if maps_are_equal(candidate, translated_frobenius_map):
+            cocycle_candidates.append(torsion_index)
+    assert len(cocycle_candidates) == 1
+    cocycle_index = cocycle_candidates[0]
+    cocycle_point = target_two_torsion_points[cocycle_index]
+
+    cocycle_norm = target_curve_extended(0)
+    conjugate = cocycle_point
+    for _ in range(level2_field.degree()):
+        cocycle_norm += conjugate
+        conjugate = frobenius_point(conjugate)
+    assert cocycle_norm.is_zero()
+
     descending_candidates = []
-    for torsion_x in [None] + target_two_torsion:
+    for torsion_index, torsion_x in enumerate(torsion_x_coordinates):
         candidate = translate_by_two_torsion(
             transported_map[0],
             transported_map[1],
@@ -266,7 +341,13 @@ for map_index, (target_curve, transported_map) in enumerate(zip(
             coefficients_are_frobenius_fixed(candidate[0])
             and coefficients_are_frobenius_fixed(candidate[1])
         ):
-            descending_candidates.append((torsion_x, candidate))
+            correction_point = target_two_torsion_points[torsion_index]
+            assert cocycle_point == (
+                correction_point - frobenius_point(correction_point)
+            )
+            descending_candidates.append(
+                (torsion_index, torsion_x, candidate)
+            )
     print(
         "DESCENT_TRANSLATION_CANDIDATES",
         map_index,
@@ -277,17 +358,56 @@ for map_index, (target_curve, transported_map) in enumerate(zip(
         (
             candidate
             for candidate in descending_candidates
-            if candidate[0] is None
+            if candidate[0] == 0
         ),
         None,
     )
-    torsion_x, descending_map = (
+    selected_index, torsion_x, descending_map = (
         identity_candidate
         if identity_candidate is not None
         else descending_candidates[0]
     )
+
+    rational_two_torsion_indices = [
+        index
+        for index, point in enumerate(target_two_torsion_points)
+        if frobenius_point(point) == point
+    ]
+    correction_indices = [
+        candidate[0] for candidate in descending_candidates
+    ]
+    selected_point = target_two_torsion_points[selected_index]
+    expected_correction_indices = {
+        target_two_torsion_points.index(
+            selected_point + target_two_torsion_points[index]
+        )
+        for index in rational_two_torsion_indices
+    }
+    assert set(correction_indices) == expected_correction_indices
+
     descent_translations.append(torsion_x)
     frobenius_fixed_maps.append(descending_map)
+    descent_cocycle_records.append(
+        {
+            "frobenius_translation_index": cocycle_index,
+            "frobenius_translation_x": (
+                None
+                if cocycle_index == 0
+                else str(target_two_torsion[cocycle_index - 1])
+            ),
+            "frobenius_action_on_two_torsion": frobenius_permutation,
+            "rational_two_torsion_indices": rational_two_torsion_indices,
+            "correction_candidate_indices": correction_indices,
+            "selected_correction_index": selected_index,
+            "selected_correction_x": (
+                None if torsion_x is None else str(torsion_x)
+            ),
+            "direct_descent": cocycle_index == 0,
+            "cocycle_norm_zero": True,
+            "selected_coboundary_equation_verified": True,
+            "correction_coset_equals_rational_two_torsion": True,
+        }
+    )
 
 transported_maps = frobenius_fixed_maps
 
@@ -422,6 +542,7 @@ for index, (
                 if descent_translations[index] is None
                 else str(descent_translations[index])
             ),
+            "descent_cocycle": descent_cocycle_records[index],
             "elliptic_equation_identity": True,
             "linear_differential_pullback": True,
             "coefficients_in_base_field": True,
@@ -465,7 +586,11 @@ result = {
     "maps": descended_records,
     "certificate": {
         "unique_mobius_class": True,
-        "transported_coefficients_frobenius_fixed": True,
+        "all_frobenius_translation_cocycles_identified": True,
+        "all_cocycle_norms_zero": True,
+        "all_selected_coboundary_equations_verified": True,
+        "all_correction_cosets_verified": True,
+        "selected_translated_coefficients_frobenius_fixed": True,
         "coefficients_descended_to_base_field": True,
         f"both_cover_degrees_equal_{prime}": all(
             record["cover_degree"] == prime

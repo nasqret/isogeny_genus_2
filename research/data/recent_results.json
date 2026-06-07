@@ -423,5 +423,10 @@
     "timestamp": "2026-06-07T22:14:00+02:00",
     "claim_id": "B022",
     "summary": "Completed B022 after degree-17 cross-validation: 87 roots in one degree-17 extension, exact X-map agreement, Y-signs (1,-1), all map identities certified, and total runtime reduced from 384.812 to 272.338 seconds (29.23%). The common-extension evaluator is now the default."
+  },
+  {
+    "timestamp": "2026-06-07T22:19:38+02:00",
+    "claim_id": "B023",
+    "summary": "Completed the odd-prime Frobenius descent theorem and algorithm. Exact Sage certificates identify the unique E[2] translation cocycle, verify its norm, solve the coboundary equation, and prove the correction set is an E[2](k)-coset for eight maps in degrees 13, 17, 19, and 23; six descend directly and only degree 17 factor 1 and degree 19 factor 1 are nontrivial."
   }
 ]

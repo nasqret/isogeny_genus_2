@@ -483,5 +483,25 @@
       "results/sage_degree17_recovery_optimization.json",
       "research/reports/map_recovery_optimization.md"
     ]
+  },
+  {
+    "id": "B023",
+    "title": "Odd-prime Frobenius descent cocycle theorem",
+    "status": "completed",
+    "progress": 100,
+    "engine": "SageMath",
+    "location": "local",
+    "objective": "Prove and implement the target 2-torsion cocycle and coboundary algorithm governing descent of normalized prime-degree Frey-Kani maps.",
+    "artifacts": [
+      "computations/sage/lib/frey_kani_map_descent.sage",
+      "computations/sage/verify_prime_degree_descent_cocycles.sage",
+      "results/sage_degree13_descended_maps.json",
+      "results/sage_degree17_descended_maps.json",
+      "results/sage_degree19_descended_maps.json",
+      "results/sage_degree23_descended_maps.json",
+      "results/sage_prime_degree_descent_cocycles.json",
+      "research/reports/odd_prime_descent_cocycle.md",
+      "book/beyond/theory.md"
+    ]
   }
 ]

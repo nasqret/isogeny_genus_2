@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-07T21:45:52+02:00",
+  "generated_at": "2026-06-07T22:18:12+02:00",
   "engine": "SageMath 10.8",
-  "runtime_seconds": 5.137522220611572,
+  "runtime_seconds": 10.927196025848389,
   "workstream": "B021",
   "status": "verified",
   "scope": "transport and descent of both degree-23 maps to the fixed F_21943 sextic",
@@ -59,6 +59,28 @@
       ],
       "hasse_witt_eigenvalue": 255,
       "target_two_torsion_translation_x": null,
+      "descent_cocycle": {
+        "frobenius_translation_index": 0,
+        "frobenius_translation_x": null,
+        "frobenius_action_on_two_torsion": [
+          0,
+          2,
+          3,
+          1
+        ],
+        "rational_two_torsion_indices": [
+          0
+        ],
+        "correction_candidate_indices": [
+          0
+        ],
+        "selected_correction_index": 0,
+        "selected_correction_x": null,
+        "direct_descent": true,
+        "cocycle_norm_zero": true,
+        "selected_coboundary_equation_verified": true,
+        "correction_coset_equals_rational_two_torsion": true
+      },
       "elliptic_equation_identity": true,
       "linear_differential_pullback": true,
       "coefficients_in_base_field": true
@@ -88,6 +110,30 @@
       ],
       "hasse_witt_eigenvalue": 21669,
       "target_two_torsion_translation_x": null,
+      "descent_cocycle": {
+        "frobenius_translation_index": 0,
+        "frobenius_translation_x": null,
+        "frobenius_action_on_two_torsion": [
+          0,
+          1,
+          3,
+          2
+        ],
+        "rational_two_torsion_indices": [
+          0,
+          1
+        ],
+        "correction_candidate_indices": [
+          0,
+          1
+        ],
+        "selected_correction_index": 0,
+        "selected_correction_x": null,
+        "direct_descent": true,
+        "cocycle_norm_zero": true,
+        "selected_coboundary_equation_verified": true,
+        "correction_coset_equals_rational_two_torsion": true
+      },
       "elliptic_equation_identity": true,
       "linear_differential_pullback": true,
       "coefficients_in_base_field": true
@@ -95,7 +141,11 @@
   ],
   "certificate": {
     "unique_mobius_class": true,
-    "transported_coefficients_frobenius_fixed": true,
+    "all_frobenius_translation_cocycles_identified": true,
+    "all_cocycle_norms_zero": true,
+    "all_selected_coboundary_equations_verified": true,
+    "all_correction_cosets_verified": true,
+    "selected_translated_coefficients_frobenius_fixed": true,
     "coefficients_descended_to_base_field": true,
     "both_cover_degrees_equal_23": true,
     "both_elliptic_identities_verified": true,

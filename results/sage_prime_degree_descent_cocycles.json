@@ -1,0 +1,201 @@
+{
+  "workstream": "B023",
+  "status": "verified",
+  "generated_at": "2026-06-07T20:19:35.190340+00:00",
+  "scope": "Frobenius translation cocycles and 2-torsion coboundary corrections for both maps in degrees 13, 17, 19, and 23",
+  "case_count": 8,
+  "direct_descent_count": 6,
+  "nontrivial_cocycle_count": 2,
+  "nontrivial_cases": [
+    [
+      17,
+      1
+    ],
+    [
+      19,
+      1
+    ]
+  ],
+  "cases": [
+    {
+      "degree": 13,
+      "factor_index": 0,
+      "target_j_invariant": "81",
+      "frobenius_action_on_two_torsion": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "frobenius_translation_index": 0,
+      "rational_two_torsion_indices": [
+        0
+      ],
+      "correction_candidate_indices": [
+        0
+      ],
+      "selected_correction_index": 0,
+      "direct_descent": true
+    },
+    {
+      "degree": 13,
+      "factor_index": 1,
+      "target_j_invariant": "3213",
+      "frobenius_action_on_two_torsion": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "frobenius_translation_index": 0,
+      "rational_two_torsion_indices": [
+        0,
+        1
+      ],
+      "correction_candidate_indices": [
+        0,
+        1
+      ],
+      "selected_correction_index": 0,
+      "direct_descent": true
+    },
+    {
+      "degree": 17,
+      "factor_index": 0,
+      "target_j_invariant": "0",
+      "frobenius_action_on_two_torsion": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frobenius_translation_index": 0,
+      "rational_two_torsion_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "correction_candidate_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "selected_correction_index": 0,
+      "direct_descent": true
+    },
+    {
+      "degree": 17,
+      "factor_index": 1,
+      "target_j_invariant": "5878",
+      "frobenius_action_on_two_torsion": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "frobenius_translation_index": 3,
+      "rational_two_torsion_indices": [
+        0
+      ],
+      "correction_candidate_indices": [
+        1
+      ],
+      "selected_correction_index": 1,
+      "direct_descent": false
+    },
+    {
+      "degree": 19,
+      "factor_index": 0,
+      "target_j_invariant": "259",
+      "frobenius_action_on_two_torsion": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "frobenius_translation_index": 0,
+      "rational_two_torsion_indices": [
+        0,
+        1
+      ],
+      "correction_candidate_indices": [
+        0,
+        1
+      ],
+      "selected_correction_index": 0,
+      "direct_descent": true
+    },
+    {
+      "degree": 19,
+      "factor_index": 1,
+      "target_j_invariant": "3441",
+      "frobenius_action_on_two_torsion": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "frobenius_translation_index": 1,
+      "rational_two_torsion_indices": [
+        0
+      ],
+      "correction_candidate_indices": [
+        3
+      ],
+      "selected_correction_index": 3,
+      "direct_descent": false
+    },
+    {
+      "degree": 23,
+      "factor_index": 0,
+      "target_j_invariant": "5760",
+      "frobenius_action_on_two_torsion": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "frobenius_translation_index": 0,
+      "rational_two_torsion_indices": [
+        0
+      ],
+      "correction_candidate_indices": [
+        0
+      ],
+      "selected_correction_index": 0,
+      "direct_descent": true
+    },
+    {
+      "degree": 23,
+      "factor_index": 1,
+      "target_j_invariant": "7985",
+      "frobenius_action_on_two_torsion": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "frobenius_translation_index": 0,
+      "rational_two_torsion_indices": [
+        0,
+        1
+      ],
+      "correction_candidate_indices": [
+        0,
+        1
+      ],
+      "selected_correction_index": 0,
+      "direct_descent": true
+    }
+  ],
+  "certificate": {
+    "all_frobenius_actions_are_permutations_of_E2": true,
+    "all_frobenius_translation_cocycles_identified": true,
+    "all_cocycle_norms_zero": true,
+    "all_selected_coboundary_equations_verified": true,
+    "every_correction_set_is_an_E2_base_field_coset": true,
+    "all_descended_map_identities_verified": true
+  }
+}

@@ -134,6 +134,63 @@ For a primitive degree-$n$ output, a complete certificate contains:
 Euler-factor splitting is useful for discovery and twist selection, but by
 itself it is not a replacement for the two exact maps.
 
+## Frobenius descent of normalized maps
+
+Let \(K/k\) be finite Galois, let \(C/k\) have hyperelliptic involution
+\(\iota\), and let \(E/k\) be elliptic. Suppose a map
+
+$$
+f:C_K\longrightarrow E_K
+$$
+
+satisfies \(f\circ\iota=[-1]\circ f\), and suppose \(f\) and every conjugate
+\(\sigma(f)\) induce the same homomorphism
+\(\operatorname{Jac}(C)_K\to E_K\).
+
+:::{admonition} Descent-cocycle theorem
+:class: theorem
+There is a unique $P_\sigma\in E[2](K)$ with
+
+$$
+\sigma(f)=\tau_{P_\sigma}\circ f.
+$$
+
+The points $P_\sigma$ form a 1-cocycle. A translated map
+$\tau_Q\circ f$, with $Q\in E[2](K)$, descends to $k$ exactly when
+
+$$
+P_\sigma=Q-\sigma(Q).
+$$
+
+When a correction exists, all corrections form one coset of $E[2](k)$.
+:::
+
+:::{admonition} Proof
+:class: proof
+Maps inducing the same Jacobian homomorphism differ by a unique target
+translation. Hyperelliptic equivariance then forces the translating point
+to equal its negative, so it lies in \(E[2]\). Conjugating twice gives the
+1-cocycle identity. Finally,
+
+$$
+\sigma(\tau_Q\circ f)
+=\tau_{\sigma(Q)+P_\sigma}\circ f,
+$$
+
+which equals \(\tau_Q\circ f\) exactly under the displayed coboundary
+equation. Two solutions differ by a Galois-fixed 2-torsion point.
+:::
+
+Over \(k=\mathbf F_q\), the algorithm enumerates only the four geometric
+2-torsion points. It identifies the unique Frobenius translation, verifies
+its norm is zero, solves the four coboundary equations, and checks that the
+solution set is a coset of \(E[2](\mathbf F_q)\). The cost is independent of
+the cover degree.
+
+The exact aggregate certificate covers both maps in degrees 13, 17, 19, and
+23. Six maps descend directly. The second maps in degrees 17 and 19 have
+nontrivial cocycles resolved by unique nonrational 2-torsion corrections.
+
 ## Primitive versus composed degree
 
 If $f:C\to E$ has degree $n$ and $\alpha:E\to E_1$ is an isogeny of

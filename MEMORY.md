@@ -299,3 +299,10 @@ This project reconstructs every computational claim in
   descend before accepting a result.
 - `explicit_degree_prime_extension` is the default recovery strategy;
   `symbolic_quotient_ring` is retained as a regression oracle.
+- B023 proves and implements the normalized-map descent cocycle:
+  `Frobenius(f) = translation(P) o f` with unique `P in E[2]`.
+- A correction `Q` descends the map exactly when
+  `P = Q - Frobenius(Q)`; all corrections form one coset of `E[2](k)`.
+- Exact certificates cover eight maps in degrees 13, 17, 19, and 23. The
+  only nontrivial cases are factor 1 in degrees 17 and 19.
+- Current active frontier: optimized end-to-end degree-29 synthesis.

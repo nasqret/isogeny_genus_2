@@ -763,3 +763,19 @@
 - Runtime falls from `384.812` to `272.338` seconds, a `29.23%` reduction.
 - B022 is complete. The common-extension strategy is now the default general
   map-recovery evaluator; the symbolic quotient-ring path remains selectable.
+
+### Odd-prime descent cocycle theorem
+
+- Formalized the normalized-map descent obstruction as a unique translation
+  cocycle in target `E[2]`.
+- The engine now computes coefficientwise Frobenius of each transported map,
+  identifies the unique cocycle translation, verifies its 24-step norm is
+  zero, and solves `P = Q - Frobenius(Q)` over all four 2-torsion points.
+- It proves the complete correction set is a coset of rational target
+  2-torsion, then rechecks coefficient descent, target identity, degree, and
+  differential eigendirection.
+- The aggregate B023 certificate covers eight maps in degrees 13, 17, 19,
+  and 23. Six descend directly. Only the second maps in degrees 17 and 19
+  have nontrivial cocycles.
+- B023 is complete. The next sequential target is end-to-end degree-29
+  Frey-Kani synthesis using the optimized evaluator.
