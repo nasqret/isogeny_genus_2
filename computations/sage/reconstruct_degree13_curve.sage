@@ -143,8 +143,7 @@ result = {
         "base_model_matches_quotient_weil_polynomial": True,
     },
     "remaining_step": (
-        "transport the recovered maps to the fixed F_8009 sextic "
-        "and certify them independently in Magma"
+        "generalize the synthesis search to prime degrees 17 and 19"
     ),
 }
 

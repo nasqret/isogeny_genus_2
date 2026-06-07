@@ -1,0 +1,13 @@
+Magma V2.28-3     Sun Jun  7 2026 19:47:54 on lts-faculty [Seed = 2067042349]
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "/tmp/isogeny_verify_degree13_maps.m"
+B014_DEGREE13_MAPS_MAGMA_VERIFIED
+degree_1 13
+degree_2 13
+j_1 81
+j_2 3213
+eigenform_1 618*x + 1045
+eigenform_2 209*x + 6653
+
+Total time: 0.160 seconds, Total memory usage: 32.09MB

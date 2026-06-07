@@ -653,7 +653,10 @@ result = {
     "runtime_seconds": time.time() - started_at,
     "notes": [
         "The formulas are on the Rosenhain model over F_(8009^24).",
-        "Transport to the fixed F_8009 sextic is the next descent step.",
+        (
+            "The descended F_8009 formulas are stored in "
+            "sage_degree13_descended_maps.json."
+        ),
         "The Y-coordinate is y times the recorded y_coefficient.",
     ],
 }

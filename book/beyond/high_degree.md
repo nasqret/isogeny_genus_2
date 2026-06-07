@@ -522,8 +522,9 @@ C:\quad y^2={}&6042x^6+4620x^5+6357x^4+3661x^3\\
 $$
 
 SageMath and Magma independently certify that this curve has the displayed
-Weil polynomial. The remaining degree-$13$ task is recovery of the two
-elliptic maps.
+Weil polynomial. Both degree-$13$ maps have now been recovered, transported
+to this fixed model, descended to $\mathbf F_{8009}$, and independently
+certified in Magma.
 
 ## Degree program
 
@@ -536,7 +537,7 @@ elliptic maps.
 | 9 | Both primitive maps, CRT centers, and full $S_9$ monodromy complete |
 | 10 | Both primitive maps complete; target isogeny obstruction excludes degree $5$ followed by a 2-isogeny |
 | 11 | Both primitive maps complete on a rational point of Kumar's $Y_-(121)$ |
-| $>11$ | Degree-13 quotient curve certified; recover its maps, then synthesize degrees 17 and 19 |
+| $>11$ | Degree-13 synthesis complete; parameterize the search and synthesize degrees 17 and 19 |
 
 ## Degree 10 and degree 11
 

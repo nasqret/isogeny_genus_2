@@ -27,9 +27,10 @@ copied article.
 - 0 unresolved.
 - Beyond-paper work is tracked separately in
   `research/data/beyond_paper.json`.
-- Both degree-13 elliptic maps are certified on the Rosenhain quotient over
-  `F_(8009^24)`. The current frontier is transport/descent to the fixed
-  `F_8009` sextic and independent Magma verification.
+- B014 is complete: both degree-13 maps are descended to the fixed `F_8009`
+  sextic and independently certified in Magma with degrees `13` and `13`.
+- The current frontier is parameterized prime-degree synthesis in degrees
+  `17` and `19`.
 
 ## Authoritative files
 

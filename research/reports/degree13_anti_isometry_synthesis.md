@@ -9,8 +9,9 @@ finite-field data.
 
 The certificate proves that the principally polarized quotient is
 geometrically a smooth genus-2 Jacobian, reconstructs an explicit equation
-over the base field, and recovers both degree-13 maps on its Rosenhain model.
-Transport and coefficient descent to the fixed base-field sextic remain.
+over the base field, recovers both degree-13 maps on its Rosenhain model,
+descends them to the fixed base-field sextic, and verifies both morphisms
+independently in Magma.
 
 ## Elliptic curves
 
@@ -128,24 +129,33 @@ that its Frobenius polynomial is exactly the required quotient polynomial.
   `computations/sage/reconstruct_degree13_curve.sage`
 - Sage recovery of both maps:
   `computations/sage/recover_degree13_maps.sage`
+- Sage transport and coefficient descent:
+  `computations/sage/descend_degree13_maps.sage`
 - Magma:
   `computations/magma/verify_degree13_anti_isometry.m`
 - independent Magma Mestre reconstruction:
   `computations/magma/reconstruct_degree13_curve.m`
+- independent Magma map verification:
+  `computations/magma/verify_degree13_maps.m`
 - certificates:
   `results/sage_degree13_anti_isometry.json` and
   `results/magma_degree13_anti_isometry.json`,
   `results/sage_degree13_curve.json`, and
   `results/magma_degree13_curve.json`, plus
-  `results/sage_degree13_maps.json`
+  `results/sage_degree13_maps.json`,
+  `results/sage_degree13_descended_maps.json`, and
+  `results/magma_degree13_maps.json`
 - remote transcript:
   `results/remote/magma_degree13_anti_isometry.log` and
-  `results/remote/magma_degree13_curve.log`
+  `results/remote/magma_degree13_curve.log`, plus
+  `results/remote/magma_degree13_maps.log`
 
 The recorded runs took under `0.4` seconds in SageMath and `0.080` seconds
 in Magma for the graph certificate. The explicit theta reconstruction took
 `3.742` seconds in SageMath, and the independent Magma reconstruction took
-`0.636` seconds.
+`0.636` seconds. Map recovery took `251.786` seconds, base-field descent
+took `3.773` seconds, and final Magma map verification took `0.160` seconds
+and `32.09 MB`.
 
 ## Degree-13 maps
 
@@ -159,10 +169,33 @@ denominator degree `12`. The elliptic equations then recover exact
 Y-coordinates `y*G_i(x)`. Both function-field identities vanish, and both
 invariant differentials pull back to linear forms.
 
+## Base-field descent
+
+The fixed sextic has branch-factor degrees `1`, `2`, and `3` over
+`F_8009`, so its six branch points split in `F_(8009^24)`. Enumerating the
+`120` Möbius transformations determined by the images of infinity, `0`, and
+`1` produces exactly one projective class carrying the Rosenhain branch set
+to the fixed sextic branch set.
+
+After solving the hyperelliptic scaling identity, both maps transport to the
+fixed sextic. Every transported coefficient is fixed by `8009`-Frobenius,
+so coefficientwise descent gives formulas over `F_8009`. Both descended
+X-coordinates have numerator and denominator degree `13`.
+
+The exact elliptic identities hold over `F_8009`. Their invariant
+differentials pull back to
+
+```text
+618*x + 1045
+209*x + 6653,
+```
+
+which normalize to the Hasse-Witt eigendirections `[1,3779]` and
+`[1,7873]`. Remote Magma independently constructs both morphisms and
+returns degrees `13` and `13`, with target j-invariants `81` and `3213`.
+
 ## Next construction step
 
-The next B014 milestone is to transport and descend the maps from the
-Rosenhain model over `F_(8009^24)` to the fixed sextic over `F_8009`, then
-certify the transported formulas independently in Magma. After that, the
-finite-field search and certification code will be generalized to degrees
-17 and 19.
+B014 is complete. The next milestone is to parameterize the finite-field
+search and certification pipeline, then search for new examples in prime
+degrees 17 and 19.

@@ -185,8 +185,8 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
 
 Current bounded tasks, in order:
 
-1. transport the certified degree-13 maps from the Rosenhain model over
-   `F_(8009^24)` to the fixed sextic over `F_8009`, descend their
-   coefficients, and add an independent Magma certificate;
-2. turn the degree-13 search into a parameterized prime-degree synthesis
-   engine and run it in degrees 17 and 19.
+1. turn the completed degree-13 construction into a parameterized
+   prime-degree synthesis engine;
+2. search for and certify new anti-isometry examples in degrees 17 and 19;
+3. compare runtime, extension degree, and interpolation complexity across
+   degrees 13, 17, and 19.

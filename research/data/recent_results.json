@@ -338,5 +338,10 @@
     "timestamp": "2026-06-07T19:40:47+02:00",
     "claim_id": "B014",
     "summary": "Recovered both primitive degree-13 maps on the Rosenhain quotient over F_(8009^24): 34 exact theta evaluations interpolate X-degree pairs (13,12), both elliptic function-field identities hold, and both differential pullbacks are linear."
+  },
+  {
+    "timestamp": "2026-06-07T19:47:54+02:00",
+    "claim_id": "B014",
+    "summary": "Completed degree-13 Frey-Kani synthesis: a unique branch-set Mobius transformation descends both maps to the fixed F_8009 sextic, Sage verifies degrees 13 and Hasse-Witt eigendirections, and remote Magma independently returns degrees 13 and 13."
   }
 ]

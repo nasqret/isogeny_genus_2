@@ -26,6 +26,9 @@ paper is tracked separately in
 - Degree-5 discrepancy report: `research/reports/degree5_source_audit.md`
 - Degree-13 synthesis and map report:
   `research/reports/degree13_anti_isometry_synthesis.md`
+- Degree-13 base-field map certificates:
+  `results/sage_degree13_descended_maps.json` and
+  `results/magma_degree13_maps.json`
 - Obsidian vault: `vault/00-Project/Home.md`
 - Plan: `PLAN.md`
 - Journal: `JOURNAL.md`

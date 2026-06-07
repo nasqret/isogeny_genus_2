@@ -21,9 +21,9 @@ above, with a degree-independent fallback and exact arithmetic certificates.
 - Degree 7: both primitive maps complete.
 - Degree 8: both primitive maps and full `S8` monodromy complete.
 - Degrees 9-11: rational primitive map pairs complete.
-- Degree 13: anti-isometry, theta quotient, explicit genus-2 curve, and both
-  maps on the Rosenhain model complete. Base-field transport/descent and
-  independent Magma verification remain active.
+- Degree 13: anti-isometry, theta quotient, explicit genus-2 curve, both
+  maps, base-field descent, and independent Magma verification complete.
+- Degrees 17 and 19: next prime-degree synthesis search.
 - Degrees 20 and 80: exact nonprimitive test maps complete.
 
 See `research/reports/high_degree_roadmap.md` and

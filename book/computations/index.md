@@ -90,6 +90,10 @@ Local exact computations live under `computations/sage/`.
   points, interpolation of both degree-13 maps on the Rosenhain quotient,
   elliptic function-field identities, and linear differential pullbacks
   over `F_(8009^24)`.
+- [`descend_degree13_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/descend_degree13_maps.sage):
+  unique branch-set Möbius transport, coefficientwise descent to `F_8009`,
+  exact target identities, and Hasse-Witt eigendirection checks for both
+  degree-13 maps.
 - [`export_degree10_11_magma.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/export_degree10_11_magma.sage):
   deterministic export of the recovered exact coefficients to static Magma
   verification programs.
@@ -98,6 +102,11 @@ Local exact computations live under `computations/sage/`.
   image, and primitivity for both Kumar maps.
 
 ## Magma
+
+- [`verify_degree13_maps.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree13_maps.m):
+  independently constructs both descended morphisms over `F_8009`, verifies
+  their equations and differential pullbacks, and computes degrees `13` and
+  `13`.
 
 Remote computations live under `computations/magma/` and execute with Magma
 V2.28-3 on `lts-faculty.wmi.amu.edu.pl`.

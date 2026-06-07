@@ -55,3 +55,8 @@ squareclasses, and the quotient Weil polynomial.
 descended Igusa-Clebsch invariants, selects the correct quadratic twist by
 the quotient L-polynomial, and independently certifies the fixed base-field
 curve used by the Sage artifact.
+
+`verify_degree13_maps.m` independently constructs the two descended
+morphisms from the fixed `F_8009` sextic to the elliptic curves with
+j-invariants `81` and `3213`. It verifies the target identities,
+differential pullbacks, and degrees `13` and `13`.

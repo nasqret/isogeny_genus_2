@@ -584,3 +584,28 @@
 - B014 is now `90%`. The remaining work is transport/descent from the
   Rosenhain model to the fixed `F_8009` sextic and independent Magma
   certification.
+
+### Degree-13 base-field descent and final certification
+
+- Factored the fixed sextic branch divisor over `F_(8009^24)`; its
+  irreducible degrees over `F_8009` are `1`, `2`, and `3`.
+- Enumerated the `120` Möbius transformations determined by the images of
+  infinity, `0`, and `1`. Exactly one projective class carries the six
+  Rosenhain branch points to the six roots of the fixed sextic.
+- Solved the hyperelliptic scaling identity and transported both maps to
+  `y^2=6042*x^6+4620*x^5+6357*x^4+3661*x^3+4018*x^2+5767*x+84`.
+- Every transported coefficient is fixed by `8009`-Frobenius, so both maps
+  descend coefficientwise to `F_8009`. Their X-coordinate degree pairs are
+  `(13,13)`.
+- Exact function-field identities hold on the fixed sextic. The pullbacks of
+  invariant differentials normalize to Hasse-Witt eigenvectors
+  `[1,3779]` and `[1,7873]`.
+- Added `computations/sage/descend_degree13_maps.sage` and
+  `results/sage_degree13_descended_maps.json`.
+- Remote Magma independently constructed both morphisms, verified their
+  equations and linear differential pullbacks, and returned degrees
+  `13` and `13` in `0.160` seconds using `32.09 MB`.
+- Added `computations/magma/verify_degree13_maps.m`,
+  `results/magma_degree13_maps.json`, and the remote transcript.
+- B014 is complete. The next construction frontier is a parameterized
+  prime-degree search in degrees `17` and `19`.

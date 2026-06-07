@@ -53,6 +53,11 @@ Each `.sage` file must:
 - `reconstruct_degree13_curve.sage`: computes the quotient theta null over
   `F_(8009^12)`, descends its invariants, and certifies an explicit
   `F_8009` genus-2 model and Weil polynomial.
+- `recover_degree13_maps.sage`: evaluates the dual theta isogeny on 34 exact
+  points and reconstructs both degree-13 maps over `F_(8009^24)`.
+- `descend_degree13_maps.sage`: finds the unique branch-set Möbius
+  isomorphism, transports both maps to the fixed sextic, descends every
+  coefficient to `F_8009`, and verifies both Hasse-Witt eigendirections.
 
 The theta reconstruction uses the GPL-3.0 Sage branch of AVIsogenies at
 commit `e488a54304a5b5bcd0ae8c58d0ab82aeb02d6746`. Install the pinned external

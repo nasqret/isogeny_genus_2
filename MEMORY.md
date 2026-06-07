@@ -224,6 +224,13 @@ This project reconstructs every computational claim in
   equations hold identically, and both invariant differentials pull back
   to linear forms. The full formulas are in
   `results/sage_degree13_maps.json`.
-- Current active frontier: transport and descend those maps to the fixed
-  `F_8009` sextic, certify them independently in Magma, then generalize the
-  synthesis search to larger prime degrees.
+- B014 is complete. A unique branch-set Möbius class transports the
+  Rosenhain quotient to the fixed `F_8009` sextic. Both descended
+  X-coordinates have degree pair `(13,13)`, their coefficients lie in
+  `F_8009`, and their normalized differential directions are
+  `[1,3779]` and `[1,7873]`.
+- Remote Magma independently constructs both descended morphisms and returns
+  degrees `13` and `13`, target j-invariants `81` and `3213`, in `0.160`
+  seconds and `32.09 MB`.
+- Current active frontier: parameterize the prime-degree Frey-Kani search and
+  run it in degrees 17 and 19.

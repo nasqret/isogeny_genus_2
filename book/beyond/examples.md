@@ -486,9 +486,27 @@ function field, and the invariant differential pulls back to a linear
 multiple of $dx/y$. The complete extension-field coefficients are stored in
 `results/sage_degree13_maps.json`.
 
-The remaining degree-$13$ task is to transport these formulas from the
-Rosenhain model to the fixed sextic over $\mathbf F_{8009}$, descend the
-coefficients, and certify the transported maps independently in Magma.
+The six branch points of the fixed sextic split over
+$\mathbf F_{8009^{24}}$. Among the $120$ Möbius transformations determined
+by the images of $\infty,0,1$, exactly one projective class identifies its
+branch set with the Rosenhain branch set. Transport through this
+isomorphism gives two maps over the fixed sextic whose coefficients are all
+fixed by $8009$-Frobenius and therefore descend to $\mathbf F_{8009}$.
+
+Both descended $X$-coordinates have numerator and denominator degree $13$.
+Their invariant differentials pull back to
+
+$$
+(618x+1045)\frac{dx}{y},
+\qquad
+(209x+6653)\frac{dx}{y},
+$$
+
+which normalize to the Hasse--Witt eigendirections $(1,3779)$ and
+$(1,7873)$. Remote Magma independently constructs the two morphisms and
+returns degree $13$ for each. The base-field formulas are stored in
+`results/sage_degree13_descended_maps.json`, with the independent certificate
+in `results/magma_degree13_maps.json`.
 
 ## Fixed-field quotient equations
 
