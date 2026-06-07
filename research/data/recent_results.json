@@ -203,5 +203,20 @@
     "timestamp": "2026-06-07T01:42:44+02:00",
     "claim_id": "B013",
     "summary": "Certified exact nonprimitive degree-20 and degree-80 maps by elliptic multiplication."
+  },
+  {
+    "timestamp": "2026-06-07T02:25:33+02:00",
+    "claim_id": "B008",
+    "summary": "Recovered both primitive degree-7 maps over Q and certified their exact target and differential identities in SageMath."
+  },
+  {
+    "timestamp": "2026-06-07T02:26:38+02:00",
+    "claim_id": "B008-B010",
+    "summary": "Remote Magma independently constructed both Kumar morphisms and returned degree 7 for each."
+  },
+  {
+    "timestamp": "2026-06-07T02:28:41+02:00",
+    "claim_id": "B010",
+    "summary": "Formal integration and exact Pade reconstruction reproduced both degree-7 X-coordinates from their eigenforms and target centers."
   }
 ]

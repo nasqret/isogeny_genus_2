@@ -82,10 +82,16 @@ This project reconstructs every computational claim in
   `M=2*b*(a+b)*(a^2+b)`, and `N=b^3*(2*a+b)`.
 - The initial exact degree-5 census has ten rows: zero conics split over `Q`,
   all ten split over the branch quadratic field.
-- Degree-7 benchmark evidence is Euler-factor splitting at 41 good primes;
-  do not describe the two degree-7 maps as recovered until B008 produces
-  exact function-field identities.
+- B008 is complete: both primitive degree-7 maps are recovered over `Q`.
+  Sage verifies their exact function-field and differential identities, and
+  remote Magma independently returns degree `7` for each morphism.
+- The first pullback differential is `(49/12) dx/y`; its absent numerator
+  `x^6` term gives the trace-zero complementary eigenform `x dx/y`.
+- The second pullback differential is `(-49/60) x dx/y`. Its positive point
+  at infinity maps to `-7*(29,-590)` on the second elliptic factor, and its
+  pole denominator is the first cubic times
+  `(x^2-115*x/24+7475/24)^2`.
 - B013 gives exact degree-20 and degree-80 maps by elliptic multiplication,
   but they are nonprimitive.
 - Current active frontier: B002 generic degree 5, B007 arbitrary given-map
-  engine, and B008 primitive degree-7 map recovery.
+  engine, and B010 automated eigenform-guided recovery.

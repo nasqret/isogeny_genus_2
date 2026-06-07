@@ -125,9 +125,9 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
 
 - Generic degree-5 quartic, three nodes, and normalization conic: exact.
 - Ten exact primitive degree-5 maps over quadratic branch fields: exact.
-- One degree-7 split benchmark with 41 Euler-factor identities: exact
-  discovery certificate; maps pending.
+- One degree-7 split benchmark with 41 Euler-factor identities and both
+  primitive maps: exact in SageMath, with independent Magma degree checks.
 - Degree-20 and degree-80 maps by elliptic multiplication: exact,
   nonprimitive.
 
-Current bounded tasks: B002, B007, and B008.
+Current bounded tasks: B002, B007, and B010.

@@ -20,7 +20,7 @@ paper is tracked separately in
 ## Live surfaces
 
 - Dashboard: `http://127.0.0.1:8765/dashboard/`
-- Private repository: `https://github.com/nasqret/isogeny_genus_2`
+- Public repository: `https://github.com/nasqret/isogeny_genus_2`
 - Jupyter Book after building: `book/_build/html/index.html`
 - Final verification report: `research/reports/final_claim_audit.md`
 - Degree-5 discrepancy report: `research/reports/degree5_source_audit.md`

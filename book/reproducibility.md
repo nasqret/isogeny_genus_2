@@ -38,8 +38,8 @@ artifact to exist. Remote Magma transcripts are preserved under
 ```
 
 This reruns the generic degree-5 structure calculation, the exact degree-5
-census, the degree-7 Kumar benchmark, and the degree-20/80 composition
-certificates.
+census, the degree-7 Kumar Euler-factor benchmark, both exact primitive
+degree-7 maps, and the degree-20/80 composition certificates.
 
 ## Dashboard
 

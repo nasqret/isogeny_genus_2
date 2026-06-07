@@ -16,5 +16,9 @@ Each `.sage` file must:
   solubility over the rational and branch fields.
 - `verify_degree7_kumar_specialization.sage`: rational degree-7 benchmark and
   41 exact Euler-factor identities.
+- `verify_degree7_maps.sage`: both primitive degree-7 maps, their differential
+  pullbacks, pole divisors, and exact target identities.
+- `recover_degree7_maps.sage`: reconstructs both degree-7 `X`-coordinates
+  from formal integration at the elliptic origin or a finite target point.
 - `verify_composed_high_degree_maps.sage`: exact nonprimitive maps of degrees
   20 and 80.

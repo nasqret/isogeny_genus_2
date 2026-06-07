@@ -204,3 +204,21 @@
 - Expanded the B-series to fourteen workstreams covering map recovery,
   Galois closures, finite-field/CRT lifting, Kumar families through degree 11,
   and Frey-Kani anti-isometry synthesis.
+
+### Primitive degree-7 maps
+
+- Recovered the first Kumar map by formal integration at infinity. Its
+  pullback differential is `(49/12) dx/y`, and its denominator is the second
+  cubic factor of the source sextic.
+- Used the absent `x^6` coefficient in the first map numerator to prove
+  `Tr(x)=0`, identifying the complementary eigenform as `x dx/y`.
+- Corrected the recovery ansatz for the complementary map: the two points at
+  infinity map to finite opposite elliptic points, so the rational
+  `X`-coordinate has degree pattern `(7,7)`, not `(7,5)`.
+- Located the positive infinity image at `-7*(29,-590)` on the second
+  elliptic factor and recovered differential scale `-49/60`.
+- SageMath verified both exact target identities, differential pullbacks, pole
+  divisors, and rational-function degrees.
+- Remote Magma constructed both morphisms and independently returned degree
+  `7` for each. B008 is complete; B010 now contains a concrete finite-point
+  formal-integration and Pade-reconstruction benchmark.
