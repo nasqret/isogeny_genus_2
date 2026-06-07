@@ -26,10 +26,13 @@ def source_frobenius_trace_pairs(
         raise NotImplementedError(
             "Frobenius target discovery currently requires a rational source"
         )
-    discriminant = ZZ(F.discriminant())
+    discriminant = QQ(F.discriminant())
     certificates = []
     for prime in prime_range(prime_start, prime_bound):
-        if discriminant % prime == 0:
+        if (
+            discriminant.numerator() % prime == 0
+            or discriminant.denominator() % prime == 0
+        ):
             continue
         finite_curve = HyperellipticCurve(F.change_ring(GF(prime)))
         frobenius = finite_curve.frobenius_polynomial()
@@ -61,10 +64,21 @@ def source_frobenius_trace_pairs(
 def discriminant_supported_twist_classes(source_polynomial):
     """
     Enumerate signed squarefree classes supported on the source discriminant.
+
+    Rational source models may have bad reduction at primes occurring in the
+    denominator of the discriminant, so both numerator and denominator
+    supports are required.
     """
     F = source_polynomial
-    numerator = ZZ(F.discriminant().numerator())
-    support = [ZZ(prime) for prime, _ in factor(abs(numerator))]
+    discriminant = QQ(F.discriminant())
+    support = sorted(set(
+        ZZ(prime)
+        for value in (
+            abs(discriminant.numerator()),
+            discriminant.denominator(),
+        )
+        for prime, _ in factor(value)
+    ))
     classes = []
     for mask in range(2^len(support)):
         value = ZZ(1)

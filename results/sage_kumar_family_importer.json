@@ -1,0 +1,143 @@
+{
+  "generated_at": "2026-06-07T03:38:06+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 1.177167,
+  "workstream": "B009",
+  "verified": true,
+  "supported_degrees": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "source_file_count": 18,
+  "source_bytes": 4048524,
+  "source_sha256": {
+    "disc36.txt": "17da1d5bd8aa9779c584ee5c30ba2de4f8fb6f4e7bf383425ce5ef13b67a6966",
+    "ig36.txt": "1fe8d906aa7e7dfe9a14e7bdf64b5adcff4505e8fc4458b7ef4143ab86cdb5ff",
+    "univcurve36.txt": "1c97a072348086bf434ed5532aeaaaae67c38453ef1209a4a51eff8bc8f79cac",
+    "disc49.txt": "3e6f9362da8ce4901a12cf3f001fac4bdd70c496ac646fd10b23db12f899294c",
+    "ig49.txt": "3ad51dc6c428ea5629be9781ea34f87ee0cfc697516bc4faa95a9278b90e13e5",
+    "univcurve49.txt": "d4802b4294f03df0e1ad698f1457f2d048f6d027106219d9d458bfa1aa8d11a3",
+    "disc64.txt": "6c17080887aaccf82a5ab61bb146a4ccd78ef06ed71bb42064185c9ae1fd1f6d",
+    "ig64.txt": "254c61263e00f9e89961192bbd6e395c9925672593b291eb25b340bcb0193223",
+    "univcurve64.txt": "801c35b8094f51b206f074f859e1bf09f0f55119617ab22b271fd984ceea9d14",
+    "disc81.txt": "fd4433d552fb9756bbe5b58dd5ffee10f97645b05cf008a4425b94df3b3a7455",
+    "ig81.txt": "cdd8a9b6a36cbcfbdff71a3bd5a32c1d4df1eeccc84f912861b30300337ea685",
+    "univcurve81.txt": "c8090a6bb1ace48c37c78ad280fc4ca42518a1fdceaa2910c970aa2b21593b83",
+    "disc100.txt": "b0f12493295997556b0ec939e611568d91db1966ff3dbffbb83a751b18f2c851",
+    "ig100.txt": "474b6b7ef62cbd0f0bd36fff5327b37600ded26023849ac426f967592bd8c587",
+    "univcurve100.txt": "73f6493d555520d8d5217249899261f5681a5f6a4dd0c8a6a494db9e5453c8ee",
+    "disc121.txt": "13496a097435a014e7750ca175936da7004686a0b685df017d72bf2b62b9aa07",
+    "ig121.txt": "bdd4c584b9aa67c5eb24b65c8a59606f05c14782889c6484176b2ab86a2d429b",
+    "univcurve121.txt": "5d4eca4a3b1152d6cae8fa859071b2ad6dcb0107d791e41d94b1ad239bb15e57"
+  },
+  "all_degree_certificates": [
+    {
+      "degree": 6,
+      "parameters": [
+        -3,
+        -3
+      ],
+      "surface_value": "510137433",
+      "j_discriminant": "1418622352372102542912/5764801",
+      "square_ratio": "2780863078464/5764801",
+      "square_root": "1667592/2401",
+      "igusa_clebsch_nonzero": true
+    },
+    {
+      "degree": 7,
+      "parameters": [
+        -3,
+        -3
+      ],
+      "surface_value": "-42444",
+      "j_discriminant": "-4946356517142933504/6103515625",
+      "square_ratio": "116538415727616/6103515625",
+      "square_root": "10795296/78125",
+      "igusa_clebsch_nonzero": true
+    },
+    {
+      "degree": 8,
+      "parameters": [
+        -3,
+        -3
+      ],
+      "surface_value": "9577197",
+      "j_discriminant": "3957062597684966109466278756352/205891132094649",
+      "square_ratio": "33467210752006276457168896/16677181699666569",
+      "square_root": "5785085198336/129140163",
+      "igusa_clebsch_nonzero": true
+    },
+    {
+      "degree": 9,
+      "parameters": [
+        -3,
+        -3
+      ],
+      "surface_value": "2521344",
+      "j_discriminant": "523144487720514056003518464/14641",
+      "square_ratio": "207486359544954617856/14641",
+      "square_root": "14404386816/121",
+      "igusa_clebsch_nonzero": true
+    },
+    {
+      "degree": 10,
+      "parameters": [
+        -3,
+        -1
+      ],
+      "surface_value": "-2988",
+      "j_discriminant": "-2374071046875/16",
+      "square_ratio": "3178140625/64",
+      "square_root": "56375/8",
+      "igusa_clebsch_nonzero": true
+    },
+    {
+      "degree": 11,
+      "parameters": [
+        -3,
+        -3
+      ],
+      "surface_value": "-23184",
+      "j_discriminant": "-14003925635513364500677984256000000/4710128697246244834921603689",
+      "square_ratio": "5436306535525374417965056000000/42391158275216203514294433201",
+      "square_root": "2331588843584000/205891132094649",
+      "igusa_clebsch_nonzero": true
+    }
+  ],
+  "degree7_executable_specialization": {
+    "parameters": [
+      "4/5",
+      "1"
+    ],
+    "z": "-23/25",
+    "source_polynomial_degree": 6,
+    "source_discriminant_nonzero": true,
+    "j_invariants": [
+      "-97967097/128",
+      "-20285403817/279936"
+    ],
+    "bad_prime_support": [
+      2,
+      3,
+      5,
+      7,
+      23,
+      419
+    ],
+    "compatible_twists": {
+      "-97967097/128": [
+        5,
+        2023770
+      ],
+      "-20285403817/279936": [
+        -87990,
+        -115
+      ]
+    },
+    "frobenius_prime_count": 10
+  }
+}

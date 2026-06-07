@@ -13,6 +13,8 @@ run_sage() {
 
 run_sage computations/sage/verify_degree5_family_structure.sage
 run_sage computations/sage/census_degree5_family.sage
+run_sage computations/sage/verify_kumar_family_importer.sage
+run_sage computations/sage/verify_kumar_all_tautological_curves.sage
 run_sage computations/sage/verify_degree7_kumar_specialization.sage
 run_sage computations/sage/test_general_elliptic_cover_recovery.sage
 run_sage computations/sage/recover_degree7_maps.sage
@@ -21,6 +23,8 @@ run_sage computations/sage/verify_composed_high_degree_maps.sage
 
 python3 -m json.tool "$ROOT/results/sage_degree5_family_structure.json" >/dev/null
 python3 -m json.tool "$ROOT/results/sage_degree5_family_census.json" >/dev/null
+python3 -m json.tool "$ROOT/results/sage_kumar_family_importer.json" >/dev/null
+python3 -m json.tool "$ROOT/results/sage_kumar_tautological_curves.json" >/dev/null
 python3 -m json.tool "$ROOT/results/sage_degree7_kumar_specialization.json" >/dev/null
 python3 -m json.tool "$ROOT/results/sage_general_map_recovery.json" >/dev/null
 python3 -m json.tool "$ROOT/results/sage_degree7_recovery.json" >/dev/null

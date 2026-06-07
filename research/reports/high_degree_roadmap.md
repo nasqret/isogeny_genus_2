@@ -34,6 +34,11 @@ is complete only after both maps and this splitting are certified exactly.
   `j`-invariants, Frobenius traces select the rational twists and a bounded
   projective search selects the eigenform lines. Exact maps certify the
   surviving candidates.
+- Kumar family importer: all 18 upstream auxiliary files for discriminants
+  `36,49,64,81,100,121` are vendored and parsed exactly. The importer exposes
+  the Hilbert modular double cover, Igusa-Clebsch tuple, quadratic
+  `j`-polynomial, and tautological sextic. One nonsingular genus-2 curve has
+  been constructed in every degree `6` through `11`.
 - High degree: exact nonprimitive degree-20 and degree-80 maps obtained from
   the degree-5 cover by elliptic multiplication.
 
@@ -101,13 +106,13 @@ curve, and recover the two maps.
 
 1. Degree 5: prove or refute generic conic splitting over the branch field;
    derive \(j(E')\).
-2. Degree 6: import the \(Y_-(36)\) family and handle exceptional
-   \(\operatorname{PGL}_2(\mathbf F_5)\) monodromy.
+2. Degree 6: the \(Y_-(36)\) family is imported; next handle exceptional
+   \(\operatorname{PGL}_2(\mathbf F_5)\) monodromy and recover both maps.
 3. Degree 7: completed for the current benchmark; from the two family
    `j`-invariants the recovery routine discovers twists, eigenforms, centers,
    scales, and both maps.
-4. Degrees 8-11: import Kumar's tautological families and recover one fully
-   certified rational specialization per degree.
+4. Degrees 8-11: imported; next locate rational surface points and recover
+   one fully certified rational specialization per degree.
 5. Degrees above 11: generate primitive examples by anti-isometry synthesis
    and recover maps with the finite-field/CRT backend.
 

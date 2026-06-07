@@ -233,5 +233,10 @@
     "timestamp": "2026-06-07T03:12:19+02:00",
     "claim_id": "B010",
     "summary": "From the degree-7 source and two family j-invariants, uniquely discovered twists -115 and 5, eigenform lines [1:0] and [0:1], and both exact maps."
+  },
+  {
+    "timestamp": "2026-06-07T03:34:46+02:00",
+    "claim_id": "B009",
+    "summary": "Imported Kumar's Y_-(n^2) data for every degree 6 through 11 and constructed an exact nonsingular tautological genus-2 specialization in all six degrees."
   }
 ]

@@ -110,12 +110,18 @@
   {
     "id": "B009",
     "title": "Kumar family importer for degrees 6 through 11",
-    "status": "in_progress",
-    "progress": 10,
+    "status": "completed",
+    "progress": 100,
     "engine": "SageMath",
     "location": "local",
     "objective": "Encode Kumar's tautological genus-2 families and the two elliptic j-invariants on Y_-(n^2) for every n from 6 through 11.",
     "artifacts": [
+      "sources/upstream/KumarSquareDiscriminants/README.md",
+      "computations/sage/lib/kumar_square_discriminant_families.sage",
+      "computations/sage/verify_kumar_family_importer.sage",
+      "computations/sage/verify_kumar_all_tautological_curves.sage",
+      "results/sage_kumar_family_importer.json",
+      "results/sage_kumar_tautological_curves.json",
       "research/reports/high_degree_roadmap.md"
     ]
   },

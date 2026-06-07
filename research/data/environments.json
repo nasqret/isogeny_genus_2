@@ -37,6 +37,6 @@
     "version": "git 2.50.1",
     "host": "workspace",
     "command": "git",
-    "notes": "Initialized on branch main; private remote is https://github.com/nasqret/isogeny_genus_2."
+    "notes": "Initialized on branch main; public remote is https://github.com/nasqret/isogeny_genus_2."
   }
 ]

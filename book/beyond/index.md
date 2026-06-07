@@ -31,6 +31,7 @@ subfield.
 | Ten exact degree-5 source curves and maps | Exact | `census_degree5_family.sage` |
 | All ten tested conics split over the branch quadratic field, none over $\mathbf Q$ | Experimental exact census | `sage_degree5_family_census.json` |
 | Rational degree-7 Kumar specialization with two primitive maps | Exact Sage identities and independent Magma degrees | `verify_degree7_maps.sage`, `verify_degree7_maps.m` |
+| Kumar families in every degree 6 through 11 | Exact surface, Igusa, `j`-polynomial, and one nonsingular tautological curve per degree | `verify_kumar_family_importer.sage`, `verify_kumar_all_tautological_curves.sage` |
 | Degree $20$ and $80$ maps from elliptic multiplication | Exact, nonprimitive | `verify_composed_high_degree_maps.sage` |
 
 The machine-readable program is

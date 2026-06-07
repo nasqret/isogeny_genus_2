@@ -40,6 +40,14 @@ Local exact computations live under `computations/sage/`.
 - [`elliptic_factor_discovery.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/lib/elliptic_factor_discovery.sage):
   Frobenius-compatible target-twist discovery and bounded eigenform-line
   search from candidate Hilbert-modular `j`-invariants.
+- [`kumar_square_discriminant_families.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/lib/kumar_square_discriminant_families.sage):
+  exact degree-6 through degree-11 Hilbert modular surfaces, Igusa-Clebsch
+  invariants, elliptic `j`-polynomials, and tautological curves.
+- [`verify_kumar_family_importer.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/verify_kumar_family_importer.sage):
+  all-degree parser audit, double-cover discriminant checks, and imported
+  degree-7 target discovery.
+- [`verify_kumar_all_tautological_curves.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/verify_kumar_all_tautological_curves.sage):
+  one exact nonsingular genus-2 specialization in each degree 6 through 11.
 - [`test_general_elliptic_cover_recovery.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/test_general_elliptic_cover_recovery.sage):
   exact regression cases in degrees 3, 5, and 7 over rational and quadratic
   number fields.
@@ -96,3 +104,5 @@ never sufficient by itself to mark a claim verified.
 - [`sage_general_map_recovery.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_general_map_recovery.json)
 - [`sage_degree7_maps.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_degree7_maps.json)
 - [`magma_degree7_maps.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree7_maps.json)
+- [`sage_kumar_family_importer.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_kumar_family_importer.json)
+- [`sage_kumar_tautological_curves.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_kumar_tautological_curves.json)

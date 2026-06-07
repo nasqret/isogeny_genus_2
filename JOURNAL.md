@@ -279,3 +279,22 @@
 - B010 progress increased to 90%. The remaining general input is extraction
   of candidate `j`-invariants from an arbitrary source; Kumar-family values
   will come from B009.
+
+### Kumar families in degrees 6 through 11
+
+- Vendored Kumar's 18 auxiliary files for discriminants
+  `36,49,64,81,100,121`.
+- Added `kumar_square_discriminant_families.sage`, which parses each Hilbert
+  modular double cover, Igusa-Clebsch tuple, symmetric `j`-functions, and
+  tautological genus-2 sextic.
+- Verified at exact rational sample points that the discriminant of the
+  `j`-polynomial differs from the surface branch polynomial by a square in
+  all six degrees.
+- Constructed one squarefree genus-2 sextic in every degree 6 through 11.
+  The degree-11 3.1 MB coefficient source is evaluated by an iterative
+  arithmetic parser to avoid Python compiler depth limits.
+- The imported degree-7 specialization reproduces both rational
+  `j`-invariants and Frobenius discovery retains twists `-115` and `5`.
+- B009 is complete. The next high-degree target is a rational degree-6
+  specialization with both primitive maps and an exceptional-monodromy
+  certificate.

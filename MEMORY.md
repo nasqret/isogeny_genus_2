@@ -113,5 +113,11 @@ This project reconstructs every computational claim in
   then selects eigenforms `[1:0]`, `[0:1]`.
 - B010's remaining fully general input is candidate `j`-invariant extraction
   from an arbitrary source. For Kumar families this belongs to B009.
+- B009 is complete. `kumar_square_discriminant_families.sage` imports the
+  exact surfaces, Igusa-Clebsch tuples, symmetric elliptic `j`-functions, and
+  tautological sextics for degrees 6 through 11. The degree-11 formula needs
+  the iterative arithmetic evaluator rather than `sage_eval`.
+- `sage_kumar_tautological_curves.json` certifies one nonsingular genus-2
+  specialization in every imported degree.
 - Current active frontier: B002 generic degree 5, B007 arbitrary given-map
-  engine, and B010 automated eigenform-guided recovery.
+  engine, B010 automated recovery, and the first primitive degree-6 pair.

@@ -41,7 +41,7 @@ A computational claim is **verified** only when:
 
 ### Phase 0: Reproducible baseline
 
-- Initialize local git and private GitHub repository.
+- Initialize local git and GitHub repository.
 - Archive the exact arXiv source and the pinned upstream repository.
 - Create claim ledger, journal, memory, vault, book, dashboard, and validation
   scripts.
@@ -75,7 +75,7 @@ A computational claim is **verified** only when:
 - Require all claim artifacts to execute.
 - Build the article copy, claim index, Jupyter Book, and dashboard.
 - Preserve local and remote environment metadata and transcripts.
-- Push validated checkpoints to the private GitHub repository.
+- Push validated checkpoints to the public GitHub repository.
 
 ## Final paper-verification state
 
@@ -116,9 +116,9 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
 | Degree | Deliverable |
 |---|---|
 | 5 | Prove the generic normalization conic and its branch-field splitting locus; derive \(j(E')\) |
-| 6 | Import \(Y_-(36)\), handle exceptional monodromy, recover one pair of maps |
+| 6 | Imported; handle exceptional monodromy and recover one pair of maps |
 | 7 | Recover both maps for the certified Kumar benchmark |
-| 8-11 | Import Kumar families and certify one rational specialization per degree |
+| 8-11 | Imported; certify one rational map pair per degree |
 | \(>11\) | Generate primitive examples from anti-isometries and recover maps by CRT |
 
 ### Implemented checkpoint
@@ -129,5 +129,11 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
   primitive maps: exact in SageMath, with independent Magma degree checks.
 - Degree-20 and degree-80 maps by elliptic multiplication: exact,
   nonprimitive.
+- Kumar's Hilbert modular surfaces, Igusa-Clebsch invariants, symmetric
+  elliptic `j`-functions, and tautological sextics are imported exactly for
+  every degree 6 through 11. One nonsingular genus-2 specialization is
+  certified in each degree.
 
-Current bounded tasks: B002, B007, and B010.
+Current bounded tasks: recover a primitive degree-6 specialization, implement
+the exceptional monodromy test, and feed the imported degree-6 targets into
+B010.
