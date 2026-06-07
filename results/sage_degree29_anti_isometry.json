@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-06-07T22:23:58+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 9.101378,
+  "workstream": "B024",
+  "verified": true,
+  "scope": "degree-29 candidate search and anti-isometry certificate",
+  "field": "GF(50867)",
+  "degree": 29,
+  "field_minimality": {
+    "first_prime_congruent_to_1_mod_29_with_two_admissible_traces": true,
+    "smaller_admissible_fields": [],
+    "admissible_trace_squareclasses": [
+      -11,
+      -19
+    ]
+  },
+  "admissible_traces": [
+    408,
+    -433
+  ],
+  "curves": [
+    {
+      "equation": "y^2=x^3+18068*x+28770",
+      "a4": 18068,
+      "a6": 28770,
+      "j": "2032",
+      "cardinality": 50460,
+      "group_invariants": [
+        29,
+        1740
+      ],
+      "trace": 408,
+      "cm_squareclass": -11,
+      "torsion_basis": [
+        [
+          24954,
+          13946
+        ],
+        [
+          40497,
+          37256
+        ]
+      ]
+    },
+    {
+      "equation": "y^2=x^3+16732*x+29860",
+      "a4": 16732,
+      "a6": 29860,
+      "j": "30870",
+      "cardinality": 51301,
+      "group_invariants": [
+        29,
+        1769
+      ],
+      "trace": -433,
+      "cm_squareclass": -19,
+      "torsion_basis": [
+        [
+          45037,
+          16292
+        ],
+        [
+          32423,
+          11221
+        ]
+      ]
+    }
+  ],
+  "anti_isometry": {
+    "matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        24
+      ]
+    ],
+    "required_determinant_in_chosen_bases": 24,
+    "compatible_matrix_count": 24360,
+    "pairing_1": "27967",
+    "pairing_2_after_map": "28661",
+    "pairing_product": "1"
+  },
+  "graph": {
+    "size": 841,
+    "maximal_isotropic": true
+  },
+  "irreducibility": {
+    "cm_squareclasses": [
+      -11,
+      -19
+    ],
+    "geometrically_nonisogenous": true,
+    "frey_kani_irreducible": true,
+    "geometric_quotient_is_smooth_genus2_jacobian": true
+  },
+  "quotient_weil_polynomial": "T^4 + 25*T^3 - 74930*T^2 + 1271675*T + 2587451689",
+  "remaining_step": "reconstruct the degree-29 quotient curve and its two maps"
+}

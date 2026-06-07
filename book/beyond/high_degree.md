@@ -591,6 +591,23 @@ $$
 The degree-19 recovery uses 46 exact samples over
 $\mathbf F_{11743^{24}}$.
 
+Degree $29$ starts from the first arithmetic instance over
+$\mathbf F_{50867}$. The traces are $408$ and $-433$, the CM squareclasses
+are $-11$ and $-19$, and the graph matrix is
+$\operatorname{diag}(1,24)$. The quotient is the Jacobian of
+
+$$
+\begin{aligned}
+C_{29}:\quad y^2={}&24513x^6+50615x^5+5530x^4+37221x^3\\
+&+46765x^2+234x+31812.
+\end{aligned}
+$$
+
+Its absolute invariants are $(15563,43108,4996)$. SageMath and Magma
+independently certify the graph, quotient model, Weil polynomial, and both
+degree-$29$ maps. The first map descends directly. The second has a
+nontrivial target 2-torsion Frobenius cocycle and a unique correction.
+
 The completed runs give the following scaling data:
 
 | $n$ | samples | theta seconds | recovery seconds | descent seconds |
@@ -599,9 +616,12 @@ The completed runs give the following scaling data:
 | 17 | 42 | 6.150 | 384.812 | 6.487 |
 | 19 | 46 | 7.690 | 586.712 | 6.099 |
 | 23 | 54 | 18.774 | 1100.736 | 5.138 |
+| 29 | 66 | 35.222 | 1912.645 | 12.312 |
 
 Thus exact map recovery, not quotient reconstruction or descent, is the
-dominant cost. The observed sample rule is $2n+8$.
+dominant cost. The observed sample rule is $2n+8$. The degree-$29$ row uses
+the optimized common-extension evaluator; the earlier rows record their
+original symbolic production runs.
 
 ### Optimized dual-theta evaluation
 
@@ -634,11 +654,18 @@ quotient-ring baseline:
 |---:|---:|---:|---:|---:|
 | 13 | 71 | 173.008 | 115.487 | 33.25% |
 | 17 | 87 | 384.812 | 272.338 | 29.23% |
+| 29 | 135 | not run | 1912.645 | production run |
 
 In both cases the two X-coordinates are identical. The Y-coordinate signs
 are $[1,-1]$, and the pulled-back invariant differentials change by the same
 signs, so the maps differ only by the target involution on the second factor.
 All interpolation samples and elliptic identities remain exact.
+
+In degree $29$, all 135 roots exist in one degree-$29$ extension and every
+final coordinate descends. The dual-isogeny phase takes 1862.473 seconds,
+or 97.38% of the complete recovery. This localizes the next optimization
+target to the kernel-table recurrence rather than root representation,
+interpolation, or descent.
 
 The common-extension strategy is now the default general evaluator.
 The symbolic quotient-ring strategy remains available as an independent
@@ -655,7 +682,7 @@ regression oracle.
 | 9 | Both primitive maps, CRT centers, and full $S_9$ monodromy complete |
 | 10 | Both primitive maps complete; target isogeny obstruction excludes degree $5$ followed by a 2-isogeny |
 | 11 | Both primitive maps complete on a rational point of Kumar's $Y_-(121)$ |
-| $>11$ | End-to-end synthesis complete in degrees 13, 17, 19, and 23 |
+| $>11$ | End-to-end synthesis complete in degrees 13, 17, 19, 23, and 29 |
 
 ## Degree 10 and degree 11
 

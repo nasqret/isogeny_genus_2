@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-06-07T22:28:28+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "lts-faculty.wmi.amu.edu.pl",
+  "elapsed_seconds": 1.889,
+  "memory_megabytes": 32.09,
+  "workstream": "B024",
+  "verified": true,
+  "scope": "Independent degree-29 Mestre reconstruction and twist selection",
+  "field": "GF(50867)",
+  "degree": 29,
+  "normalized_igusa_clebsch": [1, 21252, 39425, 6127],
+  "twist_selected": false,
+  "base_field_curve_coefficients_ascending": [
+    31812,
+    234,
+    46765,
+    37221,
+    5530,
+    50615,
+    24513
+  ],
+  "g2_invariants": [30806, 10408, 29480],
+  "quotient_weil_polynomial": "T^4+25*T^3-74930*T^2+1271675*T+2587451689",
+  "artifact": "computations/magma/reconstruct_degree29_curve.m",
+  "transcript": "results/remote/magma_degree29_curve.log",
+  "success_marker": "B024_DEGREE29_CURVE_RECONSTRUCTED"
+}

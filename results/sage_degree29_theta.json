@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-06-07T22:28:01+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 35.221731,
+  "workstream": "B024",
+  "verified": true,
+  "status": "verified",
+  "scope": "explicit degree-29 Frey-Kani quotient curve",
+  "field": "GF(50867)",
+  "degree": 29,
+  "theta_extension_degree": 12,
+  "anti_isometry_matrix": [
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      24
+    ]
+  ],
+  "quotient_theta_null": [
+    "10609*theta_extension^11 + 872*theta_extension^10 + 24927*theta_extension^9 + 40565*theta_extension^8 + 42370*theta_extension^7 + 42370*theta_extension^6 + 40565*theta_extension^5 + 24927*theta_extension^4 + 872*theta_extension^3 + 10609*theta_extension^2 + 3183",
+    "25431*theta_extension^11 + 6152*theta_extension^10 + 5531*theta_extension^9 + 8503*theta_extension^8 + 40368*theta_extension^7 + 40368*theta_extension^6 + 8503*theta_extension^5 + 5531*theta_extension^4 + 6152*theta_extension^3 + 25431*theta_extension^2 + 1094",
+    "19795*theta_extension^11 + 30635*theta_extension^10 + 26368*theta_extension^9 + 23965*theta_extension^8 + 10852*theta_extension^7 + 10852*theta_extension^6 + 23965*theta_extension^5 + 26368*theta_extension^4 + 30635*theta_extension^3 + 19795*theta_extension^2 + 9932",
+    "32572*theta_extension^11 + 35146*theta_extension^10 + 30094*theta_extension^9 + 26503*theta_extension^8 + 29779*theta_extension^7 + 29779*theta_extension^6 + 26503*theta_extension^5 + 30094*theta_extension^4 + 35146*theta_extension^3 + 32572*theta_extension^2 + 33328"
+  ],
+  "rosenhain_polynomial": "x^5 + (41845*theta_extension^11 + 41845*theta_extension^10 + 41047*theta_extension^9 + 41047*theta_extension^7 + 41047*theta_extension^6 + 41047*theta_extension^4 + 41845*theta_extension^3 + 41845*theta_extension^2 + 49695)*x^4 + (18394*theta_extension^11 + 18394*theta_extension^10 + 42203*theta_extension^9 + 42203*theta_extension^7 + 42203*theta_extension^6 + 42203*theta_extension^4 + 18394*theta_extension^3 + 18394*theta_extension^2 + 50029)*x^3 + (16396*theta_extension^11 + 16396*theta_extension^10 + 33625*theta_extension^9 + 33625*theta_extension^7 + 33625*theta_extension^6 + 33625*theta_extension^4 + 16396*theta_extension^3 + 16396*theta_extension^2 + 40816)*x^2 + (25099*theta_extension^11 + 25099*theta_extension^10 + 35726*theta_extension^9 + 35726*theta_extension^7 + 35726*theta_extension^6 + 35726*theta_extension^4 + 25099*theta_extension^3 + 25099*theta_extension^2 + 12060)*x",
+  "igusa_clebsch_invariants": [
+    "31493*theta_extension^11 + 31493*theta_extension^10 + 36529*theta_extension^9 + 36529*theta_extension^7 + 36529*theta_extension^6 + 36529*theta_extension^4 + 31493*theta_extension^3 + 31493*theta_extension^2 + 46762",
+    "37257*theta_extension^11 + 37257*theta_extension^10 + 44186*theta_extension^9 + 44186*theta_extension^7 + 44186*theta_extension^6 + 44186*theta_extension^4 + 37257*theta_extension^3 + 37257*theta_extension^2 + 35316",
+    "37661*theta_extension^11 + 37661*theta_extension^10 + 30927*theta_extension^9 + 30927*theta_extension^7 + 30927*theta_extension^6 + 30927*theta_extension^4 + 37661*theta_extension^3 + 37661*theta_extension^2 + 30623",
+    "48798*theta_extension^11 + 48798*theta_extension^10 + 30064*theta_extension^9 + 30064*theta_extension^7 + 30064*theta_extension^6 + 30064*theta_extension^4 + 48798*theta_extension^3 + 48798*theta_extension^2 + 34296"
+  ],
+  "absolute_igusa_invariants": [
+    15563,
+    43108,
+    4996
+  ],
+  "normalized_igusa_clebsch": [
+    1,
+    21252,
+    39425,
+    6127
+  ],
+  "absolute_invariants_frobenius_fixed": true,
+  "expected_quotient_weil_polynomial": "T^4 + 25*T^3 - 74930*T^2 + 1271675*T + 2587451689",
+  "base_field_curve": {
+    "equation": "y^2=24513*x^6+50615*x^5+5530*x^4+37221*x^3+46765*x^2+234*x+31812",
+    "coefficients_ascending": [
+      31812,
+      234,
+      46765,
+      37221,
+      5530,
+      50615,
+      24513
+    ],
+    "squarefree": true,
+    "genus": 2,
+    "absolute_igusa_invariants": [
+      15563,
+      43108,
+      4996
+    ],
+    "frobenius_polynomial": "x^4 + 25*x^3 - 74930*x^2 + 1271675*x + 2587451689"
+  },
+  "certificate": {
+    "theta_quotient_computed": true,
+    "moduli_descend_to_base_field": true,
+    "normalized_mestre_input_computed": true,
+    "base_model_matches_moduli": true,
+    "base_model_matches_quotient_weil_polynomial": true
+  },
+  "remaining_step": "recover and descend both degree-29 maps"
+}

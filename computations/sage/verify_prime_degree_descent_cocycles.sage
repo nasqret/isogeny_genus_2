@@ -11,6 +11,7 @@ input_files = [
     "sage_degree17_descended_maps.json",
     "sage_degree19_descended_maps.json",
     "sage_degree23_descended_maps.json",
+    "sage_degree29_descended_maps.json",
 ]
 
 cases = []
@@ -67,8 +68,8 @@ nontrivial_cases = [
     for case in cases
     if not case["direct_descent"]
 ]
-assert nontrivial_cases == [[17, 1], [19, 1]]
-assert len(cases) == 8
+assert nontrivial_cases == [[17, 1], [19, 1], [29, 1]]
+assert len(cases) == 10
 
 result = {
     "workstream": "B023",
@@ -76,7 +77,7 @@ result = {
     "generated_at": datetime.now(timezone.utc).isoformat(),
     "scope": (
         "Frobenius translation cocycles and 2-torsion coboundary "
-        "corrections for both maps in degrees 13, 17, 19, and 23"
+        "corrections for both maps in degrees 13, 17, 19, 23, and 29"
     ),
     "case_count": len(cases),
     "direct_descent_count": sum(

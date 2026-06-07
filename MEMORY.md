@@ -303,6 +303,27 @@ This project reconstructs every computational claim in
   `Frobenius(f) = translation(P) o f` with unique `P in E[2]`.
 - A correction `Q` descends the map exactly when
   `P = Q - Frobenius(Q)`; all corrections form one coset of `E[2](k)`.
-- Exact certificates cover eight maps in degrees 13, 17, 19, and 23. The
-  only nontrivial cases are factor 1 in degrees 17 and 19.
-- Current active frontier: optimized end-to-end degree-29 synthesis.
+- Exact certificates cover ten maps in degrees 13, 17, 19, 23, and 29.
+  The nontrivial cases are factor 1 in degrees 17, 19, and 29.
+- B024 degree-29 synthesis is complete end to end.
+- B024 arithmetic prefilter: the first admissible field is `F_50867`, with
+  traces `408,-433` and CM squareclasses `-11,-19`.
+- B024 frozen degree-29 input:
+  `E1=[18068,28770]`, `E2=[16732,29860]`,
+  torsion bases `[(24954,13946),(40497,37256)]` and
+  `[(45037,16292),(32423,11221)]`, anti-isometry `diag(1,24)`.
+- Sage and remote Magma independently certify graph size `841`, compatible
+  matrix count `24360`, and Weil polynomial
+  `T^4+25*T^3-74930*T^2+1271675*T+2587451689`.
+- B024 quotient sextic over `F_50867`:
+  coefficients ascending
+  `[31812,234,46765,37221,5530,50615,24513]`,
+  Kohel invariants `(15563,43108,4996)`, no Mestre twist.
+- Degree-29 Hasse-Witt eigendirections are `(1,4375)` for trace `408` and
+  `(1,33334)` for trace `-433`.
+- Degree-29 map recovery uses 66 samples and 135 explicit roots. Runtime is
+  `1912.645` seconds, of which `1862.473` seconds is dual-isogeny evaluation.
+- Both descended maps have degree `29`; factor 1 needs the unique nontrivial
+  2-torsion correction. Remote Magma independently returns `29,29`.
+- Current active frontier: optimize the kernel-table recurrence, then start
+  the degree-31 arithmetic and synthesis checkpoint.

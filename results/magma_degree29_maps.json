@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-07T23:02:28+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "lts-faculty.wmi.amu.edu.pl",
+  "elapsed_seconds": 0.17,
+  "memory_megabytes": 32.09,
+  "workstream": "B024",
+  "verified": true,
+  "scope": "Independent verification of both descended degree-29 maps",
+  "field": "GF(50867)",
+  "degree": 29,
+  "map_degrees": [29, 29],
+  "target_j_invariants": [2032, 30870],
+  "pullback_eigenforms": [
+    "6163*x+4780",
+    "6842*x+33410"
+  ],
+  "artifact": "computations/magma/verify_degree29_maps.m",
+  "transcript": "results/remote/magma_degree29_maps.log",
+  "success_marker": "B024_DEGREE29_MAPS_MAGMA_VERIFIED"
+}

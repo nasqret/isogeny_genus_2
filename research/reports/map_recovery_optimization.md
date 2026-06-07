@@ -103,4 +103,16 @@ implementation additionally checks coefficient-by-coefficient descent to
 
 The common-extension evaluator is now the default general strategy.
 `symbolic_quotient_ring` remains available as a regression oracle. B022 is
-complete, and degree 29 can use the optimized path.
+complete.
+
+## Degree-29 production run
+
+The first optimized production run beyond the regression degrees uses
+`66=2*29+8` samples and 135 compatible-lift roots. All roots are realized in
+one degree-29 extension, and every final theta coordinate descends.
+
+The dual-isogeny phase takes `1862.473` seconds; total recovery takes
+`1912.645` seconds. Thus the heavy phase occupies `97.38%` of the run.
+Interpolation and exact identity certification together take under one
+second. The next optimization target is the kernel-table recurrence and its
+finite-field additions, not rational interpolation or descent.

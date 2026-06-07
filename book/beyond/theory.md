@@ -187,9 +187,10 @@ its norm is zero, solves the four coboundary equations, and checks that the
 solution set is a coset of \(E[2](\mathbf F_q)\). The cost is independent of
 the cover degree.
 
-The exact aggregate certificate covers both maps in degrees 13, 17, 19, and
-23. Six maps descend directly. The second maps in degrees 17 and 19 have
-nontrivial cocycles resolved by unique nonrational 2-torsion corrections.
+The exact aggregate certificate covers both maps in degrees 13, 17, 19, 23,
+and 29. Seven maps descend directly. The second maps in degrees 17, 19, and
+29 have nontrivial cocycles resolved by unique nonrational 2-torsion
+corrections.
 
 ## Primitive versus composed degree
 

@@ -185,6 +185,12 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
 
 Current bounded tasks, in order:
 
-1. extend synthesis to degree 29 with the optimized evaluator;
-2. compare measured degree-29 scaling with the symbolic extrapolation;
-3. use the resulting model to choose the next practical prime-degree target.
+1. [complete] extend synthesis to degree 29 with the optimized evaluator;
+2. [complete] compare measured degree-29 scaling with the previous production
+   runs;
+3. [complete] localize the next bottleneck: the dual-isogeny kernel-table
+   recurrence occupies 97.38% of degree-29 recovery;
+4. optimize the kernel-table recurrence before the next full prime-degree
+   synthesis;
+5. scan and certify the next practical prime-degree target, starting with
+   degree 31.

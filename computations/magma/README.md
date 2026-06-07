@@ -79,3 +79,14 @@ the fixed quotient sextic and certifies its G2 invariants and L-polynomial.
 `verify_degree23_anti_isometry.m` certifies the `529`-point degree-23 graph,
 and `reconstruct_degree23_curve.m` certifies its fixed quotient sextic.
 `verify_degree23_maps.m` independently returns degrees `23,23`.
+
+`verify_degree29_anti_isometry.m` independently certifies the first
+degree-29 arithmetic instance over `F_50867`: full rational `29`-torsion,
+the graph of `diag(1,24)`, all `841` graph points, all `24360` compatible
+matrices, distinct CM squareclasses, and the quotient Weil polynomial.
+`reconstruct_degree29_curve.m` reconstructs the quotient from normalized
+Igusa-Clebsch invariants, proves that no quadratic twist is required, and
+certifies the fixed base-field sextic and its L-polynomial.
+`verify_degree29_maps.m` independently constructs the two descended
+morphisms, verifies their target equations and differential pullbacks, and
+returns degrees `29,29`.

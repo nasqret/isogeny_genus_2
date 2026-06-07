@@ -779,3 +779,42 @@
   have nontrivial cocycles.
 - B023 is complete. The next sequential target is end-to-end degree-29
   Frey-Kani synthesis using the optimized evaluator.
+
+### Degree-29 frontier
+
+- The first prime `q = 1 mod 29` with two Hasse-admissible full-29-torsion
+  trace classes is `q=50867`.
+- The trace classes are `408` and `-433`; their Frobenius discriminant
+  squareclasses are `-11` and `-19`, so any resulting ordinary curves are
+  geometrically nonisogenous.
+- B024 starts at `10%` with deterministic j-line search and graph
+  certification.
+- The Sage certificate now exhaustively rejects every smaller prime
+  `q = 1 mod 29` at the arithmetic trace/squareclass gate, then freezes the
+  first two deterministic curves over `F_50867`.
+- The selected curves have coefficients `(18068,28770)` and
+  `(16732,29860)`, group invariants `(29,1740)` and `(29,1769)`, and the
+  chosen torsion bases require the anti-isometry `diag(1,24)`.
+- Independent Magma verifies all `841` graph points, the complete count
+  `24360` of determinant-`24` matrices, the inverse Weil pairing, and the
+  quotient Weil polynomial. B024 advances to `30%`.
+- The degree-12 theta quotient descends to Kohel invariants
+  `(15563,43108,4996)` and normalized Igusa-Clebsch invariants
+  `(1,21252,39425,6127)`.
+- Magma Mestre reconstruction selects no twist and returns the fixed sextic
+  `24513*x^6+50615*x^5+5530*x^4+37221*x^3+46765*x^2+234*x+31812`.
+- Sage independently matches its moduli and Frobenius polynomial. Its
+  Hasse-Witt matrix is `[[21204,41712],[49255,29638]]`, with trace-factor
+  eigendirections `(1,4375)` and `(1,33334)`. B024 advances to `50%`.
+- The optimized map recovery realizes all `135` compatible roots in one
+  degree-29 extension. The dual-isogeny phase takes `1862.473` seconds and
+  total recovery takes `1912.645` seconds.
+- Both Rosenhain X-maps have degree pair `(29,28)`. After transport, both
+  base-field maps have degree pair `(29,29)` and exact elliptic identities.
+- The first map descends directly. The second has a nontrivial Frobenius
+  translation cocycle and one coboundary correction. The aggregate descent
+  suite now covers ten maps; seven descend directly.
+- Remote Magma independently reconstructs both final maps and returns
+  degrees `29,29` in `0.170` seconds.
+- B024 is complete. The next bounded target is kernel-table optimization,
+  followed by the degree-31 arithmetic and synthesis frontier.

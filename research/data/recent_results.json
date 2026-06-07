@@ -428,5 +428,30 @@
     "timestamp": "2026-06-07T22:19:38+02:00",
     "claim_id": "B023",
     "summary": "Completed the odd-prime Frobenius descent theorem and algorithm. Exact Sage certificates identify the unique E[2] translation cocycle, verify its norm, solve the coboundary equation, and prove the correction set is an E[2](k)-coset for eight maps in degrees 13, 17, 19, and 23; six descend directly and only degree 17 factor 1 and degree 19 factor 1 are nontrivial."
+  },
+  {
+    "timestamp": "2026-06-07T22:21:26+02:00",
+    "claim_id": "B024",
+    "summary": "Started degree-29 synthesis. The arithmetic prefilter proves the first admissible prime field is F_50867, with full-29-torsion trace classes 408 and -433 and distinct CM squareclasses -11 and -19."
+  },
+  {
+    "timestamp": "2026-06-07T22:24:56+02:00",
+    "claim_id": "B024",
+    "summary": "Sage and independent Magma certificates agree on the degree-29 Frey-Kani input over F_50867: curves y^2=x^3+18068*x+28770 and y^2=x^3+16732*x+29860, full rational 29-torsion, anti-isometry diag(1,24), 841 graph points, 24360 compatible matrices, and CM squareclasses -11 and -19."
+  },
+  {
+    "timestamp": "2026-06-07T22:28:28+02:00",
+    "claim_id": "B024",
+    "summary": "Reconstructed and independently certified the degree-29 quotient curve y^2=24513*x^6+50615*x^5+5530*x^4+37221*x^3+46765*x^2+234*x+31812 over F_50867. Sage theta moduli and Magma Mestre reconstruction agree, no twist is needed, and the quotient Weil polynomial is certified."
+  },
+  {
+    "timestamp": "2026-06-07T23:02:28+02:00",
+    "claim_id": "B024",
+    "summary": "Recovered, descended, and independently verified both degree-29 maps. The optimized evaluator certified 135 roots in one degree-29 extension, both maps have degree 29, the second map has a nontrivial E[2] Frobenius cocycle with a unique correction, and remote Magma returns degrees 29 and 29."
+  },
+  {
+    "timestamp": "2026-06-07T23:03:48+02:00",
+    "claim_id": "B024",
+    "summary": "Completed B024 end to end. Degree 29 now has minimal-field arithmetic certification, independent Sage/Magma graph and quotient reconstruction, two explicit descended maps, cocycle certification, remote Magma degree checks, measured scaling, Jupyter Book documentation, and a dedicated validation gate."
   }
 ]

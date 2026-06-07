@@ -74,4 +74,6 @@ python3 -m json.tool "$ROOT/results/magma_degree13_maps.json" >/dev/null
 python3 -m json.tool "$ROOT/results/sage_degree17_anti_isometry.json" >/dev/null
 python3 -m json.tool "$ROOT/results/magma_degree17_anti_isometry.json" >/dev/null
 
+"$ROOT/scripts/validate-degree29.sh"
+
 printf 'BEYOND_PAPER_VALIDATION_OK\n'

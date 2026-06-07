@@ -503,5 +503,38 @@
       "research/reports/odd_prime_descent_cocycle.md",
       "book/beyond/theory.md"
     ]
+  },
+  {
+    "id": "B024",
+    "title": "Prime-degree Frey-Kani synthesis in degree 29",
+    "status": "completed",
+    "progress": 100,
+    "engine": "SageMath and Magma",
+    "location": "local and faculty server",
+    "objective": "Construct, recover, descend, and independently verify both primitive degree-29 maps, then compare measured scaling with the optimized model.",
+    "artifacts": [
+      "computations/sage/verify_degree29_anti_isometry.sage",
+      "computations/sage/reconstruct_degree29_theta.sage",
+      "computations/sage/recover_degree29_maps.sage",
+      "computations/sage/descend_degree29_maps.sage",
+      "computations/magma/verify_degree29_anti_isometry.m",
+      "computations/magma/reconstruct_degree29_curve.m",
+      "computations/magma/verify_degree29_maps.m",
+      "scripts/validate-degree29.sh",
+      "results/sage_degree29_anti_isometry.json",
+      "results/sage_degree29_theta.json",
+      "results/sage_degree29_maps.json",
+      "results/sage_degree29_descended_maps.json",
+      "results/magma_degree29_anti_isometry.json",
+      "results/magma_degree29_curve.json",
+      "results/magma_degree29_maps.json",
+      "results/remote/magma_degree29_anti_isometry.log",
+      "results/remote/magma_degree29_curve.log",
+      "results/remote/magma_degree29_maps.log",
+      "results/prime_degree_scaling.json",
+      "research/reports/degree29_frey_kani_synthesis.md",
+      "book/beyond/high_degree.md",
+      "book/beyond/theory.md"
+    ]
   }
 ]
