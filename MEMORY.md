@@ -327,3 +327,57 @@ This project reconstructs every computational claim in
   2-torsion correction. Remote Magma independently returns `29,29`.
 - Current active frontier: optimize the kernel-table recurrence, then start
   the degree-31 arithmetic and synthesis checkpoint.
+- B025 generic frontier scan: degree 31 first qualifies over `F_64853` with
+  traces `467,-494`, CM squareclasses `-43,-1`, 70 samples, 143 roots, and
+  68231 kernel-table cells.
+- Comparison candidates: degree 37 over `F_128021`, degree 41 over
+  `F_195817`. Degree 31 is selected as the next practical synthesis target.
+- B025 Kummer root optimization: classify deltas in
+  `F_Q^*/(F_Q^*)^ell`, take one root of a fixed representative, and recover
+  every other root by exponentiation.
+- Exact degree-13/17 regressions preserve all maps. Total runtime reductions
+  are `23.06%` and `31.20%`; dual-phase reductions are `27.61%` and
+  `33.69%`. This is now the default prime-extension root strategy.
+- Degree-31 frozen input over `F_64853`:
+  `E1=[48095,18584]`, `E2=[1,0]`, bases
+  `[(25371,36533),(44319,54650)]` and
+  `[(64587,63692),(23062,28841)]`, graph matrix `diag(1,11)`.
+- The quotient model descends directly as
+  `y^2=x^5+52399*x^4+40681*x^3+18410*x^2+18215*x`.
+  Hasse-Witt eigendirections are `(1,55105)` and `(1,54058)`.
+- B025 is complete. Degree-31 Kummer recovery takes `2560.543` seconds;
+  dual evaluation takes `2400.937` seconds.
+- Both degree-31 maps descend directly on the identity quintic with X-degree
+  pairs `(31,30)`. Remote Magma independently returns degrees `31,31`.
+- The degree-31 dual profile is: roots `237.727` seconds, kernel recurrence
+  `1783.443` seconds, theta power sums `353.803` seconds.
+- B026 is active. Preserve both exact degree-31 maps as the regression oracle
+  while optimizing recurrence and power sums; do not launch degree 37 until
+  that gate passes.
+- Prepared basis differential additions cache fixed-basis Riemann data and
+  quadratic sums. Exact degree-13/17 regressions preserve all maps.
+- Recurrence reductions are `27.18%` in degree 13 and `52.73%` in degree 17;
+  degree-17 total recovery falls `21.45%`.
+- `prepared_basis_diff_add` is now the explicit evaluator default;
+  `standard` remains the regression oracle.
+- Degree-31 prepared recurrence is exact and reduces recurrence time from
+  `1783.443` to `488.441` seconds (`72.61%`); total recovery falls `62.16%`.
+- Row-major theta power sums are exact in degrees 13 and 17 and reduce that
+  phase by about `44.5%`. They are now the explicit evaluator default;
+  coordinate-major accumulation remains the regression oracle.
+- B026 is complete. The combined degree-31 optimized run preserves both maps
+  exactly and reduces total recovery from `2560.543` to `839.479` seconds
+  (`67.21%`); dual evaluation falls to `790.112` seconds.
+- B027 is active in degree 37. The certified frontier is `F_128021`, traces
+  `705,-664`, CM squareclasses `-11,-13`, with revised dual-time estimate
+  about `1571` seconds.
+- B027 is complete. Frozen degree-37 data:
+  `E1=[94494,115630]`, `E2=[94047,106345]`, bases
+  `[(125182,24590),(45004,43742)]` and
+  `[(56059,19346),(36636,89945)]`, graph matrix `diag(1,21)`.
+- Degree-37 quotient sextic coefficients ascending:
+  `[123483,75182,59931,44090,21256,49647,36955]`.
+- Degree-37 recovery takes `2551.792` seconds; recurrence `1386.486`,
+  power sums `819.920`. Both maps descend directly and Magma returns
+  `37,37`.
+- B028 is active. Optimize exact theta power sums before launching degree 41.

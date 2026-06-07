@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T23:03:48+02:00",
+  "generated_at": "2026-06-08T01:50:40+02:00",
   "verified": true,
   "degrees": [
     {
@@ -11,8 +11,8 @@
       "sample_count": 34,
       "sample_formula": 34,
       "theta_runtime_seconds": 4.248754,
-      "map_recovery_runtime_seconds": 251.78610491752625,
-      "descent_runtime_seconds": 3.485306739807129,
+      "map_recovery_runtime_seconds": 173.00756406784058,
+      "descent_runtime_seconds": 4.993607044219971,
       "magma_map_runtime_seconds": 0.16,
       "rosenhain_x_degree_pairs": [
         [
@@ -46,7 +46,7 @@
       "sample_formula": 42,
       "theta_runtime_seconds": 6.14967,
       "map_recovery_runtime_seconds": 384.8117027282715,
-      "descent_runtime_seconds": 6.4867799282073975,
+      "descent_runtime_seconds": 7.15907096862793,
       "magma_map_runtime_seconds": 0.2,
       "rosenhain_x_degree_pairs": [
         [
@@ -80,7 +80,7 @@
       "sample_formula": 46,
       "theta_runtime_seconds": 7.689762,
       "map_recovery_runtime_seconds": 586.7119431495667,
-      "descent_runtime_seconds": 6.098658084869385,
+      "descent_runtime_seconds": 8.647768020629883,
       "magma_map_runtime_seconds": 0.152,
       "rosenhain_x_degree_pairs": [
         [
@@ -114,7 +114,7 @@
       "sample_formula": 54,
       "theta_runtime_seconds": 18.774095,
       "map_recovery_runtime_seconds": 1100.7360136508942,
-      "descent_runtime_seconds": 5.137522220611572,
+      "descent_runtime_seconds": 10.927196025848389,
       "magma_map_runtime_seconds": 0.178,
       "rosenhain_x_degree_pairs": [
         [
@@ -144,13 +144,10 @@
       "field": "GF(50867)",
       "theta_extension_degree": 12,
       "map_extension_degree": 24,
-      "explicit_root_extension_degree": 29,
-      "explicit_root_count": 135,
       "sample_count": 66,
       "sample_formula": 66,
       "theta_runtime_seconds": 35.221731,
       "map_recovery_runtime_seconds": 1912.6445651054382,
-      "dual_isogeny_runtime_seconds": 1862.473316625008,
       "descent_runtime_seconds": 12.311579942703247,
       "magma_map_runtime_seconds": 0.17,
       "rosenhain_x_degree_pairs": [
@@ -173,7 +170,92 @@
           29
         ]
       ],
-      "nontrivial_two_torsion_corrections": 1
+      "nontrivial_two_torsion_corrections": 1,
+      "explicit_root_extension_degree": 29,
+      "explicit_root_count": 135,
+      "explicit_root_extraction_strategy": "individual_nth_root",
+      "dual_isogeny_runtime_seconds": 1862.473316625008
+    },
+    {
+      "degree": 31,
+      "map_recovery_strategy": "explicit_degree_prime_extension",
+      "field": "GF(64853)",
+      "theta_extension_degree": 12,
+      "map_extension_degree": 24,
+      "sample_count": 70,
+      "sample_formula": 70,
+      "theta_runtime_seconds": 20.28758,
+      "map_recovery_runtime_seconds": 2560.54349899292,
+      "descent_runtime_seconds": 16.721956968307495,
+      "magma_map_runtime_seconds": 0.318,
+      "rosenhain_x_degree_pairs": [
+        [
+          31,
+          30
+        ],
+        [
+          31,
+          30
+        ]
+      ],
+      "base_field_x_degree_pairs": [
+        [
+          31,
+          30
+        ],
+        [
+          31,
+          30
+        ]
+      ],
+      "nontrivial_two_torsion_corrections": 0,
+      "explicit_root_extension_degree": 31,
+      "explicit_root_count": 143,
+      "explicit_root_extraction_strategy": "kummer_class",
+      "dual_isogeny_runtime_seconds": 2400.9365396659996,
+      "optimized_map_recovery_runtime_seconds": 839.4785048961639,
+      "optimized_dual_isogeny_runtime_seconds": 790.1119775419938,
+      "optimized_root_extraction_strategy": "kummer_class",
+      "optimized_kernel_recurrence_strategy": "prepared_basis_diff_add",
+      "optimized_theta_power_sum_strategy": "row_major"
+    },
+    {
+      "degree": 37,
+      "map_recovery_strategy": "explicit_degree_prime_extension",
+      "field": "GF(128021)",
+      "theta_extension_degree": 12,
+      "map_extension_degree": 24,
+      "sample_count": 82,
+      "sample_formula": 82,
+      "theta_runtime_seconds": 11.949375,
+      "map_recovery_runtime_seconds": 2551.7921369075775,
+      "descent_runtime_seconds": 23.40536618232727,
+      "magma_map_runtime_seconds": 0.427,
+      "rosenhain_x_degree_pairs": [
+        [
+          37,
+          36
+        ],
+        [
+          37,
+          36
+        ]
+      ],
+      "base_field_x_degree_pairs": [
+        [
+          37,
+          37
+        ],
+        [
+          37,
+          37
+        ]
+      ],
+      "nontrivial_two_torsion_corrections": 0,
+      "explicit_root_extension_degree": 37,
+      "explicit_root_count": 167,
+      "explicit_root_extraction_strategy": "kummer_class",
+      "dual_isogeny_runtime_seconds": 2471.071572541987
     }
   ],
   "observed_patterns": {
@@ -181,8 +263,13 @@
     "theta_extension_degree": 12,
     "map_extension_degree": 24,
     "rosenhain_x_degree_pair": "(n,n-1)",
-    "base_field_x_degree_pair": "(n,n)",
+    "base_field_x_degree_pair_after_sextic_transport": "(n,n)",
+    "base_field_x_degree_pair_for_identity_quintic": "(n,n-1)",
     "map_recovery_is_dominant_cost": true,
-    "degree29_dual_isogeny_fraction": 0.973765
+    "degree31_dual_isogeny_fraction": 0.9376667651263512,
+    "degree31_optimized_total_reduction_percent": 67.21483133458437,
+    "degree31_optimized_dual_reduction_percent": 67.09150931361525,
+    "degree37_dual_prediction_seconds": 1570.510517953125,
+    "degree37_dual_measured_seconds": 2471.071572541987
   }
 }

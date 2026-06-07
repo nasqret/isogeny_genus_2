@@ -1,0 +1,30 @@
+PHASE_START theta_quotient
+PHASE_DONE theta_quotient 151.561973
+PHASE_START dual_kernel_recovery
+PHASE_DONE dual_kernel_recovery 0.252561
+PHASE_START level2_kernel_preparation
+PHASE_DONE level2_kernel_preparation 0.771218
+PHASE_START sample_selection
+PHASE_DONE sample_selection 0.072438
+PHASE_START sample_theta_conversion
+PHASE_DONE sample_theta_conversion 5.993833
+PHASE_START dual_isogeny_evaluation
+EXPLICIT_SUBPHASE_DONE compatible_lift_preparation 12.809111
+EXPLICIT_ROOTS verified 143 extension_degree 31 strategy kummer_class
+EXPLICIT_SUBPHASE_DONE field_extension_and_root_extraction 237.727155
+EXPLICIT_SUBPHASE_DONE kernel_table_recurrence 1783.443281
+EXPLICIT_SUBPHASE_DONE theta_power_sums 353.802664
+EXPLICIT_SUBPHASE_DONE coefficient_descent_and_target_construction 11.398488
+PHASE_DONE dual_isogeny_evaluation 2400.936540
+PHASE_START target_factorization
+PHASE_DONE target_factorization 0.020982
+PHASE_START rational_interpolation
+PHASE_DONE rational_interpolation 0.301867
+PHASE_START map_identity_certification
+PHASE_DONE map_identity_certification 0.262854
+DEGREE31_MAPS verified
+samples 70
+map_degrees [31, 31]
+x_degree_pairs [(31, 30), (31, 30)]
+differential_degrees [1, 1]
+result /Users/airbartek/codex/isogeny_genus_2/results/sage_degree31_maps.json

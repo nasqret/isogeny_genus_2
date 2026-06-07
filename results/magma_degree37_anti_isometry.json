@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-06-08T00:58:01+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "lts-faculty.wmi.amu.edu.pl",
+  "elapsed_seconds": 3.713,
+  "memory_megabytes": null,
+  "workstream": "B027",
+  "verified": true,
+  "scope": "Independent degree-37 Frey-Kani anti-isometry certificate",
+  "field": "GF(128021)",
+  "degree": 37,
+  "anti_isometry_matrix": [[1, 0], [0, 21]],
+  "compatible_matrix_count": 50616,
+  "graph_size": 1369,
+  "cm_squareclasses": [-11, -13],
+  "quotient_weil_polynomial": "T^4-41*T^3-212078*T^2-5248861*T+16389376441",
+  "artifact": "computations/magma/verify_degree37_anti_isometry.m",
+  "transcript": "results/remote/magma_degree37_anti_isometry.log",
+  "success_marker": "B027_DEGREE37_ANTI_ISOMETRY_VERIFIED"
+}

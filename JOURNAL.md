@@ -818,3 +818,92 @@
   degrees `29,29` in `0.170` seconds.
 - B024 is complete. The next bounded target is kernel-table optimization,
   followed by the degree-31 arithmetic and synthesis frontier.
+
+### Degree-31 frontier and recurrence profiling
+
+- Added a generic minimal-field scanner for arbitrary odd prime degrees.
+- Degree 31 first qualifies over `F_64853`, with traces `467,-494` and CM
+  squareclasses `-43,-1`.
+- The degree-31 production shape is 70 samples, 143 compatible roots, and
+  68231 kernel-table cells, only `21.1%` more cells than degree 29.
+- Degree 37 first qualifies over `F_128021`; degree 41 over `F_195817`.
+  Their predicted costs are substantially larger, so degree 31 is selected.
+- B025 starts at `15%`. The explicit evaluator now records five internal
+  subphases before the first optimization experiment.
+- Degree-13 profiling assigns `33.266` seconds to 71 root extractions and
+  `24.441` seconds to the kernel recurrence.
+- Kummer-class batching replaces all independent roots by one root of a
+  fixed class representative plus base-field exponentiation. The root
+  subphase falls to `11.455` seconds.
+- Exact degree-13 and degree-17 comparisons preserve all four X-maps and
+  all Y-map signs. Total runtime reductions are `23.06%` and `31.20%`.
+- The Kummer-class method is now the default common-extension root strategy;
+  individual `nth_root` calls remain the regression oracle. B025 is `55%`.
+- Degree 31 passes the graph gate over `F_64853`: the deterministic curves
+  have coefficients `(48095,18584)` and `(1,0)`, with anti-isometry
+  `diag(1,11)`. Sage and Magma certify 961 graph points.
+- The theta quotient is already the base-field Rosenhain model
+  `y^2=x^5+52399*x^4+40681*x^3+18410*x^2+18215*x`.
+- Its Hasse-Witt eigendirections are `(1,55105)` and `(1,54058)`.
+  The 70-sample Kummer-optimized map recovery is now active. B025 is `75%`.
+
+### Degree-31 synthesis completion
+
+- Degree-31 recovery completed in `2560.543` seconds. The dual-isogeny phase
+  took `2400.937` seconds, within `0.41%` of the frontier prediction.
+- The internal profile assigns `237.727` seconds to Kummer root extraction,
+  `1783.443` seconds to kernel recurrence, and `353.803` seconds to theta
+  power sums.
+- Both Rosenhain X-maps have degree pair `(31,30)`. The fixed source is the
+  same base-field quintic, so descent uses the identity Möbius map and
+  hyperelliptic scaling `1`.
+- Both Frobenius translation cocycles are trivial. The aggregate descent
+  certificate now covers twelve maps; nine descend directly, with the only
+  nontrivial cases remaining factor 1 in degrees 17, 19, and 29.
+- Remote Magma independently verifies the target equations, differential
+  pullbacks, and map degrees `31,31`.
+- B025 is complete. B026 now targets kernel recurrence and theta power sums;
+  exact agreement with both degree-31 maps is required before degree 37.
+
+### Prepared recurrence optimization
+
+- Cached the Riemann data and basis-dependent quadratic sums used by repeated
+  differential additions in the kernel table.
+- Degree-13 recurrence time falls from `28.059` to `20.432` seconds
+  (`27.18%`); exact X- and Y-map comparison passes.
+- Degree-17 recurrence time falls from `123.030` to `58.156` seconds
+  (`52.73%`). Dual evaluation falls `29.87%`, and complete recovery falls
+  `21.45%`.
+- All four regression maps are identical, not merely equivalent up to target
+  involution. Prepared basis addition is now the explicit evaluator default.
+- Degree-31 recurrence falls from `1783.443` to `488.441` seconds
+  (`72.61%`). Dual evaluation falls `62.68%`, total recovery falls `62.16%`,
+  and both maps are exactly unchanged.
+- Row-major theta power sums preserve all maps in degrees 13 and 17 while
+  reducing the isolated phase by `44.92%` and `44.50%`.
+- The combined degree-31 run preserves both maps exactly. Dual evaluation
+  falls from `2400.937` to `790.112` seconds (`67.09%`), and complete
+  recovery falls from `2560.543` to `839.479` seconds (`67.21%`).
+- B026 is complete. The revised model predicts about `1571` seconds for
+  degree-37 dual evaluation, so B027 starts from the certified `F_128021`
+  frontier with traces `705,-664` and CM squareclasses `-11,-13`.
+
+### Degree-37 synthesis
+
+- Sage and remote Magma independently certify the curves
+  `(94494,115630)` and `(94047,106345)`, full rational 37-torsion, the
+  anti-isometry `diag(1,21)`, all `1369` graph points, and all `50616`
+  compatible matrices.
+- The quotient has absolute invariants `(29635,122473,53158)`. Magma Mestre
+  reconstruction needs no twist and gives the fixed sextic with ascending
+  coefficients `[123483,75182,59931,44090,21256,49647,36955]`.
+- Sage's PARI Frobenius backend exceeded its 1 GB stack on the sextic. The
+  independent Sage certificate instead converts to an odd-degree model and
+  uses the `hypellfrob` matrix backend.
+- Recovery uses 82 samples and 167 Kummer roots. Total time is `2551.792`
+  seconds; dual evaluation is `2471.072` seconds, recurrence is `1386.486`
+  seconds, and row-major power sums are `819.920` seconds.
+- Both maps have Rosenhain degree pairs `(37,36)`, descend directly with
+  base-field degree pairs `(37,37)`, and remote Magma independently returns
+  degrees `37,37`.
+- B027 is complete. B028 targets power-sum scaling before degree 41.

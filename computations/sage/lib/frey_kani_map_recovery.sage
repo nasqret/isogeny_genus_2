@@ -248,7 +248,11 @@ def explicit_root_isogeny(
     torsion,
     points,
     root_extension_degree=1,
+    root_extraction_strategy="individual_nth_root",
+    kernel_recurrence_strategy="standard",
+    theta_power_sum_strategy="coordinate_major",
     check=False,
+    subphase_timings=None,
 ):
     """
     Evaluate the AVIsogenies level-2 formula using explicit finite-field roots.
@@ -266,7 +270,18 @@ def explicit_root_isogeny(
     dimension = theta_null.dimension()
     coordinate_count = theta_null._ng
     row_count = len(points) + 1
+    if subphase_timings is None:
+        subphase_timings = {}
 
+    def finish_subphase(name, phase_started):
+        elapsed = time.perf_counter() - phase_started
+        subphase_timings[name] = elapsed
+        print(
+            f"EXPLICIT_SUBPHASE_DONE {name} {elapsed:.6f}",
+            flush=True,
+        )
+
+    subphase_started = time.perf_counter()
     lifted_points = []
     deltas = []
     for basis_index, basis_point in enumerate(torsion):
@@ -287,7 +302,12 @@ def explicit_root_isogeny(
             basis_sum.compatible_lift(isogeny_degree)
             for basis_sum in basis_sums
         ]
+    finish_subphase(
+        "compatible_lift_preparation",
+        subphase_started,
+    )
 
+    subphase_started = time.perf_counter()
     working_field = field
     working_theta_null = theta_null
     working_points = points
@@ -315,26 +335,216 @@ def explicit_root_isogeny(
         ]
         root_deltas = [embedding(delta) for delta in deltas]
 
-    roots = []
-    for index, delta in enumerate(root_deltas):
-        try:
-            root = delta.nth_root(isogeny_degree)
-        except ValueError as error:
+    if root_extraction_strategy == "individual_nth_root":
+        roots = []
+        for index, delta in enumerate(root_deltas):
+            try:
+                root = delta.nth_root(isogeny_degree)
+            except ValueError as error:
+                raise RuntimeError(
+                    f"Compatible lift {index} is not a "
+                    f"{isogeny_degree}-th power "
+                    "in the level-2 field."
+                ) from error
+            assert root^isogeny_degree == delta
+            roots.append(root)
+    elif root_extraction_strategy == "kummer_class":
+        assert embedding is not None
+        base_group_order = field.order() - 1
+        assert base_group_order % isogeny_degree == 0
+        assert base_group_order % isogeny_degree^2 != 0
+        power_subgroup_order = base_group_order//isogeny_degree
+        root_exponent = inverse_mod(
+            isogeny_degree,
+            power_subgroup_order,
+        )
+
+        class_representative = None
+        for offset in range(1, 100):
+            candidate = field.gen() + field(offset)
+            if (
+                candidate != 0
+                and candidate^power_subgroup_order != 1
+            ):
+                class_representative = candidate
+                break
+        if class_representative is None:
             raise RuntimeError(
-                f"Compatible lift {index} is not a "
-                f"{isogeny_degree}-th power "
-                "in the level-2 field."
-            ) from error
-        assert root^isogeny_degree == delta
-        roots.append(root)
+                "failed to find a nontrivial Kummer class"
+            )
+
+        class_generator = (
+            class_representative^power_subgroup_order
+        )
+        class_lookup = {
+            class_generator^index: index
+            for index in range(isogeny_degree)
+        }
+        assert len(class_lookup) == isogeny_degree
+        representative_root = embedding(
+            class_representative
+        ).nth_root(isogeny_degree)
+        assert (
+            representative_root^isogeny_degree
+            == embedding(class_representative)
+        )
+
+        roots = []
+        for delta in deltas:
+            if delta == 0:
+                roots.append(working_field(0))
+                continue
+            class_index = class_lookup[
+                delta^power_subgroup_order
+            ]
+            power_part = (
+                delta
+                / class_representative^class_index
+            )
+            assert power_part^power_subgroup_order == 1
+            base_root = power_part^root_exponent
+            assert base_root^isogeny_degree == power_part
+            root = (
+                embedding(base_root)
+                * representative_root^class_index
+            )
+            assert root^isogeny_degree == embedding(delta)
+            roots.append(root)
+    else:
+        raise ValueError(
+            "Unknown explicit root-extraction strategy: "
+            f"{root_extraction_strategy}"
+        )
     print(
         (
             f"EXPLICIT_ROOTS verified {len(roots)} "
-            f"extension_degree {root_extension_degree}"
+            f"extension_degree {root_extension_degree} "
+            f"strategy {root_extraction_strategy}"
         ),
         flush=True,
     )
+    finish_subphase(
+        "field_extension_and_root_extraction",
+        subphase_started,
+    )
 
+    def prepare_basis_diff_add(basis_point):
+        point0 = working_theta_null
+        twotorsion = point0._twotorsion
+        index_level2 = partial(
+            avisogenies_tools.idx,
+            n=point0.level(),
+        )
+        generic_relations = []
+        covered_keys = set()
+        for coordinate_index in range(coordinate_count):
+            for character_index in range(coordinate_count):
+                relation_key = (
+                    character_index,
+                    coordinate_index,
+                    coordinate_index,
+                )
+                if relation_key in covered_keys:
+                    continue
+                relation = point0.riemann_relation(relation_key)
+                assert relation
+                ci0, cj0 = relation[:2]
+                k0, l0 = map(index_level2, relation[2:4])
+                ci20, cj20 = relation[4:6]
+                ck20, cl20 = relation[6:8]
+                translation = relation[8]
+                character = twotorsion(character_index)
+                basis_sum = sum(
+                    avisogenies_tools.eval_car(character, shift)
+                    * basis_point[ci20 + shift]
+                    * basis_point[cj20 + shift]
+                    for shift in twotorsion
+                )
+                constant = (
+                    avisogenies_tools.eval_car(
+                        character,
+                        translation,
+                    )
+                    * basis_sum
+                    / point0._dual[
+                        (character_index, k0, l0)
+                    ]
+                )
+                outputs = []
+                for shift in twotorsion:
+                    output_key = (
+                        character_index,
+                        index_level2(ci0 + shift),
+                        index_level2(cj0 + shift),
+                    )
+                    covered_keys.add(output_key)
+                    outputs.append(
+                        (
+                            output_key,
+                            avisogenies_tools.eval_car(
+                                character,
+                                shift,
+                            ),
+                        )
+                    )
+                generic_relations.append(
+                    (
+                        character,
+                        ck20,
+                        cl20,
+                        constant,
+                        outputs,
+                    )
+                )
+        assert all(
+            (character_index, coordinate_index, coordinate_index)
+            in covered_keys
+            for coordinate_index in range(coordinate_count)
+            for character_index in range(coordinate_count)
+        )
+
+        def prepared_diff_add(point, difference):
+            if any(coordinate == 0 for coordinate in difference):
+                return point.diff_add(basis_point, difference)
+            relation_values = {}
+            for (
+                character,
+                first_index,
+                second_index,
+                constant,
+                outputs,
+            ) in generic_relations:
+                point_sum = sum(
+                    avisogenies_tools.eval_car(character, shift)
+                    * point[first_index + shift]
+                    * point[second_index + shift]
+                    for shift in twotorsion
+                )
+                value = constant*point_sum
+                for output_key, output_sign in outputs:
+                    relation_values[output_key] = output_sign*value
+            coordinates = [
+                sum(
+                    relation_values[
+                        (
+                            character_index,
+                            coordinate_index,
+                            coordinate_index,
+                        )
+                    ]
+                    for character_index in range(coordinate_count)
+                )
+                / (
+                    coordinate_count
+                    * difference[coordinate_index]
+                )
+                for coordinate_index in range(coordinate_count)
+            ]
+            return point0.point(coordinates)
+
+        return prepared_diff_add
+
+    subphase_started = time.perf_counter()
     index = partial(avisogenies_tools.idx, n=isogeny_degree)
     residue_space = Zmod(isogeny_degree)^dimension
     basis_vectors = residue_space.basis()
@@ -350,6 +560,15 @@ def explicit_root_isogeny(
     kernel_table = [
         [None]*kernel_size for _ in range(row_count)
     ]
+    prepared_diff_adders = [None]*dimension
+    if kernel_recurrence_strategy not in [
+        "standard",
+        "prepared_basis_diff_add",
+    ]:
+        raise ValueError(
+            "Unknown kernel recurrence strategy: "
+            f"{kernel_recurrence_strategy}"
+        )
     for *coefficients, row_index in cantor_product(*support):
         kernel_index = index(coefficients)
         kernel_vector = residue_space(coefficients)
@@ -420,26 +639,71 @@ def explicit_root_isogeny(
             continue
         repeated_basis = basis_vectors[repeated_position]
         repeated_index = basis_indices[repeated_position]
-        kernel_table[row_index][kernel_index] = kernel_table[row_index][
+        previous_point = kernel_table[row_index][
             index(kernel_vector - repeated_basis)
-        ].diff_add(
-            kernel_table[0][repeated_index],
-            kernel_table[row_index][
-                index(kernel_vector - 2*repeated_basis)
-            ],
-        )
+        ]
+        difference_point = kernel_table[row_index][
+            index(kernel_vector - 2*repeated_basis)
+        ]
+        if kernel_recurrence_strategy == "prepared_basis_diff_add":
+            if prepared_diff_adders[repeated_position] is None:
+                prepared_diff_adders[repeated_position] = (
+                    prepare_basis_diff_add(
+                        kernel_table[0][repeated_index]
+                    )
+                )
+            kernel_table[row_index][kernel_index] = (
+                prepared_diff_adders[repeated_position](
+                    previous_point,
+                    difference_point,
+                )
+            )
+        else:
+            kernel_table[row_index][kernel_index] = (
+                previous_point.diff_add(
+                    kernel_table[0][repeated_index],
+                    difference_point,
+                )
+            )
+    finish_subphase(
+        "kernel_table_recurrence",
+        subphase_started,
+    )
 
+    subphase_started = time.perf_counter()
     images = []
     for row_index in range(row_count):
-        image_coordinates = [
-            sum(
-                element[coordinate_index]^isogeny_degree
-                for element in kernel_table[row_index]
+        if theta_power_sum_strategy == "coordinate_major":
+            image_coordinates = [
+                sum(
+                    element[coordinate_index]^isogeny_degree
+                    for element in kernel_table[row_index]
+                )
+                for coordinate_index in range(coordinate_count)
+            ]
+        elif theta_power_sum_strategy == "row_major":
+            image_coordinates = [
+                working_field(0) for _ in range(coordinate_count)
+            ]
+            for element in kernel_table[row_index]:
+                for coordinate_index, coordinate in enumerate(
+                    element._coords
+                ):
+                    image_coordinates[coordinate_index] += (
+                        coordinate^isogeny_degree
+                    )
+        else:
+            raise ValueError(
+                "Unknown theta power-sum strategy: "
+                f"{theta_power_sum_strategy}"
             )
-            for coordinate_index in range(coordinate_count)
-        ]
         images.append(image_coordinates)
+    finish_subphase(
+        "theta_power_sums",
+        subphase_started,
+    )
 
+    subphase_started = time.perf_counter()
     if embedding is not None:
         descended_images = []
         for coordinates in images:
@@ -461,6 +725,10 @@ def explicit_root_isogeny(
         target(coordinates, check=check)
         for coordinates in images[1:]
     ]
+    finish_subphase(
+        "coefficient_descent_and_target_construction",
+        subphase_started,
+    )
     return target, target_points, len(roots)
 
 
@@ -599,6 +867,40 @@ dual_isogeny_strategy = config.get(
 )
 explicit_root_count = None
 explicit_root_extension_degree = None
+default_root_extraction_strategy = (
+    "kummer_class"
+    if dual_isogeny_strategy == "explicit_degree_prime_extension"
+    else "individual_nth_root"
+)
+explicit_root_extraction_strategy = config.get(
+    "explicit_root_extraction_strategy",
+    default_root_extraction_strategy,
+)
+default_kernel_recurrence_strategy = (
+    "prepared_basis_diff_add"
+    if dual_isogeny_strategy in [
+        "explicit_base_field_roots",
+        "explicit_degree_prime_extension",
+    ]
+    else "standard"
+)
+kernel_recurrence_strategy = config.get(
+    "kernel_recurrence_strategy",
+    default_kernel_recurrence_strategy,
+)
+default_theta_power_sum_strategy = (
+    "row_major"
+    if dual_isogeny_strategy in [
+        "explicit_base_field_roots",
+        "explicit_degree_prime_extension",
+    ]
+    else "coordinate_major"
+)
+theta_power_sum_strategy = config.get(
+    "theta_power_sum_strategy",
+    default_theta_power_sum_strategy,
+)
+explicit_subphase_timings = {}
 try:
     if dual_isogeny_strategy == "explicit_base_field_roots":
         (
@@ -610,7 +912,13 @@ try:
             prime,
             level2_kernel,
             batch_theta_points,
+            root_extraction_strategy=(
+                explicit_root_extraction_strategy
+            ),
+            kernel_recurrence_strategy=kernel_recurrence_strategy,
+            theta_power_sum_strategy=theta_power_sum_strategy,
             check=False,
+            subphase_timings=explicit_subphase_timings,
         )
         explicit_root_extension_degree = 1
     elif dual_isogeny_strategy == "explicit_degree_prime_extension":
@@ -624,7 +932,13 @@ try:
             level2_kernel,
             batch_theta_points,
             root_extension_degree=prime,
+            root_extraction_strategy=(
+                explicit_root_extraction_strategy
+            ),
+            kernel_recurrence_strategy=kernel_recurrence_strategy,
+            theta_power_sum_strategy=theta_power_sum_strategy,
             check=False,
+            subphase_timings=explicit_subphase_timings,
         )
         explicit_root_extension_degree = int(prime)
     elif dual_isogeny_strategy == "symbolic_quotient_ring":
@@ -923,6 +1237,15 @@ result = {
         "explicit_root_extension_degree": (
             explicit_root_extension_degree
         ),
+        "explicit_root_extraction_strategy": (
+            explicit_root_extraction_strategy
+        ),
+        "kernel_recurrence_strategy": kernel_recurrence_strategy,
+        "theta_power_sum_strategy": theta_power_sum_strategy,
+        "explicit_subphase_timings_seconds": {
+            name: float(value)
+            for name, value in explicit_subphase_timings.items()
+        },
         "target_theta_rank": int(target_matrix.rank()),
         "all_image_theta_ranks": [
             int(matrix(level2_field, 2, 2, list(image)).rank())

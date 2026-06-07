@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-08T01:49:10+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "lts-faculty.wmi.amu.edu.pl",
+  "elapsed_seconds": 0.427,
+  "memory_megabytes": null,
+  "workstream": "B027",
+  "verified": true,
+  "scope": "Independent verification of both descended degree-37 maps",
+  "field": "GF(128021)",
+  "degree": 37,
+  "map_degrees": [37, 37],
+  "target_j_invariants": [95253, 14571],
+  "pullback_eigenforms": [
+    "101036*x+83671",
+    "97839*x+39527"
+  ],
+  "artifact": "computations/magma/verify_degree37_maps.m",
+  "transcript": "results/remote/magma_degree37_maps.log",
+  "success_marker": "B027_DEGREE37_MAPS_MAGMA_VERIFIED"
+}

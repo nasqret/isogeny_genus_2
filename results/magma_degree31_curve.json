@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-06-07T23:19:11+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "lts-faculty.wmi.amu.edu.pl",
+  "elapsed_seconds": 1.96,
+  "memory_megabytes": 32.09,
+  "workstream": "B025",
+  "verified": true,
+  "scope": "Independent degree-31 quotient reconstruction and twist selection",
+  "field": "GF(64853)",
+  "degree": 31,
+  "igusa_clebsch": [36614, 24694, 25370, 43295],
+  "twist_selected": false,
+  "base_field_curve_coefficients_ascending": [
+    0,
+    18215,
+    18410,
+    40681,
+    52399,
+    1
+  ],
+  "g2_invariants": [56482, 39931, 36038],
+  "quotient_weil_polynomial": "T^4+27*T^3-100992*T^2+1751031*T+4205911609",
+  "artifact": "computations/magma/reconstruct_degree31_curve.m",
+  "transcript": "results/remote/magma_degree31_curve.log",
+  "success_marker": "B025_DEGREE31_CURVE_RECONSTRUCTED"
+}

@@ -1,0 +1,101 @@
+{
+  "workstream": "B026",
+  "status": "verified",
+  "generated_at": "2026-06-07T23:50:31.695786+00:00",
+  "scope": "exact map equivalence and timing of prepared basis differential additions",
+  "cases": [
+    {
+      "degree": 13,
+      "baseline_recurrence_seconds": 28.058572334004566,
+      "prepared_recurrence_seconds": 20.431544167004176,
+      "recurrence_reduction_percent": 27.18252402941076,
+      "baseline_dual_seconds": 46.29693749999569,
+      "prepared_dual_seconds": 53.65886087498802,
+      "dual_reduction_percent": -15.901534253735505,
+      "baseline_total_seconds": 55.52384901046753,
+      "prepared_total_seconds": 71.99283695220947,
+      "total_reduction_percent": -29.661106416878912,
+      "map_equivalence": [
+        {
+          "factor_index": 0,
+          "x_coordinate_identical": true,
+          "target_y_sign": 1,
+          "y_coordinate_equivalent": true,
+          "differential_equivalent": true
+        },
+        {
+          "factor_index": 1,
+          "x_coordinate_identical": true,
+          "target_y_sign": 1,
+          "y_coordinate_equivalent": true,
+          "differential_equivalent": true
+        }
+      ]
+    },
+    {
+      "degree": 17,
+      "baseline_recurrence_seconds": 123.02951183299592,
+      "prepared_recurrence_seconds": 58.15604891600378,
+      "recurrence_reduction_percent": 52.730001078971526,
+      "baseline_dual_seconds": 167.89815325000382,
+      "prepared_dual_seconds": 117.7504148750013,
+      "dual_reduction_percent": 29.86795113840919,
+      "baseline_total_seconds": 187.36097717285156,
+      "prepared_total_seconds": 147.17717480659485,
+      "total_reduction_percent": 21.447263444396313,
+      "map_equivalence": [
+        {
+          "factor_index": 0,
+          "x_coordinate_identical": true,
+          "target_y_sign": 1,
+          "y_coordinate_equivalent": true,
+          "differential_equivalent": true
+        },
+        {
+          "factor_index": 1,
+          "x_coordinate_identical": true,
+          "target_y_sign": 1,
+          "y_coordinate_equivalent": true,
+          "differential_equivalent": true
+        }
+      ]
+    },
+    {
+      "degree": 31,
+      "baseline_recurrence_seconds": 1783.443281209009,
+      "prepared_recurrence_seconds": 488.44138479200774,
+      "recurrence_reduction_percent": 72.61245199449854,
+      "baseline_dual_seconds": 2400.9365396659996,
+      "prepared_dual_seconds": 896.0822435410082,
+      "dual_reduction_percent": 62.677803901236615,
+      "baseline_total_seconds": 2560.54349899292,
+      "prepared_total_seconds": 968.8214411735535,
+      "total_reduction_percent": 62.16344531719153,
+      "map_equivalence": [
+        {
+          "factor_index": 0,
+          "x_coordinate_identical": true,
+          "target_y_sign": 1,
+          "y_coordinate_equivalent": true,
+          "differential_equivalent": true
+        },
+        {
+          "factor_index": 1,
+          "x_coordinate_identical": true,
+          "target_y_sign": 1,
+          "y_coordinate_equivalent": true,
+          "differential_equivalent": true
+        }
+      ]
+    }
+  ],
+  "certificate": {
+    "all_x_coordinates_identical": true,
+    "all_y_coordinates_equal_up_to_target_involution": true,
+    "all_differentials_transform_by_the_same_sign": true,
+    "all_map_identities_and_degrees_verified": true,
+    "prepared_recurrence_faster_in_all_tested_degrees": true,
+    "degree17_total_runtime_improved": true,
+    "degree13_total_runtime_claim_deferred_for_run_noise": true
+  }
+}

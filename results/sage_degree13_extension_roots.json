@@ -70,6 +70,14 @@
     ],
     "dual_isogeny_strategy": "explicit_degree_prime_extension",
     "explicit_root_count": 71,
+    "explicit_root_extension_degree": 13,
+    "explicit_subphase_timings_seconds": {
+      "compatible_lift_preparation": 1.773578209002153,
+      "field_extension_and_root_extraction": 33.266185458996915,
+      "kernel_table_recurrence": 24.441116166999564,
+      "theta_power_sums": 2.820908292007516,
+      "coefficient_descent_and_target_construction": 1.6349830830004066
+    },
     "target_theta_rank": 1,
     "all_image_theta_ranks": [
       1,
@@ -157,17 +165,17 @@
     }
   ],
   "phase_timings_seconds": {
-    "theta_quotient": 12.3171714170021,
-    "dual_kernel_recovery": 0.1443613750016084,
-    "level2_kernel_preparation": 0.27592354199441615,
-    "sample_selection": 0.03657166600169148,
-    "sample_theta_conversion": 1.9687921669974457,
-    "dual_isogeny_evaluation": 100.45055770900217,
-    "target_factorization": 0.004644250002456829,
-    "rational_interpolation": 0.05351370900461916,
-    "map_identity_certification": 0.0616766660095891
+    "theta_quotient": 6.679633874999126,
+    "dual_kernel_recovery": 0.07585175000713207,
+    "level2_kernel_preparation": 0.15138841699808836,
+    "sample_selection": 0.019650250003905967,
+    "sample_theta_conversion": 1.0748524170048768,
+    "dual_isogeny_evaluation": 63.95202870799403,
+    "target_factorization": 0.00401633299770765,
+    "rational_interpolation": 0.04386395899928175,
+    "map_identity_certification": 0.04740187499555759
   },
-  "runtime_seconds": 115.48717498779297,
+  "runtime_seconds": 72.16181111335754,
   "notes": [
     "The formulas are on the Rosenhain model over F_(8009^24).",
     "The base-field descent is tracked in workstream B022.",

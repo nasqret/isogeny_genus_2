@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-06-07T23:17:23+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 16.537711,
+  "workstream": "B025",
+  "verified": true,
+  "scope": "degree-31 candidate search and anti-isometry certificate",
+  "field": "GF(64853)",
+  "degree": 31,
+  "field_minimality": {
+    "first_prime_congruent_to_1_mod_31_with_two_admissible_traces": true,
+    "smaller_admissible_fields": [],
+    "admissible_trace_squareclasses": [
+      -43,
+      -1
+    ]
+  },
+  "admissible_traces": [
+    467,
+    -494
+  ],
+  "curves": [
+    {
+      "equation": "y^2=x^3+48095*x+18584",
+      "a4": 48095,
+      "a6": 18584,
+      "j": "53479",
+      "cardinality": 64387,
+      "group_invariants": [
+        31,
+        2077
+      ],
+      "trace": 467,
+      "cm_squareclass": -43,
+      "torsion_basis": [
+        [
+          25371,
+          36533
+        ],
+        [
+          44319,
+          54650
+        ]
+      ]
+    },
+    {
+      "equation": "y^2=x^3+1*x+0",
+      "a4": 1,
+      "a6": 0,
+      "j": "1728",
+      "cardinality": 65348,
+      "group_invariants": [
+        62,
+        1054
+      ],
+      "trace": -494,
+      "cm_squareclass": -1,
+      "torsion_basis": [
+        [
+          64587,
+          63692
+        ],
+        [
+          23062,
+          28841
+        ]
+      ]
+    }
+  ],
+  "anti_isometry": {
+    "matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        11
+      ]
+    ],
+    "required_determinant_in_chosen_bases": 11,
+    "compatible_matrix_count": 29760,
+    "pairing_1": "49029",
+    "pairing_2_after_map": "19660",
+    "pairing_product": "1"
+  },
+  "graph": {
+    "size": 961,
+    "maximal_isotropic": true
+  },
+  "irreducibility": {
+    "cm_squareclasses": [
+      -43,
+      -1
+    ],
+    "geometrically_nonisogenous": true,
+    "frey_kani_irreducible": true,
+    "geometric_quotient_is_smooth_genus2_jacobian": true
+  },
+  "quotient_weil_polynomial": "T^4 + 27*T^3 - 100992*T^2 + 1751031*T + 4205911609",
+  "remaining_step": "reconstruct the degree-31 quotient curve and its two maps"
+}

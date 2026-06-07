@@ -1,10 +1,10 @@
 {
   "workstream": "B023",
   "status": "verified",
-  "generated_at": "2026-06-07T21:05:21.778183+00:00",
-  "scope": "Frobenius translation cocycles and 2-torsion coboundary corrections for both maps in degrees 13, 17, 19, 23, and 29",
-  "case_count": 10,
-  "direct_descent_count": 7,
+  "generated_at": "2026-06-07T23:50:40.166579+00:00",
+  "scope": "Frobenius translation cocycles and 2-torsion coboundary corrections for both maps in degrees 13, 17, 19, 23, 29, 31, and 37",
+  "case_count": 14,
+  "direct_descent_count": 11,
   "nontrivial_cocycle_count": 3,
   "nontrivial_cases": [
     [
@@ -234,6 +234,94 @@
       ],
       "selected_correction_index": 1,
       "direct_descent": false
+    },
+    {
+      "degree": 31,
+      "factor_index": 0,
+      "target_j_invariant": "53479",
+      "frobenius_action_on_two_torsion": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "frobenius_translation_index": 0,
+      "rational_two_torsion_indices": [
+        0
+      ],
+      "correction_candidate_indices": [
+        0
+      ],
+      "selected_correction_index": 0,
+      "direct_descent": true
+    },
+    {
+      "degree": 31,
+      "factor_index": 1,
+      "target_j_invariant": "1728",
+      "frobenius_action_on_two_torsion": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frobenius_translation_index": 0,
+      "rational_two_torsion_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "correction_candidate_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "selected_correction_index": 0,
+      "direct_descent": true
+    },
+    {
+      "degree": 37,
+      "factor_index": 0,
+      "target_j_invariant": "95253",
+      "frobenius_action_on_two_torsion": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "frobenius_translation_index": 0,
+      "rational_two_torsion_indices": [
+        0
+      ],
+      "correction_candidate_indices": [
+        0
+      ],
+      "selected_correction_index": 0,
+      "direct_descent": true
+    },
+    {
+      "degree": 37,
+      "factor_index": 1,
+      "target_j_invariant": "14571",
+      "frobenius_action_on_two_torsion": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "frobenius_translation_index": 0,
+      "rational_two_torsion_indices": [
+        0,
+        1
+      ],
+      "correction_candidate_indices": [
+        0,
+        1
+      ],
+      "selected_correction_index": 0,
+      "direct_descent": true
     }
   ],
   "certificate": {

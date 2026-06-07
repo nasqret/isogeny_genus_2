@@ -1,0 +1,111 @@
+{
+  "generated_at": "2026-06-07T23:06:33+02:00",
+  "engine": "SageMath 10.8",
+  "workstream": "B025",
+  "status": "verified",
+  "scope": "minimal arithmetic frontier for future odd-prime Frey-Kani synthesis",
+  "search_bound": 2000000,
+  "degrees": [
+    31,
+    37,
+    41
+  ],
+  "candidates": [
+    {
+      "degree": 31,
+      "field_order": 64853,
+      "field": "GF(64853)",
+      "tested_prime_fields_congruent_to_1": 219,
+      "admissible_traces": [
+        467,
+        -494
+      ],
+      "cm_squareclasses": [
+        -43,
+        -1
+      ],
+      "distinct_cm_squareclasses": true,
+      "sample_count": 70,
+      "explicit_root_count": 143,
+      "kernel_rows": 71,
+      "kernel_table_cells": 68231,
+      "kernel_cell_ratio_to_degree29": 1.2109074129944806,
+      "extension_weighted_ratio_to_degree29": 1.2944182690630655,
+      "predicted_dual_isogeny_seconds": 2410.8194866818894
+    },
+    {
+      "degree": 37,
+      "field_order": 128021,
+      "field": "GF(128021)",
+      "tested_prime_fields_congruent_to_1": 334,
+      "admissible_traces": [
+        705,
+        -664
+      ],
+      "cm_squareclasses": [
+        -11,
+        -13
+      ],
+      "distinct_cm_squareclasses": true,
+      "sample_count": 82,
+      "explicit_root_count": 167,
+      "kernel_rows": 83,
+      "kernel_table_cells": 113627,
+      "kernel_cell_ratio_to_degree29": 2.0165581131204857,
+      "extension_weighted_ratio_to_degree29": 2.572850006395102,
+      "predicted_dual_isogeny_seconds": 4791.864484589359
+    },
+    {
+      "degree": 41,
+      "field_order": 195817,
+      "field": "GF(195817)",
+      "tested_prime_fields_congruent_to_1": 452,
+      "admissible_traces": [
+        822,
+        -859
+      ],
+      "cm_squareclasses": [
+        -1,
+        -3
+      ],
+      "distinct_cm_squareclasses": true,
+      "sample_count": 90,
+      "explicit_root_count": 183,
+      "kernel_rows": 91,
+      "kernel_table_cells": 152971,
+      "kernel_cell_ratio_to_degree29": 2.7148029176353665,
+      "extension_weighted_ratio_to_degree29": 3.8381696421741385,
+      "predicted_dual_isogeny_seconds": 7148.488543229488
+    }
+  ],
+  "selected_next_target": {
+    "degree": 31,
+    "field_order": 64853,
+    "field": "GF(64853)",
+    "tested_prime_fields_congruent_to_1": 219,
+    "admissible_traces": [
+      467,
+      -494
+    ],
+    "cm_squareclasses": [
+      -43,
+      -1
+    ],
+    "distinct_cm_squareclasses": true,
+    "sample_count": 70,
+    "explicit_root_count": 143,
+    "kernel_rows": 71,
+    "kernel_table_cells": 68231,
+    "kernel_cell_ratio_to_degree29": 1.2109074129944806,
+    "extension_weighted_ratio_to_degree29": 1.2944182690630655,
+    "predicted_dual_isogeny_seconds": 2410.8194866818894
+  },
+  "cost_model": {
+    "baseline_degree": 29,
+    "baseline_dual_isogeny_seconds": 1862.473316625008,
+    "baseline_kernel_table_cells": 56347,
+    "formula": "degree29_seconds * cell_ratio * (candidate_degree/29)",
+    "interpretation": "heuristic planning estimate, not a runtime certificate"
+  },
+  "elapsed_seconds": 0.2951
+}

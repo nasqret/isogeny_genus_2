@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-06-08T00:58:11+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 16.70384,
+  "workstream": "B027",
+  "verified": true,
+  "scope": "degree-37 candidate search and anti-isometry certificate",
+  "field": "GF(128021)",
+  "degree": 37,
+  "field_minimality": {
+    "first_prime_congruent_to_1_mod_37_with_two_admissible_traces": true,
+    "smaller_admissible_fields": [],
+    "admissible_trace_squareclasses": [
+      -11,
+      -13
+    ]
+  },
+  "admissible_traces": [
+    705,
+    -664
+  ],
+  "curves": [
+    {
+      "equation": "y^2=x^3+94494*x+115630",
+      "a4": 94494,
+      "a6": 115630,
+      "j": "95253",
+      "cardinality": 127317,
+      "group_invariants": [
+        37,
+        3441
+      ],
+      "trace": 705,
+      "cm_squareclass": -11,
+      "torsion_basis": [
+        [
+          125182,
+          24590
+        ],
+        [
+          45004,
+          43742
+        ]
+      ]
+    },
+    {
+      "equation": "y^2=x^3+94047*x+106345",
+      "a4": 94047,
+      "a6": 106345,
+      "j": "14571",
+      "cardinality": 128686,
+      "group_invariants": [
+        37,
+        3478
+      ],
+      "trace": -664,
+      "cm_squareclass": -13,
+      "torsion_basis": [
+        [
+          56059,
+          19346
+        ],
+        [
+          36636,
+          89945
+        ]
+      ]
+    }
+  ],
+  "anti_isometry": {
+    "matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        21
+      ]
+    ],
+    "required_determinant_in_chosen_bases": 21,
+    "compatible_matrix_count": 50616,
+    "pairing_1": "91731",
+    "pairing_2_after_map": "91689",
+    "pairing_product": "1"
+  },
+  "graph": {
+    "size": 1369,
+    "maximal_isotropic": true
+  },
+  "irreducibility": {
+    "cm_squareclasses": [
+      -11,
+      -13
+    ],
+    "geometrically_nonisogenous": true,
+    "frey_kani_irreducible": true,
+    "geometric_quotient_is_smooth_genus2_jacobian": true
+  },
+  "quotient_weil_polynomial": "T^4 - 41*T^3 - 212078*T^2 - 5248861*T + 16389376441",
+  "remaining_step": "reconstruct the degree-37 quotient curve and its two maps"
+}

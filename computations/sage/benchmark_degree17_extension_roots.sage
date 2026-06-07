@@ -28,6 +28,7 @@ FREY_KANI_MAP_RECOVERY_CONFIG = {
     "extension_degree": 12,
     "sample_count": 42,
     "dual_isogeny_strategy": "explicit_degree_prime_extension",
+    "explicit_root_extraction_strategy": "individual_nth_root",
     "output_filename": "sage_degree17_extension_roots.json",
 }
 load(

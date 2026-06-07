@@ -1,0 +1,9 @@
+DESCENT_TRANSLATION_CANDIDATES 0 1
+DESCENT_TRANSLATION_CANDIDATES 1 4
+DEGREE31_DESCENT verified
+mobius (1, 0, 0, 1)
+scaling 1
+x_degree_pairs [(31, 30), (31, 30)]
+y_degree_pairs [(45, 46), (44, 45)]
+eigenvectors [[1, 55105], [1, 54058]]
+result /Users/airbartek/codex/isogeny_genus_2/results/sage_degree31_descended_maps.json

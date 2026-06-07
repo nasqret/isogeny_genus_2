@@ -190,7 +190,15 @@ Current bounded tasks, in order:
    runs;
 3. [complete] localize the next bottleneck: the dual-isogeny kernel-table
    recurrence occupies 97.38% of degree-29 recovery;
-4. optimize the kernel-table recurrence before the next full prime-degree
-   synthesis;
-5. scan and certify the next practical prime-degree target, starting with
-   degree 31.
+4. [complete] implement Kummer-class batched root extraction and validate it
+   in degrees 13 and 17;
+5. [complete] certify the degree-31 arithmetic frontier and complete both
+   maps through independent Magma verification;
+6. [complete] optimize the kernel-table recurrence and theta power sums using
+   the degree-31 profile as the regression target;
+7. [complete] certify that the optimized degree-31 recovery preserves both
+   exact maps and reduces total recovery by more than 67%;
+8. [complete] launch and finish degree-37 synthesis from the certified
+   `F_128021` arithmetic frontier using the optimized evaluator;
+9. optimize theta power sums against the exact degree-37 maps;
+10. launch degree 41 only after the power-sum gate passes.

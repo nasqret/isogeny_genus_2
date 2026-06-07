@@ -1,0 +1,26 @@
+Magma V2.28-3     Sun Jun  7 2026 23:18:50 on lts-faculty [Seed = 2783583128]
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading startup file "/home/faculty/bnaskrecki/magma/config/magma_config.txt"
+
+****************************************************
+****************Session log started*****************
+****************************************************
+Session start time: 23:18:50
+Session start date: 07.06.2026
+Session start seed: 2783583128
+****************************************************
+/home/faculty/bnaskrecki/magma/logs/session_log_2026_06_07_2783583128.txt
+****************************************************
+Loading file "/tmp/reconstruct_degree31_curve.m"
+IGUSA_CLEBSCH [ 36614, 24694, 25370, 43295 ]
+INITIAL_L_POLYNOMIAL 4205911609*t^4 + 1751031*t^3 - 100992*t^2 + 27*t + 1
+TWIST_SELECTED false
+QUOTIENT_G2_INVARIANTS [ 56482, 39931, 36038 ]
+QUOTIENT_L_POLYNOMIAL 4205911609*t^4 + 1751031*t^3 - 100992*t^2 + 27*t + 1
+QUOTIENT_WEIL_POLYNOMIAL t^4 + 27*t^3 - 100992*t^2 + 1751031*t + 4205911609
+FIXED_BASE_FIELD_CURVE Hyperelliptic Curve defined by y^2 = x^5 + 52399*x^4 + 
+    40681*x^3 + 18410*x^2 + 18215*x over GF(64853)
+B025_DEGREE31_CURVE_RECONSTRUCTED
+
+Total time: 1.960 seconds, Total memory usage: 32.09MB

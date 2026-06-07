@@ -608,6 +608,34 @@ independently certify the graph, quotient model, Weil polynomial, and both
 degree-$29$ maps. The first map descends directly. The second has a
 nontrivial target 2-torsion Frobenius cocycle and a unique correction.
 
+Degree $31$ starts over $\mathbf F_{64853}$ with traces $467$ and $-494$,
+CM squareclasses $-43$ and $-1$, and graph matrix
+$\operatorname{diag}(1,11)$. Its quotient Rosenhain model already lies over
+the base field:
+
+$$
+C_{31}:\quad
+y^2=x^5+52399x^4+40681x^3+18410x^2+18215x.
+$$
+
+The absolute invariants are $(36707,3040,53075)$. Both maps descend directly
+on this quintic, retain X-degree pair $(31,30)$, and are independently
+certified by Magma to have degree $31$.
+
+Degree $37$ starts over $\mathbf F_{128021}$ with traces $705$ and $-664$,
+CM squareclasses $-11$ and $-13$, and graph matrix
+$\operatorname{diag}(1,21)$. The fixed quotient is
+
+$$
+\begin{aligned}
+C_{37}:\quad y^2={}&36955x^6+49647x^5+21256x^4+44090x^3\\
+&+59931x^2+75182x+123483.
+\end{aligned}
+$$
+
+Both maps descend directly and remote Magma independently returns degrees
+$37,37$.
+
 The completed runs give the following scaling data:
 
 | $n$ | samples | theta seconds | recovery seconds | descent seconds |
@@ -617,6 +645,8 @@ The completed runs give the following scaling data:
 | 19 | 46 | 7.690 | 586.712 | 6.099 |
 | 23 | 54 | 18.774 | 1100.736 | 5.138 |
 | 29 | 66 | 35.222 | 1912.645 | 12.312 |
+| 31 | 70 | 20.288 | 2560.543 | 16.722 |
+| 37 | 82 | 11.949 | 2551.792 | 23.405 |
 
 Thus exact map recovery, not quotient reconstruction or descent, is the
 dominant cost. The observed sample rule is $2n+8$. The degree-$29$ row uses
@@ -667,6 +697,41 @@ or 97.38% of the complete recovery. This localizes the next optimization
 target to the kernel-table recurrence rather than root representation,
 interpolation, or descent.
 
+Root extraction itself can also be batched. Write $q-1=\ell m$ with
+$\gcd(\ell,m)=1$. A compatible delta $a$ has one of $\ell$ classes modulo
+$\ell$-th powers. After taking one root $\alpha^\ell=c$ for a fixed
+nontrivial class representative, every root is
+
+$$
+\left(\frac{a}{c^k}\right)^{\ell^{-1}\bmod m}\alpha^k,
+$$
+
+where $k$ is determined by $a^m$. This replaces one root call per delta by
+one root call for the entire batch.
+
+Exact degree-13 and degree-17 regressions preserve all X-maps and all
+Y-maps. Total runtime falls by 23.06% and 31.20%, respectively. The
+Kummer-class strategy is now the production default; individual root
+extraction remains selectable as a regression oracle.
+
+In degree $31$, the first production Kummer run uses 143 compatible roots.
+Dual evaluation takes 2400.937 seconds against a pre-run prediction of
+2410.819 seconds. The internal profile assigns 237.727 seconds to batched
+root extraction, 1783.443 seconds to the kernel recurrence, and 353.803
+seconds to theta power sums. The recurrence is therefore the next bounded
+optimization target.
+
+Prepared basis differential additions cache the basis-dependent Riemann data
+used by every recurrence step. Row-major power sums then traverse each kernel
+row only once. Exact regression preserves both degree-$31$ maps and reduces
+complete recovery from 2560.543 to 839.479 seconds, a 67.21% reduction.
+Dual evaluation falls from 2400.937 to 790.112 seconds.
+
+The optimized degree-$37$ production run takes 2551.792 seconds in total.
+Its prepared recurrence takes 1386.486 seconds and row-major power sums take
+819.920 seconds. This identifies power-sum scaling as the next bottleneck
+before degree $41$.
+
 The common-extension strategy is now the default general evaluator.
 The symbolic quotient-ring strategy remains available as an independent
 regression oracle.
@@ -682,7 +747,7 @@ regression oracle.
 | 9 | Both primitive maps, CRT centers, and full $S_9$ monodromy complete |
 | 10 | Both primitive maps complete; target isogeny obstruction excludes degree $5$ followed by a 2-isogeny |
 | 11 | Both primitive maps complete on a rational point of Kumar's $Y_-(121)$ |
-| $>11$ | End-to-end synthesis complete in degrees 13, 17, 19, 23, and 29 |
+| $>11$ | End-to-end synthesis complete in degrees 13, 17, 19, 23, 29, 31, and 37 |
 
 ## Degree 10 and degree 11
 

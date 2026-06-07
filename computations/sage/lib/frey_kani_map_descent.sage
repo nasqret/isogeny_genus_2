@@ -1,4 +1,4 @@
-"""Transport recovered Frey-Kani maps to a fixed base-field sextic."""
+"""Transport recovered Frey-Kani maps to a fixed base-field model."""
 
 import json
 import time
@@ -74,7 +74,6 @@ rosenhain_roots = rosenhain_polynomial.roots(
 )
 base_roots = base_polynomial_24.roots(multiplicities=False)
 assert len(rosenhain_roots) == 5
-assert len(base_roots) == 6
 assert level2_field(0) in rosenhain_roots
 assert level2_field(1) in rosenhain_roots
 
@@ -101,28 +100,42 @@ def normalized_mobius_from_images(
     )
 
 
-mobius_candidates = []
-for infinity_image in base_roots:
-    for zero_image in base_roots:
-        if zero_image == infinity_image:
-            continue
-        for one_image in base_roots:
-            if one_image in [infinity_image, zero_image]:
+if base_polynomial_24 == rosenhain_polynomial:
+    # The deterministic theta normalization can already produce the requested
+    # odd-degree model. In that case infinity is the sixth branch point and
+    # the identity transport avoids an unnecessary projective root search.
+    mobius_candidates = [
+        (
+            level2_field(1),
+            level2_field(0),
+            level2_field(0),
+            level2_field(1),
+        )
+    ]
+else:
+    assert len(base_roots) == 6
+    mobius_candidates = []
+    for infinity_image in base_roots:
+        for zero_image in base_roots:
+            if zero_image == infinity_image:
                 continue
-            coefficients = normalized_mobius_from_images(
-                infinity_image,
-                zero_image,
-                one_image,
-            )
-            finite_images = [
-                mobius_value(coefficients, root)
-                for root in rosenhain_roots
-            ]
-            if None in finite_images:
-                continue
-            if set(finite_images + [infinity_image]) == set(base_roots):
-                if coefficients not in mobius_candidates:
-                    mobius_candidates.append(coefficients)
+            for one_image in base_roots:
+                if one_image in [infinity_image, zero_image]:
+                    continue
+                coefficients = normalized_mobius_from_images(
+                    infinity_image,
+                    zero_image,
+                    one_image,
+                )
+                finite_images = [
+                    mobius_value(coefficients, root)
+                    for root in rosenhain_roots
+                ]
+                if None in finite_images:
+                    continue
+                if set(finite_images + [infinity_image]) == set(base_roots):
+                    if coefficients not in mobius_candidates:
+                        mobius_candidates.append(coefficients)
 
 assert len(mobius_candidates) == 1
 a, b, c, d = mobius_candidates[0]
@@ -559,7 +572,7 @@ result = {
     "status": "verified",
     "scope": (
         f"transport and descent of both degree-{prime} maps to the fixed "
-        f"F_{field_order} sextic"
+        f"F_{field_order} hyperelliptic model"
     ),
     "base_field": f"F_{field_order}",
     "source_curve": str(base_polynomial),

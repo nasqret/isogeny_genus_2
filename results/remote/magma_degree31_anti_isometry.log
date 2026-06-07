@@ -1,0 +1,27 @@
+Magma V2.28-3     Sun Jun  7 2026 23:17:09 on lts-faculty [Seed = 2700026212]
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading startup file "/home/faculty/bnaskrecki/magma/config/magma_config.txt"
+
+****************************************************
+****************Session log started*****************
+****************************************************
+Session start time: 23:17:09
+Session start date: 07.06.2026
+Session start seed: 2700026212
+****************************************************
+/home/faculty/bnaskrecki/magma/logs/session_log_2026_06_07_2700026212.txt
+****************************************************
+Loading file "/tmp/verify_degree31_anti_isometry.m"
+DEGREE 31
+ANTI_ISOMETRY_MATRIX 
+[ 1  0]
+[ 0 11]
+ANTI_ISOMETRY_COUNT 29760
+GRAPH_SIZE 961
+PAIRINGS 49029 19660
+CM_SQUARECLASSES -43 -1
+WEIL_POLYNOMIAL T^4 + 27*T^3 - 100992*T^2 + 1751031*T + 4205911609
+B025_DEGREE31_ANTI_ISOMETRY_VERIFIED
+
+Total time: 1.560 seconds, Total memory usage: 32.09MB

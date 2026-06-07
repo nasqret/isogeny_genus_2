@@ -1,0 +1,81 @@
+{
+  "workstream": "B025",
+  "status": "verified",
+  "generated_at": "2026-06-07T21:14:57.032304+00:00",
+  "scope": "exact equivalence and timing of Kummer-class batched root extraction",
+  "cases": [
+    {
+      "degree": 13,
+      "root_count": 71,
+      "individual_runtime_seconds": 72.16181111335754,
+      "kummer_runtime_seconds": 55.52384901046753,
+      "runtime_reduction_percent": 23.056464141059006,
+      "individual_dual_seconds": 63.95202870799403,
+      "kummer_dual_seconds": 46.29693749999569,
+      "dual_reduction_percent": 27.606772708668494,
+      "kummer_subphase_timings_seconds": {
+        "compatible_lift_preparation": 2.028227207993041,
+        "field_extension_and_root_extraction": 11.455231458996423,
+        "kernel_table_recurrence": 28.058572334004566,
+        "theta_power_sums": 3.013761207999778,
+        "coefficient_descent_and_target_construction": 1.7300890830083517
+      },
+      "map_equivalence": [
+        {
+          "factor_index": 0,
+          "x_coordinate_identical": true,
+          "target_y_sign": 1,
+          "y_coordinate_equivalent": true,
+          "differential_equivalent": true
+        },
+        {
+          "factor_index": 1,
+          "x_coordinate_identical": true,
+          "target_y_sign": 1,
+          "y_coordinate_equivalent": true,
+          "differential_equivalent": true
+        }
+      ]
+    },
+    {
+      "degree": 17,
+      "root_count": 87,
+      "individual_runtime_seconds": 272.3381941318512,
+      "kummer_runtime_seconds": 187.36097717285156,
+      "runtime_reduction_percent": 31.202827510069465,
+      "individual_dual_seconds": 253.19950275000883,
+      "kummer_dual_seconds": 167.89815325000382,
+      "dual_reduction_percent": 33.6893827095014,
+      "kummer_subphase_timings_seconds": {
+        "compatible_lift_preparation": 4.514990666997619,
+        "field_extension_and_root_extraction": 28.508090292001725,
+        "kernel_table_recurrence": 123.02951183299592,
+        "theta_power_sums": 10.14981279100175,
+        "coefficient_descent_and_target_construction": 1.6592419579974376
+      },
+      "map_equivalence": [
+        {
+          "factor_index": 0,
+          "x_coordinate_identical": true,
+          "target_y_sign": 1,
+          "y_coordinate_equivalent": true,
+          "differential_equivalent": true
+        },
+        {
+          "factor_index": 1,
+          "x_coordinate_identical": true,
+          "target_y_sign": 1,
+          "y_coordinate_equivalent": true,
+          "differential_equivalent": true
+        }
+      ]
+    }
+  ],
+  "certificate": {
+    "one_independent_nth_root_call_per_degree": true,
+    "all_x_coordinates_identical": true,
+    "all_y_coordinates_equal_up_to_target_involution": true,
+    "all_differentials_transform_by_the_same_sign": true,
+    "all_map_identities_and_degrees_verified": true
+  }
+}

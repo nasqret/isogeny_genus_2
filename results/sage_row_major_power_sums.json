@@ -1,0 +1,81 @@
+{
+  "workstream": "B026",
+  "status": "verified",
+  "generated_at": "2026-06-07T23:50:36.172646+00:00",
+  "scope": "exact map equivalence and isolated timing of row-major theta power sums",
+  "cases": [
+    {
+      "degree": 13,
+      "baseline_power_sum_seconds": 5.356320209000842,
+      "row_major_power_sum_seconds": 2.9501711659977445,
+      "power_sum_reduction_percent": 44.921680353608586,
+      "map_equivalence": [
+        {
+          "factor_index": 0,
+          "x_coordinate_identical": true,
+          "target_y_sign": 1,
+          "y_coordinate_equivalent": true,
+          "differential_equivalent": true
+        },
+        {
+          "factor_index": 1,
+          "x_coordinate_identical": true,
+          "target_y_sign": 1,
+          "y_coordinate_equivalent": true,
+          "differential_equivalent": true
+        }
+      ]
+    },
+    {
+      "degree": 17,
+      "baseline_power_sum_seconds": 17.295388541999273,
+      "row_major_power_sum_seconds": 9.599042333997204,
+      "power_sum_reduction_percent": 44.49941202137575,
+      "map_equivalence": [
+        {
+          "factor_index": 0,
+          "x_coordinate_identical": true,
+          "target_y_sign": 1,
+          "y_coordinate_equivalent": true,
+          "differential_equivalent": true
+        },
+        {
+          "factor_index": 1,
+          "x_coordinate_identical": true,
+          "target_y_sign": 1,
+          "y_coordinate_equivalent": true,
+          "differential_equivalent": true
+        }
+      ]
+    },
+    {
+      "degree": 31,
+      "baseline_power_sum_seconds": 202.15477483399445,
+      "row_major_power_sum_seconds": 187.40689454200037,
+      "power_sum_reduction_percent": 7.295341059396076,
+      "map_equivalence": [
+        {
+          "factor_index": 0,
+          "x_coordinate_identical": true,
+          "target_y_sign": 1,
+          "y_coordinate_equivalent": true,
+          "differential_equivalent": true
+        },
+        {
+          "factor_index": 1,
+          "x_coordinate_identical": true,
+          "target_y_sign": 1,
+          "y_coordinate_equivalent": true,
+          "differential_equivalent": true
+        }
+      ]
+    }
+  ],
+  "certificate": {
+    "all_x_coordinates_identical": true,
+    "all_y_coordinates_equal_up_to_target_involution": true,
+    "all_differentials_transform_by_the_same_sign": true,
+    "all_map_identities_and_degrees_verified": true,
+    "row_major_power_sums_faster_in_all_tested_degrees": true
+  }
+}

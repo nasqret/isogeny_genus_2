@@ -90,3 +90,14 @@ certifies the fixed base-field sextic and its L-polynomial.
 `verify_degree29_maps.m` independently constructs the two descended
 morphisms, verifies their target equations and differential pullbacks, and
 returns degrees `29,29`.
+
+`verify_degree31_anti_isometry.m` certifies the `961`-point graph of
+`diag(1,11)` over `F_64853`, and `reconstruct_degree31_curve.m` certifies
+the base-field quotient quintic and its Weil polynomial.
+`verify_degree31_maps.m` independently verifies both complete morphisms,
+their differential pullbacks, and degrees `31,31`.
+
+`verify_degree37_anti_isometry.m` certifies the `1369`-point graph of
+`diag(1,21)` over `F_128021`. `reconstruct_degree37_curve.m` certifies the
+base-field quotient sextic and its Weil polynomial, while
+`verify_degree37_maps.m` independently returns degrees `37,37`.

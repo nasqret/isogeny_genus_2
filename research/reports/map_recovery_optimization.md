@@ -116,3 +116,46 @@ The dual-isogeny phase takes `1862.473` seconds; total recovery takes
 Interpolation and exact identity certification together take under one
 second. The next optimization target is the kernel-table recurrence and its
 finite-field additions, not rational interpolation or descent.
+
+## Kummer-class batching
+
+The compatible deltas lie in the level-2 base field. Because
+`v_ell(q-1)=1`, their classes modulo `ell`-th powers form a cyclic group of
+order `ell`. One fixed nontrivial class representative needs one genuine
+root in the degree-`ell` extension. Every other root is recovered by a class
+lookup and exponentiation in the power subgroup.
+
+This replaces 71 independent root calls by one in degree 13. Exact map
+comparison passes in degrees 13 and 17. Total runtime reductions are
+`23.06%` and `31.20%`; dual-phase reductions are `27.61%` and `33.69%`.
+The Kummer-class strategy is now the production default, while individual
+root extraction remains the regression oracle.
+
+## Degree-31 production profile
+
+The degree-31 run uses 70 samples and 143 Kummer-class roots. Total recovery
+takes `2560.543` seconds, with `2400.937` seconds in dual evaluation. The
+frontier prediction was `2410.819` seconds, only `0.41%` above the measured
+dual time.
+
+The internal profile is now decisive: root extraction takes `237.727`
+seconds, kernel recurrence takes `1783.443` seconds, and theta power sums
+take `353.803` seconds. B026 targets the recurrence and power-sum phases
+before degree 37.
+
+## Prepared basis additions
+
+The recurrence always adds one of two fixed kernel-basis points. Caching the
+basis-dependent Riemann data and quadratic sums reduces recurrence time by
+`27.18%` in degree 13 and `52.73%` in degree 17. Exact comparison preserves
+all four maps, including their Y-signs and differential pullbacks.
+
+The degree-17 dual phase falls `29.87%`, and total recovery falls `21.45%`.
+Prepared basis addition is now the explicit evaluator's default; the
+standard formula remains the regression oracle. Degree 31 is the next exact
+acceptance run.
+
+The degree-31 acceptance run preserves both maps exactly and reduces
+recurrence time from `1783.443` to `488.441` seconds. A final combined run
+with row-major power sums completes recovery in `839.479` seconds, down
+`67.21%` from the original production run.

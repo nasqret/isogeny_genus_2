@@ -453,5 +453,60 @@
     "timestamp": "2026-06-07T23:03:48+02:00",
     "claim_id": "B024",
     "summary": "Completed B024 end to end. Degree 29 now has minimal-field arithmetic certification, independent Sage/Magma graph and quotient reconstruction, two explicit descended maps, cocycle certification, remote Magma degree checks, measured scaling, Jupyter Book documentation, and a dedicated validation gate."
+  },
+  {
+    "timestamp": "2026-06-07T23:06:33+02:00",
+    "claim_id": "B025",
+    "summary": "Started the next frontier with a generic arithmetic scanner. Degree 31 is selected over degrees 37 and 41: its first qualifying field is F_64853 with traces 467 and -494, CM squareclasses -43 and -1, 70 samples, 143 explicit roots, and a kernel table only 21.1% larger than degree 29."
+  },
+  {
+    "timestamp": "2026-06-07T23:15:52+02:00",
+    "claim_id": "B025",
+    "summary": "Implemented and cross-validated Kummer-class batched root extraction. One genuine root replaces 71 or 87 independent nth_root calls; exact maps are unchanged in degrees 13 and 17, total runtime drops 23.06% and 31.20%, and the strategy is now the production default."
+  },
+  {
+    "timestamp": "2026-06-07T23:19:11+02:00",
+    "claim_id": "B025",
+    "summary": "Launched degree-31 synthesis. Sage and Magma certify the graph over F_64853 and the quotient curve y^2=x^5+52399*x^4+40681*x^3+18410*x^2+18215*x; the Rosenhain model already descends, so no coordinate transport or quadratic twist is required."
+  },
+  {
+    "timestamp": "2026-06-08T00:06:53+02:00",
+    "claim_id": "B025",
+    "summary": "Completed both degree-31 maps. Kummer-class recovery used 70 samples and 143 roots, both maps descend directly on the base-field quintic with X-degree pairs (31,30), and remote Magma independently returns degrees 31 and 31."
+  },
+  {
+    "timestamp": "2026-06-08T00:08:10+02:00",
+    "claim_id": "B026",
+    "summary": "Opened the recurrence optimization phase. The degree-31 profile assigns 1783.443 seconds to the kernel recurrence and 353.803 seconds to theta power sums, versus 237.727 seconds to Kummer root extraction; exact degree-31 regression is the acceptance gate before degree 37."
+  },
+  {
+    "timestamp": "2026-06-08T00:15:00+02:00",
+    "claim_id": "B026",
+    "summary": "Prepared basis differential additions preserve all maps exactly and reduce isolated recurrence time by 27.18% in degree 13 and 52.73% in degree 17. Degree-17 dual evaluation falls 29.87% and total recovery falls 21.45%; the prepared strategy is now the default pending the degree-31 acceptance run."
+  },
+  {
+    "timestamp": "2026-06-08T00:43:00+02:00",
+    "claim_id": "B026",
+    "summary": "The degree-31 prepared recurrence gate passes exactly: recurrence falls from 1783.443 to 488.441 seconds (72.61%), dual evaluation falls 62.68%, and total recovery falls 62.16%. Row-major power sums also preserve all maps in degrees 13 and 17 and reduce that phase by about 44.5%."
+  },
+  {
+    "timestamp": "2026-06-08T00:56:09+02:00",
+    "claim_id": "B026",
+    "summary": "Completed B026. The final optimized degree-31 recovery preserves both maps exactly and finishes in 839.479 seconds instead of 2560.543 seconds, a 67.21% reduction; dual evaluation falls 67.09% to 790.112 seconds."
+  },
+  {
+    "timestamp": "2026-06-08T00:56:10+02:00",
+    "claim_id": "B027",
+    "summary": "Opened degree-37 synthesis over the certified frontier field F_128021 with traces 705 and -664 and CM squareclasses -11 and -13. The optimized scaling model predicts about 1571 seconds for dual evaluation."
+  },
+  {
+    "timestamp": "2026-06-08T01:49:10+02:00",
+    "claim_id": "B027",
+    "summary": "Completed degree-37 synthesis. Both maps recover from 82 samples, descend directly to the fixed sextic, and remote Magma independently returns degrees 37 and 37. Total recovery is 2551.792 seconds; theta power sums take 819.920 seconds."
+  },
+  {
+    "timestamp": "2026-06-08T01:49:18+02:00",
+    "claim_id": "B028",
+    "summary": "Opened the next optimization phase. Degree-37 theta power sums consume 819.920 seconds and explain most of the error in the revised scaling model; degree 41 is gated on an exact power-sum improvement."
   }
 ]

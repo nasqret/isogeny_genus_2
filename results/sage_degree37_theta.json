@@ -1,0 +1,77 @@
+{
+  "generated_at": "2026-06-08T01:01:05+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 11.949375,
+  "workstream": "B027",
+  "verified": true,
+  "status": "verified",
+  "scope": "degree-37 Frey-Kani quotient theta null and moduli",
+  "field": "GF(128021)",
+  "degree": 37,
+  "theta_extension_degree": 12,
+  "anti_isometry_matrix": [
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      21
+    ]
+  ],
+  "quotient_theta_null": [
+    "29991*theta_extension^11 + 97247*theta_extension^10 + 42057*theta_extension^9 + 68979*theta_extension^8 + 27528*theta_extension^7 + 16809*theta_extension^6 + 49526*theta_extension^5 + 26712*theta_extension^4 + 71101*theta_extension^3 + 9573*theta_extension^2 + 100477*theta_extension + 53803",
+    "33042*theta_extension^11 + 47533*theta_extension^10 + 111186*theta_extension^9 + 96254*theta_extension^8 + 93126*theta_extension^7 + 106180*theta_extension^6 + 70672*theta_extension^5 + 19529*theta_extension^4 + 81130*theta_extension^3 + 120336*theta_extension^2 + 60915*theta_extension + 97653",
+    "67990*theta_extension^11 + 94089*theta_extension^10 + 31209*theta_extension^9 + 78819*theta_extension^8 + 20813*theta_extension^7 + 41248*theta_extension^6 + 66069*theta_extension^5 + 54453*theta_extension^4 + 22052*theta_extension^3 + 54281*theta_extension^2 + 77335*theta_extension + 105596",
+    "83107*theta_extension^11 + 124313*theta_extension^10 + 79020*theta_extension^9 + 58042*theta_extension^8 + 42986*theta_extension^7 + 82092*theta_extension^6 + 9363*theta_extension^5 + 28456*theta_extension^4 + 106880*theta_extension^3 + 110936*theta_extension^2 + 14150*theta_extension + 81495"
+  ],
+  "rosenhain_polynomial": "x^5 + (72328*theta_extension^11 + 53762*theta_extension^10 + 49221*theta_extension^9 + 114370*theta_extension^8 + 27421*theta_extension^7 + 41591*theta_extension^6 + 5282*theta_extension^5 + 55187*theta_extension^4 + 6636*theta_extension^3 + 53297*theta_extension^2 + 24401*theta_extension + 104722)*x^4 + (111386*theta_extension^11 + 20497*theta_extension^10 + 29579*theta_extension^9 + 27302*theta_extension^8 + 73179*theta_extension^7 + 44839*theta_extension^6 + 117457*theta_extension^5 + 17647*theta_extension^4 + 114749*theta_extension^3 + 21427*theta_extension^2 + 79219*theta_extension + 125523)*x^3 + (123438*theta_extension^11 + 66937*theta_extension^10 + 71163*theta_extension^9 + 113294*theta_extension^8 + 113920*theta_extension^7 + 92529*theta_extension^6 + 112928*theta_extension^5 + 85430*theta_extension^4 + 93935*theta_extension^3 + 91897*theta_extension^2 + 102578*theta_extension + 43925)*x^2 + (76911*theta_extension^11 + 114846*theta_extension^10 + 106079*theta_extension^9 + 1076*theta_extension^8 + 41522*theta_extension^7 + 77083*theta_extension^6 + 20375*theta_extension^5 + 97778*theta_extension^4 + 40722*theta_extension^3 + 89421*theta_extension^2 + 49844*theta_extension + 109892)*x",
+  "igusa_clebsch_invariants": [
+    "46170",
+    "60638",
+    "15031",
+    "94505"
+  ],
+  "absolute_igusa_invariants": [
+    29635,
+    122473,
+    53158
+  ],
+  "normalized_igusa_clebsch": [
+    1,
+    12531,
+    30800,
+    118581
+  ],
+  "absolute_invariants_frobenius_fixed": true,
+  "expected_quotient_weil_polynomial": "T^4 - 41*T^3 - 212078*T^2 - 5248861*T + 16389376441",
+  "rosenhain_model_descends_without_transport": false,
+  "base_field_curve": {
+    "equation": "y^2=36955*x^6 + 49647*x^5 + 21256*x^4 + 44090*x^3 + 59931*x^2 + 75182*x + 123483",
+    "coefficients_ascending": [
+      123483,
+      75182,
+      59931,
+      44090,
+      21256,
+      49647,
+      36955
+    ],
+    "squarefree": true,
+    "genus": 2,
+    "absolute_igusa_invariants": [
+      29635,
+      122473,
+      53158
+    ],
+    "frobenius_polynomial": "x^4 - 41*x^3 - 212078*x^2 - 5248861*x + 16389376441"
+  },
+  "certificate": {
+    "theta_quotient_computed": true,
+    "moduli_descend_to_base_field": true,
+    "normalized_mestre_input_computed": true,
+    "base_model_matches_moduli": true,
+    "base_model_matches_quotient_weil_polynomial": true
+  },
+  "remaining_step": "recover and descend both degree-37 maps"
+}

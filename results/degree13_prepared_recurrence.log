@@ -1,0 +1,30 @@
+PHASE_START theta_quotient
+PHASE_DONE theta_quotient 15.235511
+PHASE_START dual_kernel_recovery
+PHASE_DONE dual_kernel_recovery 0.163394
+PHASE_START level2_kernel_preparation
+PHASE_DONE level2_kernel_preparation 0.319531
+PHASE_START sample_selection
+PHASE_DONE sample_selection 0.040382
+PHASE_START sample_theta_conversion
+PHASE_DONE sample_theta_conversion 2.175911
+PHASE_START dual_isogeny_evaluation
+EXPLICIT_SUBPHASE_DONE compatible_lift_preparation 3.841081
+EXPLICIT_ROOTS verified 71 extension_degree 13 strategy kummer_class
+EXPLICIT_SUBPHASE_DONE field_extension_and_root_extraction 20.707720
+EXPLICIT_SUBPHASE_DONE kernel_table_recurrence 20.431544
+EXPLICIT_SUBPHASE_DONE theta_power_sums 5.356320
+EXPLICIT_SUBPHASE_DONE coefficient_descent_and_target_construction 3.303475
+PHASE_DONE dual_isogeny_evaluation 53.658861
+PHASE_START target_factorization
+PHASE_DONE target_factorization 0.007571
+PHASE_START rational_interpolation
+PHASE_DONE rational_interpolation 0.089321
+PHASE_START map_identity_certification
+PHASE_DONE map_identity_certification 0.089113
+DEGREE13_MAPS verified
+samples 34
+map_degrees [13, 13]
+x_degree_pairs [(13, 12), (13, 12)]
+differential_degrees [1, 1]
+result /Users/airbartek/codex/isogeny_genus_2/results/sage_degree13_prepared_recurrence.json
