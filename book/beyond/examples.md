@@ -463,8 +463,32 @@ $$
 T^4+35T^3+9184T^2+280315T+64144081.
 $$
 
-Both SageMath and Magma certify the model. The two degree-$13$ maps are the
-next active reconstruction target.
+Both SageMath and Magma certify the model.
+
+The dual theta isogeny was then evaluated on $34$ deterministic
+Abel--Jacobi points over $\mathbf F_{8009^{24}}$. Exact Jacobian sums resolve
+the sign ambiguity of level-$2$ Kummer addition. Both target images factor
+as rank-one tensors, and rational interpolation recovers two maps
+
+$$
+(x,y)\longmapsto\bigl(X_i(x),\,yG_i(x)\bigr),\qquad i=1,2,
+$$
+
+with
+
+$$
+\deg\operatorname{num}(X_i)=13,\qquad
+\deg\operatorname{den}(X_i)=12.
+$$
+
+For both maps the elliptic equation holds identically in the source
+function field, and the invariant differential pulls back to a linear
+multiple of $dx/y$. The complete extension-field coefficients are stored in
+`results/sage_degree13_maps.json`.
+
+The remaining degree-$13$ task is to transport these formulas from the
+Rosenhain model to the fixed sextic over $\mathbf F_{8009}$, descend the
+coefficients, and certify the transported maps independently in Magma.
 
 ## Fixed-field quotient equations
 

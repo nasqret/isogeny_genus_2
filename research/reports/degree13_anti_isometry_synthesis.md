@@ -8,8 +8,9 @@ than from a known genus-2 curve. SageMath and Magma independently verify the
 finite-field data.
 
 The certificate proves that the principally polarized quotient is
-geometrically a smooth genus-2 Jacobian and reconstructs an explicit equation
-over the base field. Recovery of the two degree-13 maps remains open.
+geometrically a smooth genus-2 Jacobian, reconstructs an explicit equation
+over the base field, and recovers both degree-13 maps on its Rosenhain model.
+Transport and coefficient descent to the fixed base-field sextic remain.
 
 ## Elliptic curves
 
@@ -125,6 +126,8 @@ that its Frobenius polynomial is exactly the required quotient polynomial.
   `computations/sage/lib/frey_kani_theta_gluing.sage`
 - explicit Sage reconstruction:
   `computations/sage/reconstruct_degree13_curve.sage`
+- Sage recovery of both maps:
+  `computations/sage/recover_degree13_maps.sage`
 - Magma:
   `computations/magma/verify_degree13_anti_isometry.m`
 - independent Magma Mestre reconstruction:
@@ -133,7 +136,8 @@ that its Frobenius polynomial is exactly the required quotient polynomial.
   `results/sage_degree13_anti_isometry.json` and
   `results/magma_degree13_anti_isometry.json`,
   `results/sage_degree13_curve.json`, and
-  `results/magma_degree13_curve.json`
+  `results/magma_degree13_curve.json`, plus
+  `results/sage_degree13_maps.json`
 - remote transcript:
   `results/remote/magma_degree13_anti_isometry.log` and
   `results/remote/magma_degree13_curve.log`
@@ -143,8 +147,22 @@ in Magma for the graph certificate. The explicit theta reconstruction took
 `3.742` seconds in SageMath, and the independent Magma reconstruction took
 `0.636` seconds.
 
+## Degree-13 maps
+
+The dual kernel was converted from Kummer theta coordinates to Mumford
+divisors. Over `F_(8009^24)`, exact Jacobian sums resolve all level-2 sign
+choices needed to evaluate the dual isogeny.
+
+Thirty-four deterministic source points give rank-one target tensors. The
+two interpolated elliptic X-coordinates both have numerator degree `13` and
+denominator degree `12`. The elliptic equations then recover exact
+Y-coordinates `y*G_i(x)`. Both function-field identities vanish, and both
+invariant differentials pull back to linear forms.
+
 ## Next construction step
 
-The next B014 milestone is to recover and certify the two primitive degree-13
-maps. After that, the finite-field search and certification code will be
-generalized to degrees 17 and 19.
+The next B014 milestone is to transport and descend the maps from the
+Rosenhain model over `F_(8009^24)` to the fixed sextic over `F_8009`, then
+certify the transported formulas independently in Magma. After that, the
+finite-field search and certification code will be generalized to degrees
+17 and 19.

@@ -143,7 +143,8 @@ result = {
         "base_model_matches_quotient_weil_polynomial": True,
     },
     "remaining_step": (
-        "recover and certify the two degree-13 maps to E1 and E2"
+        "transport the recovered maps to the fixed F_8009 sextic "
+        "and certify them independently in Magma"
     ),
 }
 

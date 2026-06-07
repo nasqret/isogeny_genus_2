@@ -333,5 +333,10 @@
     "timestamp": "2026-06-07T18:41:46+02:00",
     "claim_id": "B014",
     "summary": "Computed the degree-13 quotient theta null, descended Igusa invariants to F_8009, and independently certified the explicit genus-2 curve y^2=6042*x^6+4620*x^5+6357*x^4+3661*x^3+4018*x^2+5767*x+84 with the required Weil polynomial."
+  },
+  {
+    "timestamp": "2026-06-07T19:40:47+02:00",
+    "claim_id": "B014",
+    "summary": "Recovered both primitive degree-13 maps on the Rosenhain quotient over F_(8009^24): 34 exact theta evaluations interpolate X-degree pairs (13,12), both elliptic function-field identities hold, and both differential pullbacks are linear."
   }
 ]

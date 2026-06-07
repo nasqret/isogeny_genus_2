@@ -563,3 +563,24 @@
 - B014 is now `75%`: anti-isometry, quotient polarization, theta quotient,
   descent, and explicit genus-2 model are certified. The remaining quarter
   is recovery of the two degree-13 maps.
+
+### Degree-13 map recovery on the Rosenhain quotient
+
+- Recovered Mumford representatives for the two dual-kernel generators from
+  level-2 Kummer theta coordinates. For each generator, exactly two lifts
+  survive the theta round trip, and they are negatives of one another.
+- Extended from `F_(8009^12)` to `F_(8009^24)` so every quadratic support
+  polynomial needed for exact Jacobian addition splits.
+- Evaluated the dual degree-13 theta isogeny on 34 deterministic
+  Abel--Jacobi points. Exact Jacobian sums remove the level-2 sign ambiguity;
+  every target image is a rank-one tensor on the decomposable product.
+- Rational interpolation recovered both elliptic X-coordinates with degree
+  pairs `(13,12)`. All 34 samples satisfy the recovered formulas.
+- For each map, the elliptic equation forces an exact Y-coordinate of the
+  form `y*G(x)`. The resulting function-field identities vanish exactly,
+  and the pullbacks of invariant differentials are linear.
+- Added `computations/sage/recover_degree13_maps.sage` and the full
+  coefficient certificate `results/sage_degree13_maps.json`.
+- B014 is now `90%`. The remaining work is transport/descent from the
+  Rosenhain model to the fixed `F_8009` sextic and independent Magma
+  certification.

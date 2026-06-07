@@ -85,6 +85,11 @@ Local exact computations live under `computations/sage/`.
   rational `Y_-(121)` specialization, target and eigenform discovery,
   resumable scale reconstruction up to a 238-bit modulus, and both exact
   primitive full-function-field maps.
+- [`recover_degree13_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/recover_degree13_maps.sage):
+  dual-kernel Mumford recovery, exact sign-resolved theta evaluation on 34
+  points, interpolation of both degree-13 maps on the Rosenhain quotient,
+  elliptic function-field identities, and linear differential pullbacks
+  over `F_(8009^24)`.
 - [`export_degree10_11_magma.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/export_degree10_11_magma.sage):
   deterministic export of the recovered exact coefficients to static Magma
   verification programs.

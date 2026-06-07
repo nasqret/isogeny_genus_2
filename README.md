@@ -24,6 +24,8 @@ paper is tracked separately in
 - Jupyter Book after building: `book/_build/html/index.html`
 - Final verification report: `research/reports/final_claim_audit.md`
 - Degree-5 discrepancy report: `research/reports/degree5_source_audit.md`
+- Degree-13 synthesis and map report:
+  `research/reports/degree13_anti_isometry_synthesis.md`
 - Obsidian vault: `vault/00-Project/Home.md`
 - Plan: `PLAN.md`
 - Journal: `JOURNAL.md`

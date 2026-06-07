@@ -218,5 +218,12 @@ This project reconstructs every computational claim in
   `(2419,7563,6738,5346)` and absolute invariants `(4139,7829,4340)`.
   A fixed base-field model is
   `y^2=6042*x^6+4620*x^5+6357*x^4+3661*x^3+4018*x^2+5767*x+84`.
-- Current active frontier: recover the two primitive degree-13 maps, then
-  generalize the synthesis search to larger prime degrees.
+- The two primitive degree-13 maps are now reconstructed and exactly
+  certified on the Rosenhain quotient over `F_(8009^24)`. Both elliptic
+  X-coordinates have numerator/denominator degrees `(13,12)`, the elliptic
+  equations hold identically, and both invariant differentials pull back
+  to linear forms. The full formulas are in
+  `results/sage_degree13_maps.json`.
+- Current active frontier: transport and descend those maps to the fixed
+  `F_8009` sextic, certify them independently in Magma, then generalize the
+  synthesis search to larger prime degrees.

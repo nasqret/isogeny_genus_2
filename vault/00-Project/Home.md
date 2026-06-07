@@ -27,8 +27,9 @@ copied article.
 - 0 unresolved.
 - Beyond-paper work is tracked separately in
   `research/data/beyond_paper.json`.
-- The current frontier is the explicit degree-13 Frey--Kani quotient curve;
-  its two degree-13 elliptic maps remain to be reconstructed.
+- Both degree-13 elliptic maps are certified on the Rosenhain quotient over
+  `F_(8009^24)`. The current frontier is transport/descent to the fixed
+  `F_8009` sextic and independent Magma verification.
 
 ## Authoritative files
 

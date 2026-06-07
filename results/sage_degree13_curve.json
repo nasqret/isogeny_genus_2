@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-07T18:40:20+02:00",
+  "generated_at": "2026-06-07T19:42:27+02:00",
   "engine": "SageMath 10.8",
-  "elapsed_seconds": 3.741553,
+  "elapsed_seconds": 6.671795,
   "workstream": "B014",
   "verified": true,
   "scope": "explicit degree-13 Frey-Kani quotient curve",
@@ -62,5 +62,5 @@
     "base_model_matches_moduli": true,
     "base_model_matches_quotient_weil_polynomial": true
   },
-  "remaining_step": "recover and certify the two degree-13 maps to E1 and E2"
+  "remaining_step": "transport the recovered maps to the fixed F_8009 sextic and certify them independently in Magma"
 }

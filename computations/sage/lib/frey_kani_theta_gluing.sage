@@ -170,10 +170,13 @@ def _sage_10_compatible_lift(self, prime, other=None, add=None):
     deltas = [lift]
     for point, point_sum in zip(other, add):
         translated, _ = self.diff_multadd(prime, point_sum, point)
-        ratios = [
-            coordinate/translated_coordinate
-            for coordinate, translated_coordinate in zip(point, translated)
-        ]
+        ratios = []
+        for coordinate, translated_coordinate in zip(point, translated):
+            if translated_coordinate == 0:
+                assert coordinate == 0
+                continue
+            ratios.append(coordinate/translated_coordinate)
+        assert ratios
         assert len(set(ratios)) == 1
         deltas.append(ratios[0]/lift^(prime - 1))
     return deltas
@@ -188,6 +191,7 @@ def frey_kani_theta_quotient(
     anti_isometry_matrix,
     extension_degree,
     repository_root=None,
+    compute_dual=False,
 ):
     """
     Compute the quotient theta null and Rosenhain model.
@@ -273,17 +277,57 @@ def frey_kani_theta_quotient(
     for point in graph_basis + [graph_sum]:
         assert point._mult(prime) == product(0)
 
+    zero_1 = extended_curve_1(0)
+    zero_2 = extended_curve_2(0)
+    complement_pairs = [
+        (extended_basis_1[0], zero_2),
+        (extended_basis_1[1], zero_2),
+    ]
+    complement_points = [
+        product_point(left, right)
+        for left, right in complement_pairs
+    ]
+    known_product_points = [
+        (graph_basis[0], (extended_basis_1[0], image_basis[0])),
+        (graph_basis[1], (extended_basis_1[1], image_basis[1])),
+    ]
+    if compute_dual:
+        known_product_points.extend(
+            zip(complement_points, complement_pairs)
+        )
+
     original_add = KummerVarietyPoint._add
     original_compatible_lift = KummerVarietyPoint.compatible_lift
 
     def product_aware_add(self, other, idxi0=0):
         if self.scheme() == product:
-            if (
-                self == graph_basis[0] and other == graph_basis[1]
-            ) or (
-                self == graph_basis[1] and other == graph_basis[0]
-            ):
-                return graph_sum, graph_difference
+            left_pair = next(
+                (
+                    pair
+                    for point, pair in known_product_points
+                    if self == point
+                ),
+                None,
+            )
+            right_pair = next(
+                (
+                    pair
+                    for point, pair in known_product_points
+                    if other == point
+                ),
+                None,
+            )
+            if left_pair is not None and right_pair is not None:
+                return (
+                    product_point(
+                        left_pair[0] + right_pair[0],
+                        left_pair[1] + right_pair[1],
+                    ),
+                    product_point(
+                        left_pair[0] - right_pair[0],
+                        left_pair[1] - right_pair[1],
+                    ),
+                )
         return original_add(self, other, idxi0)
 
     KummerVarietyPoint._add = product_aware_add
@@ -294,9 +338,10 @@ def frey_kani_theta_quotient(
         assert any(
             graph_difference == candidate for candidate in actual_sums
         )
-        quotient, _ = product.isogeny(
+        quotient, complement_images = product.isogeny(
             prime,
             graph_basis,
+            R=complement_points if compute_dual else [],
             check=False,
         )
     finally:
@@ -305,7 +350,7 @@ def frey_kani_theta_quotient(
 
     analytic_quotient = quotient.with_theta_basis("F(2,2)^2")
     quotient_curve = analytic_quotient.curve()
-    return {
+    result = {
         "extension_field": extension_field,
         "elliptic_theta_models": (model_1, model_2),
         "product": product,
@@ -314,3 +359,16 @@ def frey_kani_theta_quotient(
         "analytic_quotient": analytic_quotient,
         "quotient_curve": quotient_curve,
     }
+    if compute_dual:
+        KummerVarietyPoint.compatible_lift = _sage_10_compatible_lift
+        try:
+            dual_target, _ = quotient.isogeny(
+                prime,
+                complement_images,
+                check=False,
+            )
+        finally:
+            KummerVarietyPoint.compatible_lift = original_compatible_lift
+        result["dual_kernel_basis"] = complement_images
+        result["dual_target"] = dual_target
+    return result
