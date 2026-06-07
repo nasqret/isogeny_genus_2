@@ -67,6 +67,19 @@ Each `.sage` file must:
   evaluation and rational-interpolation engine for both Frey-Kani maps.
 - `recover_degree17_maps.sage`: degree-17 configuration using 42 exact
   evaluations over `F_(8263^24)`.
+- `lib/frey_kani_map_descent.sage`: branch-set Möbius transport,
+  target-2-torsion cocycle resolution, coefficientwise Frobenius descent,
+  and Hasse-Witt certification.
+- `descend_degree17_maps.sage`: transports and descends both maps to the
+  fixed `F_8263` sextic.
+- `export_frey_kani_magma.sage`: exports any descended prime-degree
+  certificate to a static independent Magma verifier.
+- `verify_degree19_anti_isometry.sage`: deterministic full rational
+  `19`-torsion graph over `F_11743`.
+- `reconstruct_degree19_theta.sage`: degree-19 theta quotient, invariant
+  descent, fixed base-field curve, and Weil certificate.
+- `recover_degree19_maps.sage`: degree-19 configuration using 46 exact
+  evaluations over `F_(11743^24)`.
 
 The theta reconstruction uses the GPL-3.0 Sage branch of AVIsogenies at
 commit `e488a54304a5b5bcd0ae8c58d0ab82aeb02d6746`. Install the pinned external

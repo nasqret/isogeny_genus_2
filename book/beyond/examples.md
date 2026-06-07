@@ -540,7 +540,36 @@ $$
 The reusable map-recovery engine takes the prime, field, elliptic factors,
 torsion bases, graph matrix, fixed sextic, and Hasse-Witt eigendirections as
 configuration data. The degree-17 specialization uses 42 deterministic
-points, compared with 34 in degree 13.
+points, compared with 34 in degree 13. Both recovered maps descend to the
+fixed sextic with degree pairs $(17,17)$. The second descent requires the
+unique suitable target 2-torsion translation. Remote Magma independently
+returns degrees $17$ and $17$.
+
+## Degree 19: next synthesized quotient
+
+Over $\mathbf F_{11743}$, the deterministic search finds traces $192$ and
+$-169$ and graph matrix $\operatorname{diag}(1,16)$. The graph has $361$
+points, and distinct CM squareclasses $-7$ and $-51$ certify
+irreducibility.
+
+The theta quotient has fixed base-field model
+
+$$
+\begin{aligned}
+C_{19}:\quad y^2={}&9500x^6+7591x^5+6679x^4+7190x^3\\
+&+1439x^2+4884x+3417
+\end{aligned}
+$$
+
+and Frobenius polynomial
+
+$$
+T^4-23T^3-8962T^2-270089T+137898049.
+$$
+
+Its absolute Igusa invariants are $(11336,8788,9369)$. Both SageMath and
+Magma independently certify the model. The map-recovery driver uses 46
+deterministic samples.
 
 ## Fixed-field quotient equations
 

@@ -105,6 +105,15 @@ Local exact computations live under `computations/sage/`.
   rational interpolation, and full function-field certification.
 - [`recover_degree17_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/recover_degree17_maps.sage):
   degree-17 specialization with 42 deterministic interpolation samples.
+- [`descend_degree17_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/descend_degree17_maps.sage):
+  branch-set transport, 2-torsion cocycle resolution, coefficient descent,
+  exact identities, and Hasse-Witt eigendirections over `F_8263`.
+- [`verify_degree19_anti_isometry.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/verify_degree19_anti_isometry.sage):
+  deterministic degree-19 graph search and exact certificate over `F_11743`.
+- [`reconstruct_degree19_theta.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/reconstruct_degree19_theta.sage):
+  degree-19 theta quotient, invariant descent, and fixed base-field curve.
+- [`recover_degree19_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/recover_degree19_maps.sage):
+  degree-19 specialization with 46 deterministic interpolation samples.
 - [`export_degree10_11_magma.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/export_degree10_11_magma.sage):
   deterministic export of the recovered exact coefficients to static Magma
   verification programs.
@@ -124,6 +133,13 @@ Local exact computations live under `computations/sage/`.
 - [`reconstruct_degree17_curve.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/reconstruct_degree17_curve.m):
   independently reconstructs the degree-17 quotient from its invariants,
   selects its twist by the L-polynomial, and checks the fixed sextic.
+- [`verify_degree17_maps.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree17_maps.m):
+  independently constructs both descended morphisms and returns degrees
+  `17` and `17`.
+- [`verify_degree19_anti_isometry.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree19_anti_isometry.m):
+  independently verifies the full degree-19 torsion graph.
+- [`reconstruct_degree19_curve.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/reconstruct_degree19_curve.m):
+  independently reconstructs and twist-selects the fixed degree-19 quotient.
 
 Remote computations live under `computations/magma/` and execute with Magma
 V2.28-3 on `lts-faculty.wmi.amu.edu.pl`.

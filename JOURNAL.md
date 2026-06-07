@@ -646,3 +646,42 @@
   `(4393,3171,8140)` and the reciprocal L-polynomial in `0.875` seconds.
 - B019 is now `75%`. Recovery and descent of both primitive degree-17 maps
   remain.
+
+### Degree-17 maps and completion
+
+- Refactored degree-13 map recovery into the configuration-driven
+  `lib/frey_kani_map_recovery.sage` engine and supplied degree-13 and
+  degree-17 drivers.
+- Forty-two exact dual-theta evaluations over `F_(8263^24)` recovered both
+  degree-17 X-coordinates with degree pairs `(17,16)`. Both elliptic
+  identities hold, and both invariant differential pullbacks are linear.
+  Runtime was `384.812` seconds, versus `251.786` seconds for degree 13.
+- Refactored branch-set transport into
+  `lib/frey_kani_map_descent.sage`. The unique Möbius class transports both
+  maps to the fixed sextic.
+- The first map descends directly. The second has a nontrivial Frobenius
+  cocycle resolved by the unique suitable translation by target 2-torsion.
+- Both descended X-coordinates have degree pair `(17,17)`. Their normalized
+  Hasse-Witt eigendirections are `[1,3636]` and `[1,6247]`.
+- Added a general static Magma exporter. Remote Magma independently verifies
+  both identities, differential pullbacks, and degrees `17,17` in `0.200`
+  seconds.
+- B019 is complete. The next sequential target is degree 19.
+
+### Degree-19 deterministic search
+
+- The first prime field with two admissible full-19-torsion trace classes is
+  `F_11743`, with traces `192` and `-169`.
+- The deterministic j-line search finds
+  `y^2=x^3+8444*x+6205`, group `(19,608)`, and
+  `y^2=x^3+4036*x+11557`, group `(19,627)`.
+- Their CM squareclasses are `-7` and `-51`. The stored bases require
+  anti-isometry matrix `diag(1,16)`.
+- The graph has `19^2=361` points, and the quotient Weil polynomial is
+  `T^4-23*T^3-8962*T^2-270089*T+137898049`.
+- The theta quotient over `F_(11743^12)` has absolute invariants
+  `(11336,8788,9369)`.
+- Magma's Mestre reconstruction selects the fixed representative
+  `y^2=9500*x^6+7591*x^5+6679*x^4+7190*x^3+1439*x^2+4884*x+3417`.
+- SageMath independently certifies its moduli and Frobenius polynomial.
+  B020 is at `75%`; both maps are now being recovered from 46 samples.

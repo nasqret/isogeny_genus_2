@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-06-07T21:01:27+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "lts-faculty.wmi.amu.edu.pl",
+  "elapsed_seconds": 0.2,
+  "workstream": "B019",
+  "verified": true,
+  "scope": "Independent verification of both descended degree-17 elliptic maps",
+  "field": "GF(8263)",
+  "degree": 17,
+  "map_degrees": [
+    17,
+    17
+  ],
+  "target_j_invariants": [
+    0,
+    5878
+  ],
+  "pullback_eigenforms": [
+    "2757*x+403",
+    "789*x+6701"
+  ],
+  "artifact": "computations/magma/verify_degree17_maps.m",
+  "transcript": "results/remote/magma_degree17_maps.log",
+  "success_marker": "B019_DEGREE17_MAPS_MAGMA_VERIFIED"
+}

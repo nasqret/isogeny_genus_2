@@ -66,3 +66,11 @@ differential pullbacks, and degrees `13` and `13`.
 Mestre reconstruction to normalized Igusa-Clebsch invariants, selects the
 correct twist by its L-polynomial, and certifies the fixed base-field
 sextic.
+
+`verify_degree17_maps.m` is generated from the descended Sage certificate
+and independently verifies both complete morphisms, their invariant
+differential pullbacks, and degrees `17` and `17`.
+
+`verify_degree19_anti_isometry.m` independently certifies the `361`-point
+degree-19 graph over `F_11743`. `reconstruct_degree19_curve.m` reconstructs
+the fixed quotient sextic and certifies its G2 invariants and L-polynomial.

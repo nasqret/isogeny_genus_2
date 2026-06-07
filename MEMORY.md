@@ -247,4 +247,24 @@ This project reconstructs every computational claim in
   The fixed `F_8263` model is
   `y^2=5422*x^6+4306*x^5+4875*x^4+5667*x^3+6314*x^2+4554*x+6050`.
 - SageMath and remote Magma independently certify that model's moduli and
-  Weil polynomial. B019 is at `75%`; both degree-17 maps remain.
+  Weil polynomial.
+- B019 is complete. The general recovery engine uses 42 exact samples over
+  `F_(8263^24)` and returns two degree-17 maps with Rosenhain X-degree pairs
+  `(17,16)`.
+- On the fixed sextic both X-degree pairs are `(17,17)`. The first map
+  descends directly; the second requires the unique suitable target
+  2-torsion translation to resolve its Frobenius cocycle.
+- The normalized differential directions are `[1,3636]` and `[1,6247]`.
+  Remote Magma independently returns degrees `17,17` in `0.200` seconds.
+- Current active frontier: degree-19 Frey-Kani synthesis.
+- B020 starts over `F_11743`. The traces are `192,-169`, the curves have
+  coefficients `(8444,6205)` and `(4036,11557)`, and the CM squareclasses
+  are `-7,-51`.
+- The degree-19 graph uses `diag(1,16)`, has `361` points, and has quotient
+  Weil polynomial
+  `T^4-23*T^3-8962*T^2-270089*T+137898049`.
+- The degree-19 quotient has absolute invariants `(11336,8788,9369)` and
+  fixed `F_11743` model
+  `y^2=9500*x^6+7591*x^5+6679*x^4+7190*x^3+1439*x^2+4884*x+3417`.
+- B020 is at `75%`; the map-recovery run uses 46 samples over
+  `F_(11743^24)`.

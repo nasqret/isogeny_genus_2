@@ -52,5 +52,19 @@ It then:
 7. reconstructs the Y-coefficients and proves both target equations;
 8. verifies that both invariant differentials pull back to linear forms.
 
-The degree-17 driver uses 42 samples over `F_(8263^24)`. Base-field descent
-and independent Magma map certification are the remaining steps.
+The degree-17 driver uses 42 samples over `F_(8263^24)`. Both recovered
+X-coordinates have degree pair `(17,16)`, both elliptic identities hold, and
+both differential pullbacks are linear. Runtime is `384.812` seconds.
+
+## Base-field descent
+
+The unique branch-set Möbius class transports the Rosenhain quotient to the
+fixed sextic. The first map descends directly. The second acquires a
+Frobenius cocycle; among the identity and three target 2-torsion
+translations, exactly one nontrivial translation makes all coefficients
+Frobenius fixed.
+
+Both descended X-coordinates have degree pair `(17,17)`. Their normalized
+Hasse-Witt eigendirections are `(1,3636)` and `(1,6247)`. Remote Magma
+independently constructs both morphisms and returns degrees `17` and `17`
+in `0.200` seconds.

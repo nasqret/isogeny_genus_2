@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-06-07T21:03:59+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 1.455456,
+  "workstream": "B020",
+  "verified": true,
+  "scope": "degree-19 candidate search and anti-isometry certificate",
+  "field": "GF(11743)",
+  "degree": 19,
+  "admissible_traces": [
+    192,
+    -169
+  ],
+  "curves": [
+    {
+      "equation": "y^2=x^3+8444*x+6205",
+      "j": "259",
+      "cardinality": 11552,
+      "group_invariants": [
+        19,
+        608
+      ],
+      "trace": 192,
+      "cm_squareclass": -7,
+      "torsion_basis": [
+        "(2689 : 8983 : 1)",
+        "(6025 : 7701 : 1)"
+      ]
+    },
+    {
+      "equation": "y^2=x^3+4036*x+11557",
+      "j": "3441",
+      "cardinality": 11913,
+      "group_invariants": [
+        19,
+        627
+      ],
+      "trace": -169,
+      "cm_squareclass": -51,
+      "torsion_basis": [
+        "(7067 : 8512 : 1)",
+        "(1751 : 5524 : 1)"
+      ]
+    }
+  ],
+  "anti_isometry": {
+    "matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        16
+      ]
+    ],
+    "required_determinant_in_chosen_bases": 16,
+    "compatible_matrix_count": 6840,
+    "pairing_1": "6127",
+    "pairing_2_after_map": "9399",
+    "pairing_product": "1"
+  },
+  "graph": {
+    "size": 361,
+    "maximal_isotropic": true
+  },
+  "irreducibility": {
+    "cm_squareclasses": [
+      -7,
+      -51
+    ],
+    "geometrically_nonisogenous": true,
+    "frey_kani_irreducible": true,
+    "geometric_quotient_is_smooth_genus2_jacobian": true
+  },
+  "quotient_weil_polynomial": "T^4 - 23*T^3 - 8962*T^2 - 270089*T + 137898049",
+  "remaining_step": "reconstruct the degree-19 quotient curve and its two maps"
+}

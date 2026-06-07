@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-06-07T21:04:58+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "lts-faculty.wmi.amu.edu.pl",
+  "elapsed_seconds": 1.004,
+  "workstream": "B020",
+  "verified": true,
+  "scope": "Independent Mestre reconstruction and twist certification for the explicit degree-19 Frey-Kani quotient curve",
+  "field": "GF(11743)",
+  "degree": 19,
+  "normalized_igusa_clebsch_invariants": [1, 3992, 8409, 8638],
+  "g2_invariants": [8456, 11363, 10925],
+  "fixed_base_field_curve": "y^2=9500*x^6+7591*x^5+6679*x^4+7190*x^3+1439*x^2+4884*x+3417",
+  "quotient_l_polynomial": "137898049*t^4-270089*t^3-8962*t^2-23*t+1",
+  "quotient_weil_polynomial": "t^4-23*t^3-8962*t^2-270089*t+137898049",
+  "twist_selected": false,
+  "artifact": "computations/magma/reconstruct_degree19_curve.m",
+  "transcript": "results/remote/magma_degree19_curve.log",
+  "success_marker": "B020_DEGREE19_CURVE_RECONSTRUCTED"
+}

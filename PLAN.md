@@ -185,9 +185,9 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
 
 Current bounded tasks, in order:
 
-1. recover both degree-17 maps on the Rosenhain quotient;
-2. descend the degree-17 maps to the fixed `F_8263` sextic and certify them
-   independently in Magma;
-3. search for and certify a degree-19 graph and quotient;
-4. compare runtime, extension degree, and interpolation complexity across
+1. search deterministically for a degree-19 anti-isometry graph;
+2. reconstruct its theta quotient and fixed base-field curve;
+3. recover, descend, and independently certify both degree-19 maps;
+4. compare runtime, extension degree, cocycle corrections, and interpolation
+   complexity across
    degrees 13, 17, and 19.

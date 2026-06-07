@@ -1,0 +1,6 @@
+DEGREE17_MAPS verified
+samples 42
+map_degrees [17, 17]
+x_degree_pairs [(17, 16), (17, 16)]
+differential_degrees [1, 1]
+result /Users/airbartek/codex/isogeny_genus_2/results/sage_degree17_maps.json

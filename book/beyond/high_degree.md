@@ -564,7 +564,32 @@ Map recovery is degree-independent. For prime $n$, the engine recovers two
 dual-kernel Mumford divisors, evaluates the dual theta isogeny on at least
 $2n+1$ deterministic points, interpolates rational functions of degree at
 most $n$, and proves the two elliptic equations as identities. The degree-17
-run uses 42 samples over $\mathbf F_{8263^{24}}$.
+run uses 42 samples over $\mathbf F_{8263^{24}}$. It returns degree pairs
+$(17,16)$ on the Rosenhain model in 384.812 seconds. After branch-set
+transport, both maps descend with degree pairs $(17,17)$. The second map
+requires one target 2-torsion translation to resolve its Frobenius cocycle.
+Magma independently returns degrees $17$ and $17$.
+
+For degree $19$, the first admissible field is $\mathbf F_{11743}$. The
+deterministic curves have traces $192$ and $-169$, CM squareclasses $-7$ and
+$-51$, and graph matrix $\operatorname{diag}(1,16)$. The quotient Weil
+polynomial is
+
+$$
+T^4-23T^3-8962T^2-270089T+137898049.
+$$
+
+Its absolute invariants are $(11336,8788,9369)$, and the fixed quotient is
+
+$$
+\begin{aligned}
+C_{19}:\quad y^2={}&9500x^6+7591x^5+6679x^4+7190x^3\\
+&+1439x^2+4884x+3417.
+\end{aligned}
+$$
+
+The degree-19 recovery uses 46 exact samples over
+$\mathbf F_{11743^{24}}$.
 
 ## Degree program
 
@@ -577,7 +602,7 @@ run uses 42 samples over $\mathbf F_{8263^{24}}$.
 | 9 | Both primitive maps, CRT centers, and full $S_9$ monodromy complete |
 | 10 | Both primitive maps complete; target isogeny obstruction excludes degree $5$ followed by a 2-isogeny |
 | 11 | Both primitive maps complete on a rational point of Kumar's $Y_-(121)$ |
-| $>11$ | Degree-13 synthesis complete; degree-17 quotient complete and maps in progress; degree 19 next |
+| $>11$ | Degrees 13 and 17 complete; degree-19 quotient complete and maps in progress |
 
 ## Degree 10 and degree 11
 
