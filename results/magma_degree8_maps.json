@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-06-07T04:27:37+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "lts-faculty.wmi.amu.edu.pl",
+  "elapsed_seconds": 0.35,
+  "maximum_memory_mb": 32.09,
+  "workstreams": [
+    "B004",
+    "B010",
+    "B012"
+  ],
+  "verified": true,
+  "degrees": [
+    8,
+    8
+  ],
+  "target_j_invariants": [
+    "-8780800/2187",
+    "5120/3"
+  ],
+  "source_automorphism_group_order": 2,
+  "source_has_rational_bielliptic_involution": false,
+  "artifact": "computations/magma/verify_degree8_maps.m",
+  "transcript": "results/remote/magma_degree8_maps.log",
+  "success_marker": "B004_B010_B012_DEGREE8_MAGMA_VERIFIED"
+}

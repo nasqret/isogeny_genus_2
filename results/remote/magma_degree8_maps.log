@@ -1,0 +1,23 @@
+Magma V2.28-3     Sun Jun  7 2026 04:27:36 on lts-faculty [Seed = 1030986854]
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading startup file "/home/faculty/bnaskrecki/magma/config/magma_config.txt"
+
+****************************************************
+****************Session log started*****************
+****************************************************
+Session start time: 04:27:37
+Session start date: 07.06.2026
+Session start seed: 1030986854
+****************************************************
+/home/faculty/bnaskrecki/magma/logs/session_log_2026_06_07_1030986854.txt
+****************************************************
+Loading file "computations/magma/verify_degree8_maps.m"
+B004_B010_B012_DEGREE8_MAGMA_VERIFIED
+degree_1 8
+degree_2 8
+j_1 -8780800/2187
+j_2 5120/3
+source_automorphism_group_order 2
+
+Total time: 0.350 seconds, Total memory usage: 32.09MB

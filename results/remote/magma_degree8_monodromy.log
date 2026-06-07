@@ -1,0 +1,22 @@
+Magma V2.28-3     Sun Jun  7 2026 04:25:25 on lts-faculty [Seed = 3986902311]
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading startup file "/home/faculty/bnaskrecki/magma/config/magma_config.txt"
+
+****************************************************
+****************Session log started*****************
+****************************************************
+Session start time: 04:25:25
+Session start date: 07.06.2026
+Session start seed: 3986902311
+****************************************************
+/home/faculty/bnaskrecki/magma/logs/session_log_2026_06_07_3986902311.txt
+****************************************************
+Loading file "computations/magma/verify_degree8_monodromy.m"
+B011_DEGREE8_MONODROMY_VERIFIED
+rational_map_group S8
+rational_map_order 40320
+elliptic_base_group S8
+discriminant_square_class -5*target_cubic
+
+Total time: 0.350 seconds, Total memory usage: 32.09MB

@@ -19,3 +19,14 @@ returns degree `6` for each map.
 quotient's generic sextic fiber and checks that the elliptic-base quadratic
 extension has a different square class from the unique quadratic subfield of
 the splitting field.
+
+`verify_degree8_maps.m` independently constructs both morphisms for the
+`Y_-(64)` benchmark. It checks the compact rational coordinate, reconstructs
+the complementary `A(x)+yB(x)` coordinate in the full function field,
+computes both degrees as `8`, and verifies that the source automorphism group
+has order `2`.
+
+`verify_degree8_monodromy.m` computes the exact group `S8` for the compact
+quotient's generic octic fiber and proves that the elliptic-base quadratic
+extension does not absorb the unique quadratic subfield of the splitting
+field.

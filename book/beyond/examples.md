@@ -237,6 +237,94 @@ which is $-7(29,-590)$ on the original second elliptic model. Remote
 Magma independently constructs both morphisms and returns degree $7$ for
 each. Since $7$ is prime, both maps are primitive.
 
+## Degree 8: a primitive full-function-field benchmark
+
+The rational point
+
+$$
+(r,s,z)=(4,-2,-1280)
+$$
+
+on Kumar's $Y_-(64)$ gives the normalized source
+
+$$
+C:\quad y^2=x^6+8x^4+20x^3+68x^2+240x+396.
+$$
+
+Its two rational elliptic factors are
+
+$$
+\begin{aligned}
+E_1&:Y^2=X^3-X^2-5833X+207037,\\
+E_2&:Y^2=X^3-X^2+7X-3,
+\end{aligned}
+$$
+
+with $j(E_1)=-8780800/2187$ and $j(E_2)=5120/3$. Hasse-Witt
+eigenvectors at six good primes identify the pullback lines as $dx/y$ and
+$(1+2x)dx/y$.
+
+The compact quotient has differential scale $2$ and
+
+$$
+X_1=
+\frac{
+x^8+4x^7+12x^6+32x^5+87x^4+220x^3+444x^2+360x-8
+}{
+x^4+4x^3+8x^2+8x+4
+},
+\qquad
+Y_1=\frac{yX_1'}{4}.
+$$
+
+For the complement,
+
+$$
+X_2=a(x)+y\,b(x)
+$$
+
+has degree $16$ as a function on $C$ and common denominator
+
+$$
+\left(
+x^7-\frac{4357}{12}x^6+314x^5-\frac{25905}{8}x^4
+-\frac{3285}{2}x^3-\frac{69039}{2}x^2-35073x-87723
+\right)^2.
+$$
+
+The exact numerators are stored in `sage_degree8_recovery.json`. The
+differential scale is $2$, reconstructed from the roots $\pm2$ modulo
+$61$ and $67$. If $F$ is the source sextic, then
+
+$$
+Y_2=
+\frac{
+F b'+\frac12bF'+a'y
+}{
+4(1+2x)
+}.
+$$
+
+SageMath verifies both target equations and both degree-$8$ assertions.
+Remote Magma independently constructs the morphisms and also computes
+$\#\operatorname{Aut}_{\mathbf Q}(C)=2$. Since neither target has a rational
+$2$-isogeny, this excludes both degree-$2$ isogeny factors and the remaining
+multiplication-by-$2$ possibility through a degree-$2$ elliptic quotient.
+Both maps are therefore primitive over $\mathbf Q$.
+
+For the compact quotient, Magma computes the generic fiber group as $S_8$ of
+order $40320$. Its discriminant is
+
+$$
+-3276800000
+\left(T^3-T^2-5833T+207037\right)^3.
+$$
+
+The discriminant square class is $-5$ times the elliptic-base cubic, so the
+elliptic quadratic extension does not absorb the unique quadratic subfield
+of the $S_8$ closure. The degree-$8$ elliptic cover retains full $S_8$
+monodromy.
+
 ## Degrees 20 and 80: exact nonprimitive maps
 
 Starting from the degree-5 map above, the script

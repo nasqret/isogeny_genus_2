@@ -32,6 +32,7 @@ subfield.
 | All ten tested conics split over the branch quadratic field, none over $\mathbf Q$ | Experimental exact census | `sage_degree5_family_census.json` |
 | Rational degree-6 Kumar specialization with two primitive maps and $S_6$ monodromy | Exact Sage identities, CRT scale recovery, and independent Magma degrees and Galois group | `recover_degree6_maps.sage`, `verify_degree6_maps.m`, `verify_degree6_monodromy.m` |
 | Rational degree-7 Kumar specialization with two primitive maps | Exact Sage identities and independent Magma degrees | `verify_degree7_maps.sage`, `verify_degree7_maps.m` |
+| Rational degree-8 Kumar specialization with two primitive maps and $S_8$ monodromy | Exact Sage full-function-field recovery, CRT scale discovery, source automorphism group, independent Magma degrees, and Galois group | `recover_degree8_maps.sage`, `verify_degree8_maps.m`, `verify_degree8_monodromy.m` |
 | Kumar families in every degree 6 through 11 | Exact surface, Igusa, `j`-polynomial, and one nonsingular tautological curve per degree | `verify_kumar_family_importer.sage`, `verify_kumar_all_tautological_curves.sage` |
 | Degree $20$ and $80$ maps from elliptic multiplication | Exact, nonprimitive | `verify_composed_high_degree_maps.sage` |
 

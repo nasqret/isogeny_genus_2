@@ -26,6 +26,10 @@ is complete only after both maps and this splitting are certified exactly.
 - Degree 7: one rational Kumar specialization with exact source curve, two
   rational elliptic twists, 41 matching good Euler factors, and both
   primitive maps certified in SageMath and Magma.
+- Degree 8: one rational Kumar specialization with both primitive maps,
+  full quadratic-function recovery for the complement, CRT scale lifting,
+  independent Magma degrees, source automorphism group of order `2`, and
+  full `S8` monodromy over the elliptic base.
 - General recovery: a degree-independent SageMath library reconstructs and
   exactly certifies maps from local formal data. Regression cases cover
   degrees 3, 5, and 7, finite and infinite source centers, finite target
@@ -103,6 +107,11 @@ primes, reconstructs `c^2` by CRT, and performs the expensive full-map solve
 only once over `Q`. For the degree-6 complement, primes `101` and `103`
 reconstruct `c^2=4/9`, hence `c=2/3`.
 
+For the degree-8 complement, primes `61` and `67` reconstruct `c^2=4`,
+hence `c=2`. Its recovered `X=a+y*b` coordinate has function degree `16`,
+and exact elimination proves that the map to the elliptic target has degree
+`8`.
+
 ### Family interpolation
 
 Solve many specializations, normalize coordinate choices, interpolate
@@ -131,9 +140,11 @@ curve, and recover the two maps.
 3. Degree 7: completed for the current benchmark; from the two family
    `j`-invariants the recovery routine discovers twists, eigenforms, centers,
    scales, and both maps.
-4. Degrees 8-11: imported; next locate rational surface points and recover
+4. Degree 8: both primitive maps and full `S8` monodromy are certified for a
+   rational `Y_-(64)` specialization.
+5. Degrees 9-11: imported; next locate rational surface points and recover
    one fully certified rational specialization per degree.
-5. Degrees above 11: generate primitive examples by anti-isometry synthesis
+6. Degrees above 11: generate primitive examples by anti-isometry synthesis
    and recover maps with the finite-field/CRT backend.
 
 ## Evidence levels

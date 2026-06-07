@@ -331,3 +331,31 @@
   `S6` splitting field. Therefore base change does not lower the group:
   the degree-6 elliptic cover also has `S6` monodromy and is not the
   exceptional `PGL(2,5)` case.
+
+### Primitive degree-8 maps and maximal monodromy
+
+- Located the rational point `(r,s,z)=(4,-2,-1280)` on `Y_-(64)` and
+  normalized its source to
+  `y^2=x^6+8*x^4+20*x^3+68*x^2+240*x+396`.
+- Frobenius filtering selected the targets
+  `y^2=x^3-x^2-5833*x+207037` and
+  `y^2=x^3-x^2+7*x-3`, with
+  `j=-8780800/2187` and `j=5120/3`.
+- Hasse-Witt eigenvectors at six good primes identified `dx/y` and
+  `(1+2*x) dx/y`.
+- Recovered the compact map in `Q(x)` with scale `2`.
+- Recovered the complementary map as `X=A(x)+yB(x)` with degree `16` as a
+  function on the source, hence elliptic cover degree `8`.
+- Reconstructed the complementary scale square `4` from exact roots `+/-2`
+  modulo `61` and `67`.
+- Remote Magma independently constructed both morphisms, returned degree `8`
+  for each, and computed the rational source automorphism group order as
+  `2`.
+- The automorphism result closes the multiplication-by-2 gap in the
+  primitivity argument: neither target has a rational `2`-isogeny and the
+  source has no rational degree-2 elliptic quotient.
+- Magma computed the compact fiber group as `S8` of order `40320`. Its
+  discriminant square class is
+  `-5*(T^3-T^2-5833*T+207037)`, distinct from the elliptic-base square class,
+  so the cover remains `S8` after base change.
+- B015 is complete. B004, B011, and B012 now include degree-8 evidence.

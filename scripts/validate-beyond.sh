@@ -16,6 +16,7 @@ run_sage computations/sage/census_degree5_family.sage
 run_sage computations/sage/verify_kumar_family_importer.sage
 run_sage computations/sage/verify_kumar_all_tautological_curves.sage
 run_sage computations/sage/recover_degree6_maps.sage
+run_sage computations/sage/recover_degree8_maps.sage
 run_sage computations/sage/verify_degree7_kumar_specialization.sage
 run_sage computations/sage/test_general_elliptic_cover_recovery.sage
 run_sage computations/sage/recover_degree7_maps.sage
@@ -29,6 +30,9 @@ python3 -m json.tool "$ROOT/results/sage_kumar_tautological_curves.json" >/dev/n
 python3 -m json.tool "$ROOT/results/sage_degree6_recovery.json" >/dev/null
 python3 -m json.tool "$ROOT/results/magma_degree6_maps.json" >/dev/null
 python3 -m json.tool "$ROOT/results/magma_degree6_monodromy.json" >/dev/null
+python3 -m json.tool "$ROOT/results/sage_degree8_recovery.json" >/dev/null
+python3 -m json.tool "$ROOT/results/magma_degree8_maps.json" >/dev/null
+python3 -m json.tool "$ROOT/results/magma_degree8_monodromy.json" >/dev/null
 python3 -m json.tool "$ROOT/results/sage_degree7_kumar_specialization.json" >/dev/null
 python3 -m json.tool "$ROOT/results/sage_general_map_recovery.json" >/dev/null
 python3 -m json.tool "$ROOT/results/sage_degree7_recovery.json" >/dev/null

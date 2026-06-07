@@ -58,6 +58,10 @@ Local exact computations live under `computations/sage/`.
 - [`recover_degree7_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/recover_degree7_maps.sage):
   application of the general library to both primitive degree-7
   `X`-coordinates.
+- [`recover_degree8_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/recover_degree8_maps.sage):
+  rational `Y_-(64)` specialization, target-twist and Hasse-Witt eigenform
+  discovery, compact and full-function-field map recovery, CRT scale
+  reconstruction, exact degrees, and primitivity inputs.
 - [`verify_degree7_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/verify_degree7_maps.sage):
   exact target identities, differential pullbacks, pole divisors, infinity
   image, and primitivity for both Kumar maps.
@@ -92,6 +96,12 @@ V2.28-3 on `lts-faculty.wmi.amu.edu.pl`.
 - [`verify_degree7_maps.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree7_maps.m):
   independent construction of both Kumar morphisms and exact degree-7
   computations.
+- [`verify_degree8_maps.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree8_maps.m):
+  independent construction of both degree-8 morphisms, exact degree
+  computations, and source automorphism-group certificate.
+- [`verify_degree8_monodromy.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree8_monodromy.m):
+  exact `S8` generic-fiber Galois group, discriminant square class, and
+  elliptic-base disjointness certificate.
 
 ## Evidence
 
@@ -118,5 +128,8 @@ never sufficient by itself to mark a claim verified.
 - [`sage_general_map_recovery.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_general_map_recovery.json)
 - [`sage_degree7_maps.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_degree7_maps.json)
 - [`magma_degree7_maps.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree7_maps.json)
+- [`sage_degree8_recovery.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_degree8_recovery.json)
+- [`magma_degree8_maps.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree8_maps.json)
+- [`magma_degree8_monodromy.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree8_monodromy.json)
 - [`sage_kumar_family_importer.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_kumar_family_importer.json)
 - [`sage_kumar_tautological_curves.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_kumar_tautological_curves.json)

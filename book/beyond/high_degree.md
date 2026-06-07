@@ -172,6 +172,12 @@ coefficient in the basis $(1,y)$, and computes the degree by eliminating
 $y$. For the current complement the recovered $X$-coordinate has degree
 $12$, proving that the elliptic map has degree $6$.
 
+The same backend now recovers the degree-$8$ complement with eigenform
+$(1+2x)dx/y$. Its $X=a+yb$ coordinate has degree $16$, while the compact
+quotient remains in $\mathbf Q(x)$. Thus the full-function-field
+representation is a stable even-degree feature rather than an isolated
+degree-$6$ exception.
+
 ### Kumar family importer
 
 The exact SageMath adapter
@@ -239,6 +245,11 @@ $$
 after which the complete map is reconstructed once over $\mathbf Q$ and
 certified exactly.
 
+For the degree-$8$ complement, primes $61$ and $67$ both leave the roots
+$c=\pm2$. Their CRT reconstruction gives $c^2=4$, and the characteristic-zero
+recovery then verifies the degree-$8$ map exactly. Coefficient-level modular
+lifting remains the next backend extension.
+
 ## Engine E: Galois closure
 
 Gallese's construction works at arbitrary degree. Compute the Galois closure
@@ -261,6 +272,17 @@ disjoint from the unique quadratic subfield of that splitting field, so the
 elliptic cover also has $S_6$ monodromy. This is a certified nonexceptional
 test case.
 
+The compact degree-$8$ quotient supplies a second exact group benchmark.
+Magma computes $S_8$ of order $40320$, and the fiber discriminant has square
+class
+
+$$
+-5\left(T^3-T^2-5833T+207037\right).
+$$
+
+The elliptic base adjoins the square root of the cubic without the factor
+$-5$, so the base change preserves $S_8$.
+
 ## Engine F: Frey-Kani synthesis
 
 Instead of starting from a curve, start from elliptic curves $E,E'$ and an
@@ -282,7 +304,7 @@ new primitive examples beyond the currently tabulated moduli families.
 | 5 | Prove the branch-field conic splitting locus and derive generic $j(E')$ |
 | 6 | Both primitive maps and nonexceptional $S_6$ monodromy complete |
 | 7 | Completed benchmark; automate finite target-point discovery |
-| 8 | Imported; solve maps with modular eigenform equations |
+| 8 | Both primitive maps and full $S_8$ monodromy complete |
 | 9 | Compare primitive degree 9 with compositions of degree 3 |
 | 10 | Separate primitive degree 10 from degree $5$ followed by a 2-isogeny |
 | 11 | Imported; recover maps on Kumar's $Y_-(121)$ model |

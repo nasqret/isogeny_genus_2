@@ -44,7 +44,7 @@
     "id": "B004",
     "title": "Exact database of primitive covers",
     "status": "in_progress",
-    "progress": 40,
+    "progress": 50,
     "engine": "SageMath+Magma",
     "location": "hybrid",
     "objective": "Store source curves, both elliptic factors, primitive maps, fields, ramification, arithmetic invariants, and exact certificates for degrees 3 through 11.",
@@ -53,7 +53,10 @@
       "results/sage_degree6_recovery.json",
       "results/magma_degree6_maps.json",
       "results/sage_degree7_kumar_specialization.json",
-      "results/sage_degree7_maps.json"
+      "results/sage_degree7_maps.json",
+      "results/sage_degree8_recovery.json",
+      "results/magma_degree8_maps.json",
+      "results/magma_degree8_monodromy.json"
     ]
   },
   {
@@ -141,22 +144,26 @@
       "computations/sage/test_general_elliptic_cover_recovery.sage",
       "computations/sage/recover_degree6_maps.sage",
       "computations/sage/recover_degree7_maps.sage",
+      "computations/sage/recover_degree8_maps.sage",
       "computations/sage/verify_degree7_maps.sage",
       "computations/magma/verify_degree6_maps.m",
       "computations/magma/verify_degree7_maps.m",
+      "computations/magma/verify_degree8_maps.m",
       "results/sage_general_map_recovery.json",
       "results/sage_degree6_recovery.json",
       "results/magma_degree6_maps.json",
       "results/sage_degree7_recovery.json",
       "results/sage_degree7_maps.json",
-      "results/magma_degree7_maps.json"
+      "results/magma_degree7_maps.json",
+      "results/sage_degree8_recovery.json",
+      "results/magma_degree8_maps.json"
     ]
   },
   {
     "id": "B011",
     "title": "Galois-closure complement algorithm",
     "status": "in_progress",
-    "progress": 25,
+    "progress": 30,
     "engine": "Magma",
     "location": "remote",
     "objective": "Implement Gallese's non-diagonal fiber-product quotient for arbitrary degree and certify subgroup, genus, quotient, and complement data.",
@@ -164,21 +171,26 @@
       "research/reports/high_degree_roadmap.md",
       "computations/magma/verify_degree6_monodromy.m",
       "results/magma_degree6_monodromy.json",
-      "results/remote/magma_degree6_monodromy.log"
+      "results/remote/magma_degree6_monodromy.log",
+      "computations/magma/verify_degree8_monodromy.m",
+      "results/magma_degree8_monodromy.json",
+      "results/remote/magma_degree8_monodromy.log"
     ]
   },
   {
     "id": "B012",
     "title": "Finite-field, CRT, and interpolation backend",
     "status": "in_progress",
-    "progress": 25,
+    "progress": 40,
     "engine": "SageMath+Magma",
     "location": "hybrid",
     "objective": "Avoid coefficient explosion by solving at good primes and parameter specializations, then lifting with CRT and certifying the reconstructed characteristic-zero formulas.",
     "artifacts": [
       "computations/sage/lib/elliptic_cover_recovery.sage",
       "computations/sage/recover_degree6_maps.sage",
-      "results/sage_degree6_recovery.json"
+      "computations/sage/recover_degree8_maps.sage",
+      "results/sage_degree6_recovery.json",
+      "results/sage_degree8_recovery.json"
     ]
   },
   {
@@ -203,5 +215,24 @@
     "location": "hybrid",
     "objective": "Construct new split Jacobians from anti-isometries E[n] to E'[n], reconstruct genus-2 curves, and recover the two primitive degree-n maps.",
     "artifacts": []
+  },
+  {
+    "id": "B015",
+    "title": "Primitive degree-8 benchmark and maximal monodromy",
+    "status": "completed",
+    "progress": 100,
+    "engine": "SageMath+Magma",
+    "location": "hybrid",
+    "objective": "Recover and certify both primitive degree-8 maps for a rational Y_-(64) specialization, including full-function-field coordinates, finite-field CRT scale recovery, and exact S8 monodromy over the elliptic base.",
+    "artifacts": [
+      "computations/sage/recover_degree8_maps.sage",
+      "computations/magma/verify_degree8_maps.m",
+      "computations/magma/verify_degree8_monodromy.m",
+      "results/sage_degree8_recovery.json",
+      "results/magma_degree8_maps.json",
+      "results/magma_degree8_monodromy.json",
+      "results/remote/magma_degree8_maps.log",
+      "results/remote/magma_degree8_monodromy.log"
+    ]
   }
 ]

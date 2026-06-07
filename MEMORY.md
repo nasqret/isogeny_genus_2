@@ -137,6 +137,21 @@ This project reconstructs every computational claim in
   `PGL(2,5)`. Its fiber discriminant square class is `2*(25*T+159)`, distinct
   from the elliptic-base square class `T^3-27*T+90`, so the quadratic base
   change preserves `S6`.
+- B015 is complete at `(r,s,z)=(4,-2,-1280)` on `Y_-(64)`. The normalized
+  source is
+  `y^2=x^6+8*x^4+20*x^3+68*x^2+240*x+396`.
+- Its targets have `j=-8780800/2187,5120/3`, and the pullback eigenforms are
+  `dx/y` and `(1+2*x) dx/y`.
+- Both degree-8 maps have scale `2`; the complementary map requires
+  `X=A(x)+yB(x)` and has function degree `16`. CRT at primes `61` and `67`
+  reconstructs `c^2=4`.
+- Remote Magma returns degree `8` for both morphisms and source automorphism
+  group order `2`. Together with the absence of rational target
+  `2`-isogenies, this rules out all nontrivial degree-8 factorizations over
+  `Q`.
+- The compact degree-8 quotient has exact `S8` monodromy over the elliptic
+  base. Its discriminant square class is
+  `-5*(T^3-T^2-5833*T+207037)`.
 - Current active frontier: coefficient-level CRT lifting, the full
-  Galois-closure quotient, B002 generic degree 5, and rational degree-8
+  Galois-closure quotient, B002 generic degree 5, and rational degree-9
   through degree-11 map benchmarks.
