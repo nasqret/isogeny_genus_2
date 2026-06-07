@@ -33,9 +33,15 @@ Local exact computations live under `computations/sage/`.
 - [`verify_exceptional_ramification.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/verify_exceptional_ramification.sage):
   universal point and full torsion classification yielding the exceptional
   ramification invariants.
+- [`elliptic_cover_recovery.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/lib/elliptic_cover_recovery.sage):
+  degree-independent formal integration, target translation, rational
+  reconstruction, and exact map certification.
+- [`test_general_elliptic_cover_recovery.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/test_general_elliptic_cover_recovery.sage):
+  exact regression cases in degrees 3, 5, and 7 over rational and quadratic
+  number fields.
 - [`recover_degree7_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/recover_degree7_maps.sage):
-  formal integration and exact Pade reconstruction of both primitive
-  degree-7 `X`-coordinates.
+  application of the general library to both primitive degree-7
+  `X`-coordinates.
 - [`verify_degree7_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/verify_degree7_maps.sage):
   exact target identities, differential pullbacks, pole divisors, infinity
   image, and primitivity for both Kumar maps.
@@ -83,5 +89,6 @@ never sufficient by itself to mark a claim verified.
 - [`magma_degree5_over_base_field.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree5_over_base_field.json)
 - [`magma_quartic_group_tower.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_quartic_group_tower.json)
 - [`sage_degree7_recovery.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_degree7_recovery.json)
+- [`sage_general_map_recovery.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_general_map_recovery.json)
 - [`sage_degree7_maps.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_degree7_maps.json)
 - [`magma_degree7_maps.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree7_maps.json)

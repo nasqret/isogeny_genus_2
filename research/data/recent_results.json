@@ -218,5 +218,10 @@
     "timestamp": "2026-06-07T02:28:41+02:00",
     "claim_id": "B010",
     "summary": "Formal integration and exact Pade reconstruction reproduced both degree-7 X-coordinates from their eigenforms and target centers."
+  },
+  {
+    "timestamp": "2026-06-07T02:43:31+02:00",
+    "claim_id": "B010",
+    "summary": "Generalized exact map recovery to arbitrary cover degree and certified degree-3, degree-5, and degree-7 cases with finite centers, quintic and sextic models, and a quadratic number field."
   }
 ]

@@ -18,7 +18,13 @@ from time import perf_counter
 
 started = perf_counter()
 root = Path.cwd()
-precision = 28
+load(str(
+    root
+    / "computations"
+    / "sage"
+    / "lib"
+    / "elliptic_cover_recovery.sage"
+))
 
 R.<x> = PolynomialRing(QQ)
 F1 = x^3 + 23*x^2 + 552*x + 17940
@@ -30,14 +36,6 @@ F2 = (
 )
 source_polynomial = F1*F2
 
-S.<t> = PowerSeriesRing(QQ, default_prec=precision)
-source_at_infinity = S(
-    sum(source_polynomial[i]*t^(6-i) for i in range(7))
-)
-square_root = source_at_infinity.sqrt()
-integral_dx_over_y = (-t/square_root).integral()
-integral_x_dx_over_y = (-1/square_root).integral()
-
 E1 = EllipticCurve(
     [0, 0, 0, -7876003275, -272222678576250]
 )
@@ -47,72 +45,33 @@ E2_original = EllipticCurve(
 E2 = E2_original.short_weierstrass_model()
 
 
-def pade_reconstruct(series, numerator_degree, denominator_degree):
-    shift = numerator_degree-denominator_degree
-    regular_series = (t^shift*series).add_bigoh(precision)
-    rows = []
-    rhs = []
-    for k in range(
-        numerator_degree+1,
-        numerator_degree+denominator_degree+1,
-    ):
-        rows.append([
-            regular_series[k-j]
-            for j in range(1, denominator_degree+1)
-        ])
-        rhs.append(-regular_series[k])
-    solution = matrix(QQ, rows).solve_right(vector(QQ, rhs))
-    denominator_series = 1+sum(
-        solution[j-1]*t^j
-        for j in range(1, denominator_degree+1)
-    )
-    numerator_series = (
-        regular_series*denominator_series
-    ).add_bigoh(precision)
-    for k in range(
-        numerator_degree+denominator_degree+1,
-        min(precision, numerator_series.prec()),
-    ):
-        assert numerator_series[k] == 0
-    numerator = sum(
-        numerator_series[k]*x^(numerator_degree-k)
-        for k in range(numerator_degree+1)
-    )
-    denominator = sum(
-        (QQ(1) if k == 0 else solution[k-1])
-        * x^(denominator_degree-k)
-        for k in range(denominator_degree+1)
-    )
-    return numerator/denominator
-
-
 # First map: the chosen infinity maps to the elliptic origin.
 c1 = QQ(49)/12
-formal_group_1 = E1.formal_group()
-parameter_1 = formal_group_1.log(precision).reverse()(
-    c1*integral_dx_over_y
+recovery_1 = recover_elliptic_cover(
+    source_polynomial,
+    E1,
+    eigenform=1,
+    differential_scale=c1,
+    cover_degree=7,
 )
-x_series_1 = formal_group_1.x(precision)(parameter_1)
-recovered_X1 = pade_reconstruct(x_series_1, 7, 3)
+recovered_X1 = recovery_1["x_coordinate"]
 
 # Second map: translate the formal point by the finite image of infinity.
 c2 = -QQ(49)/60
 generator = E2_original.gens()[0]
 isomorphism = E2_original.isomorphism_to(E2)
 infinity_image = isomorphism(-7*generator)
-formal_group_2 = E2.formal_group()
-parameter_2 = formal_group_2.log(precision).reverse()(
-    c2*integral_x_dx_over_y
+recovery_2 = recover_elliptic_cover(
+    source_polynomial,
+    E2,
+    eigenform=x,
+    differential_scale=c2,
+    cover_degree=7,
+    target_center=infinity_image,
 )
-formal_x = formal_group_2.x(precision)(parameter_2)
-formal_y = formal_group_2.y(precision)(parameter_2)
 point_x = infinity_image[0]
 point_y = infinity_image[1]
-addition_slope = (formal_y-point_y)/(formal_x-point_x)
-x_series_2 = (
-    addition_slope^2-point_x-formal_x
-).add_bigoh(precision)
-recovered_X2 = pade_reconstruct(x_series_2, 7, 7)
+recovered_X2 = recovery_2["x_coordinate"]
 
 # Compare against compact factorizations only after reconstruction.
 expected_X1 = (
@@ -145,6 +104,8 @@ expected_X2 = (
 )
 assert recovered_X1 == expected_X1
 assert recovered_X2 == expected_X2
+assert recovery_1["degree_bounds"] == (7, 3)
+assert recovery_2["degree_bounds"] == (7, 7)
 
 elapsed = perf_counter()-started
 result = {
@@ -155,7 +116,13 @@ result = {
     "elapsed_seconds": float(round(elapsed, 6)),
     "workstream": "B010",
     "verified": True,
-    "method": "formal integration plus exact Pade reconstruction",
+    "method": (
+        "degree-independent formal integration plus exact linear "
+        "rational reconstruction"
+    ),
+    "library": (
+        "computations/sage/lib/elliptic_cover_recovery.sage"
+    ),
     "maps": [
         {
             "label": "f1",

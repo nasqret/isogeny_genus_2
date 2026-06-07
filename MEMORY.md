@@ -93,5 +93,13 @@ This project reconstructs every computational claim in
   `(x^2-115*x/24+7475/24)^2`.
 - B013 gives exact degree-20 and degree-80 maps by elliptic multiplication,
   but they are nonprimitive.
+- B010 now has a degree-independent exact SageMath recovery library:
+  `computations/sage/lib/elliptic_cover_recovery.sage`. It supports finite or
+  infinite source centers, finite or identity target centers, quintic or
+  sextic genus-2 models, general Weierstrass coefficients, and exact number
+  fields. Certified regression cases have degrees 3, 5, and 7.
+- The recovery library still requires the target elliptic curve, eigenform,
+  differential scale, and image of the source expansion point. Automatic
+  discovery of these inputs is the remaining B010 frontier.
 - Current active frontier: B002 generic degree 5, B007 arbitrary given-map
   engine, and B010 automated eigenform-guided recovery.

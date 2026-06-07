@@ -222,3 +222,21 @@
 - Remote Magma constructed both morphisms and independently returned degree
   `7` for each. B008 is complete; B010 now contains a concrete finite-point
   formal-integration and Pade-reconstruction benchmark.
+
+### Degree-independent formal recovery
+
+- Replaced the fixed degree-7 Padé routine with the reusable library
+  `computations/sage/lib/elliptic_cover_recovery.sage`.
+- The API accepts a quintic or sextic genus-2 model, an elliptic target, an
+  eigenform, differential scale, source center, target center, and cover
+  degree.
+- Rational reconstruction now solves the homogeneous local equation
+  `A(x(t))-X(t)B(x(t))=O(t^N)` and infers degree bounds from valuations at
+  infinity.
+- Every reconstructed candidate is rejected unless the exact completed-square
+  elliptic identity vanishes over the source function field.
+- Regression tests recover maps of degrees `3`, `5`, and `7`; they include a
+  finite source point, finite target centers, an odd-degree source model, a
+  non-short elliptic target, and a quadratic number field.
+- B010 progress increased to 60%. Automatic target, eigenform, and scale
+  discovery remain separate inputs to implement.

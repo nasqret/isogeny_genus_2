@@ -1,0 +1,58 @@
+{
+  "generated_at": "2026-06-07T02:46:24+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 3.20988,
+  "workstream": "B010",
+  "verified": true,
+  "library": "computations/sage/lib/elliptic_cover_recovery.sage",
+  "cases": [
+    {
+      "label": "degree7_origin",
+      "degree": 7,
+      "source_center": "infinity_plus",
+      "target_center": "(0 : 1 : 0)",
+      "degree_bounds": [
+        7,
+        3
+      ],
+      "x_coordinate": "(576/2401*x^7 + 99360/343*x^5 + 298080/343*x^4 + 17702985/343*x^3 + 337608858/343*x^2 - 38850529695/1372*x + 3538907916225/9604)/(x^3 - 46/5*x^2 + 3013/4*x - 25645/4)",
+      "identity_residual": "0"
+    },
+    {
+      "label": "degree7_finite_target",
+      "degree": 7,
+      "source_center": "infinity_plus",
+      "target_center": "(10465/4 : -51175/8 : 1)",
+      "degree_bounds": [
+        7,
+        7
+      ],
+      "x_coordinate": "(10465/4*x^7 + 197225/8*x^6 + 164727955/64*x^5 + 1305770375/64*x^4 + 36305600625/64*x^3 - 1306013384375/64*x^2 - 232046932796875/16)/(x^7 + 161/12*x^6 + 563017/576*x^5 + 14123725/576*x^4 + 122661875/576*x^3 + 7010241875/576*x^2 + 83534059375/48)",
+      "identity_residual": "0"
+    },
+    {
+      "label": "degree3_finite_source",
+      "degree": 3,
+      "source_center": "finite",
+      "target_center": "(5 : 19 : 1)",
+      "degree_bounds": [
+        3,
+        3
+      ],
+      "x_coordinate": "(-6*x^3 - 6*x^2 - 35/4*x + 25/4)/(x^3 + 4/5*x^2 + 2*x + 5/4)",
+      "identity_residual": "0"
+    },
+    {
+      "label": "degree5_quintic_number_field",
+      "degree": 5,
+      "source_center": "infinity",
+      "target_center": "(0 : 1 : 0)",
+      "degree_bounds": [
+        5,
+        4
+      ],
+      "x_coordinate": "(1/225*v^5 + 26/45*v^4 + 851/45*v^3 + 26/3*v^2 + v)/(v^4 + 26/3*v^3 + 851/45*v^2 + 26/45*v + 1/225)",
+      "identity_residual": "0"
+    }
+  ]
+}

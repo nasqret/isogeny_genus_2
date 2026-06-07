@@ -59,6 +59,50 @@ complementary map sends the two infinities to finite opposite points and has
 pattern $(7,7)$. Assuming $(7,5)$ incorrectly forces nonexistent tail
 equations.
 
+### Reusable exact implementation
+
+The SageMath library
+[`elliptic_cover_recovery.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/lib/elliptic_cover_recovery.sage)
+implements this process without fixing the degree. Its input is
+
+$$
+(F,E,h,c,Q,P,n),
+$$
+
+where $C:y^2=F(x)$, $h(x)\,dx/y$ is the selected eigenform, $c$ is the
+differential scale, $Q$ is a finite or infinite source expansion point,
+$P$ is its image on $E$, and $n$ is the expected cover degree.
+
+The implementation:
+
+1. constructs the local source expansions at $Q$;
+2. integrates $c\,h(x)\,dx/y$ exactly;
+3. inverts the elliptic formal logarithm;
+4. translates the formal point by $P$ using the full Weierstrass group law;
+5. solves the linear system
+   $A(x(t))-X_E(t)B(x(t))=O(t^N)$;
+6. verifies the exact completed-square identity
+
+   $$
+   F(X')^2=c^2h^2
+   \left(4X^3+b_2X^2+2b_4X+b_6\right).
+   $$
+
+It returns
+
+$$
+X=\frac{A}{B},\qquad
+Y=y\frac{X'}{2ch}-\frac{a_1X+a_3}{2}.
+$$
+
+Regression certificates cover degrees $3$, $5$, and $7$, a finite source
+point, finite and identity target centers, quintic and sextic source models,
+and a quadratic number field. Thus the implementation is no longer tied to
+the Kumar specialization.
+
+The target curve, eigenform, scale, and center are currently inputs. Their
+automatic discovery remains the modular and finite-field part of Engine B.
+
 ## Engine C: specialization and interpolation
 
 Generic elimination becomes too large quickly. For a parameterized family:

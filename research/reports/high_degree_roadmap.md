@@ -23,6 +23,10 @@ is complete only after both maps and this splitting are certified exactly.
 - Degree 7: one rational Kumar specialization with exact source curve, two
   rational elliptic twists, 41 matching good Euler factors, and both
   primitive maps certified in SageMath and Magma.
+- General recovery: a degree-independent SageMath library reconstructs and
+  exactly certifies maps from local formal data. Regression cases cover
+  degrees 3, 5, and 7, finite and infinite source centers, finite target
+  centers, quintic and sextic models, and a quadratic number field.
 - High degree: exact nonprimitive degree-20 and degree-80 maps obtained from
   the degree-5 cover by elliptic multiplication.
 
@@ -54,6 +58,14 @@ opposite points, giving a `(7,7)` problem. Translating by the rational point
 `-7*(29,-590)` before formal integration recovers the second map and its
 scale `-49/60`.
 
+This is implemented in
+`computations/sage/lib/elliptic_cover_recovery.sage`. The reconstruction step
+is a homogeneous linear solve for `A(x)-X(t)B(x)`, not a fixed `(7,d)` Padé
+formula. Local valuations infer the degree pattern at infinity; finite source
+points trigger a search through all numerator/denominator patterns of the
+specified cover degree. Every candidate must pass the exact function-field
+identity before it is returned.
+
 ### Family interpolation
 
 Solve many specializations, normalize coordinate choices, interpolate
@@ -78,8 +90,8 @@ curve, and recover the two maps.
    derive \(j(E')\).
 2. Degree 6: import the \(Y_-(36)\) family and handle exceptional
    \(\operatorname{PGL}_2(\mathbf F_5)\) monodromy.
-3. Degree 7: completed for the current benchmark; generalize the finite-point
-   recovery routine and automate target-point discovery.
+3. Degree 7: completed for the current benchmark; the recovery routine is now
+   degree-independent, leaving target-point and differential-scale discovery.
 4. Degrees 8-11: import Kumar's tautological families and recover one fully
    certified rational specialization per degree.
 5. Degrees above 11: generate primitive examples by anti-isometry synthesis
