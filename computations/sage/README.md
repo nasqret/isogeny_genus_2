@@ -48,6 +48,19 @@ Each `.sage` file must:
 - `verify_degree13_anti_isometry.sage`: full rational `13`-torsion bases,
   inverse Weil pairing, maximal isotropic graph, CM-field irreducibility,
   and quotient Weil polynomial over `F_8009`.
+- `lib/frey_kani_theta_gluing.sage`: parameterized product-theta construction
+  from two elliptic torsion bases and an anti-isometry matrix.
+- `reconstruct_degree13_curve.sage`: computes the quotient theta null over
+  `F_(8009^12)`, descends its invariants, and certifies an explicit
+  `F_8009` genus-2 model and Weil polynomial.
+
+The theta reconstruction uses the GPL-3.0 Sage branch of AVIsogenies at
+commit `e488a54304a5b5bcd0ae8c58d0ab82aeb02d6746`. Install the pinned external
+dependency with:
+
+```bash
+./scripts/setup-avisogenies-sage.sh
+```
 
 ## General recovery API
 

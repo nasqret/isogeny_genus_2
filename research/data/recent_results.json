@@ -328,5 +328,10 @@
     "timestamp": "2026-06-07T17:04:28+02:00",
     "claim_id": "B014",
     "summary": "SageMath and remote Magma certified a degree-13 Frey-Kani anti-isometry over F_8009: the graph has 169 points, 2184 matrices have the required determinant, and distinct CM fields force an irreducible principally polarized genus-2 quotient."
+  },
+  {
+    "timestamp": "2026-06-07T18:41:46+02:00",
+    "claim_id": "B014",
+    "summary": "Computed the degree-13 quotient theta null, descended Igusa invariants to F_8009, and independently certified the explicit genus-2 curve y^2=6042*x^6+4620*x^5+6357*x^4+3661*x^3+4018*x^2+5767*x+84 with the required Weil polynomial."
   }
 ]

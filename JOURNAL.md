@@ -538,3 +538,28 @@
 - This completes the initial B014 synthesis milestone. B014 remains in
   progress because an explicit genus-2 model and the two degree-13 maps have
   not yet been reconstructed.
+
+### Explicit degree-13 quotient curve
+
+- Added a pinned external dependency installer for the GPL-3.0 Sage branch of
+  AVIsogenies at commit
+  `e488a54304a5b5bcd0ae8c58d0ab82aeb02d6746`.
+- Derived and checked level-2 elliptic Kummer coordinates from Legendre
+  coordinates. Scalar multiplication and normal addition agree with the
+  original elliptic group law on both certified `13`-torsion bases.
+- Implemented the decomposable product theta null and the graph basis
+  `(P1,Q1)`, `(P2,3Q2)`. The only normal sum needed by the generic isogeny
+  initializer is supplied componentwise; all remaining kernel arithmetic is
+  performed by AVIsogenies differential addition.
+- Computed the quotient theta null over `F_(8009^12)` and a Rosenhain model.
+  Its Igusa-Clebsch invariants are `(2419,7563,6738,5346)`, and its absolute
+  invariants `(4139,7829,4340)` are fixed by `8009`-Frobenius.
+- Magma's Mestre reconstruction and twist test produced a base-field model.
+  The fixed committed representative is
+  `y^2=6042*x^6+4620*x^5+6357*x^4+3661*x^3+4018*x^2+5767*x+84`.
+- SageMath independently computed its Frobenius polynomial as
+  `T^4+35*T^3+9184*T^2+280315*T+64144081`. Remote Magma independently
+  verified the same moduli and L-polynomial in `0.636` seconds.
+- B014 is now `75%`: anti-isometry, quotient polarization, theta quotient,
+  descent, and explicit genus-2 model are certified. The remaining quarter
+  is recovery of the two degree-13 maps.

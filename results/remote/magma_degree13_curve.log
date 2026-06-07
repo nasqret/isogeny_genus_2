@@ -1,0 +1,24 @@
+****************************************************
+****************Session log started*****************
+****************************************************
+Session start time: 18:41:46
+Session start date: 07.06.2026
+Session start seed: 1797566475
+****************************************************
+/home/faculty/bnaskrecki/magma/logs/session_log_2026_06_07_1797566475.txt
+****************************************************
+INPUT_IGUSA_CLEBSCH [ 2419, 7563, 6738, 5346 ]
+MESTRE_INITIAL_L_POLYNOMIAL 64144081*t^4 + 280315*t^3 + 9184*t^2 + 35*t + 1
+TWIST_FACTOR 1
+MESTRE_QUOTIENT_CURVE Hyperelliptic Curve defined by y^2 = 544*x^6 + 1068*x^5 + 
+    3455*x^4 + 1542*x^3 + 4836*x^2 + 4776*x + 1151 over GF(8009)
+QUOTIENT_G2_INVARIANTS [ 584, 2709, 1888 ]
+QUOTIENT_L_POLYNOMIAL 64144081*t^4 + 280315*t^3 + 9184*t^2 + 35*t + 1
+QUOTIENT_WEIL_POLYNOMIAL t^4 + 35*t^3 + 9184*t^2 + 280315*t + 64144081
+FIXED_BASE_FIELD_CURVE Hyperelliptic Curve defined by y^2 = 6042*x^6 + 4620*x^5 
+    + 6357*x^4 + 3661*x^3 + 4018*x^2 + 5767*x + 84 over GF(8009)
+B014_DEGREE13_CURVE_RECONSTRUCTED
+
+real	0m0,636s
+user	0m0,618s
+sys	0m0,008s

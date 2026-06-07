@@ -8,8 +8,8 @@ than from a known genus-2 curve. SageMath and Magma independently verify the
 finite-field data.
 
 The certificate proves that the principally polarized quotient is
-geometrically a smooth genus-2 Jacobian. It does not yet provide an explicit
-equation for that curve or its two degree-13 maps.
+geometrically a smooth genus-2 Jacobian and reconstructs an explicit equation
+over the base field. Recovery of the two degree-13 maps remains open.
 
 ## Elliptic curves
 
@@ -77,26 +77,74 @@ The quotient Weil polynomial is
 T^4 + 35*T^3 + 9184*T^2 + 280315*T + 64144081.
 ```
 
+## Theta quotient and descent
+
+The parameterized Sage implementation places both elliptic curves in
+level-2 theta coordinates over `F_(8009^12)`. It checks the derived
+elliptic Kummer coordinates against scalar multiplication and normal
+addition, forms the decomposable product theta null, and evaluates the
+degree-13 isogeny on the graph basis.
+
+The quotient Rosenhain model has Igusa-Clebsch invariants
+
+```text
+(2419, 7563, 6738, 5346)
+```
+
+and absolute invariants
+
+```text
+(4139, 7829, 4340).
+```
+
+The absolute invariants are fixed by `8009`-Frobenius, so the moduli point
+descends to `F_8009`.
+
+## Explicit base-field curve
+
+Magma's Mestre reconstruction, followed by quadratic-twist selection using
+the quotient L-polynomial, gives the fixed representative
+
+```text
+C: y^2 =
+6042*x^6 + 4620*x^5 + 6357*x^4 + 3661*x^3
++ 4018*x^2 + 5767*x + 84.
+```
+
+SageMath independently verifies that this sextic is squarefree, that `C` has
+genus two, that its absolute Igusa invariants are `(4139,7829,4340)`, and
+that its Frobenius polynomial is exactly the required quotient polynomial.
+
 ## Reproducibility
 
 - SageMath:
   `computations/sage/verify_degree13_anti_isometry.sage`
 - reusable SageMath library:
   `computations/sage/lib/frey_kani_synthesis.sage`
+- reusable theta-gluing library:
+  `computations/sage/lib/frey_kani_theta_gluing.sage`
+- explicit Sage reconstruction:
+  `computations/sage/reconstruct_degree13_curve.sage`
 - Magma:
   `computations/magma/verify_degree13_anti_isometry.m`
+- independent Magma Mestre reconstruction:
+  `computations/magma/reconstruct_degree13_curve.m`
 - certificates:
   `results/sage_degree13_anti_isometry.json` and
-  `results/magma_degree13_anti_isometry.json`
+  `results/magma_degree13_anti_isometry.json`,
+  `results/sage_degree13_curve.json`, and
+  `results/magma_degree13_curve.json`
 - remote transcript:
-  `results/remote/magma_degree13_anti_isometry.log`
+  `results/remote/magma_degree13_anti_isometry.log` and
+  `results/remote/magma_degree13_curve.log`
 
 The recorded runs took under `0.4` seconds in SageMath and `0.080` seconds
-in Magma; Magma used `32.09 MB`.
+in Magma for the graph certificate. The explicit theta reconstruction took
+`3.742` seconds in SageMath, and the independent Magma reconstruction took
+`0.636` seconds.
 
 ## Next construction step
 
-The next B014 milestone is to reconstruct an explicit genus-2 model of the
-quotient and then recover the two primitive degree-13 maps. After that, the
-finite-field search and certification code will be generalized to degrees
-17 and 19.
+The next B014 milestone is to recover and certify the two primitive degree-13
+maps. After that, the finite-field search and certification code will be
+generalized to degrees 17 and 19.

@@ -16,6 +16,7 @@ results/*.tmp
 
 # Local environments and system files
 .venv/
+.deps/
 .DS_Store
 
 # Upstream checkout internals are not part of this repository

@@ -36,5 +36,6 @@ run, and a committed result or compact certificate are all present.
 
 ```bash
 python3 scripts/audit-claims.py
+./scripts/setup-avisogenies-sage.sh
 ./scripts/validate-all.sh
 ```

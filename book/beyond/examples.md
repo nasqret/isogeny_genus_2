@@ -432,6 +432,40 @@ $$
 which is coprime to the elliptic branch cubic. Hence the elliptic cover
 retains full $S_9$ monodromy.
 
+## Degree 13: synthesized quotient curve
+
+Over $\mathbf F_{8009}$, the elliptic curves
+
+$$
+E_1:y^2=x^3+5553x+5419,\qquad
+E_2:y^2=x^3+2531x+1402
+$$
+
+have full rational $13$-torsion. In the certified bases,
+$\operatorname{diag}(1,3)$ defines an anti-isometry. Its graph has
+$13^2=169$ points, and the distinct ordinary CM fields force an irreducible
+Frey--Kani polarization.
+
+The quotient theta null over $\mathbf F_{8009^{12}}$ descends to the
+base-field curve
+
+$$
+\begin{aligned}
+C:\quad y^2={}&6042x^6+4620x^5+6357x^4+3661x^3\\
+&+4018x^2+5767x+84.
+\end{aligned}
+$$
+
+Its absolute Igusa invariants are $(4139,7829,4340)$, and its Frobenius
+polynomial is
+
+$$
+T^4+35T^3+9184T^2+280315T+64144081.
+$$
+
+Both SageMath and Magma certify the model. The two degree-$13$ maps are the
+next active reconstruction target.
+
 ## Fixed-field quotient equations
 
 For any compact quotient with rational coordinate

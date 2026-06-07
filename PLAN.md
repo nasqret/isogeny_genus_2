@@ -175,13 +175,16 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
 - The initial construction-engine milestone is complete in degree 13.
   Over `F_8009`, SageMath and Magma independently certify an anti-isometry
   graph of order `13^2`, an irreducible Frey-Kani principal polarization,
-  and the quotient Weil polynomial. This proves the quotient is geometrically
-  a smooth genus-2 Jacobian, but does not yet reconstruct its curve equation.
+  and the quotient Weil polynomial.
+- The quotient theta null is now computed over `F_(8009^12)`. Its
+  Igusa-Clebsch invariants descend to `F_8009`, and SageMath and Magma
+  independently certify the explicit model
+  `y^2=6042*x^6+4620*x^5+6357*x^4+3661*x^3+4018*x^2+5767*x+84`.
+  Its Frobenius polynomial is exactly the product of the two elliptic
+  Frobenius polynomials.
 
 Current bounded tasks, in order:
 
-1. reconstruct an explicit genus-2 curve for the certified degree-13
-   anti-isometry quotient;
-2. recover and certify its two degree-13 elliptic maps;
-3. turn the degree-13 search into a parameterized prime-degree synthesis
+1. recover and certify the two degree-13 elliptic maps;
+2. turn the degree-13 search into a parameterized prime-degree synthesis
    engine and run it in degrees 17 and 19.

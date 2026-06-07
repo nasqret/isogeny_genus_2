@@ -1,0 +1,66 @@
+{
+  "generated_at": "2026-06-07T18:40:20+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 3.741553,
+  "workstream": "B014",
+  "verified": true,
+  "scope": "explicit degree-13 Frey-Kani quotient curve",
+  "dependency": {
+    "name": "AVIsogenies Sage branch",
+    "repository": "https://gitlab.inria.fr/roberdam/avisogenies.git",
+    "commit": "e488a54304a5b5bcd0ae8c58d0ab82aeb02d6746",
+    "license": "GPL-3.0"
+  },
+  "field": "GF(8009)",
+  "theta_extension_degree": 12,
+  "degree": 13,
+  "anti_isometry_matrix": [
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      3
+    ]
+  ],
+  "quotient_theta_null": [
+    "4177*theta_extension^11 + 6064*theta_extension^10 + 1480*theta_extension^9 + 7468*theta_extension^8 + 3336*theta_extension^7 + 1549*theta_extension^6 + 5059*theta_extension^5 + 6057*theta_extension^4 + 4028*theta_extension^3 + 2989*theta_extension^2 + 97*theta_extension + 4006",
+    "1838*theta_extension^11 + 7908*theta_extension^10 + 5146*theta_extension^9 + 4617*theta_extension^8 + 6344*theta_extension^7 + 977*theta_extension^6 + 6114*theta_extension^5 + 5297*theta_extension^4 + 3554*theta_extension^3 + 4655*theta_extension^2 + 3531*theta_extension + 4114",
+    "2223*theta_extension^11 + 6203*theta_extension^10 + 3059*theta_extension^9 + 5952*theta_extension^8 + 1686*theta_extension^7 + 1695*theta_extension^6 + 3432*theta_extension^5 + 5871*theta_extension^4 + 721*theta_extension^3 + 6708*theta_extension^2 + 4704*theta_extension + 5251",
+    "1076*theta_extension^11 + 280*theta_extension^10 + 6065*theta_extension^9 + 7067*theta_extension^8 + 6185*theta_extension^7 + 7863*theta_extension^6 + 3197*theta_extension^5 + 1142*theta_extension^4 + 834*theta_extension^3 + 2629*theta_extension^2 + 4992*theta_extension + 5811"
+  ],
+  "rosenhain_polynomial_over_theta_extension": "x^5 + (3972*theta_extension^11 + 2295*theta_extension^10 + 1400*theta_extension^9 + 6696*theta_extension^8 + 1919*theta_extension^7 + 4560*theta_extension^6 + 3398*theta_extension^5 + 4195*theta_extension^4 + 4857*theta_extension^3 + 553*theta_extension^2 + 2489*theta_extension + 5262)*x^4 + (65*theta_extension^11 + 3419*theta_extension^10 + 5209*theta_extension^9 + 2626*theta_extension^8 + 4171*theta_extension^7 + 6898*theta_extension^6 + 1213*theta_extension^5 + 7628*theta_extension^4 + 6304*theta_extension^3 + 6903*theta_extension^2 + 3031*theta_extension + 5753)*x^3 + (2977*theta_extension^11 + 6021*theta_extension^10 + 7913*theta_extension^9 + 6543*theta_extension^8 + 5223*theta_extension^7 + 6781*theta_extension^6 + 2696*theta_extension^5 + 170*theta_extension^4 + 2001*theta_extension^3 + 7010*theta_extension^2 + 1065*theta_extension + 321)*x^2 + (995*theta_extension^11 + 4283*theta_extension^10 + 1496*theta_extension^9 + 153*theta_extension^8 + 4705*theta_extension^7 + 5788*theta_extension^6 + 702*theta_extension^5 + 4025*theta_extension^4 + 2856*theta_extension^3 + 1552*theta_extension^2 + 1424*theta_extension + 4681)*x",
+  "igusa_clebsch_invariants": [
+    2419,
+    7563,
+    6738,
+    5346
+  ],
+  "absolute_igusa_invariants": [
+    4139,
+    7829,
+    4340
+  ],
+  "absolute_invariants_frobenius_fixed": true,
+  "base_field_curve": {
+    "equation": "y^2=6042*x^6+4620*x^5+6357*x^4+3661*x^3+4018*x^2+5767*x+84",
+    "squarefree": true,
+    "genus": 2,
+    "absolute_igusa_invariants": [
+      4139,
+      7829,
+      4340
+    ],
+    "frobenius_polynomial": "x^4 + 35*x^3 + 9184*x^2 + 280315*x + 64144081"
+  },
+  "certificate": {
+    "elliptic_kummer_arithmetic": true,
+    "product_graph_arithmetic": true,
+    "theta_quotient_computed": true,
+    "moduli_descend_to_base_field": true,
+    "base_model_matches_moduli": true,
+    "base_model_matches_quotient_weil_polynomial": true
+  },
+  "remaining_step": "recover and certify the two degree-13 maps to E1 and E2"
+}

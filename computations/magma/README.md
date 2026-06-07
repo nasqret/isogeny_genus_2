@@ -50,3 +50,8 @@ beyond-degree-11 Frey-Kani synthesis: full rational `13`-torsion on two
 curves over `F_8009`, the matrix `diag(1,3)`, inverse Weil pairings, all
 `169` graph points, the count of `2184` compatible matrices, distinct CM
 squareclasses, and the quotient Weil polynomial.
+
+`reconstruct_degree13_curve.m` applies Magma's Mestre reconstruction to the
+descended Igusa-Clebsch invariants, selects the correct quadratic twist by
+the quotient L-polynomial, and independently certifies the fixed base-field
+curve used by the Sage artifact.

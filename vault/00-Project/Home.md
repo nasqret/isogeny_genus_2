@@ -27,6 +27,8 @@ copied article.
 - 0 unresolved.
 - Beyond-paper work is tracked separately in
   `research/data/beyond_paper.json`.
+- The current frontier is the explicit degree-13 Frey--Kani quotient curve;
+  its two degree-13 elliptic maps remain to be reconstructed.
 
 ## Authoritative files
 

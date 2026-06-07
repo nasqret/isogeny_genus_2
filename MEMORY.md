@@ -211,6 +211,12 @@ This project reconstructs every computational claim in
   Frey-Kani irreducibility. The quotient is geometrically a smooth genus-2
   Jacobian with Weil polynomial
   `T^4+35*T^3+9184*T^2+280315*T+64144081`.
-- Current active frontier: reconstruct the explicit degree-13 genus-2 curve
-  and its two primitive maps, then generalize the synthesis search to larger
-  prime degrees.
+- The B014 theta quotient is now explicit. The pinned AVIsogenies Sage
+  dependency is installed by `scripts/setup-avisogenies-sage.sh`; its commit
+  is `e488a54304a5b5bcd0ae8c58d0ab82aeb02d6746`.
+- The quotient theta null over `F_(8009^12)` has Igusa-Clebsch invariants
+  `(2419,7563,6738,5346)` and absolute invariants `(4139,7829,4340)`.
+  A fixed base-field model is
+  `y^2=6042*x^6+4620*x^5+6357*x^4+3661*x^3+4018*x^2+5767*x+84`.
+- Current active frontier: recover the two primitive degree-13 maps, then
+  generalize the synthesis search to larger prime degrees.

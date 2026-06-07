@@ -38,6 +38,7 @@ subfield.
 | Explicit degree-6 and degree-8 splitting kernels | Full torsion pullback to the genus-2 Jacobian, graph matrices, complete kernel enumeration, and inverse Weil pairings | `verify_degree6_splitting_kernel.m`, `verify_degree8_splitting_kernel.m` |
 | Degree-independent Galois-closure complement quotient | Exact invariant equations, subgroup fixed fields, critical-quartic recovery, and genus-one signatures through degree 15 | `verify_galois_complement.sage`, `verify_galois_complement.m` |
 | Kumar families in every degree 6 through 11 | Exact surface, Igusa, `j`-polynomial, and one nonsingular tautological curve per degree | `verify_kumar_family_importer.sage`, `verify_kumar_all_tautological_curves.sage` |
+| Degree-13 Frey--Kani quotient curve | Exact theta quotient, invariant descent, explicit base-field model, and independent Sage/Magma Weil certificates | `reconstruct_degree13_curve.sage`, `reconstruct_degree13_curve.m` |
 | Degree $20$ and $80$ maps from elliptic multiplication | Exact, nonprimitive | `verify_composed_high_degree_maps.sage` |
 
 The machine-readable program is

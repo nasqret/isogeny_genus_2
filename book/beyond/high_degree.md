@@ -504,9 +504,26 @@ $$
 T^4+35T^3+9184T^2+280315T+64144081.
 $$
 
-SageMath and Magma independently certify all of these assertions. The next
-step is constructive rather than existential: recover an explicit genus-2
-equation and its two degree-$13$ maps.
+The theta-gluing implementation now computes the quotient over
+$\mathbf F_{8009^{12}}$. Its absolute Igusa invariants are
+
+$$
+(4139,7829,4340),
+$$
+
+and are fixed by $8009$-Frobenius. Magma's Mestre reconstruction and twist
+test give the base-field model
+
+$$
+\begin{aligned}
+C:\quad y^2={}&6042x^6+4620x^5+6357x^4+3661x^3\\
+&+4018x^2+5767x+84.
+\end{aligned}
+$$
+
+SageMath and Magma independently certify that this curve has the displayed
+Weil polynomial. The remaining degree-$13$ task is recovery of the two
+elliptic maps.
 
 ## Degree program
 
@@ -519,7 +536,7 @@ equation and its two degree-$13$ maps.
 | 9 | Both primitive maps, CRT centers, and full $S_9$ monodromy complete |
 | 10 | Both primitive maps complete; target isogeny obstruction excludes degree $5$ followed by a 2-isogeny |
 | 11 | Both primitive maps complete on a rational point of Kumar's $Y_-(121)$ |
-| $>11$ | Degree-13 anti-isometry quotient certified; reconstruct its curve and maps, then synthesize degrees 17 and 19 |
+| $>11$ | Degree-13 quotient curve certified; recover its maps, then synthesize degrees 17 and 19 |
 
 ## Degree 10 and degree 11
 
