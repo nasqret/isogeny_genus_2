@@ -140,6 +140,10 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
   primitive maps: exact in SageMath, with independent Magma degrees and full
   `S9` monodromy over the elliptic base. Modular center searches reconstruct
   the two finite infinity images from 128-bit and 184-bit CRT moduli.
+- The finite-field backend lifts complete projective coefficient vectors for
+  both `X=A(x)/D(x)` and `X=A(x)/D(x)+y*B(x)/D(x)`. Partial CRT state is
+  resumable and every lift is accepted only after exact characteristic-zero
+  map and degree certification.
 - Degree-20 and degree-80 maps by elliptic multiplication: exact,
   nonprimitive.
 - Kumar's Hilbert modular surfaces, Igusa-Clebsch invariants, symmetric
@@ -147,8 +151,8 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
   every degree 6 through 11. One nonsingular genus-2 specialization is
   certified in each degree.
 
-Current bounded tasks: generalize the CRT backend from center lifting to
-coefficient lifting, recover rational map pairs in degrees 10 and 11,
-certify the explicit degree-6 and degree-8 splitting kernels, and
-implement the full Galois-closure quotient rather than only its monodromy
-certificate.
+Current bounded tasks: recover rational map pairs in degrees 10 and 11,
+certify the explicit degree-6 and degree-8 splitting kernels, implement the
+full Galois-closure quotient rather than only its monodromy certificate,
+finish the generic degree-5 complementary `j`-formula, and begin Frey-Kani
+anti-isometry synthesis beyond degree 11.

@@ -255,7 +255,20 @@ centers for which the complete modular map identity holds, combines the
 affine coordinates by CRT, and tests rational reconstructions against both
 the rational target and the full characteristic-zero map. The two finite
 centers required moduli of $128$ and $184$ bits. Coefficient-level modular
-lifting remains the next backend extension.
+lifting is now implemented as well.
+
+A modular rational map is stored as the projective coefficient vector of
+$(A,D)$, while a full quadratic-function map uses $(A,B,D)$. One common
+nonzero coefficient is fixed as projective pivot across all good primes.
+Every other coordinate is combined by CRT and rationally reconstructed. The
+state is resumable and records the modulus, pivot, residues, accepted prime
+certificates, and rejected primes. The lift is accepted only after the exact
+elliptic identity and cover degree certify over $\mathbf Q$.
+
+For the degree-$6$ benchmark, this recovers the rational quotient with a
+$27$-bit modulus and its $A+yB$ complement with a $34$-bit modulus. Thus the
+modular pipeline no longer requires a characteristic-zero linear solve for
+the final map coefficients.
 
 ## Engine E: Galois closure
 

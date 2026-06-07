@@ -169,6 +169,11 @@ This project reconstructs every computational claim in
   `(1,3,5)` and `(2,7)` force `S9`; its discriminant square class is
   `359687*(1842229401671*T+98280453222687553920)`, coprime to the cubic
   elliptic branch class, so base change preserves `S9`.
-- Current active frontier: coefficient-level CRT lifting, the full
-  Galois-closure quotient, B002 generic degree 5, and rational degree-10
-  and degree-11 map benchmarks.
+- `discover_coefficients_by_crt` completes coefficient-level CRT lifting. It
+  supports rational and full quadratic-function X-coordinates, uses a common
+  projective pivot, preserves resumable partial state, and requires exact
+  characteristic-zero identity and degree certification. The degree-6
+  regression is stored in `results/sage_crt_coefficient_lifting.json`.
+- Current active frontier: the full Galois-closure quotient, B002 generic
+  degree 5, rational degree-10 and degree-11 map benchmarks, explicit
+  splitting kernels, and anti-isometry synthesis.

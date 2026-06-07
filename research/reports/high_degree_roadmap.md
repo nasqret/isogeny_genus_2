@@ -123,6 +123,15 @@ reconstruction against the characteristic-zero target and map identity.
 Partial CRT state is resumable. The two degree-9 centers were certified with
 128-bit and 184-bit moduli.
 
+The coefficient stage is also implemented. `discover_coefficients_by_crt`
+normalizes the complete modular map coefficient vector at a common projective
+pivot, combines every coordinate by CRT, and rationally reconstructs both
+`A/D` and `(A+yB)/D` representations. It rejects a lift unless the full
+characteristic-zero elliptic identity and exact cover degree hold. The
+degree-6 regression reconstructs the rational quotient from a 27-bit modulus
+and the full quadratic-function complement from a 34-bit modulus, including
+stop-and-resume state in both cases.
+
 ### Family interpolation
 
 Solve many specializations, normalize coordinate choices, interpolate

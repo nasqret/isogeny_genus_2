@@ -389,3 +389,21 @@
   coprime to the cubic elliptic branch polynomial. The elliptic cover
   therefore retains `S9`.
 - B016 is complete. B004, B010, B011, and B012 now include degree-9 evidence.
+
+### Complete coefficient-vector CRT lifting
+
+- Added `discover_coefficients_by_crt` to the general SageMath recovery
+  library.
+- The backend supports both rational `X=A(x)/D(x)` coordinates and general
+  `X=A(x)/D(x)+y*B(x)/D(x)` coordinates.
+- Modular maps are represented by padded projective coefficient vectors and
+  normalized at a common nonzero pivot before entrywise CRT.
+- Bad reductions and vanishing pivots are recorded as per-prime failures.
+  Partial states retain the modulus, coefficient residues, pivot, and modular
+  certificates and can be resumed without repeating earlier work.
+- Rational reconstruction is never accepted heuristically: the complete map
+  identity and exact cover degree must certify over `QQ`.
+- The degree-6 quotient reconstructs after a 27-bit modulus. Its full
+  quadratic-function complement reconstructs after a 34-bit modulus. Both
+  agree exactly with direct characteristic-zero recovery.
+- B012 is complete.

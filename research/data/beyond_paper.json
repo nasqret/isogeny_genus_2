@@ -189,16 +189,18 @@
   {
     "id": "B012",
     "title": "Finite-field, CRT, and interpolation backend",
-    "status": "in_progress",
-    "progress": 60,
+    "status": "completed",
+    "progress": 100,
     "engine": "SageMath+Magma",
     "location": "hybrid",
     "objective": "Avoid coefficient explosion by solving at good primes and parameter specializations, then lifting with CRT and certifying the reconstructed characteristic-zero formulas.",
     "artifacts": [
       "computations/sage/lib/elliptic_cover_recovery.sage",
+      "computations/sage/test_crt_coefficient_lifting.sage",
       "computations/sage/recover_degree6_maps.sage",
       "computations/sage/recover_degree8_maps.sage",
       "computations/sage/recover_degree9_maps.sage",
+      "results/sage_crt_coefficient_lifting.json",
       "results/sage_degree6_recovery.json",
       "results/sage_degree8_recovery.json",
       "results/sage_degree9_recovery.json"

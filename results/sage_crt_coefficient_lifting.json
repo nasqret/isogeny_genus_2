@@ -1,0 +1,44 @@
+{
+  "generated_at": "2026-06-07T12:13:25+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 0.684279,
+  "workstream": "B012",
+  "verified": true,
+  "scope": "Resumable CRT reconstruction of every projective coefficient in rational and full quadratic-function elliptic maps",
+  "cases": [
+    {
+      "label": "degree6_rational",
+      "map_type": "rational",
+      "degree_bounds": [
+        6,
+        6
+      ],
+      "cover_degree": 6,
+      "partial_modulus_bits": 7,
+      "final_modulus_bits": 27,
+      "pivot_index": 13,
+      "prime_count": 4,
+      "failure_count": 0,
+      "x_coordinate": "(3*x^6 - 30*x^5 + 81*x^4 - 296/3*x^3 + 184/3*x^2 - 848/27)/(x^6 - 6*x^5 + 9*x^4 + 40/9*x^3 - 40/3*x^2 + 400/81)"
+    },
+    {
+      "label": "degree6_general",
+      "map_type": "general",
+      "degree_bounds": [
+        12,
+        9,
+        8
+      ],
+      "cover_degree": 6,
+      "partial_modulus_bits": 21,
+      "final_modulus_bits": 34,
+      "pivot_index": 31,
+      "prime_count": 5,
+      "failure_count": 0,
+      "x_coordinate": {
+        "rational_part": "(9/2*x^12 - 693/20*x^10 - 533/10*x^9 + 2061/400*x^8 + 6501/100*x^7 + 7097/150*x^6 + 221/50*x^5 - 10621/1200*x^4 - 17029/4050*x^3 - 289/450*x^2 + 22/2025*x + 161/18225)/(x^8 + 4*x^7 + 63/10*x^6 + 221/45*x^5 + 6841/3600*x^4 + 121/450*x^3 - 109/4050*x^2 - 14/2025*x + 1/2025)",
+        "y_part": "(9/2*x^9 + 27/2*x^8 + 207/20*x^7 - 9/4*x^6 - 33/5*x^5 - 7/2*x^4 - 16/15*x^3 - 1/3*x^2 - 4/45*x - 4/405)/(x^8 + 4*x^7 + 63/10*x^6 + 221/45*x^5 + 6841/3600*x^4 + 121/450*x^3 - 109/4050*x^2 - 14/2025*x + 1/2025)"
+      }
+    }
+  ]
+}

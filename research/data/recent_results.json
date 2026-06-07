@@ -283,5 +283,10 @@
     "timestamp": "2026-06-07T05:19:57+02:00",
     "claim_id": "B011-B016",
     "summary": "Deterministic modular cycle types force S9 monodromy for the first degree-9 quotient; its linear discriminant square class is coprime to the elliptic branch cubic, so base change preserves S9."
+  },
+  {
+    "timestamp": "2026-06-07T12:13:25+02:00",
+    "claim_id": "B012",
+    "summary": "Completed a resumable projective coefficient-CRT backend for rational X=A/D and full X=A/D+yB/D maps, with exact degree-6 characteristic-zero certification."
   }
 ]

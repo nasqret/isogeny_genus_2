@@ -36,8 +36,12 @@ Local exact computations live under `computations/sage/`.
 - [`elliptic_cover_recovery.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/lib/elliptic_cover_recovery.sage):
   degree-independent formal integration, target translation, rational
   and full quadratic-function reconstruction, symbolic and CRT scale solving,
-  bounded Mordell-Weil and resumable CRT center search, and exact map
-  certification.
+  bounded Mordell-Weil search, resumable CRT center and complete coefficient
+  lifting, and exact map certification.
+- [`test_crt_coefficient_lifting.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/test_crt_coefficient_lifting.sage):
+  projective coefficient-vector CRT for rational and full
+  quadratic-function degree-6 maps, including resumable partial states and
+  characteristic-zero certification.
 - [`elliptic_factor_discovery.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/lib/elliptic_factor_discovery.sage):
   Frobenius-compatible target-twist discovery and bounded eigenform-line
   search from candidate Hilbert-modular `j`-invariants.

@@ -1596,6 +1596,474 @@ def discover_center_by_crt(
     )
 
 
+def _map_coefficient_vector(
+    x_coordinate,
+    degree_bounds,
+    polynomial_ring,
+    map_type,
+):
+    """
+    Return a padded projective coefficient vector for an elliptic X-map.
+
+    Rational maps use ``A/D``.  General maps use ``(A+y*B)/D``.  No
+    normalization is imposed here because finite-field vectors are normalized
+    at a common projective pivot by the CRT driver.
+    """
+    Kx = polynomial_ring.fraction_field()
+    if map_type == "rational":
+        numerator_degree, denominator_degree = (
+            ZZ(value) for value in degree_bounds
+        )
+        X = Kx(x_coordinate)
+        A = polynomial_ring(X.numerator())
+        D = polynomial_ring(X.denominator())
+        common = A.gcd(D)
+        if not common.is_constant():
+            A //= common
+            D //= common
+        return tuple(
+            [A[i] for i in range(numerator_degree+1)]
+            + [D[i] for i in range(denominator_degree+1)]
+        )
+
+    if map_type == "general":
+        numerator_degree, y_numerator_degree, denominator_degree = (
+            ZZ(value) for value in degree_bounds
+        )
+        a = Kx(x_coordinate[0])
+        b = Kx(x_coordinate[1])
+        common_denominator = lcm(a.denominator(), b.denominator())
+        A = polynomial_ring(a*common_denominator)
+        B = polynomial_ring(b*common_denominator)
+        D = polynomial_ring(common_denominator)
+        common = A.gcd(B).gcd(D)
+        if not common.is_constant():
+            A //= common
+            B //= common
+            D //= common
+        return tuple(
+            [A[i] for i in range(numerator_degree+1)]
+            + [B[i] for i in range(y_numerator_degree+1)]
+            + [D[i] for i in range(denominator_degree+1)]
+        )
+
+    raise ValueError("map_type must be 'rational' or 'general'")
+
+
+def _normalize_projective_vector(vector, pivot_index=None):
+    """
+    Normalize a coefficient vector by one nonzero projective coordinate.
+    """
+    if pivot_index is None:
+        nonzero_indices = [
+            index
+            for index, coefficient in enumerate(vector)
+            if coefficient != 0
+        ]
+        if not nonzero_indices:
+            raise ValueError("the map coefficient vector is zero")
+        pivot_index = nonzero_indices[-1]
+    pivot_index = ZZ(pivot_index)
+    if not 0 <= pivot_index < len(vector):
+        raise ValueError("projective pivot index is out of range")
+    pivot = vector[pivot_index]
+    if pivot == 0:
+        raise ValueError("projective pivot vanishes")
+    return (
+        tuple(coefficient/pivot for coefficient in vector),
+        pivot_index,
+    )
+
+
+def _map_from_coefficient_vector(
+    coefficients,
+    degree_bounds,
+    polynomial_ring,
+    map_type,
+):
+    """
+    Rebuild a rational or quadratic-function X-coordinate from coefficients.
+    """
+    x = polynomial_ring.gen()
+    Kx = polynomial_ring.fraction_field()
+    if map_type == "rational":
+        numerator_degree, denominator_degree = (
+            ZZ(value) for value in degree_bounds
+        )
+        offset = numerator_degree+1
+        A = polynomial_ring(sum(
+            coefficients[i]*x^i
+            for i in range(numerator_degree+1)
+        ))
+        D = polynomial_ring(sum(
+            coefficients[offset+i]*x^i
+            for i in range(denominator_degree+1)
+        ))
+        if D == 0:
+            raise ValueError("reconstructed denominator is zero")
+        return Kx(A/D)
+
+    if map_type == "general":
+        numerator_degree, y_numerator_degree, denominator_degree = (
+            ZZ(value) for value in degree_bounds
+        )
+        b_offset = numerator_degree+1
+        d_offset = b_offset+y_numerator_degree+1
+        A = polynomial_ring(sum(
+            coefficients[i]*x^i
+            for i in range(numerator_degree+1)
+        ))
+        B = polynomial_ring(sum(
+            coefficients[b_offset+i]*x^i
+            for i in range(y_numerator_degree+1)
+        ))
+        D = polynomial_ring(sum(
+            coefficients[d_offset+i]*x^i
+            for i in range(denominator_degree+1)
+        ))
+        if D == 0:
+            raise ValueError("reconstructed denominator is zero")
+        return (Kx(A/D), Kx(B/D))
+
+    raise ValueError("map_type must be 'rational' or 'general'")
+
+
+def discover_coefficients_by_crt(
+    source_polynomial,
+    target_curve,
+    eigenform,
+    differential_scale,
+    cover_degree,
+    degree_bounds,
+    primes,
+    map_type="rational",
+    source_point=None,
+    infinity_branch=1,
+    target_center=None,
+    precision=None,
+    allow_partial=False,
+    initial_state=None,
+):
+    """
+    Recover all coefficients of an elliptic X-map by modular CRT lifting.
+
+    For ``map_type="rational"`` the reconstructed coordinate is ``A(x)/D(x)``.
+    For ``map_type="general"`` it is ``A(x)/D(x)+y*B(x)/D(x)``.  Each modular
+    candidate is accepted only after the complete finite-field map identity
+    and degree check performed by the existing recovery routines.
+
+    The padded coefficient vector is normalized projectively at one common
+    nonzero coordinate, combined entrywise by CRT, and rationally
+    reconstructed.  A characteristic-zero lift is returned only after the
+    complete elliptic identity and map degree certify over QQ.  Partial state
+    is resumable through ``initial_state``.
+    """
+    F = source_polynomial
+    E = target_curve
+    degree = ZZ(cover_degree)
+    polynomial_ring = F.parent()
+    if F.base_ring() is not QQ or E.base_ring() is not QQ:
+        raise NotImplementedError(
+            "CRT coefficient discovery currently requires rational input"
+        )
+    if map_type not in ("rational", "general"):
+        raise ValueError("map_type must be 'rational' or 'general'")
+    expected_bound_count = 2 if map_type == "rational" else 3
+    if len(degree_bounds) != expected_bound_count:
+        raise ValueError(
+            f"{map_type} coefficient lifting needs "
+            f"{expected_bound_count} degree bounds"
+        )
+    bounds = tuple(ZZ(value) for value in degree_bounds)
+    if min(bounds) < 0:
+        raise ValueError("degree bounds must be nonnegative")
+    coefficient_count = sum(bound+1 for bound in bounds)
+    if map_type == "general":
+        if source_point is not None:
+            raise NotImplementedError(
+                "general coefficient lifting currently expands at infinity"
+            )
+        if target_center is not None and not target_center.is_zero():
+            raise NotImplementedError(
+                "general coefficient lifting currently requires the "
+                "elliptic origin as target center"
+            )
+    if precision is None:
+        precision = max(32, 6*degree+20)
+    precision = ZZ(precision)
+
+    if initial_state is None:
+        modulus = ZZ(1)
+        coefficient_residues = [ZZ(0)]*coefficient_count
+        pivot_index = None
+        certificates = []
+        failures = []
+    else:
+        if initial_state.get("map_type") != map_type:
+            raise ValueError("initial state has a different map type")
+        if tuple(initial_state.get("degree_bounds", ())) != bounds:
+            raise ValueError("initial state has different degree bounds")
+        modulus = ZZ(initial_state["crt_modulus"])
+        coefficient_residues = [
+            ZZ(value) % modulus
+            for value in initial_state["coefficient_residues"]
+        ]
+        if len(coefficient_residues) != coefficient_count:
+            raise ValueError(
+                "initial state has the wrong coefficient-vector length"
+            )
+        pivot_index = ZZ(initial_state["pivot_index"])
+        certificates = list(initial_state.get("certificates", []))
+        failures = list(initial_state.get("failures", []))
+        if modulus <= 0:
+            raise ValueError("initial CRT modulus must be positive")
+
+    for prime in primes:
+        prime = ZZ(prime)
+        if not prime.is_prime():
+            raise ValueError(f"{prime} is not prime")
+        if prime <= precision:
+            raise ValueError(
+                f"prime {prime} must exceed precision {precision}"
+            )
+        if gcd(modulus, prime) != 1:
+            raise ValueError(
+                f"prime {prime} already divides the CRT modulus"
+            )
+        finite_field = GF(prime)
+        finite_ring = PolynomialRing(
+            finite_field,
+            names=(str(polynomial_ring.gen()),),
+        )
+        try:
+            finite_source = finite_ring(F)
+        except (ArithmeticError, TypeError, ValueError, ZeroDivisionError):
+            failures.append({
+                "prime": prime,
+                "reason": "source coefficients have bad reduction",
+            })
+            continue
+        if finite_source.discriminant() == 0:
+            failures.append({
+                "prime": prime,
+                "reason": "source has bad reduction",
+            })
+            continue
+        try:
+            finite_target = E.change_ring(finite_field)
+        except (ArithmeticError, TypeError, ValueError, ZeroDivisionError):
+            failures.append({
+                "prime": prime,
+                "reason": "target has bad reduction",
+            })
+            continue
+        if finite_target.discriminant() == 0:
+            failures.append({
+                "prime": prime,
+                "reason": "target has bad reduction",
+            })
+            continue
+        try:
+            finite_eigenform = _change_rational_function_ring(
+                polynomial_ring.fraction_field()(eigenform),
+                finite_ring,
+            )
+            finite_scale = finite_field(differential_scale)
+            if target_center is None or target_center.is_zero():
+                finite_center = finite_target(0)
+            else:
+                finite_center = finite_target(
+                    finite_field(target_center[0]),
+                    finite_field(target_center[1]),
+                )
+            if map_type == "rational":
+                finite_answer = recover_elliptic_cover(
+                    finite_source,
+                    finite_target,
+                    finite_eigenform,
+                    finite_scale,
+                    cover_degree=degree,
+                    degree_bounds=bounds,
+                    source_point=(
+                        None
+                        if source_point is None
+                        else (
+                            finite_field(source_point[0]),
+                            finite_field(source_point[1]),
+                        )
+                    ),
+                    infinity_branch=infinity_branch,
+                    target_center=finite_center,
+                    precision=precision,
+                )
+            else:
+                finite_answer = recover_general_elliptic_cover(
+                    finite_source,
+                    finite_target,
+                    finite_eigenform,
+                    finite_scale,
+                    degree,
+                    bounds,
+                    infinity_branch=infinity_branch,
+                    precision=precision,
+                )
+            raw_vector = _map_coefficient_vector(
+                finite_answer["x_coordinate"],
+                bounds,
+                finite_ring,
+                map_type,
+            )
+            normalized_vector, used_pivot = (
+                _normalize_projective_vector(
+                    raw_vector,
+                    pivot_index=pivot_index,
+                )
+            )
+        except (
+            ArithmeticError,
+            TypeError,
+            ValueError,
+            ZeroDivisionError,
+        ) as error:
+            failures.append({
+                "prime": prime,
+                "reason": str(error),
+            })
+            continue
+
+        if pivot_index is None:
+            pivot_index = used_pivot
+        coefficient_residues = [
+            CRT(
+                coefficient_residues[index],
+                ZZ(normalized_vector[index]),
+                modulus,
+                prime,
+            )
+            for index in range(coefficient_count)
+        ]
+        modulus *= prime
+        certificates.append({
+            "prime": prime,
+            "pivot_index": pivot_index,
+            "coefficient_residues": [
+                ZZ(value) for value in normalized_vector
+            ],
+        })
+
+        try:
+            rational_coefficients = [
+                QQ(residue.rational_reconstruction(modulus))
+                for residue in coefficient_residues
+            ]
+            candidate = _map_from_coefficient_vector(
+                rational_coefficients,
+                bounds,
+                polynomial_ring,
+                map_type,
+            )
+            if map_type == "rational":
+                residual = elliptic_cover_identity(
+                    F,
+                    E,
+                    eigenform,
+                    differential_scale,
+                    candidate,
+                )
+                actual_degree = rational_function_degree(candidate)
+                if residual != 0 or actual_degree != degree:
+                    continue
+                y_multiplier, y_offset = elliptic_cover_y_data(
+                    E,
+                    eigenform,
+                    differential_scale,
+                    candidate,
+                )
+                map_answer = {
+                    "verified": True,
+                    "x_coordinate": candidate,
+                    "y_multiplier": y_multiplier,
+                    "y_offset": y_offset,
+                    "identity_residual": residual,
+                    "degree": actual_degree,
+                    "degree_bounds": bounds,
+                    "target_center": (
+                        E(0) if target_center is None else target_center
+                    ),
+                    "differential_scale": QQ(differential_scale),
+                }
+            else:
+                residual = general_elliptic_cover_identity(
+                    F,
+                    E,
+                    eigenform,
+                    differential_scale,
+                    candidate,
+                )
+                actual_degree = general_x_coordinate_degree(F, candidate)
+                if (
+                    not _quadratic_function_is_zero(residual)
+                    or actual_degree != 2*degree
+                ):
+                    continue
+                map_answer = {
+                    "verified": True,
+                    "x_coordinate": candidate,
+                    "y_coordinate": general_elliptic_cover_y_coordinate(
+                        F,
+                        E,
+                        eigenform,
+                        differential_scale,
+                        candidate,
+                    ),
+                    "identity_residual": residual,
+                    "x_coordinate_degree": actual_degree,
+                    "cover_degree": degree,
+                    "degree_bounds": bounds,
+                    "target_center": E(0),
+                    "differential_scale": QQ(differential_scale),
+                }
+        except (
+            ArithmeticError,
+            TypeError,
+            ValueError,
+            ZeroDivisionError,
+        ):
+            continue
+
+        return {
+            "verified": True,
+            "map": map_answer,
+            "map_type": map_type,
+            "degree_bounds": bounds,
+            "pivot_index": pivot_index,
+            "coefficients": rational_coefficients,
+            "crt_modulus": modulus,
+            "coefficient_residues": coefficient_residues,
+            "certificates": certificates,
+            "failures": failures,
+        }
+
+    partial = {
+        "verified": False,
+        "map": None,
+        "map_type": map_type,
+        "degree_bounds": bounds,
+        "pivot_index": pivot_index,
+        "coefficients": None,
+        "crt_modulus": modulus,
+        "coefficient_residues": coefficient_residues,
+        "certificates": certificates,
+        "failures": failures,
+    }
+    if allow_partial:
+        return partial
+    raise ValueError(
+        "no rational map coefficient vector reconstructed from supplied "
+        f"primes; CRT modulus={modulus}"
+    )
+
+
 def recover_elliptic_cover(
     source_polynomial,
     target_curve,
