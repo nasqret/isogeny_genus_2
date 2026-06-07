@@ -30,9 +30,12 @@ is complete only after both maps and this splitting are certified exactly.
   full quadratic-function recovery for the complement, CRT scale lifting,
   independent Magma degrees, source automorphism group of order `2`, and
   full `S8` monodromy over the elliptic base.
+- Degree 9: one rational Kumar specialization with both primitive maps,
+  modular reconstruction of finite target centers, independent Magma
+  degrees, and full `S9` monodromy over the elliptic base.
 - General recovery: a degree-independent SageMath library reconstructs and
   exactly certifies maps from local formal data. Regression cases cover
-  degrees 3, 5, and 7, finite and infinite source centers, finite target
+  degrees 3, 5, 7, and 9, finite and infinite source centers, finite target
   centers, quintic and sextic models, and a quadratic number field.
 - Automatic local-data discovery: the differential scale is solved exactly
   as an algebraic condition, and rational target centers are found in a
@@ -112,6 +115,14 @@ hence `c=2`. Its recovered `X=a+y*b` coordinate has function degree `16`,
 and exact elimination proves that the map to the elliptic target has degree
 `8`.
 
+The degree-9 benchmark adds finite-center reconstruction. For a known
+eigenform and scale, `discover_center_by_crt` enumerates target points over
+each good finite field, retains only centers passing the complete modular map
+identity, combines affine coordinates by CRT, and tests every rational
+reconstruction against the characteristic-zero target and map identity.
+Partial CRT state is resumable. The two degree-9 centers were certified with
+128-bit and 184-bit moduli.
+
 ### Family interpolation
 
 Solve many specializations, normalize coordinate choices, interpolate
@@ -142,9 +153,11 @@ curve, and recover the two maps.
    scales, and both maps.
 4. Degree 8: both primitive maps and full `S8` monodromy are certified for a
    rational `Y_-(64)` specialization.
-5. Degrees 9-11: imported; next locate rational surface points and recover
+5. Degree 9: both primitive maps, modular target centers, and full `S9`
+   monodromy are certified for a rational `Y_-(81)` specialization.
+6. Degrees 10-11: imported; next locate rational surface points and recover
    one fully certified rational specialization per degree.
-6. Degrees above 11: generate primitive examples by anti-isometry synthesis
+7. Degrees above 11: generate primitive examples by anti-isometry synthesis
    and recover maps with the finite-field/CRT backend.
 
 ## Evidence levels

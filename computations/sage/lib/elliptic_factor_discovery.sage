@@ -117,9 +117,44 @@ def discover_target_twists_from_j(
     for j_value in j_invariants:
         j_value = QQ(j_value)
         base_curve = EllipticCurve_from_j(j_value)
+        base_trace_data = []
+        for certificate in frobenius_data:
+            prime = certificate["prime"]
+            if base_curve.discriminant() % prime == 0:
+                base_trace_data.append(None)
+                continue
+            base_trace_data.append(
+                ZZ(
+                    prime + 1
+                    - base_curve.change_ring(GF(prime)).cardinality()
+                )
+            )
         compatible = []
         seen_models = set()
         for twist_class in twist_classes:
+            predicted_traces = []
+            is_compatible = True
+            for certificate, base_trace in zip(
+                frobenius_data,
+                base_trace_data,
+            ):
+                prime = certificate["prime"]
+                if (
+                    twist_class % prime == 0
+                    or base_trace is None
+                ):
+                    is_compatible = False
+                    break
+                predicted_trace = (
+                    kronecker_symbol(twist_class, prime)*base_trace
+                )
+                if predicted_trace not in certificate["traces"]:
+                    is_compatible = False
+                    break
+                predicted_traces.append(ZZ(predicted_trace))
+            if not is_compatible:
+                continue
+
             curve = (
                 base_curve
                 .quadratic_twist(twist_class)
@@ -131,8 +166,10 @@ def discover_target_twists_from_j(
             seen_models.add(model_key)
 
             trace_certificates = []
-            is_compatible = True
-            for certificate in frobenius_data:
+            for certificate, predicted_trace in zip(
+                frobenius_data,
+                predicted_traces,
+            ):
                 prime = certificate["prime"]
                 if curve.discriminant() % prime == 0:
                     is_compatible = False
@@ -144,6 +181,10 @@ def discover_target_twists_from_j(
                 if trace not in certificate["traces"]:
                     is_compatible = False
                     break
+                if trace != predicted_trace:
+                    raise AssertionError(
+                        "quadratic-twist trace prediction failed"
+                    )
                 trace_certificates.append(
                     {
                         "prime": prime,

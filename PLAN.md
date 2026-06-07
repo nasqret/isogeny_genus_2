@@ -119,7 +119,8 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
 | 6 | Both primitive maps and nonexceptional \(S_6\) monodromy certified |
 | 7 | Recover both maps for the certified Kumar benchmark |
 | 8 | Both primitive maps and full \(S_8\) monodromy certified |
-| 9-11 | Imported; certify one rational map pair per degree |
+| 9 | Both primitive maps, CRT centers, and full \(S_9\) monodromy certified |
+| 10-11 | Imported; certify one rational map pair per degree |
 | \(>11\) | Generate primitive examples from anti-isometries and recover maps by CRT |
 
 ### Implemented checkpoint
@@ -135,6 +136,10 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
   SageMath, with independent Magma degrees, source automorphism-group order
   `2`, and full `S8` monodromy over the elliptic base. Its complementary map
   again uses `Q(x,y)`, and CRT reconstructs scale `2`.
+- One rational degree-9 benchmark at `(r,s,z)=(3,-7,-29280)` with both
+  primitive maps: exact in SageMath, with independent Magma degrees and full
+  `S9` monodromy over the elliptic base. Modular center searches reconstruct
+  the two finite infinity images from 128-bit and 184-bit CRT moduli.
 - Degree-20 and degree-80 maps by elliptic multiplication: exact,
   nonprimitive.
 - Kumar's Hilbert modular surfaces, Igusa-Clebsch invariants, symmetric
@@ -142,8 +147,8 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
   every degree 6 through 11. One nonsingular genus-2 specialization is
   certified in each degree.
 
-Current bounded tasks: generalize the CRT backend from scale lifting to
-coefficient lifting, recover rational map pairs in degrees 9 through 11,
+Current bounded tasks: generalize the CRT backend from center lifting to
+coefficient lifting, recover rational map pairs in degrees 10 and 11,
 certify the explicit degree-6 and degree-8 splitting kernels, and
 implement the full Galois-closure quotient rather than only its monodromy
 certificate.

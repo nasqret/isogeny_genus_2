@@ -325,6 +325,80 @@ elliptic quadratic extension does not absorb the unique quadratic subfield
 of the $S_8$ closure. The degree-$8$ elliptic cover retains full $S_8$
 monodromy.
 
+## Degree 9: primitive maps with CRT-reconstructed centers
+
+The rational point
+
+$$
+(r,s,z)=(3,-7,-29280)
+$$
+
+on Kumar's $Y_-(81)$ gives the normalized source
+
+$$
+\begin{aligned}
+C:\quad y^2={}&x^6-9038618392x^4-64880615814700x^3\\
+&+23434251437448181208x^2
+&+276514602725620514127600x\\
+&-12176183106883876734347363424.
+\end{aligned}
+$$
+
+Frobenius filtering among $512$ signed twist classes selects
+
+$$
+\begin{aligned}
+E_1:\quad Y^2+Y={}&X^3-X^2-1604677999942163X\\
+&-205661103401997979787347,\\
+E_2:\quad Y^2+Y={}&X^3-X^2-6547160054952023739513X\\
+&+203904847526895684592439318144228.
+\end{aligned}
+$$
+
+Their pullback eigenforms and scales are
+
+$$
+(231434+9x)\frac{dx}{y},\quad c_1=1,
+\qquad
+\frac{dx}{y},\quad c_2=-24806.
+$$
+
+Exact finite-field map searches and CRT reconstruct the two finite images of
+infinity:
+
+$$
+P_1=\left(
+\frac{1162836225963}{5041},
+-\frac{1224177442475117122}{357911}
+\right)
+$$
+
+from a $128$-bit modulus and
+
+$$
+P_2=\left(
+\frac{14623882010512642188}{314743081},
+-\frac{528607451220336034930422397}{5583857000021}
+\right)
+$$
+
+from a $184$-bit modulus. The exact degree-$(9,9)$ rational functions
+$X_1(x)$ and $X_2(x)$ are stored in `sage_degree9_recovery.json`.
+SageMath certifies both target identities, and remote Magma independently
+returns degree $9$ for each morphism.
+
+Neither target has a rational $3$-isogeny, so both degree-$9$ maps are
+primitive over $\mathbf Q$. For the first quotient, modular cycle types
+$(1,3,5)$ and $(2,7)$ force the generic group to be $S_9$. Its discriminant
+square class is
+
+$$
+359687\left(1842229401671T+98280453222687553920\right),
+$$
+
+which is coprime to the elliptic branch cubic. Hence the elliptic cover
+retains full $S_9$ monodromy.
+
 ## Degrees 20 and 80: exact nonprimitive maps
 
 Starting from the degree-5 map above, the script

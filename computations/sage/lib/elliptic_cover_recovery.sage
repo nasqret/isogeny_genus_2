@@ -1351,6 +1351,251 @@ def discover_elliptic_cover(
     }
 
 
+def discover_center_by_crt(
+    source_polynomial,
+    target_curve,
+    eigenform,
+    differential_scale,
+    cover_degree,
+    degree_bounds,
+    primes,
+    infinity_branch=1,
+    precision=None,
+    allow_partial=False,
+    initial_state=None,
+):
+    """
+    Recover a rational finite target center from modular map searches.
+
+    The differential scale is assumed known.  At each good prime, every
+    target point is tested until the exact finite-field map identity succeeds.
+    The affine center coordinates are combined by CRT and rational
+    reconstruction.  A lift is accepted only when it lies on the rational
+    target and the full characteristic-zero map recovery succeeds.
+
+    When ``allow_partial`` is true, return the accumulated CRT state and
+    per-prime failures instead of raising if the supplied primes do not yet
+    determine a certified rational center.  A partial result from an earlier
+    call may be supplied as ``initial_state`` to resume the reconstruction
+    without repeating its modular searches.
+    """
+    F = source_polynomial
+    E = target_curve
+    degree = ZZ(cover_degree)
+    base_field = F.base_ring()
+    if base_field is not QQ or E.base_ring() is not QQ:
+        raise NotImplementedError(
+            "CRT center discovery currently requires rational input"
+        )
+    normalized_bounds = _normalize_degree_bounds(degree_bounds)
+    if normalized_bounds is None or len(normalized_bounds) != 1:
+        raise ValueError("supply one explicit degree-bound pair")
+    bounds = normalized_bounds[0]
+    if precision is None:
+        precision = max(32, 6*degree+20)
+    precision = ZZ(precision)
+
+    if initial_state is None:
+        x_residue = ZZ(0)
+        y_residue = ZZ(0)
+        modulus = ZZ(1)
+        certificates = []
+        failures = []
+    else:
+        modulus = ZZ(initial_state["crt_modulus"])
+        residues = initial_state["center_residues"]
+        x_residue = ZZ(residues["x"]) % modulus
+        y_residue = ZZ(residues["y"]) % modulus
+        certificates = list(initial_state.get("certificates", []))
+        failures = list(initial_state.get("failures", []))
+        if modulus <= 0:
+            raise ValueError("initial CRT modulus must be positive")
+
+    for prime in primes:
+        prime = ZZ(prime)
+        if not prime.is_prime():
+            raise ValueError(f"{prime} is not prime")
+        if prime <= precision:
+            raise ValueError(
+                f"prime {prime} must exceed precision {precision}"
+            )
+        if gcd(modulus, prime) != 1:
+            raise ValueError(
+                f"prime {prime} already divides the CRT modulus"
+            )
+        finite_field = GF(prime)
+        finite_ring = PolynomialRing(
+            finite_field,
+            names=(str(F.parent().gen()),),
+        )
+        finite_source = finite_ring(F)
+        if finite_source.discriminant() == 0:
+            failures.append({
+                "prime": prime,
+                "reason": "source has bad reduction",
+            })
+            continue
+        try:
+            finite_target = E.change_ring(finite_field)
+        except (ArithmeticError, ValueError, ZeroDivisionError):
+            failures.append({
+                "prime": prime,
+                "reason": "target has bad reduction",
+            })
+            continue
+        if finite_target.discriminant() == 0:
+            failures.append({
+                "prime": prime,
+                "reason": "target has bad reduction",
+            })
+            continue
+
+        finite_eigenform = _change_rational_function_ring(
+            F.parent().fraction_field()(eigenform),
+            finite_ring,
+        )
+        finite_scale = finite_field(differential_scale)
+        matches = []
+        for point_index, center in enumerate(finite_target):
+            try:
+                answer = recover_elliptic_cover(
+                    finite_source,
+                    finite_target,
+                    finite_eigenform,
+                    finite_scale,
+                    cover_degree=degree,
+                    degree_bounds=bounds,
+                    infinity_branch=infinity_branch,
+                    target_center=center,
+                    precision=precision,
+                )
+            except (ArithmeticError, ValueError, ZeroDivisionError):
+                continue
+            matches.append((center, answer, point_index+1))
+
+        if len(matches) != 1:
+            failures.append({
+                "prime": prime,
+                "reason": (
+                    "expected one modular center, found "
+                    f"{len(matches)}"
+                ),
+            })
+            continue
+
+        center, finite_answer, point_attempt_count = matches[0]
+        if center.is_zero():
+            try:
+                answer = recover_elliptic_cover(
+                    F,
+                    E,
+                    eigenform,
+                    differential_scale,
+                    cover_degree=degree,
+                    degree_bounds=bounds,
+                    infinity_branch=infinity_branch,
+                    target_center=E(0),
+                )
+            except (ArithmeticError, ValueError, ZeroDivisionError):
+                failures.append({
+                    "prime": prime,
+                    "reason": (
+                        "modular center is the origin but the rational "
+                        "origin failed certification"
+                    ),
+                })
+                continue
+            return {
+                "verified": True,
+                "map": answer,
+                "target_center": E(0),
+                "differential_scale": QQ(differential_scale),
+                "crt_modulus": ZZ(1),
+                "center_residues": None,
+                "certificates": [],
+                "failures": failures,
+            }
+        center_x = center[0]
+        center_y = center[1]
+        x_residue = CRT(
+            x_residue,
+            ZZ(center_x),
+            modulus,
+            prime,
+        )
+        y_residue = CRT(
+            y_residue,
+            ZZ(center_y),
+            modulus,
+            prime,
+        )
+        modulus *= prime
+        certificate = {
+            "prime": prime,
+            "center_x": ZZ(center_x),
+            "center_y": ZZ(center_y),
+            "point_attempt_count": ZZ(point_attempt_count),
+            "x_coordinate": finite_answer["x_coordinate"],
+        }
+        certificates.append(certificate)
+
+        try:
+            rational_x = x_residue.rational_reconstruction(modulus)
+            rational_y = y_residue.rational_reconstruction(modulus)
+        except ArithmeticError:
+            continue
+        try:
+            rational_center = E(rational_x, rational_y)
+        except (ArithmeticError, TypeError, ValueError):
+            continue
+        try:
+            answer = recover_elliptic_cover(
+                F,
+                E,
+                eigenform,
+                differential_scale,
+                cover_degree=degree,
+                degree_bounds=bounds,
+                infinity_branch=infinity_branch,
+                target_center=rational_center,
+            )
+        except (ArithmeticError, ValueError, ZeroDivisionError):
+            continue
+        return {
+            "verified": True,
+            "map": answer,
+            "target_center": rational_center,
+            "differential_scale": QQ(differential_scale),
+            "crt_modulus": modulus,
+            "center_residues": {
+                "x": x_residue,
+                "y": y_residue,
+            },
+            "certificates": certificates,
+            "failures": failures,
+        }
+
+    partial = {
+        "verified": False,
+        "map": None,
+        "target_center": None,
+        "differential_scale": QQ(differential_scale),
+        "crt_modulus": modulus,
+        "center_residues": {
+            "x": x_residue,
+            "y": y_residue,
+        },
+        "certificates": certificates,
+        "failures": failures,
+    }
+    if allow_partial:
+        return partial
+    raise ValueError(
+        "no rational target center reconstructed from supplied primes; "
+        f"CRT modulus={modulus}"
+    )
+
+
 def recover_elliptic_cover(
     source_polynomial,
     target_curve,

@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-06-07T05:19:57+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "lts-faculty.wmi.amu.edu.pl",
+  "elapsed_seconds": 0.05,
+  "maximum_memory_mb": 32.09,
+  "workstreams": [
+    "B011",
+    "B016"
+  ],
+  "verified": true,
+  "specialized_fiber": {
+    "target_x": 0,
+    "irreducible": true,
+    "cycle_types": [
+      [
+        1,
+        3,
+        5
+      ],
+      [
+        2,
+        7
+      ]
+    ],
+    "group": "S9",
+    "order": 362880,
+    "group_method": "Irreducibility gives transitivity; cycle type (1,3,5) yields a 5-cycle and primitivity, Jordan gives A9, and cycle type (2,7) yields a transposition."
+  },
+  "generic_rational_map_group": "S9",
+  "elliptic_base_group": "S9",
+  "discriminant_square_class": "359687*(1842229401671*T+98280453222687553920)",
+  "base_change_disjointness": "The linear discriminant class and cubic elliptic branch polynomial are squarefree and coprime.",
+  "artifact": "computations/magma/verify_degree9_monodromy.m",
+  "transcript": "results/remote/magma_degree9_monodromy.log",
+  "success_marker": "B011_B016_DEGREE9_MONODROMY_VERIFIED"
+}

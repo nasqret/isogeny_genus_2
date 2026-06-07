@@ -36,7 +36,8 @@ Local exact computations live under `computations/sage/`.
 - [`elliptic_cover_recovery.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/lib/elliptic_cover_recovery.sage):
   degree-independent formal integration, target translation, rational
   and full quadratic-function reconstruction, symbolic and CRT scale solving,
-  bounded Mordell-Weil center search, and exact map certification.
+  bounded Mordell-Weil and resumable CRT center search, and exact map
+  certification.
 - [`elliptic_factor_discovery.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/lib/elliptic_factor_discovery.sage):
   Frobenius-compatible target-twist discovery and bounded eigenform-line
   search from candidate Hilbert-modular `j`-invariants.
@@ -62,6 +63,10 @@ Local exact computations live under `computations/sage/`.
   rational `Y_-(64)` specialization, target-twist and Hasse-Witt eigenform
   discovery, compact and full-function-field map recovery, CRT scale
   reconstruction, exact degrees, and primitivity inputs.
+- [`recover_degree9_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/recover_degree9_maps.sage):
+  rational `Y_-(81)` specialization, twist and eigenform discovery,
+  resumable finite-target-center reconstruction by CRT, both exact
+  degree-9 maps, and primitivity.
 - [`verify_degree7_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/verify_degree7_maps.sage):
   exact target identities, differential pullbacks, pole divisors, infinity
   image, and primitivity for both Kumar maps.
@@ -102,6 +107,12 @@ V2.28-3 on `lts-faculty.wmi.amu.edu.pl`.
 - [`verify_degree8_monodromy.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree8_monodromy.m):
   exact `S8` generic-fiber Galois group, discriminant square class, and
   elliptic-base disjointness certificate.
+- [`verify_degree9_maps.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree9_maps.m):
+  independent construction of both degree-9 morphisms and exact degree
+  computations.
+- [`verify_degree9_monodromy.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree9_monodromy.m):
+  deterministic `S9` certificate from modular cycle types, exact generic
+  discriminant square class, and elliptic-base disjointness.
 
 ## Evidence
 
@@ -131,5 +142,8 @@ never sufficient by itself to mark a claim verified.
 - [`sage_degree8_recovery.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_degree8_recovery.json)
 - [`magma_degree8_maps.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree8_maps.json)
 - [`magma_degree8_monodromy.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree8_monodromy.json)
+- [`sage_degree9_recovery.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_degree9_recovery.json)
+- [`magma_degree9_maps.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree9_maps.json)
+- [`magma_degree9_monodromy.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree9_monodromy.json)
 - [`sage_kumar_family_importer.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_kumar_family_importer.json)
 - [`sage_kumar_tautological_curves.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_kumar_tautological_curves.json)

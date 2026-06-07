@@ -152,6 +152,23 @@ This project reconstructs every computational claim in
 - The compact degree-8 quotient has exact `S8` monodromy over the elliptic
   base. Its discriminant square class is
   `-5*(T^3-T^2-5833*T+207037)`.
+- B016 is complete at `(r,s,z)=(3,-7,-29280)` on `Y_-(81)`. The normalized
+  source has targets with
+  `j=-121929728/4804839` and
+  `j=598116032039544946688/43441281`.
+- Frobenius filtering selects twists `-359687` and `-21940907`; the
+  eigenforms are `(231434+9*x) dx/y` and `dx/y`, with scales `1` and
+  `-24806`.
+- `discover_center_by_crt` searches exact finite-field target points,
+  combines unique centers by CRT, supports resumable partial state, and
+  accepts a lift only after characteristic-zero map certification. The two
+  degree-9 centers required 128-bit and 184-bit moduli.
+- Remote Magma independently returns degree `9` for both maps. Neither target
+  has a rational `3`-isogeny, so both maps are primitive over `Q`.
+- The first degree-9 quotient has `S9` monodromy. Exact factorization patterns
+  `(1,3,5)` and `(2,7)` force `S9`; its discriminant square class is
+  `359687*(1842229401671*T+98280453222687553920)`, coprime to the cubic
+  elliptic branch class, so base change preserves `S9`.
 - Current active frontier: coefficient-level CRT lifting, the full
-  Galois-closure quotient, B002 generic degree 5, and rational degree-9
-  through degree-11 map benchmarks.
+  Galois-closure quotient, B002 generic degree 5, and rational degree-10
+  and degree-11 map benchmarks.

@@ -102,7 +102,7 @@ X=\frac{A}{B},\qquad
 Y=y\frac{X'}{2ch}-\frac{a_1X+a_3}{2}.
 $$
 
-Regression certificates cover degrees $3$, $5$, and $7$, a finite source
+Regression certificates cover degrees $3$, $5$, $7$, and $9$, a finite source
 point, finite and identity target centers, quintic and sextic source models,
 and a quadratic number field. Thus the implementation is no longer tied to
 the Kumar specialization.
@@ -247,7 +247,14 @@ certified exactly.
 
 For the degree-$8$ complement, primes $61$ and $67$ both leave the roots
 $c=\pm2$. Their CRT reconstruction gives $c^2=4$, and the characteristic-zero
-recovery then verifies the degree-$8$ map exactly. Coefficient-level modular
+recovery then verifies the degree-$8$ map exactly.
+
+The degree-$9$ benchmark adds resumable target-center lifting. For each good
+prime, the implementation enumerates the finite elliptic target, retains only
+centers for which the complete modular map identity holds, combines the
+affine coordinates by CRT, and tests rational reconstructions against both
+the rational target and the full characteristic-zero map. The two finite
+centers required moduli of $128$ and $184$ bits. Coefficient-level modular
 lifting remains the next backend extension.
 
 ## Engine E: Galois closure
@@ -283,6 +290,19 @@ $$
 The elliptic base adjoins the square root of the cubic without the factor
 $-5$, so the base change preserves $S_8$.
 
+For the first degree-$9$ quotient, an irreducible rational fiber has modular
+factorization patterns $(1,3,5)$ and $(2,7)$. Powers of the corresponding
+Frobenius elements give a $5$-cycle and a transposition. The $5$-cycle rules
+out the only possible block size, Jordan's theorem supplies $A_9$, and the
+transposition gives $S_9$. The generic fiber discriminant has square class
+
+$$
+359687\left(1842229401671T+98280453222687553920\right).
+$$
+
+This linear polynomial is squarefree and coprime to the elliptic branch
+cubic, so the quadratic elliptic base change preserves $S_9$.
+
 ## Engine F: Frey-Kani synthesis
 
 Instead of starting from a curve, start from elliptic curves $E,E'$ and an
@@ -305,7 +325,7 @@ new primitive examples beyond the currently tabulated moduli families.
 | 6 | Both primitive maps and nonexceptional $S_6$ monodromy complete |
 | 7 | Completed benchmark; automate finite target-point discovery |
 | 8 | Both primitive maps and full $S_8$ monodromy complete |
-| 9 | Compare primitive degree 9 with compositions of degree 3 |
+| 9 | Both primitive maps, CRT centers, and full $S_9$ monodromy complete |
 | 10 | Separate primitive degree 10 from degree $5$ followed by a 2-isogeny |
 | 11 | Imported; recover maps on Kumar's $Y_-(121)$ model |
 | $>11$ | Generate examples by anti-isometries and use modular/CRT reconstruction |

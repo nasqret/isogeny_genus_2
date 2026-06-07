@@ -1,0 +1,16 @@
+Magma V2.28-3     Sun Jun  7 2026 05:19:57 on lts-faculty [Seed = 1241833022]
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "computations/magma/verify_degree9_monodromy.m"
+B011_B016_DEGREE9_MONODROMY_VERIFIED
+specialized_cycle_types [
+    [ 1, 3, 5 ],
+    [ 2, 7 ]
+]
+specialized_fiber_group S9
+specialized_fiber_order 362880
+generic_rational_map_group S9
+elliptic_base_group S9
+discriminant_square_class 359687*(1842229401671*T+98280453222687553920)
+
+Total time: 0.050 seconds, Total memory usage: 32.09MB

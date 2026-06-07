@@ -359,3 +359,33 @@
   `-5*(T^3-T^2-5833*T+207037)`, distinct from the elliptic-base square class,
   so the cover remains `S8` after base change.
 - B015 is complete. B004, B011, and B012 now include degree-8 evidence.
+
+### Primitive degree-9 maps, modular centers, and maximal monodromy
+
+- Located the rational point `(r,s,z)=(3,-7,-29280)` on `Y_-(81)` and
+  normalized the tautological source to
+  `y^2=x^6-9038618392*x^4-64880615814700*x^3
+  +23434251437448181208*x^2+276514602725620514127600*x
+  -12176183106883876734347363424`.
+- Frobenius filtering over 512 discriminant-supported twist classes uniquely
+  selected twists `-359687` and `-21940907`.
+- Hasse-Witt eigenvectors identified `(231434+9*x) dx/y` and `dx/y`.
+  Modular map searches reconstructed differential scales `1` and `-24806`.
+- Added `discover_center_by_crt`, including resumable partial CRT state.
+  Exact finite-field center searches lifted the two images of infinity from
+  128-bit and 184-bit moduli:
+  `(1162836225963/5041,-1224177442475117122/357911)` and
+  `(14623882010512642188/314743081,
+  -528607451220336034930422397/5583857000021)`.
+- `recover_degree9_maps.sage` rebuilt both centers from modular certificates,
+  recovered both rational `X(x)` maps, verified the completed-square target
+  identities, and returned degree `9`.
+- Remote Magma independently constructed both morphisms and returned degree
+  `9`. Neither target has a rational `3`-isogeny, proving primitivity.
+- For the first quotient, factorization patterns `(1,3,5)` and `(2,7)` in
+  the irreducible `X=0` fiber force `S9`. The generic discriminant square
+  class is
+  `359687*(1842229401671*T+98280453222687553920)`, which is squarefree and
+  coprime to the cubic elliptic branch polynomial. The elliptic cover
+  therefore retains `S9`.
+- B016 is complete. B004, B010, B011, and B012 now include degree-9 evidence.

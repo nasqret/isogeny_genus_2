@@ -268,5 +268,20 @@
     "timestamp": "2026-06-07T04:27:37+02:00",
     "claim_id": "B015",
     "summary": "Remote Magma independently constructed both degree-8 morphisms, returned degree 8 for each, and proved that the source automorphism group has order 2."
+  },
+  {
+    "timestamp": "2026-06-07T05:11:33+02:00",
+    "claim_id": "B004-B010-B012-B016",
+    "summary": "Remote Magma independently constructed both degree-9 morphisms and returned degree 9 for each."
+  },
+  {
+    "timestamp": "2026-06-07T05:11:56+02:00",
+    "claim_id": "B004-B010-B012-B016",
+    "summary": "Recovered both primitive degree-9 maps at (r,s,z)=(3,-7,-29280); exact modular target-center searches lifted the finite infinity images with 128-bit and 184-bit CRT moduli."
+  },
+  {
+    "timestamp": "2026-06-07T05:19:57+02:00",
+    "claim_id": "B011-B016",
+    "summary": "Deterministic modular cycle types force S9 monodromy for the first degree-9 quotient; its linear discriminant square class is coprime to the elliptic branch cubic, so base change preserves S9."
   }
 ]
