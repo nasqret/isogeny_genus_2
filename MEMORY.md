@@ -268,3 +268,14 @@ This project reconstructs every computational claim in
   `y^2=9500*x^6+7591*x^5+6679*x^4+7190*x^3+1439*x^2+4884*x+3417`.
 - B020 is at `75%`; the map-recovery run uses 46 samples over
   `F_(11743^24)`.
+- B020 is complete. Degree-19 map recovery took `586.712` seconds and
+  produced Rosenhain X-degree pairs `(19,18)`.
+- Both descended X-degree pairs are `(19,19)`, with normalized differential
+  directions `[1,8272]` and `[1,5957]`. The second map needs a nontrivial
+  target 2-torsion correction.
+- Remote Magma independently returns degrees `19,19` in `0.152` seconds.
+- B021 starts over `F_21943` with traces `255,-274`, CM squareclasses
+  `-43,-6`, identity graph matrix, and `529` graph points.
+- Its fixed degree-23 quotient is
+  `y^2=7036*x^6+9761*x^5+17544*x^4+6384*x^3+20690*x^2+11330*x+14637`.
+- B021 is at `75%`; recovery uses 54 samples over `F_(21943^24)`.

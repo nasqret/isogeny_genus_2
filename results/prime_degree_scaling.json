@@ -1,0 +1,113 @@
+{
+  "generated_at": "2026-06-07T21:19:38+02:00",
+  "verified": true,
+  "degrees": [
+    {
+      "degree": 13,
+      "field": "GF(8009)",
+      "theta_extension_degree": 12,
+      "map_extension_degree": 24,
+      "sample_count": 34,
+      "sample_formula": 34,
+      "theta_runtime_seconds": 4.248754,
+      "map_recovery_runtime_seconds": 251.78610491752625,
+      "descent_runtime_seconds": 3.485306739807129,
+      "magma_map_runtime_seconds": 0.16,
+      "rosenhain_x_degree_pairs": [
+        [
+          13,
+          12
+        ],
+        [
+          13,
+          12
+        ]
+      ],
+      "base_field_x_degree_pairs": [
+        [
+          13,
+          13
+        ],
+        [
+          13,
+          13
+        ]
+      ],
+      "nontrivial_two_torsion_corrections": 0
+    },
+    {
+      "degree": 17,
+      "field": "GF(8263)",
+      "theta_extension_degree": 12,
+      "map_extension_degree": 24,
+      "sample_count": 42,
+      "sample_formula": 42,
+      "theta_runtime_seconds": 6.14967,
+      "map_recovery_runtime_seconds": 384.8117027282715,
+      "descent_runtime_seconds": 6.4867799282073975,
+      "magma_map_runtime_seconds": 0.2,
+      "rosenhain_x_degree_pairs": [
+        [
+          17,
+          16
+        ],
+        [
+          17,
+          16
+        ]
+      ],
+      "base_field_x_degree_pairs": [
+        [
+          17,
+          17
+        ],
+        [
+          17,
+          17
+        ]
+      ],
+      "nontrivial_two_torsion_corrections": 1
+    },
+    {
+      "degree": 19,
+      "field": "GF(11743)",
+      "theta_extension_degree": 12,
+      "map_extension_degree": 24,
+      "sample_count": 46,
+      "sample_formula": 46,
+      "theta_runtime_seconds": 7.689762,
+      "map_recovery_runtime_seconds": 586.7119431495667,
+      "descent_runtime_seconds": 6.098658084869385,
+      "magma_map_runtime_seconds": 0.152,
+      "rosenhain_x_degree_pairs": [
+        [
+          19,
+          18
+        ],
+        [
+          19,
+          18
+        ]
+      ],
+      "base_field_x_degree_pairs": [
+        [
+          19,
+          19
+        ],
+        [
+          19,
+          19
+        ]
+      ],
+      "nontrivial_two_torsion_corrections": 1
+    }
+  ],
+  "observed_patterns": {
+    "sample_count": "2*n+8",
+    "theta_extension_degree": 12,
+    "map_extension_degree": 24,
+    "rosenhain_x_degree_pair": "(n,n-1)",
+    "base_field_x_degree_pair": "(n,n)",
+    "map_recovery_is_dominant_cost": true
+  }
+}

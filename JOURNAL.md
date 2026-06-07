@@ -685,3 +685,32 @@
   `y^2=9500*x^6+7591*x^5+6679*x^4+7190*x^3+1439*x^2+4884*x+3417`.
 - SageMath independently certifies its moduli and Frobenius polynomial.
   B020 is at `75%`; both maps are now being recovered from 46 samples.
+
+### Degree-19 maps and completion
+
+- Forty-six exact dual-theta evaluations over `F_(11743^24)` recover both
+  degree-19 maps. Their Rosenhain X-degree pairs are `(19,18)`, and the
+  runtime is `586.712` seconds.
+- The general descent engine finds two valid target translations for the
+  first map and selects the identity. The second map has one descending
+  candidate, a nontrivial 2-torsion translation.
+- Both fixed-field X-degree pairs are `(19,19)`. The normalized Hasse-Witt
+  directions are `[1,8272]` and `[1,5957]`.
+- Remote Magma independently verifies both morphisms and returns degrees
+  `19,19` in `0.152` seconds.
+- B020 is complete. Degrees 13, 17, and 19 now have end-to-end synthesis
+  certificates.
+
+### Degree-23 frontier
+
+- The first admissible field is `F_21943`, with traces `255,-274`.
+- The deterministic curves have coefficients `(18008,21189)` and
+  `(6198,5070)`, groups `(23,943)` and `(23,966)`, and CM squareclasses
+  `-43,-6`.
+- The graph matrix is the identity, its size is `529`, and the quotient Weil
+  polynomial is
+  `T^4+19*T^3-25984*T^2+416917*T+481495249`.
+- The theta quotient has base-field Igusa-Clebsch invariants
+  `(6652,7299,13559,5703)` and fixed curve
+  `y^2=7036*x^6+9761*x^5+17544*x^4+6384*x^3+20690*x^2+11330*x+14637`.
+- B021 is at `75%`. The map-recovery run uses 54 exact samples.

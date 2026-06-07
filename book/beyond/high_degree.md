@@ -591,6 +591,17 @@ $$
 The degree-19 recovery uses 46 exact samples over
 $\mathbf F_{11743^{24}}$.
 
+The completed runs give the following scaling data:
+
+| $n$ | samples | theta seconds | recovery seconds | descent seconds |
+|---:|---:|---:|---:|---:|
+| 13 | 34 | 4.249 | 251.786 | 3.485 |
+| 17 | 42 | 6.150 | 384.812 | 6.487 |
+| 19 | 46 | 7.690 | 586.712 | 6.099 |
+
+Thus exact map recovery, not quotient reconstruction or descent, is the
+dominant cost. The observed sample rule is $2n+8$.
+
 ## Degree program
 
 | Degree | Immediate target |

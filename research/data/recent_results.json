@@ -378,5 +378,25 @@
     "timestamp": "2026-06-07T21:05:05+02:00",
     "claim_id": "B020",
     "summary": "Computed the degree-19 theta quotient and independently certified the fixed curve y^2=9500*x^6+7591*x^5+6679*x^4+7190*x^3+1439*x^2+4884*x+3417 over F_11743, with absolute invariants (11336,8788,9369)."
+  },
+  {
+    "timestamp": "2026-06-07T21:15:00+02:00",
+    "claim_id": "B020",
+    "summary": "Recovered both degree-19 maps over F_(11743^24) from 46 exact samples in 586.712 seconds; both Rosenhain X-degree pairs are (19,18), both target identities hold, and both differential pullbacks are linear."
+  },
+  {
+    "timestamp": "2026-06-07T21:19:01+02:00",
+    "claim_id": "B020",
+    "summary": "Completed degree-19 synthesis: both maps descend with X-degree pairs (19,19), the second descent cocycle is resolved by target 2-torsion, and remote Magma independently returns degrees 19 and 19."
+  },
+  {
+    "timestamp": "2026-06-07T21:20:54+02:00",
+    "claim_id": "B021",
+    "summary": "SageMath and remote Magma certified a degree-23 Frey-Kani graph over F_21943: traces 255 and -274, CM squareclasses -43 and -6, determinant 1, 529 graph points, and quotient Weil polynomial T^4+19*T^3-25984*T^2+416917*T+481495249."
+  },
+  {
+    "timestamp": "2026-06-07T21:22:15+02:00",
+    "claim_id": "B021",
+    "summary": "Computed the degree-23 theta quotient and independently certified the fixed curve y^2=7036*x^6+9761*x^5+17544*x^4+6384*x^3+20690*x^2+11330*x+14637 over F_21943."
   }
 ]

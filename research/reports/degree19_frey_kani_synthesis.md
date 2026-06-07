@@ -41,6 +41,15 @@ Frobenius polynomial. Magma independently certifies G2 invariants
 
 ## Map recovery
 
-The general map-recovery engine is running with 46 deterministic samples
-over `F_(11743^24)`. Base-field descent and independent Magma map
-verification follow automatically after interpolation.
+The general map-recovery engine uses 46 deterministic samples over
+`F_(11743^24)`. Both recovered X-coordinates have degree pair `(19,18)`;
+both elliptic identities and linear differential pullbacks hold exactly.
+Runtime is `586.712` seconds.
+
+The unique branch-set Möbius class transports both maps to the fixed sextic.
+The first map descends directly; the second requires one nontrivial target
+2-torsion translation. Both descended X-degree pairs are `(19,19)`, with
+normalized Hasse-Witt directions `(1,8272)` and `(1,5957)`.
+
+Remote Magma independently constructs both morphisms and returns degrees
+`19,19` in `0.152` seconds.

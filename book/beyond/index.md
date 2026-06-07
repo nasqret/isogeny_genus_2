@@ -45,6 +45,8 @@ subfield.
 | Degree-17 Frey--Kani quotient curve | Exact theta quotient, invariant descent, fixed base-field sextic, and independent Sage/Magma Weil certificates | `reconstruct_degree17_theta.sage`, `reconstruct_degree17_curve.m` |
 | Two descended degree-17 maps over $\mathbf F_{8263}$ | 42 exact theta evaluations, target 2-torsion cocycle resolution, coefficient descent, Hasse--Witt eigendirections, and independent Magma degrees $17,17$ | `recover_degree17_maps.sage`, `descend_degree17_maps.sage`, `verify_degree17_maps.m` |
 | Degree-19 Frey--Kani quotient over $\mathbf F_{11743}$ | Deterministic full $19$-torsion graph, $361$ graph points, exact theta quotient, fixed base-field sextic, and independent Sage/Magma Weil certificates | `verify_degree19_anti_isometry.sage`, `reconstruct_degree19_theta.sage`, `reconstruct_degree19_curve.m` |
+| Two descended degree-19 maps over $\mathbf F_{11743}$ | 46 exact theta evaluations, target 2-torsion cocycle resolution, coefficient descent, Hasse--Witt eigendirections, and independent Magma degrees $19,19$ | `recover_degree19_maps.sage`, `descend_degree19_maps.sage`, `verify_degree19_maps.m` |
+| Degree-23 Frey--Kani quotient over $\mathbf F_{21943}$ | Identity graph matrix, $529$ graph points, base-field Igusa-Clebsch invariants, fixed quotient sextic, and independent Sage/Magma certificates | `verify_degree23_anti_isometry.sage`, `reconstruct_degree23_theta.sage`, `reconstruct_degree23_curve.m` |
 | Degree $20$ and $80$ maps from elliptic multiplication | Exact, nonprimitive | `verify_composed_high_degree_maps.sage` |
 
 The machine-readable program is

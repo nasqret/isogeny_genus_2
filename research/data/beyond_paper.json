@@ -402,8 +402,8 @@
   {
     "id": "B020",
     "title": "Prime-degree Frey-Kani synthesis in degree 19",
-    "status": "in_progress",
-    "progress": 75,
+    "status": "completed",
+    "progress": 100,
     "engine": "SageMath+Magma",
     "location": "hybrid",
     "objective": "Certify a degree-19 anti-isometry graph, reconstruct its genus-2 quotient, and recover, descend, and independently verify both primitive degree-19 maps.",
@@ -413,14 +413,44 @@
       "computations/sage/verify_degree19_anti_isometry.sage",
       "computations/sage/reconstruct_degree19_theta.sage",
       "computations/sage/recover_degree19_maps.sage",
+      "computations/sage/descend_degree19_maps.sage",
       "computations/magma/verify_degree19_anti_isometry.m",
       "computations/magma/reconstruct_degree19_curve.m",
+      "computations/magma/verify_degree19_maps.m",
       "results/sage_degree19_anti_isometry.json",
       "results/sage_degree19_theta.json",
+      "results/sage_degree19_maps.json",
+      "results/sage_degree19_descended_maps.json",
       "results/magma_degree19_anti_isometry.json",
       "results/magma_degree19_curve.json",
+      "results/magma_degree19_maps.json",
       "results/remote/magma_degree19_anti_isometry.log",
-      "results/remote/magma_degree19_curve.log"
+      "results/remote/magma_degree19_curve.log",
+      "results/remote/magma_degree19_maps.log"
+    ]
+  },
+  {
+    "id": "B021",
+    "title": "Prime-degree Frey-Kani synthesis in degree 23",
+    "status": "in_progress",
+    "progress": 75,
+    "engine": "SageMath+Magma",
+    "location": "hybrid",
+    "objective": "Certify a degree-23 anti-isometry graph, reconstruct its genus-2 quotient, and recover and descend both primitive maps while measuring the next scaling step.",
+    "artifacts": [
+      "computations/sage/lib/frey_kani_synthesis.sage",
+      "computations/sage/lib/frey_kani_map_recovery.sage",
+      "computations/sage/verify_degree23_anti_isometry.sage",
+      "computations/sage/reconstruct_degree23_theta.sage",
+      "computations/sage/recover_degree23_maps.sage",
+      "computations/magma/verify_degree23_anti_isometry.m",
+      "computations/magma/reconstruct_degree23_curve.m",
+      "results/sage_degree23_anti_isometry.json",
+      "results/sage_degree23_theta.json",
+      "results/magma_degree23_anti_isometry.json",
+      "results/magma_degree23_curve.json",
+      "results/remote/magma_degree23_anti_isometry.log",
+      "results/remote/magma_degree23_curve.log"
     ]
   }
 ]

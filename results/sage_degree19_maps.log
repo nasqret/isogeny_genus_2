@@ -1,0 +1,6 @@
+DEGREE19_MAPS verified
+samples 46
+map_degrees [19, 19]
+x_degree_pairs [(19, 18), (19, 18)]
+differential_degrees [1, 1]
+result /Users/airbartek/codex/isogeny_genus_2/results/sage_degree19_maps.json

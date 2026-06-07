@@ -80,6 +80,16 @@ Each `.sage` file must:
   descent, fixed base-field curve, and Weil certificate.
 - `recover_degree19_maps.sage`: degree-19 configuration using 46 exact
   evaluations over `F_(11743^24)`.
+- `descend_degree19_maps.sage`: fixed-field transport, cocycle resolution,
+  and exact certification of both degree-19 maps.
+- `compare_prime_degree_scaling.py`: machine-readable comparison of the
+  complete degree-13, degree-17, and degree-19 synthesis runs.
+- `verify_degree23_anti_isometry.sage`: deterministic full rational
+  `23`-torsion graph over `F_21943`.
+- `reconstruct_degree23_theta.sage`: degree-23 theta quotient and fixed
+  base-field model.
+- `recover_degree23_maps.sage`: degree-23 configuration using 54 exact
+  evaluations over `F_(21943^24)`.
 
 The theta reconstruction uses the GPL-3.0 Sage branch of AVIsogenies at
 commit `e488a54304a5b5bcd0ae8c58d0ab82aeb02d6746`. Install the pinned external

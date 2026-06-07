@@ -114,6 +114,14 @@ Local exact computations live under `computations/sage/`.
   degree-19 theta quotient, invariant descent, and fixed base-field curve.
 - [`recover_degree19_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/recover_degree19_maps.sage):
   degree-19 specialization with 46 deterministic interpolation samples.
+- [`descend_degree19_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/descend_degree19_maps.sage):
+  exact fixed-field transport and certification of both degree-19 maps.
+- [`compare_prime_degree_scaling.py`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/compare_prime_degree_scaling.py):
+  reproducible scaling table for complete degrees 13, 17, and 19.
+- [`verify_degree23_anti_isometry.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/verify_degree23_anti_isometry.sage):
+  deterministic degree-23 graph certificate over `F_21943`.
+- [`reconstruct_degree23_theta.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/reconstruct_degree23_theta.sage):
+  degree-23 theta quotient and fixed base-field model.
 - [`export_degree10_11_magma.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/export_degree10_11_magma.sage):
   deterministic export of the recovered exact coefficients to static Magma
   verification programs.
@@ -140,6 +148,12 @@ Local exact computations live under `computations/sage/`.
   independently verifies the full degree-19 torsion graph.
 - [`reconstruct_degree19_curve.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/reconstruct_degree19_curve.m):
   independently reconstructs and twist-selects the fixed degree-19 quotient.
+- [`verify_degree19_maps.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree19_maps.m):
+  independently constructs both degree-19 morphisms.
+- [`verify_degree23_anti_isometry.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree23_anti_isometry.m):
+  independently verifies the degree-23 graph.
+- [`reconstruct_degree23_curve.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/reconstruct_degree23_curve.m):
+  independently reconstructs the fixed degree-23 quotient.
 
 Remote computations live under `computations/magma/` and execute with Magma
 V2.28-3 on `lts-faculty.wmi.amu.edu.pl`.

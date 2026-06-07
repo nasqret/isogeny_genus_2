@@ -1,0 +1,20 @@
+****************************************************
+****************Session log started*****************
+****************************************************
+Session start time: 21:20:52
+Session start date: 07.06.2026
+Session start seed: 3019648170
+****************************************************
+/home/faculty/bnaskrecki/magma/logs/session_log_2026_06_07_3019648170.txt
+****************************************************
+DEGREE 23
+ANTI_ISOMETRY_MATRIX
+[1 0]
+[0 1]
+ANTI_ISOMETRY_COUNT 12144
+GRAPH_SIZE 529
+PAIRINGS 14925 13773
+CM_SQUARECLASSES -43 -6
+WEIL_POLYNOMIAL T^4 + 19*T^3 - 25984*T^2 + 416917*T + 481495249
+B021_DEGREE23_ANTI_ISOMETRY_VERIFIED
+real 0,540

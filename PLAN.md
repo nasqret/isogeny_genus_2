@@ -185,9 +185,7 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
 
 Current bounded tasks, in order:
 
-1. search deterministically for a degree-19 anti-isometry graph;
-2. reconstruct its theta quotient and fixed base-field curve;
-3. recover, descend, and independently certify both degree-19 maps;
-4. compare runtime, extension degree, cocycle corrections, and interpolation
-   complexity across
-   degrees 13, 17, and 19.
+1. recover both degree-23 maps from 54 exact theta evaluations;
+2. descend and independently verify the degree-23 maps;
+3. optimize batched dual-theta evaluation, the dominant runtime cost;
+4. formalize the general odd-prime descent-cocycle theorem and algorithm.

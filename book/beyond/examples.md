@@ -569,7 +569,9 @@ $$
 
 Its absolute Igusa invariants are $(11336,8788,9369)$. Both SageMath and
 Magma independently certify the model. The map-recovery driver uses 46
-deterministic samples.
+deterministic samples. Both maps are now complete: the Rosenhain degree pairs
+are $(19,18)$, the fixed-field degree pairs are $(19,19)$, and remote Magma
+returns degrees $19$ and $19$.
 
 ## Fixed-field quotient equations
 

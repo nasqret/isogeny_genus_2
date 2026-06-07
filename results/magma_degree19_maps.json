@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-06-07T21:19:01+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "lts-faculty.wmi.amu.edu.pl",
+  "elapsed_seconds": 0.152,
+  "workstream": "B020",
+  "verified": true,
+  "scope": "Independent verification of both descended degree-19 elliptic maps",
+  "field": "GF(11743)",
+  "degree": 19,
+  "map_degrees": [19, 19],
+  "target_j_invariants": [259, 3441],
+  "pullback_eigenforms": [
+    "10395*x+6513",
+    "5397*x+10364"
+  ],
+  "artifact": "computations/magma/verify_degree19_maps.m",
+  "transcript": "results/remote/magma_degree19_maps.log",
+  "success_marker": "B020_DEGREE19_MAPS_MAGMA_VERIFIED"
+}
