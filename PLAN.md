@@ -172,7 +172,16 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
   elliptic `j`-functions, and tautological sextics are imported exactly for
   every degree 6 through 11. One nonsingular genus-2 specialization is
   certified in each degree.
+- The initial construction-engine milestone is complete in degree 13.
+  Over `F_8009`, SageMath and Magma independently certify an anti-isometry
+  graph of order `13^2`, an irreducible Frey-Kani principal polarization,
+  and the quotient Weil polynomial. This proves the quotient is geometrically
+  a smooth genus-2 Jacobian, but does not yet reconstruct its curve equation.
 
 Current bounded tasks, in order:
 
-1. begin Frey-Kani anti-isometry synthesis beyond degree 11.
+1. reconstruct an explicit genus-2 curve for the certified degree-13
+   anti-isometry quotient;
+2. recover and certify its two degree-13 elliptic maps;
+3. turn the degree-13 search into a parameterized prime-degree synthesis
+   engine and run it in degrees 17 and 19.

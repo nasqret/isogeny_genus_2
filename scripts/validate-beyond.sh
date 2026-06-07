@@ -29,6 +29,7 @@ run_sage computations/sage/recover_degree7_maps.sage
 run_sage computations/sage/verify_degree7_maps.sage
 run_sage computations/sage/verify_galois_complement.sage
 run_sage computations/sage/verify_composed_high_degree_maps.sage
+run_sage computations/sage/verify_degree13_anti_isometry.sage
 
 python3 -m json.tool "$ROOT/results/sage_degree5_family_structure.json" >/dev/null
 python3 -m json.tool "$ROOT/results/sage_degree5_family_census.json" >/dev/null
@@ -59,5 +60,7 @@ python3 -m json.tool "$ROOT/results/magma_degree7_monodromy.json" >/dev/null
 python3 -m json.tool "$ROOT/results/sage_galois_complement.json" >/dev/null
 python3 -m json.tool "$ROOT/results/magma_galois_complement.json" >/dev/null
 python3 -m json.tool "$ROOT/results/sage_composed_high_degree_maps.json" >/dev/null
+python3 -m json.tool "$ROOT/results/sage_degree13_anti_isometry.json" >/dev/null
+python3 -m json.tool "$ROOT/results/magma_degree13_anti_isometry.json" >/dev/null
 
 printf 'BEYOND_PAPER_VALIDATION_OK\n'

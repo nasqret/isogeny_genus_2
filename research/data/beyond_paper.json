@@ -261,12 +261,20 @@
   {
     "id": "B014",
     "title": "Frey-Kani anti-isometry synthesis",
-    "status": "planned",
-    "progress": 0,
+    "status": "in_progress",
+    "progress": 50,
     "engine": "Magma+SageMath",
     "location": "hybrid",
     "objective": "Construct new split Jacobians from anti-isometries E[n] to E'[n], reconstruct genus-2 curves, and recover the two primitive degree-n maps.",
-    "artifacts": []
+    "artifacts": [
+      "computations/sage/lib/frey_kani_synthesis.sage",
+      "computations/sage/verify_degree13_anti_isometry.sage",
+      "computations/magma/verify_degree13_anti_isometry.m",
+      "results/sage_degree13_anti_isometry.json",
+      "results/magma_degree13_anti_isometry.json",
+      "results/remote/magma_degree13_anti_isometry.log",
+      "research/reports/degree13_anti_isometry_synthesis.md"
+    ]
   },
   {
     "id": "B015",

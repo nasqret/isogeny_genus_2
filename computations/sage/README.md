@@ -43,6 +43,11 @@ Each `.sage` file must:
   degree-7 maps.
 - `verify_composed_high_degree_maps.sage`: exact nonprimitive maps of degrees
   20 and 80.
+- `lib/frey_kani_synthesis.sage`: reusable finite-field enumeration and
+  certificate routines for prime-degree anti-isometry graphs.
+- `verify_degree13_anti_isometry.sage`: full rational `13`-torsion bases,
+  inverse Weil pairing, maximal isotropic graph, CM-field irreducibility,
+  and quotient Weil polynomial over `F_8009`.
 
 ## General recovery API
 

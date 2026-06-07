@@ -44,3 +44,9 @@ path for the compact quartic-invariant formula. The compact, routinely
 validated implementation is `computations/sage/lib/degree5_complement.sage`;
 the expanded Magma trace/norm form is intentionally treated as a heavy
 derived artifact.
+
+`verify_degree13_anti_isometry.m` independently certifies the first
+beyond-degree-11 Frey-Kani synthesis: full rational `13`-torsion on two
+curves over `F_8009`, the matrix `diag(1,3)`, inverse Weil pairings, all
+`169` graph points, the count of `2184` compatible matrices, distinct CM
+squareclasses, and the quotient Weil polynomial.

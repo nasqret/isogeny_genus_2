@@ -466,6 +466,48 @@ principal polarization is a Jacobian, reconstruct the genus-2 curve, and then
 recover both degree-$n$ maps. This is the construction engine for genuinely
 new primitive examples beyond the currently tabulated moduli families.
 
+The first certified synthesis uses $n=13$ over $\mathbf F_{8009}$:
+
+$$
+E_1:y^2=x^3+5553x+5419,\qquad
+E_2:y^2=x^3+2531x+1402.
+$$
+
+Their rational point groups have invariants $(13,611)$ and $(13,624)$, so
+both full $13$-torsion modules are rational. In the stored bases, the required
+determinant is $3$, and
+
+$$
+\psi=
+\begin{pmatrix}
+1&0\\
+0&3
+\end{pmatrix}
+\pmod {13}
+$$
+
+inverts the Weil pairing. The graph has $169$ points. There are exactly
+
+$$
+13(13^2-1)=2184
+$$
+
+matrices with the required determinant.
+
+The Frobenius traces are $67$ and $-102$. The corresponding ordinary
+endomorphism fields have squareclasses $-163$ and $-2$, so the curves are
+geometrically nonisogenous. This supplies the strong Frey-Kani irreducibility
+criterion: the quotient principal polarization is geometrically the
+Jacobian of a smooth genus-2 curve. Its Weil polynomial is
+
+$$
+T^4+35T^3+9184T^2+280315T+64144081.
+$$
+
+SageMath and Magma independently certify all of these assertions. The next
+step is constructive rather than existential: recover an explicit genus-2
+equation and its two degree-$13$ maps.
+
 ## Degree program
 
 | Degree | Immediate target |
@@ -477,7 +519,7 @@ new primitive examples beyond the currently tabulated moduli families.
 | 9 | Both primitive maps, CRT centers, and full $S_9$ monodromy complete |
 | 10 | Both primitive maps complete; target isogeny obstruction excludes degree $5$ followed by a 2-isogeny |
 | 11 | Both primitive maps complete on a rational point of Kumar's $Y_-(121)$ |
-| $>11$ | Generate examples by anti-isometries and use modular/CRT reconstruction |
+| $>11$ | Degree-13 anti-isometry quotient certified; reconstruct its curve and maps, then synthesize degrees 17 and 19 |
 
 ## Degree 10 and degree 11
 

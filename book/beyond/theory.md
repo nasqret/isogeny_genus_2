@@ -28,6 +28,37 @@ is an $(n,n)$-isogeny. Its kernel is the graph of an anti-isometry
 $E[n]\to E'[n]$ for the Weil pairings. This is the Frey-Kani structure that
 the computational pipeline must recover and certify.
 
+## Synthesis from an anti-isometry
+
+Conversely, let $n$ be prime to the characteristic and let
+$\psi:E[n]\to E'[n]$ be an anti-isometry. Its graph is maximally isotropic in
+$E[n]\times E'[n]$, so the product principal polarization descends to a
+principal polarization on
+
+$$
+A=(E\times E')/\operatorname{Graph}(\psi).
+$$
+
+For the finite-field synthesis used here, both full torsion modules are
+rational and the anti-isometry is represented by a matrix in chosen bases.
+If the basis pairings are $\zeta_1$ and $\zeta_2$, then a matrix of
+determinant $d$ is anti-symplectic exactly when
+
+$$
+\zeta_1\zeta_2^d=1.
+$$
+
+For prime $n$, each nonzero determinant occurs on exactly
+$n(n^2-1)$ matrices in $\operatorname{GL}_2(\mathbf F_n)$.
+
+A strong sufficient irreducibility test is that $E$ and $E'$ are
+geometrically nonisogenous. For ordinary finite-field curves this follows
+when their Frobenius discriminants define different imaginary quadratic
+fields. Then there is no nonzero geometric homomorphism between the factors,
+the Frey-Kani anti-isometry is irreducible, and the principally polarized
+quotient is geometrically the Jacobian of a smooth genus-2 curve rather than
+a product.
+
 ## Certifying the splitting kernel
 
 Suppose both maps $f:C\to E$ and $f':C\to E'$ are known. Their pullbacks

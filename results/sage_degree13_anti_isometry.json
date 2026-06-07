@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-06-07T17:12:22+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 0.377065,
+  "workstream": "B014",
+  "verified": true,
+  "scope": "initial finite-field Frey-Kani synthesis in prime degree 13",
+  "field": "GF(8009)",
+  "degree": 13,
+  "curves": [
+    {
+      "equation": "y^2=x^3+5553*x+5419",
+      "j": "81",
+      "cardinality": 7943,
+      "group_invariants": [
+        13,
+        611
+      ],
+      "trace": 67,
+      "cm_squareclass": -163,
+      "torsion_basis": [
+        "(3600 : 411 : 1)",
+        "(5265 : 3005 : 1)"
+      ]
+    },
+    {
+      "equation": "y^2=x^3+2531*x+1402",
+      "j": "3213",
+      "cardinality": 8112,
+      "group_invariants": [
+        13,
+        624
+      ],
+      "trace": -102,
+      "cm_squareclass": -2,
+      "torsion_basis": [
+        "(6171 : 1633 : 1)",
+        "(3628 : 2373 : 1)"
+      ]
+    }
+  ],
+  "anti_isometry": {
+    "matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "required_determinant_in_chosen_bases": 3,
+    "compatible_matrix_count": 2184,
+    "pairing_1": "1420",
+    "pairing_2_after_map": "6379",
+    "pairing_product": "1"
+  },
+  "graph": {
+    "size": 169,
+    "maximal_isotropic": true
+  },
+  "irreducibility": {
+    "geometrically_nonisogenous": true,
+    "reason": "ordinary endomorphism fields Q(sqrt(-163)) and Q(sqrt(-2)) are distinct",
+    "frey_kani_irreducible": true,
+    "geometric_quotient_is_smooth_genus2_jacobian": true
+  },
+  "quotient_weil_polynomial": "T^4 + 35*T^3 + 9184*T^2 + 280315*T + 64144081",
+  "remaining_step": "reconstruct an explicit genus-2 curve and its two degree-13 maps"
+}

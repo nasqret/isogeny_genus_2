@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-06-07T17:04:28+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "lts-faculty.wmi.amu.edu.pl",
+  "elapsed_seconds": 0.08,
+  "maximum_memory_mb": 32.09,
+  "workstream": "B014",
+  "verified": true,
+  "scope": "Independent degree-13 Frey-Kani anti-isometry and irreducible principally polarized quotient certificate",
+  "field": "GF(8009)",
+  "degree": 13,
+  "curve_cardinalities": [
+    7943,
+    8112
+  ],
+  "group_invariants": [
+    [
+      13,
+      611
+    ],
+    [
+      13,
+      624
+    ]
+  ],
+  "anti_isometry_matrix": [
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      3
+    ]
+  ],
+  "required_determinant": 3,
+  "compatible_matrix_count": 2184,
+  "graph_size": 169,
+  "weil_pairings": [
+    "1420",
+    "6379"
+  ],
+  "pairing_product_is_one": true,
+  "cm_squareclasses": [
+    -163,
+    -2
+  ],
+  "frey_kani_irreducible": true,
+  "geometric_quotient_is_smooth_genus2_jacobian": true,
+  "quotient_weil_polynomial": "T^4 + 35*T^3 + 9184*T^2 + 280315*T + 64144081",
+  "artifact": "computations/magma/verify_degree13_anti_isometry.m",
+  "transcript": "results/remote/magma_degree13_anti_isometry.log",
+  "success_marker": "B014_DEGREE13_ANTI_ISOMETRY_VERIFIED"
+}

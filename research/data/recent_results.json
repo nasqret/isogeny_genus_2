@@ -323,5 +323,10 @@
     "timestamp": "2026-06-07T16:31:16+02:00",
     "claim_id": "B003",
     "summary": "Derived the generic degree-5 complementary j as the binary-quartic invariant of the four orientation divisors, recovered the article value, and constructed quadratic examples over the branch field."
+  },
+  {
+    "timestamp": "2026-06-07T17:04:28+02:00",
+    "claim_id": "B014",
+    "summary": "SageMath and remote Magma certified a degree-13 Frey-Kani anti-isometry over F_8009: the graph has 169 points, 2184 matrices have the required determinant, and distinct CM fields force an irreducible principally polarized genus-2 quotient."
   }
 ]

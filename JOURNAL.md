@@ -512,3 +512,29 @@
   polynomial. Four of the ten displayed rows have quadratic `j'`.
 - B002 and B003 are complete. The next bounded task is Frey-Kani
   anti-isometry synthesis beyond degree 11.
+
+### Initial degree-13 Frey-Kani synthesis
+
+- Selected `F_8009`, where both elliptic curves have full rational
+  `13`-torsion:
+  `E1: y^2=x^3+5553*x+5419` and
+  `E2: y^2=x^3+2531*x+1402`.
+- Their group invariants are `[13,611]` and `[13,624]`. Explicit torsion
+  bases are stored in the SageMath and Magma certificates.
+- In the chosen bases, inverse Weil pairings require determinant `3`.
+  The matrix `diag(1,3)` defines an anti-isometry, and exactly
+  `13*(13^2-1)=2184` matrices have the same required determinant.
+- The graph contains exactly `13^2=169` points and is maximally isotropic.
+  SageMath records pairings `1420` and `6379`, whose product is one.
+- The Frobenius traces are `67` and `-102`. Their discriminants have
+  squareclasses `-163` and `-2`, so the ordinary geometric endomorphism
+  fields differ. The curves are geometrically nonisogenous, which gives the
+  strong Frey-Kani irreducibility criterion.
+- Therefore the quotient principal polarization is geometrically the
+  Jacobian of a smooth genus-2 curve. Its Weil polynomial is
+  `T^4+35*T^3+9184*T^2+280315*T+64144081`.
+- Local SageMath verification took under `0.4` seconds. Independent remote
+  Magma verification took `0.080` seconds and `32.09 MB`.
+- This completes the initial B014 synthesis milestone. B014 remains in
+  progress because an explicit genus-2 model and the two degree-13 maps have
+  not yet been reconstructed.

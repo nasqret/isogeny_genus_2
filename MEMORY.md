@@ -204,5 +204,13 @@ This project reconstructs every computational claim in
   them to a squarefree quartic, and use
   `j'=256*I^3/discriminant`. The invariant generally has degree two over
   `Q(a,b)`.
-- Current active frontier: Frey-Kani anti-isometry synthesis beyond degree
-  11.
+- B014 has an initial degree-13 synthesis certificate over `F_8009`.
+  The curves with `j=81` and `j=3213` have full rational `13`-torsion; in
+  the stored bases, `diag(1,3)` is an anti-isometry graph with `169` points.
+  The CM squareclasses `-163` and `-2` prove geometric nonisogeny and hence
+  Frey-Kani irreducibility. The quotient is geometrically a smooth genus-2
+  Jacobian with Weil polynomial
+  `T^4+35*T^3+9184*T^2+280315*T+64144081`.
+- Current active frontier: reconstruct the explicit degree-13 genus-2 curve
+  and its two primitive maps, then generalize the synthesis search to larger
+  prime degrees.
