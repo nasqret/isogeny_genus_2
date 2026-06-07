@@ -1,4 +1,4 @@
-"""Build the machine-readable degree 13/17/19 synthesis comparison."""
+"""Build the machine-readable prime-degree synthesis comparison."""
 
 import json
 from datetime import datetime
@@ -7,7 +7,7 @@ from pathlib import Path
 
 root = Path.cwd()
 records = []
-for degree in (13, 17, 19):
+for degree in (13, 17, 19, 23):
     anti = json.loads(
         (
             root

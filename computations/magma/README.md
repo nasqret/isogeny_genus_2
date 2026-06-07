@@ -78,3 +78,4 @@ the fixed quotient sextic and certifies its G2 invariants and L-polynomial.
 `verify_degree19_maps.m` independently returns degrees `19,19`.
 `verify_degree23_anti_isometry.m` certifies the `529`-point degree-23 graph,
 and `reconstruct_degree23_curve.m` certifies its fixed quotient sextic.
+`verify_degree23_maps.m` independently returns degrees `23,23`.

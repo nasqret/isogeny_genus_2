@@ -278,4 +278,8 @@ This project reconstructs every computational claim in
   `-43,-6`, identity graph matrix, and `529` graph points.
 - Its fixed degree-23 quotient is
   `y^2=7036*x^6+9761*x^5+17544*x^4+6384*x^3+20690*x^2+11330*x+14637`.
-- B021 is at `75%`; recovery uses 54 samples over `F_(21943^24)`.
+- B021 is complete. Recovery uses 54 samples over `F_(21943^24)`, takes
+  `1100.736` seconds, and returns Rosenhain degree pairs `(23,22)`.
+- Both maps descend directly with degree pairs `(23,23)` and normalized
+  differential directions `[1,19333]`, `[1,19653]`.
+- Remote Magma independently returns degrees `23,23` in `0.178` seconds.

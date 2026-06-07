@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-06-07T21:46:17+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "lts-faculty.wmi.amu.edu.pl",
+  "elapsed_seconds": 0.178,
+  "workstream": "B021",
+  "verified": true,
+  "scope": "Independent verification of both descended degree-23 elliptic maps",
+  "field": "GF(21943)",
+  "degree": 23,
+  "map_degrees": [23, 23],
+  "target_j_invariants": [5760, 7985],
+  "pullback_eigenforms": [
+    "17002*x+14908",
+    "3687*x+19153"
+  ],
+  "artifact": "computations/magma/verify_degree23_maps.m",
+  "transcript": "results/remote/magma_degree23_maps.log",
+  "success_marker": "B021_DEGREE23_MAPS_MAGMA_VERIFIED"
+}

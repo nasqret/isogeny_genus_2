@@ -398,5 +398,15 @@
     "timestamp": "2026-06-07T21:22:15+02:00",
     "claim_id": "B021",
     "summary": "Computed the degree-23 theta quotient and independently certified the fixed curve y^2=7036*x^6+9761*x^5+17544*x^4+6384*x^3+20690*x^2+11330*x+14637 over F_21943."
+  },
+  {
+    "timestamp": "2026-06-07T21:41:00+02:00",
+    "claim_id": "B021",
+    "summary": "Recovered both degree-23 maps over F_(21943^24) from 54 exact samples in 1100.736 seconds; both Rosenhain X-degree pairs are (23,22), both identities hold, and both differential pullbacks are linear."
+  },
+  {
+    "timestamp": "2026-06-07T21:46:17+02:00",
+    "claim_id": "B021",
+    "summary": "Completed degree-23 synthesis: both maps descend directly with X-degree pairs (23,23), and remote Magma independently returns degrees 23 and 23."
   }
 ]

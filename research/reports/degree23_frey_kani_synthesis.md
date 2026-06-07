@@ -37,5 +37,12 @@ L-polynomial.
 
 ## Maps
 
-The general recovery engine is running with 54 exact samples over
-`F_(21943^24)`. The dashboard tracks screen `degree23-map-recovery`.
+The general recovery engine uses 54 exact samples over `F_(21943^24)`.
+Both recovered X-coordinate degree pairs are `(23,22)`, both target
+identities hold, and both differential pullbacks are linear. Runtime is
+`1100.736` seconds.
+
+Both maps descend directly to the fixed sextic with degree pairs `(23,23)`.
+Their normalized Hasse-Witt eigendirections are `(1,19333)` and
+`(1,19653)`. Remote Magma independently constructs both morphisms and
+returns degrees `23,23` in `0.178` seconds.

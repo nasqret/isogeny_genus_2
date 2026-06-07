@@ -1,0 +1,6 @@
+DEGREE23_MAPS verified
+samples 54
+map_degrees [23, 23]
+x_degree_pairs [(23, 22), (23, 22)]
+differential_degrees [1, 1]
+result /Users/airbartek/codex/isogeny_genus_2/results/sage_degree23_maps.json

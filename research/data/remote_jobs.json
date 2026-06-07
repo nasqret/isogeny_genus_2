@@ -1,12 +1,1 @@
-[
-  {
-    "id": "B021-degree23-map-recovery",
-    "status": "in_progress",
-    "summary": "Recovering both primitive degree-23 maps from 54 exact dual-theta evaluations.",
-    "host": "local macOS",
-    "screen": "degree23-map-recovery",
-    "engine": "SageMath 10.8",
-    "started_at": "2026-06-07T21:22:00+02:00",
-    "log": "results/sage_degree23_maps.log"
-  }
-]
+[]

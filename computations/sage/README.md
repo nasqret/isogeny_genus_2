@@ -90,6 +90,8 @@ Each `.sage` file must:
   base-field model.
 - `recover_degree23_maps.sage`: degree-23 configuration using 54 exact
   evaluations over `F_(21943^24)`.
+- `descend_degree23_maps.sage`: fixed-field descent and exact certification
+  of both degree-23 maps.
 
 The theta reconstruction uses the GPL-3.0 Sage branch of AVIsogenies at
 commit `e488a54304a5b5bcd0ae8c58d0ab82aeb02d6746`. Install the pinned external

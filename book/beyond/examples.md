@@ -573,6 +573,10 @@ deterministic samples. Both maps are now complete: the Rosenhain degree pairs
 are $(19,18)$, the fixed-field degree pairs are $(19,19)$, and remote Magma
 returns degrees $19$ and $19$.
 
+For degree $23$, 54 samples recover Rosenhain degree pairs $(23,22)$ in
+1100.736 seconds. Both maps descend directly with fixed-field degree pairs
+$(23,23)$, and remote Magma independently returns degrees $23$ and $23$.
+
 ## Fixed-field quotient equations
 
 For any compact quotient with rational coordinate

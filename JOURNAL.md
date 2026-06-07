@@ -714,3 +714,17 @@
   `(6652,7299,13559,5703)` and fixed curve
   `y^2=7036*x^6+9761*x^5+17544*x^4+6384*x^3+20690*x^2+11330*x+14637`.
 - B021 is at `75%`. The map-recovery run uses 54 exact samples.
+
+### Degree-23 maps and completion
+
+- Fifty-four exact samples recover both maps over `F_(21943^24)` in
+  `1100.736` seconds. Their Rosenhain X-degree pairs are `(23,22)`.
+- Both maps descend directly to the fixed sextic with X-degree pairs
+  `(23,23)`. The normalized Hasse-Witt directions are `[1,19333]` and
+  `[1,19653]`.
+- Remote Magma independently verifies both morphisms and returns degrees
+  `23,23` in `0.178` seconds.
+- B021 is complete. The dominant-cost optimization is now urgent: recovery
+  grew from `251.786` seconds at degree 13 to `1100.736` seconds at degree
+  23, while descent and Magma verification remained below seven seconds and
+  one second respectively.

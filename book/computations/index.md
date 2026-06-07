@@ -122,6 +122,8 @@ Local exact computations live under `computations/sage/`.
   deterministic degree-23 graph certificate over `F_21943`.
 - [`reconstruct_degree23_theta.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/reconstruct_degree23_theta.sage):
   degree-23 theta quotient and fixed base-field model.
+- [`descend_degree23_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/descend_degree23_maps.sage):
+  fixed-field transport and exact certification of both degree-23 maps.
 - [`export_degree10_11_magma.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/export_degree10_11_magma.sage):
   deterministic export of the recovered exact coefficients to static Magma
   verification programs.
@@ -154,6 +156,8 @@ Local exact computations live under `computations/sage/`.
   independently verifies the degree-23 graph.
 - [`reconstruct_degree23_curve.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/reconstruct_degree23_curve.m):
   independently reconstructs the fixed degree-23 quotient.
+- [`verify_degree23_maps.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree23_maps.m):
+  independently constructs both degree-23 morphisms.
 
 Remote computations live under `computations/magma/` and execute with Magma
 V2.28-3 on `lts-faculty.wmi.amu.edu.pl`.

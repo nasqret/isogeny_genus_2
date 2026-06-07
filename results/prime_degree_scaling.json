@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T21:19:38+02:00",
+  "generated_at": "2026-06-07T21:46:44+02:00",
   "verified": true,
   "degrees": [
     {
@@ -100,6 +100,39 @@
         ]
       ],
       "nontrivial_two_torsion_corrections": 1
+    },
+    {
+      "degree": 23,
+      "field": "GF(21943)",
+      "theta_extension_degree": 12,
+      "map_extension_degree": 24,
+      "sample_count": 54,
+      "sample_formula": 54,
+      "theta_runtime_seconds": 18.774095,
+      "map_recovery_runtime_seconds": 1100.7360136508942,
+      "descent_runtime_seconds": 5.137522220611572,
+      "magma_map_runtime_seconds": 0.178,
+      "rosenhain_x_degree_pairs": [
+        [
+          23,
+          22
+        ],
+        [
+          23,
+          22
+        ]
+      ],
+      "base_field_x_degree_pairs": [
+        [
+          23,
+          23
+        ],
+        [
+          23,
+          23
+        ]
+      ],
+      "nontrivial_two_torsion_corrections": 0
     }
   ],
   "observed_patterns": {

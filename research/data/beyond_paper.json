@@ -432,8 +432,8 @@
   {
     "id": "B021",
     "title": "Prime-degree Frey-Kani synthesis in degree 23",
-    "status": "in_progress",
-    "progress": 75,
+    "status": "completed",
+    "progress": 100,
     "engine": "SageMath+Magma",
     "location": "hybrid",
     "objective": "Certify a degree-23 anti-isometry graph, reconstruct its genus-2 quotient, and recover and descend both primitive maps while measuring the next scaling step.",
@@ -443,14 +443,20 @@
       "computations/sage/verify_degree23_anti_isometry.sage",
       "computations/sage/reconstruct_degree23_theta.sage",
       "computations/sage/recover_degree23_maps.sage",
+      "computations/sage/descend_degree23_maps.sage",
       "computations/magma/verify_degree23_anti_isometry.m",
       "computations/magma/reconstruct_degree23_curve.m",
+      "computations/magma/verify_degree23_maps.m",
       "results/sage_degree23_anti_isometry.json",
       "results/sage_degree23_theta.json",
+      "results/sage_degree23_maps.json",
+      "results/sage_degree23_descended_maps.json",
       "results/magma_degree23_anti_isometry.json",
       "results/magma_degree23_curve.json",
+      "results/magma_degree23_maps.json",
       "results/remote/magma_degree23_anti_isometry.log",
-      "results/remote/magma_degree23_curve.log"
+      "results/remote/magma_degree23_curve.log",
+      "results/remote/magma_degree23_maps.log"
     ]
   }
 ]

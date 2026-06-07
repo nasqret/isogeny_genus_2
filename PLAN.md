@@ -185,7 +185,7 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
 
 Current bounded tasks, in order:
 
-1. recover both degree-23 maps from 54 exact theta evaluations;
-2. descend and independently verify the degree-23 maps;
-3. optimize batched dual-theta evaluation, the dominant runtime cost;
-4. formalize the general odd-prime descent-cocycle theorem and algorithm.
+1. optimize batched dual-theta evaluation, the dominant runtime cost;
+2. formalize the general odd-prime descent-cocycle theorem and algorithm;
+3. derive a predictive complexity model from degrees 13, 17, 19, and 23;
+4. extend synthesis to degree 29 after the recovery optimization.

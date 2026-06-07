@@ -598,6 +598,7 @@ The completed runs give the following scaling data:
 | 13 | 34 | 4.249 | 251.786 | 3.485 |
 | 17 | 42 | 6.150 | 384.812 | 6.487 |
 | 19 | 46 | 7.690 | 586.712 | 6.099 |
+| 23 | 54 | 18.774 | 1100.736 | 5.138 |
 
 Thus exact map recovery, not quotient reconstruction or descent, is the
 dominant cost. The observed sample rule is $2n+8$.
@@ -613,7 +614,7 @@ dominant cost. The observed sample rule is $2n+8$.
 | 9 | Both primitive maps, CRT centers, and full $S_9$ monodromy complete |
 | 10 | Both primitive maps complete; target isogeny obstruction excludes degree $5$ followed by a 2-isogeny |
 | 11 | Both primitive maps complete on a rational point of Kumar's $Y_-(121)$ |
-| $>11$ | Degrees 13 and 17 complete; degree-19 quotient complete and maps in progress |
+| $>11$ | End-to-end synthesis complete in degrees 13, 17, 19, and 23 |
 
 ## Degree 10 and degree 11
 
