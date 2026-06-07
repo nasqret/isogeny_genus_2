@@ -49,11 +49,33 @@ M = answer["y_multiplier"]
 N = answer["y_offset"]      # the map is (X, y*M + N)
 ```
 
+When the scale and target center are not known, use:
+
+```sage
+discovery = discover_elliptic_cover(
+    source_polynomial=F,
+    target_curve=E,
+    eigenform=r + s*x,
+    cover_degree=n,
+    source_point=None,       # or (x0, y0)
+    mordell_weil_bound=n,
+)
+
+answers = discovery["maps"]
+```
+
+For each candidate center, reconstruction runs over `k(scale)`. The exact
+elliptic identity produces a polynomial in `scale`; its roots in the base
+field are passed through the ordinary characteristic-zero verifier. Over
+`QQ`, the center can be found by a bounded Mordell-Weil search. The origin,
+small multiples, and degree-sized multiples are tested early.
+
 The routine infers rational degree bounds from local valuations when the
 source center is at infinity. At finite source points it searches all degree
 patterns with maximum degree `n`. A candidate is returned only if the exact
 completed-square elliptic identity vanishes in the source function field.
 
-The current API assumes that the target curve, eigenform, differential scale,
-and image of the expansion point are known. Discovering those inputs is a
-separate modular/period/finite-field stage of B010.
+The discovery API assumes that the target curve and eigenform are known. Over
+number fields other than `QQ`, center candidates must currently be supplied.
+Automatic target and eigenform discovery is the remaining
+modular/period/finite-field stage of B010.

@@ -35,7 +35,8 @@ Local exact computations live under `computations/sage/`.
   ramification invariants.
 - [`elliptic_cover_recovery.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/lib/elliptic_cover_recovery.sage):
   degree-independent formal integration, target translation, rational
-  reconstruction, and exact map certification.
+  reconstruction, symbolic scale solving, bounded Mordell-Weil center search,
+  and exact map certification.
 - [`test_general_elliptic_cover_recovery.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/test_general_elliptic_cover_recovery.sage):
   exact regression cases in degrees 3, 5, and 7 over rational and quadratic
   number fields.

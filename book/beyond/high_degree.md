@@ -100,8 +100,26 @@ point, finite and identity target centers, quintic and sextic source models,
 and a quadratic number field. Thus the implementation is no longer tied to
 the Kumar specialization.
 
-The target curve, eigenform, scale, and center are currently inputs. Their
-automatic discovery remains the modular and finite-field part of Engine B.
+The library now also discovers the scale and center. For a fixed candidate
+center it performs reconstruction over $k(c)$, where $c$ is an indeterminate
+differential scale. The exact map identity yields a univariate polynomial in
+$c$, and only roots in the base field that pass full exact verification are
+accepted.
+
+Over $\mathbb Q$, unknown centers are searched in an explicitly bounded
+Mordell-Weil box. The bound and attempted centers are retained in the
+certificate. For the second degree-$7$ map, four centers are tested before
+finding
+
+$$
+P=\left(\frac{10465}{4},-\frac{51175}{8}\right)=-7G
+$$
+
+and $c=-49/60$. The finite degree-$3$ regression similarly discovers
+$P=(5,19)$ and $c=-1/5$.
+
+The target elliptic curve and eigenform remain inputs. Their automatic
+discovery is the next modular and finite-field part of Engine B.
 
 ## Engine C: specialization and interpolation
 

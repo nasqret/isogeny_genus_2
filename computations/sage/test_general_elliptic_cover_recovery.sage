@@ -5,7 +5,7 @@ The tests cover:
 
 * an infinity-to-origin degree-7 map;
 * an infinity-to-finite-point degree-7 map;
-* a finite-source-to-finite-target degree-3 map.
+* automatic center and scale discovery for a finite degree-3 map;
 * a quintic source over a quadratic field and a non-short target.
 
 Run from the repository root:
@@ -118,19 +118,26 @@ degree3_denominator = (
 expected_degree3 = (
     -6*x^3 - 6*x^2 - QQ(35)/4*x + QQ(25)/4
 ) / degree3_denominator
-degree3 = recover_elliptic_cover(
+degree3_discovery = discover_elliptic_cover(
     F3,
     E3,
     eigenform=x + QQ(15)/4,
-    differential_scale=-QQ(1)/5,
     cover_degree=3,
     source_point=(QQ(0), QQ(5)/2),
-    target_center=E3(QQ(5), QQ(19)),
+    mordell_weil_bound=1,
 )
+assert len(degree3_discovery["maps"]) == 1
+degree3 = degree3_discovery["maps"][0]
 assert degree3["x_coordinate"] == expected_degree3
 assert degree3["degree"] == 3
 assert degree3["source_center"] == "finite"
 assert degree3["y_offset"] == -expected_degree3-1
+assert degree3["differential_scale"] == -QQ(1)/5
+assert degree3["target_center"] == E3(QQ(5), QQ(19))
+assert len(degree3_discovery["attempted_centers"]) == 2
+assert degree3["scale_polynomial"] == (
+    degree3["scale_polynomial"].parent().gen()+QQ(1)/5
+)
 
 # Degree 5: odd-degree source model over a number field.
 Q.<u> = PolynomialRing(QQ)
@@ -190,6 +197,15 @@ result = {
     "library": (
         "computations/sage/lib/elliptic_cover_recovery.sage"
     ),
+    "automatic_discovery": {
+        "degree3_attempted_centers": [
+            str(attempt["center"])
+            for attempt in degree3_discovery["attempted_centers"]
+        ],
+        "degree3_scale_polynomial": str(
+            degree3["scale_polynomial"]
+        ),
+    },
     "cases": [
         {
             "label": label,
@@ -201,6 +217,9 @@ result = {
             ],
             "x_coordinate": str(case["x_coordinate"]),
             "identity_residual": str(case["identity_residual"]),
+            "differential_scale": str(
+                case["differential_scale"]
+            ),
         }
         for label, case in cases
     ],

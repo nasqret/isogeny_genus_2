@@ -240,3 +240,22 @@
   non-short elliptic target, and a quadratic number field.
 - B010 progress increased to 60%. Automatic target, eigenform, and scale
   discovery remain separate inputs to implement.
+
+### Automatic scale and center discovery
+
+- Added `discover_elliptic_cover` to the general SageMath library.
+- For each candidate center, reconstruction runs over `k(scale)`. The
+  coefficientwise gcd of the exact identity residual yields the scale
+  polynomial.
+- The first degree-7 map gives `scale^2-2401/144`; the positive
+  normalization recovers `49/12`.
+- A bounded Mordell-Weil search tests four centers for the complementary
+  degree-7 map and discovers `-7*G=(10465/4,-51175/8)` with
+  `scale+49/60`.
+- The finite degree-3 regression discovers `(5,19)` after two center attempts
+  and derives `scale+1/5`.
+- Every nonzero scale root is rerun through the exact characteristic-zero
+  verifier. The search bound and attempted centers remain in the returned
+  certificate.
+- B010 progress increased to 75%. Target-curve and eigenform discovery are
+  the remaining conceptual inputs.

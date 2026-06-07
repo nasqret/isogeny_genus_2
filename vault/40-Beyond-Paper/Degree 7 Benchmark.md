@@ -11,6 +11,8 @@ Kumar's rational family on `Y_-(49)` was specialized at `u=1`.
 - exact factorization of the genus-2 Frobenius polynomial at 41 good primes.
 - both primitive degree-7 maps over `Q`;
 - exact differential pullbacks `(49/12) dx/y` and `(-49/60) x dx/y`;
+- automatic symbolic recovery of both differential scales;
+- automatic bounded Mordell-Weil discovery of the finite center `-7*G`;
 - independent Magma degree computations.
 
 ## Completed obligation

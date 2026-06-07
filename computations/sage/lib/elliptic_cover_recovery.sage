@@ -1,14 +1,19 @@
 """
 Degree-independent recovery of hyperelliptic-to-elliptic maps.
 
-The main entry point is ``recover_elliptic_cover``.  It reconstructs the
-elliptic X-coordinate from:
+The main entry points are ``recover_elliptic_cover`` and
+``discover_elliptic_cover``.  The first reconstructs the elliptic
+X-coordinate from:
 
 * a hyperelliptic model y^2 = F(x);
 * an elliptic target E;
 * a pulled-back invariant differential c*h(x)*dx/y;
 * a source expansion point and its image on E;
 * the degree of the cover, or explicit numerator/denominator bounds.
+
+The discovery wrapper can determine the differential scale exactly and,
+over the rationals, search a bounded part of the target Mordell-Weil group
+for the image of the selected source point.
 
 All arithmetic is exact.  A returned candidate is accepted only after the
 identity induced by the invariant differential and the elliptic equation is
@@ -295,6 +300,90 @@ def rational_reconstruct_from_series(
     return polynomial_ring.fraction_field()(numerator/denominator)
 
 
+def _symbolic_rational_candidate(
+    source_x_series,
+    target_x_series,
+    numerator_degree,
+    denominator_degree,
+    polynomial_ring,
+):
+    """
+    Construct the generic rational candidate from the first independent rows.
+
+    At a generic symbolic scale the full reconstruction system has trivial
+    kernel.  The first ``unknown_count-1`` independent equations instead
+    produce a one-dimensional candidate whose exact identity residual cuts
+    out the valid scales.
+    """
+    numerator_degree = ZZ(numerator_degree)
+    denominator_degree = ZZ(denominator_degree)
+    x = polynomial_ring.gen()
+    base_field = polynomial_ring.base_ring()
+    source_powers = [
+        source_x_series^i
+        for i in range(max(numerator_degree, denominator_degree)+1)
+    ]
+    basis = [
+        source_powers[i]
+        for i in range(numerator_degree+1)
+    ] + [
+        -target_x_series*source_powers[j]
+        for j in range(denominator_degree+1)
+    ]
+    unknown_count = len(basis)
+    minimum_exponent = min(series.valuation() for series in basis)
+    finite_precisions = [
+        series.precision_absolute()
+        for series in basis
+        if series.precision_absolute() is not Infinity
+    ]
+    if not finite_precisions:
+        raise ValueError("the symbolic solve needs a truncated target series")
+    maximum_exponent = ZZ(min(finite_precisions))
+
+    independent_rows = []
+    system = None
+    current_rank = 0
+    for exponent in range(minimum_exponent, maximum_exponent):
+        row = [series[exponent] for series in basis]
+        if not any(coefficient != 0 for coefficient in row):
+            continue
+        trial = matrix(base_field, independent_rows+[row])
+        trial_rank = trial.rank()
+        if trial_rank > current_rank:
+            independent_rows.append(row)
+            current_rank = trial_rank
+        if current_rank == unknown_count-1:
+            system = trial
+            break
+
+    if system is None:
+        raise ValueError(
+            "insufficient independent local equations for symbolic recovery"
+        )
+    kernel = system.right_kernel()
+    if kernel.dimension() != 1:
+        raise ValueError(
+            "symbolic reconstruction kernel has dimension "
+            f"{kernel.dimension()}, expected 1"
+        )
+
+    vector = kernel.basis()[0]
+    numerator = polynomial_ring(
+        sum(vector[i]*x^i for i in range(numerator_degree+1))
+    )
+    offset = numerator_degree+1
+    denominator = polynomial_ring(
+        sum(
+            vector[offset+j]*x^j
+            for j in range(denominator_degree+1)
+        )
+    )
+    if denominator == 0:
+        raise ValueError("symbolic reconstruction has zero denominator")
+    return polynomial_ring.fraction_field()(numerator/denominator)
+
+
 def elliptic_cover_identity(
     source_polynomial,
     target_curve,
@@ -390,6 +479,362 @@ def _normalize_degree_bounds(degree_bounds):
         tuple(ZZ(value) for value in pair)
         for pair in degree_bounds
     ]
+
+
+def _change_rational_function_ring(value, polynomial_ring):
+    source = value.parent()(value)
+    target_field = polynomial_ring.fraction_field()
+    return target_field(
+        polynomial_ring(source.numerator())
+        / polynomial_ring(source.denominator())
+    )
+
+
+def _center_key(point):
+    if point.is_zero():
+        return ("origin",)
+    return tuple(str(coordinate) for coordinate in point)
+
+
+def mordell_weil_center_candidates(
+    target_curve,
+    coefficient_bound,
+    priority_multiple=None,
+):
+    """
+    Enumerate a bounded exact Mordell-Weil box over QQ.
+
+    The origin is first.  For rank one, negative and positive small multiples
+    are followed by the requested priority multiple, typically the cover
+    degree.  Torsion translates and higher-rank boxes are also supported.
+    """
+    E = target_curve
+    if E.base_ring() is not QQ:
+        raise NotImplementedError(
+            "automatic Mordell-Weil center search currently requires QQ"
+        )
+    coefficient_bound = ZZ(coefficient_bound)
+    if coefficient_bound < 0:
+        raise ValueError("coefficient_bound must be nonnegative")
+
+    torsion_points = list(E.torsion_points())
+    free_generators = list(E.gens())
+    rank = len(free_generators)
+    coefficient_vectors = [tuple(ZZ(0) for _ in range(rank))]
+
+    if rank == 1:
+        priority = []
+        for value in range(1, coefficient_bound+1):
+            priority.extend([-ZZ(value), ZZ(value)])
+            if value == 1 and priority_multiple is not None:
+                special = ZZ(priority_multiple)
+                if 1 < special <= coefficient_bound:
+                    priority.extend([-special, special])
+        seen_coefficients = set()
+        coefficient_vectors = [(ZZ(0),)]
+        seen_coefficients.add((ZZ(0),))
+        for value in priority:
+            vector = (value,)
+            if vector not in seen_coefficients:
+                coefficient_vectors.append(vector)
+                seen_coefficients.add(vector)
+    elif rank > 1:
+        coefficient_vectors = sorted(
+            cartesian_product(
+                [range(-coefficient_bound, coefficient_bound+1)]*rank
+            ),
+            key=lambda vector: (
+                max(abs(ZZ(value)) for value in vector),
+                sum(abs(ZZ(value)) for value in vector),
+                tuple(ZZ(value) for value in vector),
+            ),
+        )
+
+    points = []
+    seen_points = set()
+    for coefficients in coefficient_vectors:
+        free_point = E(0)
+        for coefficient, generator in zip(
+            coefficients,
+            free_generators,
+        ):
+            free_point += coefficient*generator
+        for torsion_point in torsion_points:
+            point = free_point+torsion_point
+            key = _center_key(point)
+            if key not in seen_points:
+                points.append(point)
+                seen_points.add(key)
+    if _center_key(E(0)) not in seen_points:
+        points.insert(0, E(0))
+    else:
+        origin_index = next(
+            index
+            for index, point in enumerate(points)
+            if point.is_zero()
+        )
+        points.insert(0, points.pop(origin_index))
+    return points
+
+
+def _scale_polynomial_for_center(
+    source_polynomial,
+    target_curve,
+    eigenform,
+    cover_degree,
+    degree_bounds,
+    source_point,
+    infinity_branch,
+    target_center,
+    precision,
+):
+    base_field = source_polynomial.base_ring()
+    scale_ring = PolynomialRing(base_field, names=("scale",))
+    scale = scale_ring.gen()
+    symbolic_field = scale_ring.fraction_field()
+    source_ring = PolynomialRing(
+        symbolic_field,
+        names=(str(source_polynomial.parent().gen()),),
+    )
+    symbolic_source = source_ring(source_polynomial)
+    symbolic_eigenform = _change_rational_function_ring(
+        source_polynomial.parent().fraction_field()(eigenform),
+        source_ring,
+    )
+    symbolic_target = target_curve.change_ring(symbolic_field)
+    if target_center.is_zero():
+        symbolic_center = symbolic_target(0)
+    else:
+        symbolic_center = symbolic_target(
+            symbolic_field(target_center[0]),
+            symbolic_field(target_center[1]),
+        )
+    symbolic_source_point = (
+        None
+        if source_point is None
+        else tuple(symbolic_field(value) for value in source_point)
+    )
+
+    local_data = hyperelliptic_local_data(
+        symbolic_source,
+        precision,
+        source_point=symbolic_source_point,
+        infinity_branch=infinity_branch,
+    )
+    integral = integrate_eigenform(
+        symbolic_source,
+        symbolic_eigenform,
+        local_data,
+    )
+    target_x_series, _ = elliptic_target_x_series(
+        symbolic_target,
+        scale*integral,
+        precision,
+        target_center=symbolic_center,
+    )
+    normalized_bounds = _normalize_degree_bounds(degree_bounds)
+    if normalized_bounds is None:
+        bounds_candidates = _degree_bound_candidates(
+            cover_degree,
+            local_data,
+            target_x_series,
+        )
+    else:
+        bounds_candidates = normalized_bounds
+
+    scale_polynomials = []
+    failures = []
+    for bounds in bounds_candidates:
+        try:
+            candidate_x = _symbolic_rational_candidate(
+                local_data["x"],
+                target_x_series,
+                bounds[0],
+                bounds[1],
+                source_ring,
+            )
+            residual = elliptic_cover_identity(
+                symbolic_source,
+                symbolic_target,
+                symbolic_eigenform,
+                scale,
+                candidate_x,
+            )
+            coefficient_polynomials = [
+                scale_ring(coefficient.numerator())
+                for coefficient in residual.numerator().coefficients()
+                if coefficient != 0
+            ]
+            if not coefficient_polynomials:
+                raise ValueError(
+                    "symbolic residual vanished identically in the scale"
+                )
+            common = coefficient_polynomials[0]
+            for polynomial in coefficient_polynomials[1:]:
+                common = common.gcd(polynomial)
+                if common.is_constant():
+                    break
+            while common != 0 and common[0] == 0:
+                common //= scale
+            if common.is_constant():
+                failures.append(
+                    {
+                        "bounds": tuple(int(value) for value in bounds),
+                        "reason": "scale equations have no common root",
+                    }
+                )
+                continue
+            scale_polynomials.append((common.monic(), bounds))
+        except (ArithmeticError, ValueError, ZeroDivisionError) as error:
+            failures.append(
+                {
+                    "bounds": tuple(int(value) for value in bounds),
+                    "reason": str(error),
+                }
+            )
+    return scale_polynomials, failures
+
+
+def discover_elliptic_cover(
+    source_polynomial,
+    target_curve,
+    eigenform,
+    cover_degree,
+    degree_bounds=None,
+    source_point=None,
+    infinity_branch=1,
+    target_centers=None,
+    mordell_weil_bound=None,
+    symbolic_precision=None,
+):
+    """
+    Discover the differential scale and target center, then certify the map.
+
+    If ``target_centers`` is omitted, the origin is tested first.  Over QQ,
+    a bounded Mordell-Weil search follows.  The bound defaults to the cover
+    degree.  Over other fields explicit center candidates are required unless
+    the source point maps to the origin.
+    """
+    F = source_polynomial
+    E = target_curve
+    base_field = F.base_ring()
+    degree = ZZ(cover_degree)
+    if symbolic_precision is None:
+        symbolic_precision = max(20, 2*degree+10)
+    symbolic_precision = ZZ(symbolic_precision)
+
+    if target_centers is None:
+        centers = [E(0)]
+        use_mordell_weil_search = True
+    else:
+        centers = [E(point) for point in target_centers]
+        use_mordell_weil_search = False
+
+    attempts = []
+    discoveries = []
+    visited = set()
+
+    while centers:
+        center = centers.pop(0)
+        center_key = _center_key(center)
+        if center_key in visited:
+            continue
+        visited.add(center_key)
+        scale_data, failures = _scale_polynomial_for_center(
+            F,
+            E,
+            eigenform,
+            degree,
+            degree_bounds,
+            source_point,
+            infinity_branch,
+            center,
+            symbolic_precision,
+        )
+        center_attempt = {
+            "center": center,
+            "scale_polynomials": [
+                (polynomial, bounds)
+                for polynomial, bounds in scale_data
+            ],
+            "failures": failures,
+        }
+        attempts.append(center_attempt)
+
+        for scale_polynomial, bounds in scale_data:
+            roots = scale_polynomial.roots(base_field)
+            for scale, multiplicity in roots:
+                if scale == 0:
+                    continue
+                try:
+                    answer = recover_elliptic_cover(
+                        F,
+                        E,
+                        eigenform,
+                        scale,
+                        cover_degree=degree,
+                        degree_bounds=bounds,
+                        source_point=source_point,
+                        infinity_branch=infinity_branch,
+                        target_center=center,
+                    )
+                except (ArithmeticError, ValueError, ZeroDivisionError):
+                    continue
+                answer["scale_polynomial"] = scale_polynomial
+                answer["scale_root_multiplicity"] = ZZ(multiplicity)
+                discoveries.append(answer)
+
+        if discoveries:
+            break
+        if (
+            not centers
+            and use_mordell_weil_search
+            and len(visited) == 1
+        ):
+            if base_field is not QQ:
+                break
+            search_bound = (
+                degree
+                if mordell_weil_bound is None
+                else ZZ(mordell_weil_bound)
+            )
+            centers.extend(
+                mordell_weil_center_candidates(
+                    E,
+                    search_bound,
+                    priority_multiple=degree,
+                )
+            )
+
+    unique = {}
+    for answer in discoveries:
+        key = (
+            str(answer["x_coordinate"]),
+            str(answer["y_multiplier"]),
+            str(answer["y_offset"]),
+        )
+        unique[key] = answer
+    answers = list(unique.values())
+    if not answers:
+        raise ValueError(
+            "no certified map found in the target-center search; "
+            f"attempted {len(attempts)} centers"
+        )
+    return {
+        "verified": True,
+        "maps": answers,
+        "attempted_centers": attempts,
+        "mordell_weil_bound": (
+            None
+            if not use_mordell_weil_search
+            else (
+                degree
+                if mordell_weil_bound is None
+                else ZZ(mordell_weil_bound)
+            )
+        ),
+        "symbolic_precision": symbolic_precision,
+    }
 
 
 def recover_elliptic_cover(

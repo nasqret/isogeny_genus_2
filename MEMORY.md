@@ -98,8 +98,13 @@ This project reconstructs every computational claim in
   infinite source centers, finite or identity target centers, quintic or
   sextic genus-2 models, general Weierstrass coefficients, and exact number
   fields. Certified regression cases have degrees 3, 5, and 7.
-- The recovery library still requires the target elliptic curve, eigenform,
-  differential scale, and image of the source expansion point. Automatic
-  discovery of these inputs is the remaining B010 frontier.
+- The recovery library still requires the target elliptic curve and
+  eigenform, but no longer requires the differential scale or image of the
+  source expansion point. `discover_elliptic_cover` solves the scale
+  symbolically and searches a bounded Mordell-Weil box over `Q`.
+- For degree 7, automatic discovery gives `scale^2-2401/144` at the origin
+  and finds `-7*G=(10465/4,-51175/8)` with `scale+49/60` after four center
+  attempts.
+- Target-curve and eigenform discovery are the remaining B010 frontier.
 - Current active frontier: B002 generic degree 5, B007 arbitrary given-map
   engine, and B010 automated eigenform-guided recovery.

@@ -1,9 +1,10 @@
 """
-Reconstruct both degree-7 x-coordinates by formal integration and Pade.
+Discover and reconstruct both degree-7 x-coordinates by formal integration.
 
 This is an executable B010 benchmark.  It starts from the source curve,
-elliptic targets, eigenforms, target points, and differential scales.  It does
-not insert either rational map into the reconstruction step.
+elliptic targets, eigenforms, and degree.  It discovers the differential
+scales and target centers, and does not insert either rational map into the
+reconstruction step.
 
 Run from the repository root:
 
@@ -45,30 +46,35 @@ E2_original = EllipticCurve(
 E2 = E2_original.short_weierstrass_model()
 
 
-# First map: the chosen infinity maps to the elliptic origin.
-c1 = QQ(49)/12
-recovery_1 = recover_elliptic_cover(
+# The first search discovers that infinity maps to the origin and derives
+# scale^2=(49/12)^2.  Select the positive normalization.
+discovery_1 = discover_elliptic_cover(
     source_polynomial,
     E1,
     eigenform=1,
-    differential_scale=c1,
     cover_degree=7,
 )
+recovery_1 = next(
+    answer
+    for answer in discovery_1["maps"]
+    if answer["differential_scale"] > 0
+)
+c1 = recovery_1["differential_scale"]
 recovered_X1 = recovery_1["x_coordinate"]
 
-# Second map: translate the formal point by the finite image of infinity.
-c2 = -QQ(49)/60
-generator = E2_original.gens()[0]
-isomorphism = E2_original.isomorphism_to(E2)
-infinity_image = isomorphism(-7*generator)
-recovery_2 = recover_elliptic_cover(
+# The second search enumerates a bounded Mordell-Weil box and discovers both
+# the finite center -7*G and the scale -49/60.
+discovery_2 = discover_elliptic_cover(
     source_polynomial,
     E2,
     eigenform=x,
-    differential_scale=c2,
     cover_degree=7,
-    target_center=infinity_image,
+    mordell_weil_bound=7,
 )
+assert len(discovery_2["maps"]) == 1
+recovery_2 = discovery_2["maps"][0]
+c2 = recovery_2["differential_scale"]
+infinity_image = recovery_2["target_center"]
 point_x = infinity_image[0]
 point_y = infinity_image[1]
 recovered_X2 = recovery_2["x_coordinate"]
@@ -106,6 +112,10 @@ assert recovered_X1 == expected_X1
 assert recovered_X2 == expected_X2
 assert recovery_1["degree_bounds"] == (7, 3)
 assert recovery_2["degree_bounds"] == (7, 7)
+assert c1 == QQ(49)/12
+assert c2 == -QQ(49)/60
+assert len(discovery_1["attempted_centers"]) == 1
+assert len(discovery_2["attempted_centers"]) == 4
 
 elapsed = perf_counter()-started
 result = {
@@ -117,8 +127,8 @@ result = {
     "workstream": "B010",
     "verified": True,
     "method": (
-        "degree-independent formal integration plus exact linear "
-        "rational reconstruction"
+        "exact symbolic scale solving, bounded Mordell-Weil center search, "
+        "formal integration, and linear rational reconstruction"
     ),
     "library": (
         "computations/sage/lib/elliptic_cover_recovery.sage"
@@ -128,8 +138,18 @@ result = {
             "label": "f1",
             "eigenform": "dx/y",
             "target_center": "elliptic origin",
+            "centers_attempted": int(
+                len(discovery_1["attempted_centers"])
+            ),
+            "attempted_centers": [
+                str(attempt["center"])
+                for attempt in discovery_1["attempted_centers"]
+            ],
+            "scale_polynomial": str(
+                recovery_1["scale_polynomial"]
+            ),
             "differential_scale": str(c1),
-            "pade_degrees": [int(7), int(3)],
+            "degree_bounds": [int(7), int(3)],
             "recovered_x_coordinate": str(recovered_X1),
         },
         {
@@ -140,8 +160,18 @@ result = {
                 str(point_x),
                 str(point_y),
             ],
+            "centers_attempted": int(
+                len(discovery_2["attempted_centers"])
+            ),
+            "attempted_centers": [
+                str(attempt["center"])
+                for attempt in discovery_2["attempted_centers"]
+            ],
+            "scale_polynomial": str(
+                recovery_2["scale_polynomial"]
+            ),
             "differential_scale": str(c2),
-            "pade_degrees": [int(7), int(7)],
+            "degree_bounds": [int(7), int(7)],
             "recovered_x_coordinate": str(recovered_X2),
         },
     ],

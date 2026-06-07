@@ -223,5 +223,10 @@
     "timestamp": "2026-06-07T02:43:31+02:00",
     "claim_id": "B010",
     "summary": "Generalized exact map recovery to arbitrary cover degree and certified degree-3, degree-5, and degree-7 cases with finite centers, quintic and sextic models, and a quadratic number field."
+  },
+  {
+    "timestamp": "2026-06-07T03:00:43+02:00",
+    "claim_id": "B010",
+    "summary": "Automatically discovered exact differential scales and rational target centers for the degree-3 and both degree-7 maps using symbolic scale equations and bounded Mordell-Weil search."
   }
 ]

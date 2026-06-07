@@ -123,10 +123,10 @@
     "id": "B010",
     "title": "Eigenform-guided exact map recovery",
     "status": "in_progress",
-    "progress": 60,
+    "progress": 75,
     "engine": "SageMath+Magma",
     "location": "hybrid",
-    "objective": "Recover rational maps from split differentials using formal integration at finite or infinite target points, linear rational reconstruction, modular solving, coefficient lifting, and final function-field verification.",
+    "objective": "Recover rational maps from split differentials using target and eigenform discovery, exact symbolic scale solving, bounded center search, linear rational reconstruction, coefficient lifting, and final function-field verification.",
     "artifacts": [
       "computations/sage/lib/elliptic_cover_recovery.sage",
       "computations/sage/test_general_elliptic_cover_recovery.sage",
