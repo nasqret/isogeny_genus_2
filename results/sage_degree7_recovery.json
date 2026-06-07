@@ -1,19 +1,85 @@
 {
-  "generated_at": "2026-06-07T03:03:58+02:00",
+  "generated_at": "2026-06-07T03:15:06+02:00",
   "engine": "SageMath 10.8",
-  "elapsed_seconds": 33.705297,
+  "elapsed_seconds": 31.132174,
   "workstream": "B010",
   "verified": true,
-  "method": "exact symbolic scale solving, bounded Mordell-Weil center search, formal integration, and linear rational reconstruction",
-  "library": "computations/sage/lib/elliptic_cover_recovery.sage",
+  "method": "Frobenius twist filtering, bounded eigenform and Mordell-Weil search, symbolic scale solving, and exact map reconstruction",
+  "libraries": [
+    "computations/sage/lib/elliptic_cover_recovery.sage",
+    "computations/sage/lib/elliptic_factor_discovery.sage"
+  ],
+  "target_discovery": {
+    "input_j_invariants": [
+      "-20285403817/279936",
+      "-97967097/128"
+    ],
+    "bad_prime_support": [
+      2,
+      3,
+      5,
+      7,
+      23
+    ],
+    "twist_class_count": 64,
+    "frobenius_prime_count": 17,
+    "frobenius_primes": [
+      11,
+      13,
+      17,
+      19,
+      29,
+      31,
+      37,
+      41,
+      43,
+      47,
+      53,
+      59,
+      61,
+      67,
+      71,
+      73,
+      79
+    ],
+    "compatible_twists_per_j": [
+      {
+        "j": "-20285403817/279936",
+        "count": 1,
+        "square_classes": [
+          -115
+        ]
+      },
+      {
+        "j": "-97967097/128",
+        "count": 1,
+        "square_classes": [
+          5
+        ]
+      }
+    ]
+  },
   "maps": [
     {
       "label": "f1",
+      "target_j": "-20285403817/279936",
+      "twist_square_class": -115,
+      "eigenform_coefficients": [
+        1,
+        0
+      ],
       "eigenform": "dx/y",
       "target_center": "elliptic origin",
-      "centers_attempted": 1,
-      "attempted_centers": [
-        "(0 : 1 : 0)"
+      "search_attempt_count": 1,
+      "search_attempts": [
+        {
+          "center": "(0 : 1 : 0)",
+          "eigenform_coefficients": [
+            1,
+            0
+          ],
+          "success": true
+        }
       ],
       "scale_polynomial": "scale^2 - 2401/144",
       "differential_scale": "49/12",
@@ -25,18 +91,84 @@
     },
     {
       "label": "f2",
+      "target_j": "-97967097/128",
+      "twist_square_class": 5,
+      "eigenform_coefficients": [
+        0,
+        1
+      ],
       "eigenform": "x dx/y",
       "target_center": "-7*(29,-590)",
       "target_center_short": [
         "10465/4",
         "-51175/8"
       ],
-      "centers_attempted": 4,
-      "attempted_centers": [
-        "(0 : 1 : 0)",
-        "(1035 : 124200 : 1)",
-        "(1035 : -124200 : 1)",
-        "(10465/4 : -51175/8 : 1)"
+      "search_attempt_count": 8,
+      "search_attempts": [
+        {
+          "center": "(0 : 1 : 0)",
+          "eigenform_coefficients": [
+            1,
+            0
+          ],
+          "success": false
+        },
+        {
+          "center": "(0 : 1 : 0)",
+          "eigenform_coefficients": [
+            0,
+            1
+          ],
+          "success": false
+        },
+        {
+          "center": "(1035 : 124200 : 1)",
+          "eigenform_coefficients": [
+            1,
+            0
+          ],
+          "success": false
+        },
+        {
+          "center": "(1035 : 124200 : 1)",
+          "eigenform_coefficients": [
+            0,
+            1
+          ],
+          "success": false
+        },
+        {
+          "center": "(1035 : -124200 : 1)",
+          "eigenform_coefficients": [
+            1,
+            0
+          ],
+          "success": false
+        },
+        {
+          "center": "(1035 : -124200 : 1)",
+          "eigenform_coefficients": [
+            0,
+            1
+          ],
+          "success": false
+        },
+        {
+          "center": "(10465/4 : -51175/8 : 1)",
+          "eigenform_coefficients": [
+            1,
+            0
+          ],
+          "success": false
+        },
+        {
+          "center": "(10465/4 : -51175/8 : 1)",
+          "eigenform_coefficients": [
+            0,
+            1
+          ],
+          "success": true
+        }
       ],
       "scale_polynomial": "scale + 49/60",
       "differential_scale": "-49/60",

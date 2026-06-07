@@ -105,6 +105,13 @@ This project reconstructs every computational claim in
 - For degree 7, automatic discovery gives `scale^2-2401/144` at the origin
   and finds `-7*G=(10465/4,-51175/8)` with `scale+49/60` after four center
   attempts.
-- Target-curve and eigenform discovery are the remaining B010 frontier.
+- Given candidate Hilbert-modular `j`-invariants,
+  `elliptic_factor_discovery.sage` now discovers rational target twists by
+  Frobenius filtering and eigenform lines by bounded projective search.
+- For degree 7, 64 discriminant-supported twist classes and 17 split good
+  Frobenius polynomials uniquely recover twists `-115`, `5`; exact recovery
+  then selects eigenforms `[1:0]`, `[0:1]`.
+- B010's remaining fully general input is candidate `j`-invariant extraction
+  from an arbitrary source. For Kumar families this belongs to B009.
 - Current active frontier: B002 generic degree 5, B007 arbitrary given-map
   engine, and B010 automated eigenform-guided recovery.

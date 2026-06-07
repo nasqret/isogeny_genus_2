@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-07T03:03:29+02:00",
+  "generated_at": "2026-06-07T03:13:28+02:00",
   "engine": "SageMath 10.8",
-  "elapsed_seconds": 4.510106,
+  "elapsed_seconds": 3.961615,
   "workstream": "B010",
   "verified": true,
   "library": "computations/sage/lib/elliptic_cover_recovery.sage",

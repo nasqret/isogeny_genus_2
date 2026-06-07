@@ -30,6 +30,10 @@ is complete only after both maps and this splitting are certified exactly.
 - Automatic local-data discovery: the differential scale is solved exactly
   as an algebraic condition, and rational target centers are found in a
   bounded Mordell-Weil search.
+- Target and eigenform discovery: given candidate Hilbert-modular
+  `j`-invariants, Frobenius traces select the rational twists and a bounded
+  projective search selects the eigenform lines. Exact maps certify the
+  surviving candidates.
 - High degree: exact nonprimitive degree-20 and degree-80 maps obtained from
   the degree-5 cover by elliptic multiplication.
 
@@ -99,9 +103,9 @@ curve, and recover the two maps.
    derive \(j(E')\).
 2. Degree 6: import the \(Y_-(36)\) family and handle exceptional
    \(\operatorname{PGL}_2(\mathbf F_5)\) monodromy.
-3. Degree 7: completed for the current benchmark; the recovery routine now
-   discovers target points and differential scales, leaving target-curve and
-   eigenform discovery.
+3. Degree 7: completed for the current benchmark; from the two family
+   `j`-invariants the recovery routine discovers twists, eigenforms, centers,
+   scales, and both maps.
 4. Degrees 8-11: import Kumar's tautological families and recover one fully
    certified rational specialization per degree.
 5. Degrees above 11: generate primitive examples by anti-isometry synthesis

@@ -118,8 +118,19 @@ $$
 and $c=-49/60$. The finite degree-$3$ regression similarly discovers
 $P=(5,19)$ and $c=-1/5$.
 
-The target elliptic curve and eigenform remain inputs. Their automatic
-discovery is the next modular and finite-field part of Engine B.
+When candidate Hilbert-modular $j$-invariants are supplied, the target models
+and eigenforms are now also discovered. Signed squarefree twists supported on
+the source discriminant are filtered by the two quadratic Frobenius factors.
+Primitive projective differential lines $[r:s]$ are then searched in bounded
+height, and only candidates producing an exact map survive.
+
+For the degree-$7$ benchmark, 64 twist classes and 17 split good Frobenius
+polynomials uniquely select twists $-115$ and $5$. The exact map search then
+selects eigenform lines $[1:0]$ and $[0:1]$.
+
+The remaining input is the list of candidate $j$-invariants. Extracting that
+list from an arbitrary source curve is a separate moduli or database problem;
+for Kumar families it is supplied by the family importer.
 
 ## Engine C: specialization and interpolation
 

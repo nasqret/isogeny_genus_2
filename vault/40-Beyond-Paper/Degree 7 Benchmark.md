@@ -13,6 +13,9 @@ Kumar's rational family on `Y_-(49)` was specialized at `u=1`.
 - exact differential pullbacks `(49/12) dx/y` and `(-49/60) x dx/y`;
 - automatic symbolic recovery of both differential scales;
 - automatic bounded Mordell-Weil discovery of the finite center `-7*G`;
+- automatic recovery of twists `-115`, `5` from the two candidate
+  Hilbert-modular `j`-invariants and 17 split Frobenius polynomials;
+- automatic eigenform discovery `[1:0]`, `[0:1]`;
 - independent Magma degree computations.
 
 ## Completed obligation

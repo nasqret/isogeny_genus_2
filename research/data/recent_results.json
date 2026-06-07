@@ -228,5 +228,10 @@
     "timestamp": "2026-06-07T03:00:43+02:00",
     "claim_id": "B010",
     "summary": "Automatically discovered exact differential scales and rational target centers for the degree-3 and both degree-7 maps using symbolic scale equations and bounded Mordell-Weil search."
+  },
+  {
+    "timestamp": "2026-06-07T03:12:19+02:00",
+    "claim_id": "B010",
+    "summary": "From the degree-7 source and two family j-invariants, uniquely discovered twists -115 and 5, eigenform lines [1:0] and [0:1], and both exact maps."
   }
 ]

@@ -1,10 +1,10 @@
 """
-Discover and reconstruct both degree-7 x-coordinates by formal integration.
+Discover and reconstruct both degree-7 maps from their candidate j-values.
 
 This is an executable B010 benchmark.  It starts from the source curve,
-elliptic targets, eigenforms, and degree.  It discovers the differential
-scales and target centers, and does not insert either rational map into the
-reconstruction step.
+the two Hilbert-modular j-invariants, and the degree.  It discovers the
+rational target twists, eigenform lines, differential scales, target centers,
+and maps.
 
 Run from the repository root:
 
@@ -26,6 +26,13 @@ load(str(
     / "lib"
     / "elliptic_cover_recovery.sage"
 ))
+load(str(
+    root
+    / "computations"
+    / "sage"
+    / "lib"
+    / "elliptic_factor_discovery.sage"
+))
 
 R.<x> = PolynomialRing(QQ)
 F1 = x^3 + 23*x^2 + 552*x + 17940
@@ -37,42 +44,43 @@ F2 = (
 )
 source_polynomial = F1*F2
 
-E1 = EllipticCurve(
+j1 = -QQ(20285403817)/279936
+j2 = -QQ(97967097)/128
+full_discovery = discover_covers_from_j_invariants(
+    source_polynomial,
+    [j1, j2],
+    7,
+    prime_bound=80,
+    eigenform_height_bound=1,
+    mordell_weil_bound=7,
+    symbolic_precision=20,
+)
+assert len(full_discovery["covers"]) == 2
+covers_by_j = {
+    cover["twist_data"]["j_invariant"]: cover
+    for cover in full_discovery["covers"]
+}
+cover_1 = covers_by_j[j1]
+cover_2 = covers_by_j[j2]
+
+assert cover_1["twist_data"]["twist_square_class"] == -115
+assert cover_2["twist_data"]["twist_square_class"] == 5
+assert cover_1["map_data"]["eigenform_coefficients"] == (1, 0)
+assert cover_2["map_data"]["eigenform_coefficients"] == (0, 1)
+
+E1 = cover_1["short_curve"]
+E2 = cover_2["short_curve"]
+assert E1 == EllipticCurve(
     [0, 0, 0, -7876003275, -272222678576250]
 )
-E2_original = EllipticCurve(
-    [1, -1, 1, -15705, 762297]
+assert E2 == EllipticCurve(
+    [0, 0, 0, -20353275, 35382561750]
 )
-E2 = E2_original.short_weierstrass_model()
 
-
-# The first search discovers that infinity maps to the origin and derives
-# scale^2=(49/12)^2.  Select the positive normalization.
-discovery_1 = discover_elliptic_cover(
-    source_polynomial,
-    E1,
-    eigenform=1,
-    cover_degree=7,
-)
-recovery_1 = next(
-    answer
-    for answer in discovery_1["maps"]
-    if answer["differential_scale"] > 0
-)
+recovery_1 = cover_1["map_data"]["maps"][0]
+recovery_2 = cover_2["map_data"]["maps"][0]
 c1 = recovery_1["differential_scale"]
 recovered_X1 = recovery_1["x_coordinate"]
-
-# The second search enumerates a bounded Mordell-Weil box and discovers both
-# the finite center -7*G and the scale -49/60.
-discovery_2 = discover_elliptic_cover(
-    source_polynomial,
-    E2,
-    eigenform=x,
-    cover_degree=7,
-    mordell_weil_bound=7,
-)
-assert len(discovery_2["maps"]) == 1
-recovery_2 = discovery_2["maps"][0]
 c2 = recovery_2["differential_scale"]
 infinity_image = recovery_2["target_center"]
 point_x = infinity_image[0]
@@ -114,8 +122,11 @@ assert recovery_1["degree_bounds"] == (7, 3)
 assert recovery_2["degree_bounds"] == (7, 7)
 assert c1 == QQ(49)/12
 assert c2 == -QQ(49)/60
-assert len(discovery_1["attempted_centers"]) == 1
-assert len(discovery_2["attempted_centers"]) == 4
+assert infinity_image == E2(QQ(10465)/4, -QQ(51175)/8)
+
+E2_original = cover_2["twist_data"]["curve"]
+E2_isomorphism = E2_original.isomorphism_to(E2)
+assert infinity_image == E2_isomorphism(-7*E2_original.gens()[0])
 
 elapsed = perf_counter()-started
 result = {
@@ -127,23 +138,70 @@ result = {
     "workstream": "B010",
     "verified": True,
     "method": (
-        "exact symbolic scale solving, bounded Mordell-Weil center search, "
-        "formal integration, and linear rational reconstruction"
+        "Frobenius twist filtering, bounded eigenform and Mordell-Weil "
+        "search, symbolic scale solving, and exact map reconstruction"
     ),
-    "library": (
-        "computations/sage/lib/elliptic_cover_recovery.sage"
-    ),
+    "libraries": [
+        "computations/sage/lib/elliptic_cover_recovery.sage",
+        "computations/sage/lib/elliptic_factor_discovery.sage",
+    ],
+    "target_discovery": {
+        "input_j_invariants": [str(j1), str(j2)],
+        "bad_prime_support": [
+            int(value)
+            for value in full_discovery[
+                "target_search"
+            ]["bad_prime_support"]
+        ],
+        "twist_class_count": int(
+            full_discovery["target_search"]["twist_class_count"]
+        ),
+        "frobenius_prime_count": int(
+            len(full_discovery["target_search"]["frobenius_data"])
+        ),
+        "frobenius_primes": [
+            int(certificate["prime"])
+            for certificate in full_discovery[
+                "target_search"
+            ]["frobenius_data"]
+        ],
+        "compatible_twists_per_j": [
+            {
+                "j": str(target["j_invariant"]),
+                "count": int(len(target["compatible_twists"])),
+                "square_classes": [
+                    int(candidate["twist_square_class"])
+                    for candidate in target["compatible_twists"]
+                ],
+            }
+            for target in full_discovery[
+                "target_search"
+            ]["targets"]
+        ],
+    },
     "maps": [
         {
             "label": "f1",
+            "target_j": str(j1),
+            "twist_square_class": int(-115),
+            "eigenform_coefficients": [int(1), int(0)],
             "eigenform": "dx/y",
             "target_center": "elliptic origin",
-            "centers_attempted": int(
-                len(discovery_1["attempted_centers"])
+            "search_attempt_count": int(
+                len(cover_1["map_data"]["attempted"])
             ),
-            "attempted_centers": [
-                str(attempt["center"])
-                for attempt in discovery_1["attempted_centers"]
+            "search_attempts": [
+                {
+                    "center": str(attempt["center"]),
+                    "eigenform_coefficients": [
+                        int(value)
+                        for value in attempt[
+                            "eigenform_coefficients"
+                        ]
+                    ],
+                    "success": bool(attempt["success"]),
+                }
+                for attempt in cover_1["map_data"]["attempted"]
             ],
             "scale_polynomial": str(
                 recovery_1["scale_polynomial"]
@@ -154,18 +212,30 @@ result = {
         },
         {
             "label": "f2",
+            "target_j": str(j2),
+            "twist_square_class": int(5),
+            "eigenform_coefficients": [int(0), int(1)],
             "eigenform": "x dx/y",
             "target_center": "-7*(29,-590)",
             "target_center_short": [
                 str(point_x),
                 str(point_y),
             ],
-            "centers_attempted": int(
-                len(discovery_2["attempted_centers"])
+            "search_attempt_count": int(
+                len(cover_2["map_data"]["attempted"])
             ),
-            "attempted_centers": [
-                str(attempt["center"])
-                for attempt in discovery_2["attempted_centers"]
+            "search_attempts": [
+                {
+                    "center": str(attempt["center"]),
+                    "eigenform_coefficients": [
+                        int(value)
+                        for value in attempt[
+                            "eigenform_coefficients"
+                        ]
+                    ],
+                    "success": bool(attempt["success"]),
+                }
+                for attempt in cover_2["map_data"]["attempted"]
             ],
             "scale_polynomial": str(
                 recovery_2["scale_polynomial"]

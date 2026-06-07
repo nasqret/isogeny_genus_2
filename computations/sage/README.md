@@ -22,6 +22,9 @@ Each `.sage` file must:
   genus-2 covers of arbitrary degree, with finite or infinite source centers,
   finite or identity target centers, quintic or sextic source models, and
   exact number fields.
+- `lib/elliptic_factor_discovery.sage`: discovers rational target twists from
+  candidate `j`-invariants and genus-2 Frobenius factors, searches bounded
+  eigenform lines, and invokes exact map recovery.
 - `test_general_elliptic_cover_recovery.sage`: regression cases in degrees
   `3`, `5`, and `7`, including finite centers and a quadratic number field.
 - `recover_degree7_maps.sage`: applies the reusable library to both
@@ -75,7 +78,37 @@ source center is at infinity. At finite source points it searches all degree
 patterns with maximum degree `n`. A candidate is returned only if the exact
 completed-square elliptic identity vanishes in the source function field.
 
-The discovery API assumes that the target curve and eigenform are known. Over
-number fields other than `QQ`, center candidates must currently be supplied.
-Automatic target and eigenform discovery is the remaining
-modular/period/finite-field stage of B010.
+The base recovery API assumes that the target curve and eigenform are known.
+Over number fields other than `QQ`, center candidates must currently be
+supplied. The wrapper below removes the target-model and eigenform inputs
+when candidate `j`-invariants are available.
+
+## Target and eigenform discovery
+
+For Hilbert-modular families that supply candidate `j`-invariants:
+
+```sage
+load("computations/sage/lib/elliptic_cover_recovery.sage")
+load("computations/sage/lib/elliptic_factor_discovery.sage")
+
+answer = discover_covers_from_j_invariants(
+    source_polynomial=F,
+    j_invariants=[j1, j2],
+    cover_degree=n,
+    prime_bound=80,
+    eigenform_height_bound=1,
+    mordell_weil_bound=n,
+)
+```
+
+The target search enumerates signed squarefree twist classes supported on the
+source discriminant. A twist survives only when its trace belongs to one of
+the two quadratic factors of the source Frobenius polynomial at every tested
+good split prime. Surviving targets are tested against primitive projective
+lines `[r:s]`, representing `(r+s*x) dx/y`. Scale, center, and map recovery
+then use exact characteristic-zero identities.
+
+The twist-support, Frobenius-prime, eigenform-height, and Mordell-Weil bounds
+are explicit search bounds, not proof substitutes. The returned map identity
+is the final certificate. Discovering the candidate `j`-invariants from an
+arbitrary source curve remains outside this API.

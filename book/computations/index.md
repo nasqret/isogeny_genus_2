@@ -37,6 +37,9 @@ Local exact computations live under `computations/sage/`.
   degree-independent formal integration, target translation, rational
   reconstruction, symbolic scale solving, bounded Mordell-Weil center search,
   and exact map certification.
+- [`elliptic_factor_discovery.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/lib/elliptic_factor_discovery.sage):
+  Frobenius-compatible target-twist discovery and bounded eigenform-line
+  search from candidate Hilbert-modular `j`-invariants.
 - [`test_general_elliptic_cover_recovery.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/test_general_elliptic_cover_recovery.sage):
   exact regression cases in degrees 3, 5, and 7 over rational and quadratic
   number fields.

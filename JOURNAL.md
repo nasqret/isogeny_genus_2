@@ -259,3 +259,23 @@
   certificate.
 - B010 progress increased to 75%. Target-curve and eigenform discovery are
   the remaining conceptual inputs.
+
+### Target twist and eigenform discovery
+
+- Added `computations/sage/lib/elliptic_factor_discovery.sage`.
+- Starting from the source discriminant support
+  `{2,3,5,7,23}`, the target search enumerates 64 signed squarefree twist
+  classes for each candidate `j`-invariant.
+- Seventeen split good Frobenius polynomials below 80 uniquely select twist
+  `-115` for `j1` and twist `5` for `j2`.
+- A bounded projective search in `(r+s*x) dx/y` finds eigenform lines
+  `[1:0]` and `[0:1]`.
+- The degree-7 recovery benchmark now starts only from the source sextic, the
+  two Hilbert-modular `j`-invariants, and degree `7`; target models,
+  eigenforms, centers, scales, and maps are discovered.
+- All discovery evidence is followed by exact characteristic-zero map
+  identities, so the finite-prime and height bounds are search aids rather
+  than proof claims.
+- B010 progress increased to 90%. The remaining general input is extraction
+  of candidate `j`-invariants from an arbitrary source; Kumar-family values
+  will come from B009.
