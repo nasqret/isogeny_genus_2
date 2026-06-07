@@ -1,0 +1,245 @@
+{
+  "generated_at": "2026-06-07T04:14:58+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 3.428789,
+  "workstreams": [
+    "B004",
+    "B010",
+    "B012"
+  ],
+  "verified": true,
+  "scope": "Exact recovery of both primitive degree-6 maps for a rational Y_-(36) specialization",
+  "specialization": {
+    "parameters": {
+      "r": "-9",
+      "s": "9/2",
+      "z": "39366"
+    },
+    "surface_value": "1549681956",
+    "raw_sextic_discriminant_factorization": "2^27 * 3^472",
+    "normalization": {
+      "raw_x": "3^16*x",
+      "raw_y": "3^48*y"
+    },
+    "normalized_source_polynomial": "x^6 - 6*x^5 + 7*x^4 + 28/9*x^3 - 16/3*x^2 - 16/9*x + 16/81",
+    "j_invariants": [
+      "-972",
+      "1296"
+    ]
+  },
+  "target_discovery": {
+    "bad_prime_support": [
+      2,
+      3
+    ],
+    "frobenius_primes": [
+      5,
+      7,
+      11,
+      13,
+      17,
+      19,
+      23,
+      29,
+      31,
+      37,
+      41,
+      43,
+      47,
+      53,
+      59,
+      61,
+      67,
+      71,
+      73,
+      79
+    ],
+    "targets": [
+      {
+        "j": "-972",
+        "twist_square_class": -1,
+        "curve": "Elliptic Curve defined by y^2 = x^3 - 27*x + 90 over Rational Field"
+      },
+      {
+        "j": "1296",
+        "twist_square_class": -1,
+        "curve": "Elliptic Curve defined by y^2 = x^3 + 81*x - 162 over Rational Field"
+      }
+    ]
+  },
+  "hasse_witt_certificates": [
+    {
+      "prime": 5,
+      "matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_traces": {
+        "-972": -4,
+        "1296": 2
+      }
+    },
+    {
+      "prime": 13,
+      "matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          8
+        ]
+      ],
+      "target_traces": {
+        "-972": -5,
+        "1296": 1
+      }
+    },
+    {
+      "prime": 17,
+      "matrix": [
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          15
+        ]
+      ],
+      "target_traces": {
+        "-972": -2,
+        "1296": 4
+      }
+    },
+    {
+      "prime": 23,
+      "matrix": [
+        [
+          15,
+          0
+        ],
+        [
+          0,
+          21
+        ]
+      ],
+      "target_traces": {
+        "-972": -2,
+        "1296": -8
+      }
+    },
+    {
+      "prime": 31,
+      "matrix": [
+        [
+          7,
+          0
+        ],
+        [
+          0,
+          26
+        ]
+      ],
+      "target_traces": {
+        "-972": -5,
+        "1296": 7
+      }
+    },
+    {
+      "prime": 41,
+      "matrix": [
+        [
+          35,
+          0
+        ],
+        [
+          0,
+          29
+        ]
+      ],
+      "target_traces": {
+        "-972": -12,
+        "1296": -6
+      }
+    }
+  ],
+  "maps": [
+    {
+      "label": "degree6_quotient",
+      "target_j": "-972",
+      "target_curve": "Elliptic Curve defined by y^2 = x^3 - 27*x + 90 over Rational Field",
+      "eigenform": "x dx/y",
+      "differential_scale": "-1",
+      "target_center": [
+        "3",
+        "-6"
+      ],
+      "degree_bounds": [
+        6,
+        6
+      ],
+      "cover_degree": 6,
+      "primitive_over_Q": true,
+      "primitivity_reason": "The target has no rational prime-degree isogeny of degree 2 or 3.",
+      "x_coordinate": "(3*x^6 - 30*x^5 + 81*x^4 - 296/3*x^3 + 184/3*x^2 - 848/27)/(x^6 - 6*x^5 + 9*x^4 + 40/9*x^3 - 40/3*x^2 + 400/81)",
+      "y_multiplier": "(-6*x^6 + 36*x^5 - 168*x^4 + 1312/3*x^3 - 544*x^2 + 704/3*x + 1408/27)/(x^9 - 9*x^8 + 27*x^7 - 61/3*x^6 - 40*x^5 + 60*x^4 + 400/27*x^3 - 400/9*x^2 + 8000/729)",
+      "y_offset": "0"
+    },
+    {
+      "label": "degree6_complement",
+      "target_j": "1296",
+      "target_curve": "Elliptic Curve defined by y^2 = x^3 + 81*x - 162 over Rational Field",
+      "eigenform": "dx/y",
+      "differential_scale": "2/3",
+      "target_center": "elliptic origin",
+      "degree_bounds": [
+        12,
+        9,
+        8
+      ],
+      "cover_degree": 6,
+      "primitive_over_Q": true,
+      "primitivity_reason": "The target has no rational prime-degree isogeny of degree 2 or 3.",
+      "x_coordinate_degree": 12,
+      "x_coordinate": {
+        "rational_part": "(9/2*x^12 - 693/20*x^10 - 533/10*x^9 + 2061/400*x^8 + 6501/100*x^7 + 7097/150*x^6 + 221/50*x^5 - 10621/1200*x^4 - 17029/4050*x^3 - 289/450*x^2 + 22/2025*x + 161/18225)/(x^8 + 4*x^7 + 63/10*x^6 + 221/45*x^5 + 6841/3600*x^4 + 121/450*x^3 - 109/4050*x^2 - 14/2025*x + 1/2025)",
+        "y_part": "(9/2*x^9 + 27/2*x^8 + 207/20*x^7 - 9/4*x^6 - 33/5*x^5 - 7/2*x^4 - 16/15*x^3 - 1/3*x^2 - 4/45*x - 4/405)/(x^8 + 4*x^7 + 63/10*x^6 + 221/45*x^5 + 6841/3600*x^4 + 121/450*x^3 - 109/4050*x^2 - 14/2025*x + 1/2025)"
+      },
+      "y_coordinate": {
+        "rational_part": "(27/2*x^18 - 6237/40*x^16 - 4797/20*x^15 + 135189/800*x^14 + 119709/200*x^13 + 53591/200*x^12 - 18531/50*x^11 - 192911/400*x^10 - 261887/1350*x^9 - 213/100*x^8 + 6511/450*x^7 - 17369/3240*x^6 - 3241/450*x^5 - 10919/4050*x^4 - 1796/3645*x^3 - 14/405*x^2 + 56/18225*x + 296/492075)/(x^12 + 6*x^11 + 309/20*x^10 + 334/15*x^9 + 7827/400*x^8 + 1273/120*x^7 + 717149/216000*x^6 + 7829/18000*x^5 - 2413/54000*x^4 - 3121/182250*x^3 + 11/121500*x^2 + 7/30375*x - 1/91125)",
+        "y_part": "(27/2*x^15 + 81/2*x^14 - 837/40*x^13 - 1941/8*x^12 - 336051/800*x^11 - 236397/800*x^10 + 157627/24000*x^9 + 1358961/8000*x^8 + 277547/2000*x^7 + 6547759/108000*x^6 + 167641/9000*x^5 + 269423/54000*x^4 + 32588/30375*x^3 + 1039/10125*x^2 - 314/30375*x - 613/273375)/(x^12 + 6*x^11 + 309/20*x^10 + 334/15*x^9 + 7827/400*x^8 + 1273/120*x^7 + 717149/216000*x^6 + 7829/18000*x^5 - 2413/54000*x^4 - 3121/182250*x^3 + 11/121500*x^2 + 7/30375*x - 1/91125)"
+      },
+      "denominator_factorization": "(x + 1/2)^2 * (x^3 + 3/2*x^2 + 2/5*x - 2/45)^2",
+      "crt_scale_discovery": {
+        "scale_square": "4/9",
+        "crt_modulus": 10403,
+        "certificates": [
+          {
+            "prime": 101,
+            "scale_roots": [
+              33,
+              68
+            ],
+            "scale_square": 79
+          },
+          {
+            "prime": 103,
+            "scale_roots": [
+              35,
+              68
+            ],
+            "scale_square": 92
+          }
+        ]
+      }
+    }
+  ]
+}

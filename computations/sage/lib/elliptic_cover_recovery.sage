@@ -15,9 +15,13 @@ The discovery wrapper can determine the differential scale exactly and,
 over the rationals, search a bounded part of the target Mordell-Weil group
 for the image of the selected source point.
 
+Even-degree maps whose elliptic X-coordinate is not fixed by the
+hyperelliptic involution are represented as ``A(x)+y*B(x)``.  Their scale can
+be discovered over good finite fields and reconstructed by CRT.
+
 All arithmetic is exact.  A returned candidate is accepted only after the
 identity induced by the invariant differential and the elliptic equation is
-verified in the rational function field of the source.
+verified in the full function field of the source.
 """
 
 
@@ -62,9 +66,11 @@ def hyperelliptic_local_data(
 
     if precision < 8:
         raise ValueError("precision must be at least 8")
-    if base_field.characteristic() != 0:
-        raise NotImplementedError(
-            "formal integration currently requires characteristic zero"
+    characteristic = ZZ(base_field.characteristic())
+    if characteristic != 0 and precision >= characteristic:
+        raise ValueError(
+            "finite-characteristic formal integration requires precision "
+            "strictly below the characteristic"
         )
 
     L = LaurentSeriesRing(
@@ -437,6 +443,514 @@ def rational_function_degree(value):
         value.numerator().degree(),
         value.denominator().degree(),
     )
+
+
+def _quadratic_function_add(left, right):
+    return (left[0]+right[0], left[1]+right[1])
+
+
+def _quadratic_function_scale(scalar, value):
+    return (scalar*value[0], scalar*value[1])
+
+
+def _quadratic_function_multiply(left, right, source_polynomial):
+    return (
+        left[0]*right[0]
+        + source_polynomial*left[1]*right[1],
+        left[0]*right[1]+left[1]*right[0],
+    )
+
+
+def _quadratic_function_power(value, exponent, source_polynomial):
+    exponent = ZZ(exponent)
+    if exponent < 0:
+        raise ValueError("quadratic-function exponent must be nonnegative")
+    one = value[0].parent()(1)
+    answer = (one, one.parent()(0))
+    base = value
+    while exponent:
+        if exponent % 2:
+            answer = _quadratic_function_multiply(
+                answer,
+                base,
+                source_polynomial,
+            )
+        base = _quadratic_function_multiply(
+            base,
+            base,
+            source_polynomial,
+        )
+        exponent //= 2
+    return answer
+
+
+def _quadratic_function_derivative(value, source_polynomial):
+    """
+    Differentiate a+b*y in QQ(x,y), where y^2=F(x).
+    """
+    a, b = value
+    F = source_polynomial
+    return (
+        a.derivative(),
+        b.derivative()+b*F.derivative()/(2*F),
+    )
+
+
+def _quadratic_function_is_zero(value):
+    return value[0] == 0 and value[1] == 0
+
+
+def _quadratic_function_candidate_from_series(
+    source_x_series,
+    source_y_series,
+    target_x_series,
+    numerator_degree,
+    y_numerator_degree,
+    denominator_degree,
+    polynomial_ring,
+):
+    """
+    Recover X=(A(x)+y*B(x))/D(x) from one exact local expansion.
+    """
+    numerator_degree = ZZ(numerator_degree)
+    y_numerator_degree = ZZ(y_numerator_degree)
+    denominator_degree = ZZ(denominator_degree)
+    if min(
+        numerator_degree,
+        y_numerator_degree,
+        denominator_degree,
+    ) < 0:
+        raise ValueError("quadratic reconstruction degrees must be nonnegative")
+
+    x = polynomial_ring.gen()
+    base_field = polynomial_ring.base_ring()
+    maximum_degree = max(
+        numerator_degree,
+        y_numerator_degree,
+        denominator_degree,
+    )
+    source_powers = [
+        source_x_series^i
+        for i in range(maximum_degree+1)
+    ]
+    basis = [
+        source_powers[i]
+        for i in range(numerator_degree+1)
+    ] + [
+        source_y_series*source_powers[i]
+        for i in range(y_numerator_degree+1)
+    ] + [
+        -target_x_series*source_powers[i]
+        for i in range(denominator_degree+1)
+    ]
+    minimum_exponent = min(series.valuation() for series in basis)
+    finite_precisions = [
+        series.precision_absolute()
+        for series in basis
+        if series.precision_absolute() is not Infinity
+    ]
+    if not finite_precisions:
+        raise ValueError(
+            "quadratic reconstruction needs a truncated target series"
+        )
+    maximum_exponent = ZZ(min(finite_precisions))
+
+    rows = []
+    for exponent in range(minimum_exponent, maximum_exponent):
+        row = [series[exponent] for series in basis]
+        if not any(coefficient != 0 for coefficient in row):
+            continue
+        rows.append(row)
+
+    system = matrix(base_field, rows)
+    kernel = system.right_kernel()
+    if kernel.dimension() != 1:
+        raise ValueError(
+            "quadratic reconstruction kernel has dimension "
+            f"{kernel.dimension()}, expected 1"
+        )
+
+    vector = kernel.basis()[0]
+    a_offset = numerator_degree+1
+    b_offset = a_offset+y_numerator_degree+1
+    numerator = polynomial_ring(
+        sum(vector[i]*x^i for i in range(a_offset))
+    )
+    y_numerator = polynomial_ring(
+        sum(
+            vector[a_offset+i]*x^i
+            for i in range(y_numerator_degree+1)
+        )
+    )
+    denominator = polynomial_ring(
+        sum(
+            vector[b_offset+i]*x^i
+            for i in range(denominator_degree+1)
+        )
+    )
+    if denominator == 0:
+        raise ValueError(
+            "quadratic reconstruction produced a zero denominator"
+        )
+
+    common = numerator.gcd(y_numerator).gcd(denominator)
+    if not common.is_constant():
+        numerator //= common
+        y_numerator //= common
+        denominator //= common
+    Kx = polynomial_ring.fraction_field()
+    return (
+        Kx(numerator/denominator),
+        Kx(y_numerator/denominator),
+    )
+
+
+def general_elliptic_cover_identity(
+    source_polynomial,
+    target_curve,
+    eigenform,
+    differential_scale,
+    x_coordinate,
+):
+    """
+    Certify a general pullback X=a(x)+y*b(x).
+
+    The returned pair is the coefficient of 1 and y in the completed-square
+    Weierstrass equation.  Both entries vanish exactly when the elliptic
+    equation and differential pullback hold.
+    """
+    F = source_polynomial
+    E = target_curve
+    Kx = F.parent().fraction_field()
+    X = (Kx(x_coordinate[0]), Kx(x_coordinate[1]))
+    h = Kx(eigenform)
+    c = Kx.base_ring()(differential_scale)
+    derivative = _quadratic_function_derivative(X, F)
+    completed_y = (
+        F*derivative[1]/(c*h),
+        derivative[0]/(c*h),
+    )
+
+    b2 = E.a1()^2+4*E.a2()
+    b4 = 2*E.a4()+E.a1()*E.a3()
+    b6 = E.a3()^2+4*E.a6()
+    rhs = _quadratic_function_add(
+        _quadratic_function_scale(
+            4,
+            _quadratic_function_power(X, 3, F),
+        ),
+        _quadratic_function_add(
+            _quadratic_function_scale(
+                b2,
+                _quadratic_function_power(X, 2, F),
+            ),
+            _quadratic_function_add(
+                _quadratic_function_scale(2*b4, X),
+                (Kx(b6), Kx(0)),
+            ),
+        ),
+    )
+    lhs = _quadratic_function_power(completed_y, 2, F)
+    return (
+        Kx(lhs[0]-rhs[0]),
+        Kx(lhs[1]-rhs[1]),
+    )
+
+
+def general_elliptic_cover_y_coordinate(
+    source_polynomial,
+    target_curve,
+    eigenform,
+    differential_scale,
+    x_coordinate,
+):
+    """
+    Return Y=c(x)+y*d(x) for a certified general elliptic cover.
+    """
+    F = source_polynomial
+    E = target_curve
+    Kx = F.parent().fraction_field()
+    X = (Kx(x_coordinate[0]), Kx(x_coordinate[1]))
+    h = Kx(eigenform)
+    c = Kx.base_ring()(differential_scale)
+    derivative = _quadratic_function_derivative(X, F)
+    completed_y = (
+        F*derivative[1]/(c*h),
+        derivative[0]/(c*h),
+    )
+    correction = (
+        E.a1()*X[0]+E.a3(),
+        E.a1()*X[1],
+    )
+    return (
+        Kx((completed_y[0]-correction[0])/2),
+        Kx((completed_y[1]-correction[1])/2),
+    )
+
+
+def general_x_coordinate_degree(
+    source_polynomial,
+    x_coordinate,
+):
+    """
+    Compute [QQ(C):QQ(X)] from X=a(x)+y*b(x) by elimination.
+    """
+    F = source_polynomial
+    polynomial_ring = F.parent()
+    base_field = polynomial_ring.base_ring()
+    x = polynomial_ring.gen()
+    a = polynomial_ring.fraction_field()(x_coordinate[0])
+    b = polynomial_ring.fraction_field()(x_coordinate[1])
+    common_denominator = lcm(
+        a.denominator(),
+        b.denominator(),
+    )
+    A = polynomial_ring(a*common_denominator)
+    B = polynomial_ring(b*common_denominator)
+    D = polynomial_ring(common_denominator)
+    parameter_ring = PolynomialRing(base_field, names=("target_x",))
+    target_x = parameter_ring.gen()
+    coefficient_ring = PolynomialRing(parameter_ring, names=(str(x),))
+    base_factor = (D^2).gcd(D*A).gcd(A^2-B^2*F)
+    relation = (
+        (target_x*coefficient_ring(D)-coefficient_ring(A))^2
+        - coefficient_ring(B)^2*coefficient_ring(F)
+    )
+    if not base_factor.is_constant():
+        relation = relation.quo_rem(coefficient_ring(base_factor))[0]
+    return ZZ(relation.degree())
+
+
+def recover_general_elliptic_cover(
+    source_polynomial,
+    target_curve,
+    eigenform,
+    differential_scale,
+    cover_degree,
+    degree_bounds,
+    infinity_branch=1,
+    precision=None,
+):
+    """
+    Reconstruct and certify X=A(x)+y*B(x) for a known differential scale.
+    """
+    F = source_polynomial
+    E = target_curve
+    degree = ZZ(cover_degree)
+    numerator_degree, y_numerator_degree, denominator_degree = (
+        ZZ(value) for value in degree_bounds
+    )
+    if precision is None:
+        precision = max(
+            32,
+            numerator_degree
+            + y_numerator_degree
+            + denominator_degree
+            + 12,
+        )
+    precision = ZZ(precision)
+    local_data = hyperelliptic_local_data(
+        F,
+        precision,
+        infinity_branch=infinity_branch,
+    )
+    integral = integrate_eigenform(F, eigenform, local_data)
+    target_x_series, _ = elliptic_target_x_series(
+        E,
+        F.base_ring()(differential_scale)*integral,
+        precision,
+        target_center=E(0),
+    )
+    x_coordinate = _quadratic_function_candidate_from_series(
+        local_data["x"],
+        local_data["y"],
+        target_x_series,
+        numerator_degree,
+        y_numerator_degree,
+        denominator_degree,
+        F.parent(),
+    )
+    residual = general_elliptic_cover_identity(
+        F,
+        E,
+        eigenform,
+        differential_scale,
+        x_coordinate,
+    )
+    if not _quadratic_function_is_zero(residual):
+        raise ValueError("the reconstructed general map failed certification")
+    x_degree = general_x_coordinate_degree(F, x_coordinate)
+    if x_degree != 2*degree:
+        raise ValueError(
+            f"general X-coordinate has degree {x_degree}, expected {2*degree}"
+        )
+    return {
+        "verified": True,
+        "x_coordinate": x_coordinate,
+        "y_coordinate": general_elliptic_cover_y_coordinate(
+            F,
+            E,
+            eigenform,
+            differential_scale,
+            x_coordinate,
+        ),
+        "differential_scale": F.base_ring()(differential_scale),
+        "degree_bounds": (
+            numerator_degree,
+            y_numerator_degree,
+            denominator_degree,
+        ),
+        "x_coordinate_degree": x_degree,
+        "cover_degree": degree,
+        "infinity_branch": ZZ(infinity_branch),
+        "target_center": E(0),
+    }
+
+
+def discover_general_scale_by_crt(
+    source_polynomial,
+    target_curve,
+    eigenform,
+    cover_degree,
+    degree_bounds,
+    primes,
+    infinity_branch=1,
+    precision=None,
+):
+    """
+    Discover c^2 modulo good primes and reconstruct c over QQ.
+
+    This avoids a large symbolic solve over QQ(c).  Every modular residue is
+    accepted only after the full quadratic-function identity is checked.
+    """
+    F = source_polynomial
+    E = target_curve
+    degree = ZZ(cover_degree)
+    if F.base_ring() is not QQ or E.base_ring() is not QQ:
+        raise NotImplementedError(
+            "CRT scale discovery currently requires rational input"
+        )
+    numerator_degree, y_numerator_degree, denominator_degree = (
+        ZZ(value) for value in degree_bounds
+    )
+    if precision is None:
+        precision = max(
+            32,
+            numerator_degree
+            + y_numerator_degree
+            + denominator_degree
+            + 12,
+        )
+    precision = ZZ(precision)
+
+    certificates = []
+    for prime in primes:
+        prime = ZZ(prime)
+        if not prime.is_prime():
+            raise ValueError(f"{prime} is not prime")
+        if prime <= precision:
+            raise ValueError(
+                f"prime {prime} must exceed precision {precision}"
+            )
+        finite_field = GF(prime)
+        finite_ring = PolynomialRing(
+            finite_field,
+            names=(str(F.parent().gen()),),
+        )
+        finite_source = finite_ring(F)
+        if finite_source.discriminant() == 0:
+            raise ValueError(f"source has bad reduction at {prime}")
+        finite_target = E.change_ring(finite_field)
+        local_data = hyperelliptic_local_data(
+            finite_source,
+            precision,
+            infinity_branch=infinity_branch,
+        )
+        finite_eigenform = _change_rational_function_ring(
+            F.parent().fraction_field()(eigenform),
+            finite_ring,
+        )
+        integral = integrate_eigenform(
+            finite_source,
+            finite_eigenform,
+            local_data,
+        )
+
+        matches = []
+        for scale in finite_field:
+            if scale == 0:
+                continue
+            try:
+                target_x_series, _ = elliptic_target_x_series(
+                    finite_target,
+                    scale*integral,
+                    precision,
+                    target_center=finite_target(0),
+                )
+                candidate = _quadratic_function_candidate_from_series(
+                    local_data["x"],
+                    local_data["y"],
+                    target_x_series,
+                    numerator_degree,
+                    y_numerator_degree,
+                    denominator_degree,
+                    finite_ring,
+                )
+                residual = general_elliptic_cover_identity(
+                    finite_source,
+                    finite_target,
+                    finite_eigenform,
+                    scale,
+                    candidate,
+                )
+                if (
+                    _quadratic_function_is_zero(residual)
+                    and general_x_coordinate_degree(
+                        finite_source,
+                        candidate,
+                    ) == 2*degree
+                ):
+                    matches.append(scale)
+            except (ArithmeticError, ValueError, ZeroDivisionError):
+                continue
+        square_classes = sorted(set(scale^2 for scale in matches))
+        if len(square_classes) != 1:
+            raise ValueError(
+                f"expected one certified scale square at {prime}, "
+                f"found {square_classes}"
+            )
+        certificates.append(
+            {
+                "prime": prime,
+                "scale_roots": matches,
+                "scale_square": square_classes[0],
+            }
+        )
+
+    moduli = [certificate["prime"] for certificate in certificates]
+    residues = [
+        ZZ(certificate["scale_square"])
+        for certificate in certificates
+    ]
+    modulus = prod(moduli)
+    scale_square = QQ(
+        rational_reconstruction(
+            crt(residues, moduli),
+            modulus,
+        )
+    )
+    if not scale_square.is_square():
+        raise ValueError(
+            f"reconstructed scale square {scale_square} is not rationally "
+            "square"
+        )
+    return {
+        "verified": True,
+        "scale": scale_square.sqrt(),
+        "scale_square": scale_square,
+        "crt_modulus": modulus,
+        "certificates": certificates,
+    }
 
 
 def _degree_bound_candidates(

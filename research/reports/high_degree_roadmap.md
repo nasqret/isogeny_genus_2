@@ -20,6 +20,9 @@ is complete only after both maps and this splitting are certified exactly.
   conic, and exact construction of source curves and maps.
 - Degree-5 census: ten exact primitive covers; all tested normalization conics
   split over the branch quadratic field and none over Q.
+- Degree 6: one rational Kumar specialization with both primitive maps,
+  full quadratic-function recovery for the complement, CRT scale lifting,
+  independent Magma degrees, and nonexceptional `S6` monodromy.
 - Degree 7: one rational Kumar specialization with exact source curve, two
   rational elliptic twists, 41 matching good Euler factors, and both
   primitive maps certified in SageMath and Magma.
@@ -84,6 +87,22 @@ polynomial. Nonzero roots in the base field are rerun through the ordinary
 exact verifier. Over `Q`, center candidates come from a bounded Mordell-Weil
 box whose bound and attempted points are recorded.
 
+For even-degree maps, the elliptic `X`-coordinate need not be fixed by the
+hyperelliptic involution. The recovery library now also reconstructs
+
+$$
+X=a(x)+y\,b(x),\qquad Y=c(x)+y\,d(x)
+$$
+
+inside the full quadratic function field. Exact pair arithmetic verifies the
+elliptic identity in the basis `(1,y)`, and elimination computes the degree
+of `X:C\to P^1`.
+
+The first finite-field backend discovers the differential scale modulo good
+primes, reconstructs `c^2` by CRT, and performs the expensive full-map solve
+only once over `Q`. For the degree-6 complement, primes `101` and `103`
+reconstruct `c^2=4/9`, hence `c=2/3`.
+
 ### Family interpolation
 
 Solve many specializations, normalize coordinate choices, interpolate
@@ -106,8 +125,9 @@ curve, and recover the two maps.
 
 1. Degree 5: prove or refute generic conic splitting over the branch field;
    derive \(j(E')\).
-2. Degree 6: the \(Y_-(36)\) family is imported; next handle exceptional
-   \(\operatorname{PGL}_2(\mathbf F_5)\) monodromy and recover both maps.
+2. Degree 6: both primitive maps are recovered and independently checked in
+   Magma. The monodromy is \(S_6\), so this specialization is not the
+   exceptional \(\operatorname{PGL}_2(\mathbf F_5)\) action.
 3. Degree 7: completed for the current benchmark; from the two family
    `j`-invariants the recovery routine discovers twists, eigenforms, centers,
    scales, and both maps.

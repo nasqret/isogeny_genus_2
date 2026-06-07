@@ -298,3 +298,36 @@
 - B009 is complete. The next high-degree target is a rational degree-6
   specialization with both primitive maps and an exceptional-monodromy
   certificate.
+
+### Primitive degree-6 maps and the first CRT backend
+
+- Located the rational point `(r,s,z)=(-9,9/2,39366)` on `Y_-(36)`.
+  Its elliptic invariants are `-972` and `1296`, and the normalized source is
+  `y^2=x^6-6*x^5+7*x^4+28*x^3/9-16*x^2/3-16*x/9+16/81`.
+- Frobenius filtering uniquely selected twist `-1` for both targets:
+  `y^2=x^3-27*x+90` and `y^2=x^3+81*x-162`.
+- Diagonal Hasse-Witt matrices identified the eigenform lines as
+  `x dx/y` and `dx/y`.
+- Recovered the first map with scale `-1` using the original rational
+  `X(x)` backend.
+- Extended `elliptic_cover_recovery.sage` to reconstruct general
+  `X=A(x)+yB(x)`, derive `Y=C(x)+yD(x)` from the differential, and certify
+  the completed-square elliptic identity in the quadratic function field.
+- The complementary map has scale `2/3`. Its scale square `4/9` was
+  reconstructed by CRT from exact residues modulo `101` and `103`; the
+  characteristic-zero `X`-coordinate has degree `12`, hence cover degree
+  `6`.
+- Both targets have no rational prime-degree isogenies of degree `2` or `3`,
+  proving that the degree-6 maps are primitive over `Q`.
+- Remote Magma independently constructed both morphisms and returned degree
+  `6` for each. B012 is now active with a working scale-lifting backend.
+- For the first quotient, the generic fiber polynomial
+  `N(x)-T*D(x)` has discriminant
+  `2^43/3^6*(25*T+159)*(T^3-27*T+90)^2`.
+- Magma computed its exact transitive Galois group as `S6` (group `6T16`,
+  order `720`).
+- The elliptic base adjoins `sqrt(T^3-27*T+90)`, which is a different square
+  class from `sqrt(2*(25*T+159))`, the unique quadratic subfield of the
+  `S6` splitting field. Therefore base change does not lower the group:
+  the degree-6 elliptic cover also has `S6` monodromy and is not the
+  exceptional `PGL(2,5)` case.

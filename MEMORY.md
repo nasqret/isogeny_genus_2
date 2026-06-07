@@ -121,3 +121,22 @@ This project reconstructs every computational claim in
   specialization in every imported degree.
 - Current active frontier: B002 generic degree 5, B007 arbitrary given-map
   engine, B010 automated recovery, and the first primitive degree-6 pair.
+- The primitive degree-6 benchmark is now complete at
+  `(r,s,z)=(-9,9/2,39366)`. The normalized source has elliptic targets
+  `j=-972,1296`, with eigenforms `x dx/y` and `dx/y`.
+- Even-degree recovery cannot assume `X` lies in `Q(x)`. The complementary
+  degree-6 map requires `X=A(x)+yB(x)`; its exact scale is `2/3` and its
+  elliptic `X`-coordinate has degree `12`.
+- `discover_general_scale_by_crt` finds the scale square modulo good primes
+  and rationally reconstructs it. For the degree-6 complement, residues
+  modulo `101` and `103` reconstruct `c^2=4/9`.
+- Both degree-6 targets have no rational `2`- or `3`-isogenies, so the maps
+  are primitive over `Q`. Remote Magma independently returns degree `6` for
+  both morphisms.
+- The first degree-6 quotient has exact monodromy `S6`, not exceptional
+  `PGL(2,5)`. Its fiber discriminant square class is `2*(25*T+159)`, distinct
+  from the elliptic-base square class `T^3-27*T+90`, so the quadratic base
+  change preserves `S6`.
+- Current active frontier: coefficient-level CRT lifting, the full
+  Galois-closure quotient, B002 generic degree 5, and rational degree-8
+  through degree-11 map benchmarks.

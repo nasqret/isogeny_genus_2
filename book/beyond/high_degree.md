@@ -26,18 +26,25 @@ f^*\left(\frac{dX}{Y}\right)
 =(r+sx)\frac{dx}{y}.
 $$
 
-Use an ansatz
+For maps normalized so that the hyperelliptic involution acts as elliptic
+negation, use
 
 $$
 X=\frac{A(x)}{B(x)},\qquad
 Y=\frac{y\,C(x)}{B(x)^q}
 $$
 
-with degree bounds forced by $n$. The elliptic equation and differential
-identity give polynomial equations in the coefficients of $A,B,C,r,s$.
-Solve them modulo several good primes, Hensel lift when useful, reconstruct
-rational coefficients by CRT, and certify the final characteristic-zero
-identity.
+with degree bounds forced by $n$. In the general even-degree case the correct
+ansatz is
+
+$$
+X=a(x)+y\,b(x),\qquad Y=c(x)+y\,d(x).
+$$
+
+The elliptic equation and differential identity give polynomial equations in
+the coefficients and the eigenform line. Solve them modulo several good
+primes, Hensel lift when useful, reconstruct rational coefficients by CRT,
+and certify the final characteristic-zero identity.
 
 This is the main map-recovery route for Kumar's degree $6$ through $11$
 families.
@@ -132,6 +139,39 @@ The remaining input is the list of candidate $j$-invariants. Extracting that
 list from an arbitrary source curve is a separate moduli or database problem;
 for Kumar families it is supplied by the family importer.
 
+### General even-degree coordinates
+
+The degree-$6$ benchmark shows why a rational-function-only implementation is
+not sufficient. After translating one rational point at infinity to the
+elliptic origin, the complementary map has
+
+$$
+X=a(x)+y\,b(x).
+$$
+
+If $\delta(x)=1$ and $\delta(y)=F'(x)/(2y)$, then
+
+$$
+\delta(X)=a'
++\left(b'+\frac{bF'}{2F}\right)y.
+$$
+
+For a short Weierstrass target and pullback differential
+$c\,h(x)\,dx/y$, the second coordinate is forced:
+
+$$
+Y=
+\frac{
+F b'+\frac12bF'+a'y
+}{2ch}.
+$$
+
+The library represents functions as pairs `(a,b)` for $a+yb$, performs exact
+quadratic-function arithmetic, verifies the elliptic equation coefficient by
+coefficient in the basis $(1,y)$, and computes the degree by eliminating
+$y$. For the current complement the recovered $X$-coordinate has degree
+$12$, proving that the elliptic map has degree $6$.
+
 ### Kumar family importer
 
 The exact SageMath adapter
@@ -187,6 +227,18 @@ For one large characteristic-zero example:
 
 This backend is required once direct resultants become memory-bound.
 
+The first implemented CRT stage discovers the differential scale. For the
+degree-$6$ complement, full finite-field map identities leave the two roots
+$c=\pm33$ modulo $101$ and $c=\pm35$ modulo $103$. Rational reconstruction of
+the scale squares gives
+
+$$
+c^2=\frac49,
+$$
+
+after which the complete map is reconstructed once over $\mathbf Q$ and
+certified exactly.
+
 ## Engine E: Galois closure
 
 Gallese's construction works at arbitrary degree. Compute the Galois closure
@@ -202,6 +254,12 @@ algorithm should output:
 It is less efficient than Engine A, but it is degree-independent and provides
 an independent structural check. Degree $6$ needs special care because the
 exceptional $\operatorname{PGL}_2(\mathbf F_5)$ action can occur.
+
+For the current degree-$6$ benchmark, Magma computes the rational generic
+fiber group as $S_6$. The elliptic-base quadratic extension is linearly
+disjoint from the unique quadratic subfield of that splitting field, so the
+elliptic cover also has $S_6$ monodromy. This is a certified nonexceptional
+test case.
 
 ## Engine F: Frey-Kani synthesis
 
@@ -222,7 +280,7 @@ new primitive examples beyond the currently tabulated moduli families.
 | Degree | Immediate target |
 |---|---|
 | 5 | Prove the branch-field conic splitting locus and derive generic $j(E')$ |
-| 6 | Imported; handle the exceptional monodromy case and recover one exact pair of maps |
+| 6 | Both primitive maps and nonexceptional $S_6$ monodromy complete |
 | 7 | Completed benchmark; automate finite target-point discovery |
 | 8 | Imported; solve maps with modular eigenform equations |
 | 9 | Compare primitive degree 9 with compositions of degree 3 |

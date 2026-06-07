@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-06-07T04:08:44+02:00",
+  "engine": "Magma V2.28-3",
+  "location": "lts-faculty.wmi.amu.edu.pl",
+  "workstream": "B011",
+  "verified": true,
+  "rational_map_monodromy_group": "S6",
+  "rational_map_group_order": 720,
+  "transitive_group_identification": [
+    6,
+    16
+  ],
+  "fiber_discriminant": "2^43/3^6 * (25*T + 159) * (T^3 - 27*T + 90)^2",
+  "elliptic_base_square_class": "T^3 - 27*T + 90",
+  "discriminant_square_class": "2*(25*T + 159)",
+  "square_classes_distinct": true,
+  "elliptic_base_monodromy_group": "S6",
+  "exceptional_PGL2_F5": false,
+  "artifact": "computations/magma/verify_degree6_monodromy.m",
+  "transcript": "results/remote/magma_degree6_monodromy.log",
+  "success_marker": "B011_DEGREE6_MONODROMY_VERIFIED"
+}

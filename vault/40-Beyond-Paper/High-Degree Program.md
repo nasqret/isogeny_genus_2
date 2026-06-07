@@ -17,9 +17,9 @@ above, with a degree-independent fallback and exact arithmetic certificates.
 ## Degree frontier
 
 - Degree 5: generic normalization conic proved; complementary `j` pending.
-- Degree 6: Kumar import and exceptional monodromy pending.
-- Degree 7: split benchmark certified; maps pending.
-- Degrees 8-11: Kumar family import pending.
+- Degree 6: both primitive maps and nonexceptional `S6` monodromy complete.
+- Degree 7: both primitive maps complete.
+- Degrees 8-11: Kumar families imported; rational map benchmarks pending.
 - Degrees 20 and 80: exact nonprimitive test maps complete.
 
 See `research/reports/high_degree_roadmap.md` and

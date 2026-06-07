@@ -35,8 +35,8 @@ Local exact computations live under `computations/sage/`.
   ramification invariants.
 - [`elliptic_cover_recovery.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/lib/elliptic_cover_recovery.sage):
   degree-independent formal integration, target translation, rational
-  reconstruction, symbolic scale solving, bounded Mordell-Weil center search,
-  and exact map certification.
+  and full quadratic-function reconstruction, symbolic and CRT scale solving,
+  bounded Mordell-Weil center search, and exact map certification.
 - [`elliptic_factor_discovery.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/lib/elliptic_factor_discovery.sage):
   Frobenius-compatible target-twist discovery and bounded eigenform-line
   search from candidate Hilbert-modular `j`-invariants.
@@ -51,6 +51,10 @@ Local exact computations live under `computations/sage/`.
 - [`test_general_elliptic_cover_recovery.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/test_general_elliptic_cover_recovery.sage):
   exact regression cases in degrees 3, 5, and 7 over rational and quadratic
   number fields.
+- [`recover_degree6_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/recover_degree6_maps.sage):
+  rational `Y_-(36)` specialization, target-twist and Hasse-Witt eigenform
+  discovery, one rational `X(x)` map, one full `A(x)+yB(x)` map, CRT scale
+  lifting, exact degree, and primitivity.
 - [`recover_degree7_maps.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/recover_degree7_maps.sage):
   application of the general library to both primitive degree-7
   `X`-coordinates.
@@ -78,6 +82,13 @@ V2.28-3 on `lts-faculty.wmi.amu.edu.pl`.
 - [`verify_degree5_over_base_field.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree5_over_base_field.m):
   corrected degree-5 parametrization over the original quadratic field and
   complementary `j`-invariant.
+- [`verify_degree6_maps.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree6_maps.m):
+  independent construction of both degree-6 morphisms, including the
+  complementary `A(x)+yB(x)` coordinate, and exact degree computations.
+- [`verify_degree6_monodromy.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree6_monodromy.m):
+  exact `S6` generic-fiber Galois group, discriminant square class, and
+  elliptic-base disjointness certificate ruling out exceptional
+  `PGL(2,5)` monodromy.
 - [`verify_degree7_maps.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree7_maps.m):
   independent construction of both Kumar morphisms and exact degree-7
   computations.
@@ -100,6 +111,9 @@ never sufficient by itself to mark a claim verified.
 - [`sage_exceptional_ramification.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_exceptional_ramification.json)
 - [`magma_degree5_over_base_field.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree5_over_base_field.json)
 - [`magma_quartic_group_tower.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_quartic_group_tower.json)
+- [`sage_degree6_recovery.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_degree6_recovery.json)
+- [`magma_degree6_maps.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree6_maps.json)
+- [`magma_degree6_monodromy.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree6_monodromy.json)
 - [`sage_degree7_recovery.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_degree7_recovery.json)
 - [`sage_general_map_recovery.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_general_map_recovery.json)
 - [`sage_degree7_maps.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_degree7_maps.json)

@@ -31,6 +31,110 @@ The $Y$-coordinate multiplier is recovered by exact squarefree
 factorization, and the target equation is checked as an identity over
 $\mathbf Q(e)(x)$.
 
+## Degree 6: a primitive even-degree benchmark
+
+The rational point
+
+$$
+(r,s,z)=\left(-9,\frac92,39366\right)
+$$
+
+on Kumar's $Y_-(36)$ gives, after
+$x_{\mathrm{raw}}=3^{16}x$ and
+$y_{\mathrm{raw}}=3^{48}y$,
+
+$$
+C:\quad y^2=F(x)
+=x^6-6x^5+7x^4+\frac{28}{9}x^3
+-\frac{16}{3}x^2-\frac{16}{9}x+\frac{16}{81}.
+$$
+
+The two rational elliptic factors are
+
+$$
+E_1:Y^2=X^3-27X+90,\qquad
+E_2:Y^2=X^3+81X-162,
+$$
+
+with $j(E_1)=-972$ and $j(E_2)=1296$. Hasse-Witt matrices at six
+good primes identify the pullback lines as $x\,dx/y$ and $dx/y$.
+
+For the first map,
+
+$$
+X_1=
+\frac{
+3x^6-30x^5+81x^4-\frac{296}{3}x^3
++\frac{184}{3}x^2-\frac{848}{27}
+}{
+x^6-6x^5+9x^4+\frac{40}{9}x^3
+-\frac{40}{3}x^2+\frac{400}{81}
+},
+$$
+
+and
+
+$$
+Y_1=-\frac{yX_1'}{2x}.
+$$
+
+The complementary map exhibits the even-degree phenomenon absent from the
+degree-$7$ benchmark:
+
+$$
+X_2=a(x)+y\,b(x)
+$$
+
+is not contained in $\mathbf Q(x)$. Its common denominator is
+
+$$
+\left(x+\frac12\right)^2
+\left(x^3+\frac32x^2+\frac25x-\frac{2}{45}\right)^2.
+$$
+
+The exact numerators are recorded in `sage_degree6_recovery.json`. The
+differential scale is
+
+$$
+c_2=\frac23.
+$$
+
+It is reconstructed from the certified congruences
+
+$$
+c_2^2\equiv79\pmod{101},\qquad
+c_2^2\equiv92\pmod{103},
+$$
+
+whose CRT rational reconstruction is $4/9$. Writing
+$X_2=a+yb$, the second coordinate is derived exactly as
+
+$$
+Y_2=
+\frac{
+F b'+\frac12bF'+a'y
+}{2c_2}.
+$$
+
+SageMath verifies $Y_2^2=X_2^3+81X_2-162$ in
+$\mathbf Q(C)$ and computes $\deg(X_2)=12$, hence
+$\deg(C\to E_2)=6$. Remote Magma independently returns degree $6$ for
+both maps. Neither target has a rational $2$- or $3$-isogeny, so both
+degree-$6$ maps are primitive over $\mathbf Q$.
+
+For the first quotient, Magma computes the generic fiber group as
+$S_6$ of order $720$. Its discriminant is
+
+$$
+\frac{2^{43}}{3^6}(25T+159)(T^3-27T+90)^2.
+$$
+
+The unique quadratic subfield of the $S_6$ splitting field has square class
+$2(25T+159)$, whereas the elliptic base adjoins
+$\sqrt{T^3-27T+90}$. These square classes are distinct, so the elliptic base
+change preserves $S_6$. This benchmark is therefore not the exceptional
+$\operatorname{PGL}_2(\mathbf F_5)$ case.
+
 ## Degree 7: a primitive benchmark
 
 Kumar's rational curve on $Y_-(49)$ gives at $u=1$

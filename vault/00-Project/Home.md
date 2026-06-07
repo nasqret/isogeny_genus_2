@@ -9,6 +9,7 @@
 - [[../../30-Computations/Execution Environments|Execution Environments]]
 - [[../../40-Beyond-Paper/High-Degree Program|High-Degree Program]]
 - [[../../40-Beyond-Paper/Degree 5 Family|Degree 5 Family]]
+- [[../../40-Beyond-Paper/Degree 6 Benchmark|Degree 6 Benchmark]]
 - [[../../40-Beyond-Paper/Degree 7 Benchmark|Degree 7 Benchmark]]
 - [[../../90-Operations/Remote Magma Operations|Remote Magma Operations]]
 

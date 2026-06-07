@@ -238,5 +238,20 @@
     "timestamp": "2026-06-07T03:34:46+02:00",
     "claim_id": "B009",
     "summary": "Imported Kumar's Y_-(n^2) data for every degree 6 through 11 and constructed an exact nonsingular tautological genus-2 specialization in all six degrees."
+  },
+  {
+    "timestamp": "2026-06-07T04:02:40+02:00",
+    "claim_id": "B004-B010-B012",
+    "summary": "Recovered both primitive degree-6 maps over Q; the complementary X-coordinate uses the full quadratic function field and its scale 2/3 was lifted from certified finite-field residues."
+  },
+  {
+    "timestamp": "2026-06-07T04:03:41+02:00",
+    "claim_id": "B004-B010-B012",
+    "summary": "Remote Magma independently constructed both degree-6 morphisms and returned degree 6 for each."
+  },
+  {
+    "timestamp": "2026-06-07T04:08:44+02:00",
+    "claim_id": "B011",
+    "summary": "Magma computed S6 monodromy for the degree-6 quotient; the elliptic-base square class is distinct from the unique quadratic subfield, so the cover remains S6 and is not exceptional PGL(2,5)."
   }
 ]

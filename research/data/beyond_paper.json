@@ -44,12 +44,14 @@
     "id": "B004",
     "title": "Exact database of primitive covers",
     "status": "in_progress",
-    "progress": 30,
+    "progress": 40,
     "engine": "SageMath+Magma",
     "location": "hybrid",
     "objective": "Store source curves, both elliptic factors, primitive maps, fields, ramification, arithmetic invariants, and exact certificates for degrees 3 through 11.",
     "artifacts": [
       "results/sage_degree5_family_census.json",
+      "results/sage_degree6_recovery.json",
+      "results/magma_degree6_maps.json",
       "results/sage_degree7_kumar_specialization.json",
       "results/sage_degree7_maps.json"
     ]
@@ -129,7 +131,7 @@
     "id": "B010",
     "title": "Eigenform-guided exact map recovery",
     "status": "in_progress",
-    "progress": 90,
+    "progress": 95,
     "engine": "SageMath+Magma",
     "location": "hybrid",
     "objective": "Recover rational maps from split differentials using target and eigenform discovery, exact symbolic scale solving, bounded center search, linear rational reconstruction, coefficient lifting, and final function-field verification.",
@@ -137,10 +139,14 @@
       "computations/sage/lib/elliptic_cover_recovery.sage",
       "computations/sage/lib/elliptic_factor_discovery.sage",
       "computations/sage/test_general_elliptic_cover_recovery.sage",
+      "computations/sage/recover_degree6_maps.sage",
       "computations/sage/recover_degree7_maps.sage",
       "computations/sage/verify_degree7_maps.sage",
+      "computations/magma/verify_degree6_maps.m",
       "computations/magma/verify_degree7_maps.m",
       "results/sage_general_map_recovery.json",
+      "results/sage_degree6_recovery.json",
+      "results/magma_degree6_maps.json",
       "results/sage_degree7_recovery.json",
       "results/sage_degree7_maps.json",
       "results/magma_degree7_maps.json"
@@ -150,23 +156,30 @@
     "id": "B011",
     "title": "Galois-closure complement algorithm",
     "status": "in_progress",
-    "progress": 15,
+    "progress": 25,
     "engine": "Magma",
     "location": "remote",
     "objective": "Implement Gallese's non-diagonal fiber-product quotient for arbitrary degree and certify subgroup, genus, quotient, and complement data.",
     "artifacts": [
-      "research/reports/high_degree_roadmap.md"
+      "research/reports/high_degree_roadmap.md",
+      "computations/magma/verify_degree6_monodromy.m",
+      "results/magma_degree6_monodromy.json",
+      "results/remote/magma_degree6_monodromy.log"
     ]
   },
   {
     "id": "B012",
     "title": "Finite-field, CRT, and interpolation backend",
-    "status": "planned",
-    "progress": 0,
+    "status": "in_progress",
+    "progress": 25,
     "engine": "SageMath+Magma",
     "location": "hybrid",
     "objective": "Avoid coefficient explosion by solving at good primes and parameter specializations, then lifting with CRT and certifying the reconstructed characteristic-zero formulas.",
-    "artifacts": []
+    "artifacts": [
+      "computations/sage/lib/elliptic_cover_recovery.sage",
+      "computations/sage/recover_degree6_maps.sage",
+      "results/sage_degree6_recovery.json"
+    ]
   },
   {
     "id": "B013",

@@ -116,7 +116,7 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
 | Degree | Deliverable |
 |---|---|
 | 5 | Prove the generic normalization conic and its branch-field splitting locus; derive \(j(E')\) |
-| 6 | Imported; handle exceptional monodromy and recover one pair of maps |
+| 6 | Both primitive maps and nonexceptional \(S_6\) monodromy certified |
 | 7 | Recover both maps for the certified Kumar benchmark |
 | 8-11 | Imported; certify one rational map pair per degree |
 | \(>11\) | Generate primitive examples from anti-isometries and recover maps by CRT |
@@ -127,6 +127,9 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
 - Ten exact primitive degree-5 maps over quadratic branch fields: exact.
 - One degree-7 split benchmark with 41 Euler-factor identities and both
   primitive maps: exact in SageMath, with independent Magma degree checks.
+- One rational degree-6 benchmark with both primitive maps: exact in
+  SageMath, with independent Magma degree checks. The complementary map uses
+  the full function field `Q(x,y)`, and its scale is reconstructed by CRT.
 - Degree-20 and degree-80 maps by elliptic multiplication: exact,
   nonprimitive.
 - Kumar's Hilbert modular surfaces, Igusa-Clebsch invariants, symmetric
@@ -134,6 +137,8 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
   every degree 6 through 11. One nonsingular genus-2 specialization is
   certified in each degree.
 
-Current bounded tasks: recover a primitive degree-6 specialization, implement
-the exceptional monodromy test, and feed the imported degree-6 targets into
-B010.
+Current bounded tasks: generalize the CRT backend from scale lifting to
+coefficient lifting, begin rational specialization searches in degrees
+8 through 11, certify the explicit degree-6 `(6,6)` splitting kernel, and
+implement the full Galois-closure quotient rather than only its monodromy
+certificate.

@@ -39,8 +39,9 @@ artifact to exist. Remote Magma transcripts are preserved under
 
 This reruns the generic degree-5 structure calculation, the exact degree-5
 census, all Kumar family imports and tautological curves in degrees 6 through
-11, the degree-7 Euler-factor benchmark, both exact primitive degree-7 maps,
-and the degree-20/80 composition certificates.
+11, both exact primitive degree-6 maps with CRT scale discovery, the degree-7
+Euler-factor benchmark, both exact primitive degree-7 maps, and the
+degree-20/80 composition certificates.
 
 ## Dashboard
 
