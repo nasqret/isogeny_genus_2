@@ -432,6 +432,41 @@ $$
 which is coprime to the elliptic branch cubic. Hence the elliptic cover
 retains full $S_9$ monodromy.
 
+## Fixed-field quotient equations
+
+For any compact quotient with rational coordinate
+
+$$
+z=\frac{N(t)}{D(t)}
+$$
+
+and target equation $w^2=f(z)$, load the reusable SageMath library and run:
+
+```python
+load("computations/sage/lib/galois_complement.sage")
+certificate = galois_complement_equations(N/D, f)
+equations = certificate["equations"]
+```
+
+The result is the three-equation affine model
+
+$$
+r_0(s,p,z)=r_1(s,p,z)=0,\qquad
+q^2=f(z)(s^2-4p),
+$$
+
+where $r_1T+r_0$ is the remainder of $N(T)-zD(T)$ modulo
+$T^2-sT+p$.  The quotient map from the off-diagonal Galois component is
+
+$$
+(t_1,t_2,w)\longmapsto
+(t_1+t_2,\ t_1t_2,\ z,\ w(t_1-t_2)).
+$$
+
+The exact degree-$6$, degree-$7$, and degree-$8$ equation sizes are recorded
+in `sage_galois_complement.json`.  Remote Magma independently verifies that
+their branch actions have genus one.
+
 ## Degrees 10 and 11: full-function-field CRT benchmarks
 
 For degree $10$, use

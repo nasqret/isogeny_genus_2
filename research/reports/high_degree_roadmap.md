@@ -147,11 +147,47 @@ Solve many specializations, normalize coordinate choices, interpolate
 rational functions in the parameters, and prove the candidate by one generic
 function-field identity.
 
-### Galois-closure fallback
+### Galois-closure quotient
 
-Implement the non-diagonal fiber-product quotient of Gallese. This is slower
-but works in arbitrary degree and gives subgroup and genus certificates
-independent of the plane-model shortcuts.
+The Gallese quotient is now implemented at the fixed-field level.  For
+\(\phi(t)=N(t)/D(t)\), \(w^2=f(z)\), and two distinct roots \(t_1,t_2\) of
+\(N(t)-zD(t)\), the off-diagonal component is quotiented by
+
+\[
+(t_1,t_2,w)\longmapsto(t_2,t_1,-w).
+\]
+
+Its invariant generators are
+
+\[
+s=t_1+t_2,\qquad p=t_1t_2,\qquad q=w(t_1-t_2).
+\]
+
+The reusable SageMath engine computes the two coefficients of the remainder
+of \(N(T)-zD(T)\) modulo \(T^2-sT+p\), and appends
+
+\[
+q^2=f(z)(s^2-4p).
+\]
+
+These three equations give the quotient map and an affine model in every
+degree.  The Magma engine independently certifies
+
+\[
+H_Z=S_{n-2}\times\{1\},\qquad
+H_W=\langle H_Z,((12),-1)\rangle
+\]
+
+inside \(S_n\times C_2\), including their orders and indices.  Its twisted
+ordered-pair action has degree \(n(n-1)\), and Riemann--Hurwitz gives genus
+one for the generic odd-degree signatures through degree \(15\), as well as
+the concrete degree-\(6\), \(7\), and \(8\) signatures.
+
+For the critical quartic, intersecting \(H_W\) with the sign graph
+\(S_4\hookrightarrow S_4\times C_2\) gives an order-\(2\), index-\(12\)
+subgroup, recovering the paper's transposition fixed field.  The invariant
+equations reduce to the known genus-one quartic and its exact complementary
+\(j\)-invariant.
 
 ### Construction from torsion
 
@@ -183,7 +219,8 @@ implemented in `computations/magma/lib/splitting_kernel.m`.
    exceptional \(\operatorname{PGL}_2(\mathbf F_5)\) action.
 3. Degree 7: completed for the current benchmark; from the two family
    `j`-invariants the recovery routine discovers twists, eigenforms, centers,
-   scales, and both maps.
+   scales, and both maps. The compact quotient has exact `S7` monodromy over
+   the elliptic base and a certified genus-one Galois quotient.
 4. Degree 8: both primitive maps and full `S8` monodromy are certified for a
    rational `Y_-(64)` specialization.
 5. Degree 9: both primitive maps, modular target centers, and full `S9`

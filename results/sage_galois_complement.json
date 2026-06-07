@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-06-07T13:23:19+02:00",
+  "engine": "SageMath 10.8",
+  "elapsed_seconds": 0.390162,
+  "workstream": "B011",
+  "verified": true,
+  "scope": "Fixed-field equations for the off-diagonal Galois-closure quotient, with a generic quartic recovery and degree 6/7/8 benchmarks",
+  "invariants": {
+    "s": "t1+t2",
+    "p": "t1*t2",
+    "q": "w*(t1-t2)",
+    "involution": "(t1,t2,w)->(t2,t1,-w)",
+    "orientation_relation": "q^2=f(z)*(s^2-4*p)"
+  },
+  "generic_quartic": {
+    "remainder_coefficient_T": "s^3 - 2*s*p + a*s + b",
+    "remainder_constant": "-s^2*p + p^2 + (-a)*p - z",
+    "normalized_quartic": "S^4 + (2*a)*S^2 + Y^2 + (2*b)*S",
+    "genus": 1,
+    "j_invariant": "(-1024) * b^-2 * a^6 * (8*a^3 + 27*b^2)^-1"
+  },
+  "benchmarks": {
+    "degree6": {
+      "remainder_total_degrees": [
+        6,
+        6
+      ],
+      "pair_relation_total_degree": 5,
+      "orientation_total_degree": 5,
+      "pair_relation_terms": 19,
+      "orientation_terms": 7
+    },
+    "degree7": {
+      "remainder_total_degrees": [
+        6,
+        6
+      ],
+      "pair_relation_total_degree": 6,
+      "orientation_total_degree": 5,
+      "pair_relation_terms": 23,
+      "orientation_terms": 7
+    },
+    "degree8": {
+      "remainder_total_degrees": [
+        7,
+        7
+      ],
+      "pair_relation_total_degree": 7,
+      "orientation_total_degree": 5,
+      "pair_relation_terms": 30,
+      "orientation_terms": 9
+    }
+  }
+}

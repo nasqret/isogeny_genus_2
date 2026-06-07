@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-07T13:01:53+02:00",
+  "generated_at": "2026-06-07T13:17:40+02:00",
   "engine": "SageMath 10.8",
-  "elapsed_seconds": 0.620991,
+  "elapsed_seconds": 0.617329,
   "workstream": "B002",
   "verified": true,
   "tested_parameter_count": 10,

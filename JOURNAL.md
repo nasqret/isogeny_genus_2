@@ -453,3 +453,37 @@
 - The reduction characteristics do not divide `n`, so these are finite etale
   good-reduction models of the characteristic-zero splitting kernels.
   B018 is complete.
+
+### Full Galois-closure complementary quotient
+
+- Audited Gallese's fixed-field construction rather than treating the
+  rational generic-fiber Galois group as the quotient itself.
+- Implemented invariant generators
+  `s=t1+t2`, `p=t1*t2`, and `q=w*(t1-t2)` for the involution
+  `(t1,t2,w)->(t2,t1,-w)`.
+- `galois_complement.sage` computes the exact remainder of
+  `N(T)-z*D(T)` modulo `T^2-s*T+p`; its two coefficients together with
+  `q^2=f(z)*(s^2-4*p)` define the complementary fixed field in arbitrary
+  degree.
+- The generic critical quartic reduces to
+  `s^3-2*s*p+a*s+b=0` and the known genus-one quartic
+  `Y^2=-s^4-2*a*s^2-2*b*s`, with
+  `j=-1024*a^6/(b^2*(8*a^3+27*b^2))`.
+- Added a Magma model of `G=S_n x C2`,
+  `H_Z=S_(n-2) x {1}`, and
+  `H_W=<H_Z,((12),-1)>`. Exact orders and indices certify the
+  off-diagonal and quotient degrees for every `n=4,...,11`.
+- The twisted ordered-pair coset action gives genus one for generic odd
+  degrees `5,7,9,11,13,15`. It also gives genus one for the exact
+  degree-6, degree-7, and degree-8 branch signatures.
+- In the critical quartic, the sign-graph `S4` intersects `H_W` in an
+  order-2 subgroup of index `12`, recovering the transposition fixed field
+  used in the paper.
+- Remote Magma computed `S7` for the compact degree-7 quotient. Its fiber
+  discriminant is
+  `(828157741498368/117649)*target_cubic^3`, with square class
+  `2*target_cubic`; adjoining `sqrt(target_cubic)` therefore preserves
+  `S7`.
+- Remote runtimes were `0.050` seconds for the subgroup/genus certificate
+  and `0.290` seconds for the degree-7 Galois group, both at `32.09 MB`.
+  B011 is complete.

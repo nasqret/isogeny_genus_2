@@ -1,0 +1,11 @@
+Magma V2.28-3     Sun Jun  7 2026 13:15:52 on lts-faculty [Seed = 644430333]
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "computations/magma/verify_degree7_monodromy.m"
+B011_DEGREE7_MONODROMY_VERIFIED
+rational_map_group S7
+rational_map_order 5040
+elliptic_base_group S7
+discriminant_square_class 2*target_cubic
+
+Total time: 0.290 seconds, Total memory usage: 32.09MB

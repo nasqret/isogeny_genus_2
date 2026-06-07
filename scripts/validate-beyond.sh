@@ -26,6 +26,7 @@ run_sage computations/sage/test_general_elliptic_cover_recovery.sage
 run_sage computations/sage/test_crt_coefficient_lifting.sage
 run_sage computations/sage/recover_degree7_maps.sage
 run_sage computations/sage/verify_degree7_maps.sage
+run_sage computations/sage/verify_galois_complement.sage
 run_sage computations/sage/verify_composed_high_degree_maps.sage
 
 python3 -m json.tool "$ROOT/results/sage_degree5_family_structure.json" >/dev/null
@@ -52,6 +53,9 @@ python3 -m json.tool "$ROOT/results/sage_general_map_recovery.json" >/dev/null
 python3 -m json.tool "$ROOT/results/sage_crt_coefficient_lifting.json" >/dev/null
 python3 -m json.tool "$ROOT/results/sage_degree7_recovery.json" >/dev/null
 python3 -m json.tool "$ROOT/results/sage_degree7_maps.json" >/dev/null
+python3 -m json.tool "$ROOT/results/magma_degree7_monodromy.json" >/dev/null
+python3 -m json.tool "$ROOT/results/sage_galois_complement.json" >/dev/null
+python3 -m json.tool "$ROOT/results/magma_galois_complement.json" >/dev/null
 python3 -m json.tool "$ROOT/results/sage_composed_high_degree_maps.json" >/dev/null
 
 printf 'BEYOND_PAPER_VALIDATION_OK\n'

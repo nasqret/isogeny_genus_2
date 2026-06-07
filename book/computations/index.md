@@ -22,6 +22,12 @@ Local exact computations live under `computations/sage/`.
 - [`verify_generic_quartic.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/verify_generic_quartic.sage):
   generic critical-quartic source, map, self-fiber, and complementary
   invariant.
+- [`lib/galois_complement.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/lib/galois_complement.sage):
+  arbitrary-degree fixed-field equations for the off-diagonal
+  Galois-closure quotient.
+- [`verify_galois_complement.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/verify_galois_complement.sage):
+  exact invariant construction, generic critical-quartic recovery, and
+  degree-6, degree-7, and degree-8 quotient-equation benchmarks.
 - [`verify_structural_claims.sage`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/sage/verify_structural_claims.sage):
   squarefree normalization, universal degree-3 linearity, dominance, and
   twist non-torsion.
@@ -94,6 +100,9 @@ V2.28-3 on `lts-faculty.wmi.amu.edu.pl`.
 - [`lib/splitting_kernel.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/lib/splitting_kernel.m):
   reusable full-torsion pullback, graph-kernel enumeration, and Weil-pairing
   anti-isometry certificate.
+- [`lib/galois_complement.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/lib/galois_complement.m):
+  reusable `H_Z`, graph-subgroup `H_W`, twisted ordered-pair action, and
+  Riemann--Hurwitz genus certificate.
 - [`smoke_test.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/smoke_test.m):
   remote engine and exact-arithmetic smoke certificate.
 - [`verify_degree3_map.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree3_map.m):
@@ -122,6 +131,13 @@ V2.28-3 on `lts-faculty.wmi.amu.edu.pl`.
 - [`verify_degree7_maps.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree7_maps.m):
   independent construction of both Kumar morphisms and exact degree-7
   computations.
+- [`verify_degree7_monodromy.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree7_monodromy.m):
+  exact `S7` generic-fiber group and quadratic-disjointness certificate over
+  the elliptic base.
+- [`verify_galois_complement.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_galois_complement.m):
+  subgroup orders and indices through degree 11, critical-quartic fixed
+  field, generic odd-degree genus-one signatures through degree 15, and
+  exact degree-6/7/8 signatures.
 - [`verify_degree8_maps.m`](https://github.com/nasqret/isogeny_genus_2/blob/main/computations/magma/verify_degree8_maps.m):
   independent construction of both degree-8 morphisms, exact degree
   computations, and source automorphism-group certificate.
@@ -169,6 +185,9 @@ never sufficient by itself to mark a claim verified.
 - [`sage_general_map_recovery.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_general_map_recovery.json)
 - [`sage_degree7_maps.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_degree7_maps.json)
 - [`magma_degree7_maps.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree7_maps.json)
+- [`magma_degree7_monodromy.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree7_monodromy.json)
+- [`sage_galois_complement.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_galois_complement.json)
+- [`magma_galois_complement.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_galois_complement.json)
 - [`sage_degree8_recovery.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/sage_degree8_recovery.json)
 - [`magma_degree8_maps.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree8_maps.json)
 - [`magma_degree8_monodromy.json`](https://github.com/nasqret/isogeny_genus_2/blob/main/results/magma_degree8_monodromy.json)

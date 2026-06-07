@@ -152,6 +152,14 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
   Magma pulls full torsion bases into the genus-2 Jacobians, recovers graph
   matrices modulo `6` and `8`, enumerates exactly `36` and `64` kernel
   points, and verifies inverse Weil pairings.
+- The full Galois-closure quotient is implemented. SageMath constructs the
+  invariant fixed-field equations from `N(t)-zD(t)` and
+  `q^2=f(z)(s^2-4p)`. Magma certifies `H_Z`, the graph subgroup `H_W`, the
+  critical-quartic intersection, and genus-one branch actions for generic
+  odd degrees through `15` and the degree-6/7/8 benchmarks.
+- The compact degree-7 map has exact `S7` monodromy. Its discriminant square
+  class is `2*target_cubic`, distinct from the elliptic-base class, so base
+  change preserves `S7`.
 - The finite-field backend lifts complete projective coefficient vectors for
   both `X=A(x)/D(x)` and `X=A(x)/D(x)+y*B(x)/D(x)`. Partial CRT state is
   resumable and every lift is accepted only after exact characteristic-zero
@@ -165,7 +173,5 @@ degree-\(n\) cover \(C\to E'\), certify the induced \((n,n)\)-isogeny
 
 Current bounded tasks, in order:
 
-1. implement the full Galois-closure quotient rather than only its monodromy
-   certificate;
-2. finish the generic degree-5 complementary `j`-formula;
-3. begin Frey-Kani anti-isometry synthesis beyond degree 11.
+1. finish the generic degree-5 complementary `j`-formula;
+2. begin Frey-Kani anti-isometry synthesis beyond degree 11.

@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-06-07T13:16:00+02:00",
+  "engine": "Magma V2.28-3",
+  "host": "lts-faculty.wmi.amu.edu.pl",
+  "artifact": "computations/magma/verify_degree7_monodromy.m",
+  "workstream": "B011",
+  "verified": true,
+  "degree": 7,
+  "rational_map_group": "S7",
+  "rational_map_group_order": 5040,
+  "fiber_discriminant": "828157741498368/117649 * target_cubic^3",
+  "discriminant_square_class": "2*target_cubic",
+  "elliptic_base_square_class": "target_cubic",
+  "elliptic_base_group": "S7",
+  "success_marker": "B011_DEGREE7_MONODROMY_VERIFIED",
+  "elapsed_seconds": 0.29,
+  "memory_mb": 32.09,
+  "transcript": "results/remote/magma_degree7_monodromy.log"
+}

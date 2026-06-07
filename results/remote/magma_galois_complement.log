@@ -1,0 +1,89 @@
+Magma V2.28-3     Sun Jun  7 2026 13:15:52 on lts-faculty [Seed = 560873210]
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "computations/magma/verify_galois_complement.m"
+Loading "computations/magma/lib/galois_complement.m"
+SUBGROUP_CERTIFICATE 4
+G_order 48
+HZ_order_index 2 24
+HW_order_index 4 12
+SUBGROUP_CERTIFICATE 5
+G_order 240
+HZ_order_index 6 40
+HW_order_index 12 20
+SUBGROUP_CERTIFICATE 6
+G_order 1440
+HZ_order_index 24 60
+HW_order_index 48 30
+SUBGROUP_CERTIFICATE 7
+G_order 10080
+HZ_order_index 120 84
+HW_order_index 240 42
+SUBGROUP_CERTIFICATE 8
+G_order 80640
+HZ_order_index 720 112
+HW_order_index 1440 56
+SUBGROUP_CERTIFICATE 9
+G_order 725760
+HZ_order_index 5040 144
+HW_order_index 10080 72
+SUBGROUP_CERTIFICATE 10
+G_order 7257600
+HZ_order_index 40320 180
+HW_order_index 80640 90
+SUBGROUP_CERTIFICATE 11
+G_order 79833600
+HZ_order_index 362880 220
+HW_order_index 725760 110
+GENERIC_ODD_CERTIFICATE 5
+quotient_degree 20
+branch_indices [ 9, 8, 8, 8, 7 ]
+quotient_genus 1
+action_order 240
+stabilizer_order 12
+GENERIC_ODD_CERTIFICATE 7
+quotient_degree 42
+branch_indices [ 19, 18, 18, 18, 11 ]
+quotient_genus 1
+action_order 10080
+stabilizer_order 240
+GENERIC_ODD_CERTIFICATE 9
+quotient_degree 72
+branch_indices [ 33, 32, 32, 32, 15 ]
+quotient_genus 1
+action_order 725760
+stabilizer_order 10080
+GENERIC_ODD_CERTIFICATE 11
+quotient_degree 110
+branch_indices [ 51, 50, 50, 50, 19 ]
+quotient_genus 1
+action_order 79833600
+stabilizer_order 725760
+GENERIC_ODD_CERTIFICATE 13
+quotient_degree 156
+branch_indices [ 73, 72, 72, 72, 23 ]
+quotient_genus 1
+action_order 12454041600
+stabilizer_order 79833600
+GENERIC_ODD_CERTIFICATE 15
+quotient_degree 210
+branch_indices [ 99, 98, 98, 98, 27 ]
+quotient_genus 1
+action_order 2615348736000
+stabilizer_order 12454041600
+BENCHMARK_SIGNATURE 6
+branch_indices [ 13, 13, 13, 12, 9 ]
+quotient_genus 1
+BENCHMARK_SIGNATURE 7
+branch_indices [ 18, 18, 18, 30 ]
+quotient_genus 1
+BENCHMARK_SIGNATURE 8
+branch_indices [ 25, 25, 25, 37 ]
+quotient_genus 1
+CRITICAL_QUARTIC_CERTIFICATE
+critical_group_order 24
+critical_fixed_subgroup_order 2
+critical_quotient_degree 12
+B011_GALOIS_COMPLEMENT_VERIFIED
+
+Total time: 0.050 seconds, Total memory usage: 32.09MB

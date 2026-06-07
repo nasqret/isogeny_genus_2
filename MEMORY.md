@@ -188,5 +188,13 @@ This project reconstructs every computational claim in
   `[[1,4],[0,1]] mod 6` and the kernel has `36` points. For degree 8 over
   `F_(79^2)`, the matrix is `[[4,7],[3,4]] mod 8` and the kernel has `64`
   points. Inverse Weil pairings certify maximal isotropy.
-- Current active frontier, in order: the full Galois-closure quotient,
-  B002/B003 generic degree 5, and anti-isometry synthesis.
+- B011 is complete. The general fixed-field quotient uses
+  `s=t1+t2`, `p=t1*t2`, and `q=w*(t1-t2)`, with the remainder equations of
+  `N(T)-zD(T)` modulo `T^2-sT+p` and
+  `q^2=f(z)*(s^2-4p)`. Magma certifies
+  `H_Z=S_(n-2)x{1}` and `H_W=<H_Z,((12),-1)>`, genus one through generic
+  odd degree `15`, and the exact degree-6/7/8 signatures.
+- The compact degree-7 quotient has `S7` monodromy after elliptic base
+  change; its discriminant square class is `2*target_cubic`.
+- Current active frontier, in order: B002/B003 generic degree 5 and
+  anti-isometry synthesis.

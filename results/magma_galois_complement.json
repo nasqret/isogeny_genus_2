@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-06-07T13:16:00+02:00",
+  "engine": "Magma V2.28-3",
+  "host": "lts-faculty.wmi.amu.edu.pl",
+  "artifact": "computations/magma/verify_galois_complement.m",
+  "workstream": "B011",
+  "verified": true,
+  "subgroup_degrees": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "generic_odd_degrees": [
+    5,
+    7,
+    9,
+    11,
+    13,
+    15
+  ],
+  "generic_odd_quotient_genera": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "benchmark_signatures": {
+    "degree6": {
+      "branch_indices": [
+        13,
+        13,
+        13,
+        12,
+        9
+      ],
+      "quotient_genus": 1
+    },
+    "degree7": {
+      "branch_indices": [
+        18,
+        18,
+        18,
+        30
+      ],
+      "quotient_genus": 1
+    },
+    "degree8": {
+      "branch_indices": [
+        25,
+        25,
+        25,
+        37
+      ],
+      "quotient_genus": 1
+    }
+  },
+  "critical_quartic": {
+    "galois_group_order": 24,
+    "fixed_subgroup_order": 2,
+    "quotient_degree": 12
+  },
+  "success_marker": "B011_GALOIS_COMPLEMENT_VERIFIED",
+  "elapsed_seconds": 0.05,
+  "memory_mb": 32.09,
+  "transcript": "results/remote/magma_galois_complement.log"
+}

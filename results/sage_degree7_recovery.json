@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-07T13:07:34+02:00",
+  "generated_at": "2026-06-07T13:23:13+02:00",
   "engine": "SageMath 10.8",
-  "elapsed_seconds": 23.568605,
+  "elapsed_seconds": 23.591272,
   "workstream": "B010",
   "verified": true,
   "method": "Frobenius twist filtering, bounded eigenform and Mordell-Weil search, symbolic scale solving, and exact map reconstruction",

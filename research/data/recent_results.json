@@ -303,5 +303,15 @@
     "timestamp": "2026-06-07T12:59:37+02:00",
     "claim_id": "B004-B018",
     "summary": "Remote Magma explicitly recovered the degree-6 and degree-8 splitting kernels as anti-isometry graphs. The graph matrices are [[1,4],[0,1]] mod 6 and [[4,7],[3,4]] mod 8, with 36 and 64 kernel points."
+  },
+  {
+    "timestamp": "2026-06-07T13:16:00+02:00",
+    "claim_id": "B011",
+    "summary": "Completed the Galois-closure complement engine: exact fixed-field equations in SageMath, H_Z and H_W subgroup certificates in Magma, genus-one branch actions through degree 15, and concrete degree-6, degree-7, and degree-8 signatures."
+  },
+  {
+    "timestamp": "2026-06-07T13:16:00+02:00",
+    "claim_id": "B011",
+    "summary": "Remote Magma computed S7 monodromy for the compact degree-7 quotient. Its discriminant square class is 2 times the elliptic cubic, so the elliptic base change remains S7."
   }
 ]
